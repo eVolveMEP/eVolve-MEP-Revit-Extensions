@@ -4,6 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
+extern alias eVolve;
 using System.Linq;
 using System.Windows.Media.Imaging;
 using Autodesk.Revit.UI;
@@ -43,7 +44,7 @@ namespace eVolve.CsvDataExchange.Revit
         /// <inheritdoc/>
         public Result OnStartup(UIControlledApplication application)
         {
-            var ribbonButton = eVolve.Core.Revit.Integration.API.CreateButton("CSV Data\nExchange",
+            var ribbonButton = eVolve::eVolve.Core.Revit.Integration.API.CreateButton("CSV Data\nExchange",
                 System.Reflection.Assembly.GetExecutingAssembly().Location,
                 typeof(Command),
                 typeof(CommandAvailability),
@@ -51,7 +52,7 @@ namespace eVolve.CsvDataExchange.Revit
                 "Imports/Exports data from Revit using the eVolve Integration Platform.",
                 HelpLinkUrl);
 
-            eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(ribbonButton);
+            eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(ribbonButton);
 
             return Result.Succeeded;
         }

@@ -4,6 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
+extern alias eVolve;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using eVolve.Core.Revit.Integration;
+using eVolve::eVolve.Core.Revit.Integration;
 
 namespace eVolve.CsvDataExchange.Revit
 {
