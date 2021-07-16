@@ -234,6 +234,7 @@
             <Reference Include="eVolveElectrical">
               <HintPath>..\..\eVolve-Revit-Products\eVolve Electrical\bin\Release\eVolveElectrical.dll</HintPath>
               <Private>False</Private>
+              <Aliases>eVolve</Aliases>
             </Reference>
           </ItemGroup>
         </When>
@@ -244,6 +245,7 @@
             <Reference Include="eVolveMechanical">
               <HintPath>..\..\eVolve-Revit-Products\eVolve Mechanical\bin\Release\eVolveMechanical.dll</HintPath>
               <Private>False</Private>
+              <Aliases>eVolve</Aliases>
             </Reference>
           </ItemGroup>
         </When>
@@ -317,6 +319,7 @@
             <Reference Include="eVolveElectrical">
               <HintPath>..\..\eVolve-Revit-Products\eVolve Electrical\bin\Release\eVolveElectrical.dll</HintPath>
               <Private>False</Private>
+              <Aliases>eVolve</Aliases>
             </Reference>
           </ItemGroup>
         </When>
@@ -327,6 +330,7 @@
             <Reference Include="eVolveMechanical">
               <HintPath>..\..\eVolve-Revit-Products\eVolve Mechanical\bin\Release\eVolveMechanical.dll</HintPath>
               <Private>False</Private>
+              <Aliases>eVolve</Aliases>
             </Reference>
           </ItemGroup>
         </When>
@@ -400,6 +404,7 @@
             <Reference Include="eVolveElectrical">
               <HintPath>..\..\eVolve-Revit-Products\eVolve Electrical\bin\Release\eVolveElectrical.dll</HintPath>
               <Private>False</Private>
+              <Aliases>eVolve</Aliases>
             </Reference>
           </ItemGroup>
         </When>
@@ -410,6 +415,7 @@
             <Reference Include="eVolveMechanical">
               <HintPath>..\..\eVolve-Revit-Products\eVolve Mechanical\bin\Release\eVolveMechanical.dll</HintPath>
               <Private>False</Private>
+              <Aliases>eVolve</Aliases>
             </Reference>
           </ItemGroup>
         </When>
