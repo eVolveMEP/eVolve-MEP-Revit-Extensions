@@ -26,6 +26,21 @@ namespace eVolve.CsvDataExchange.Revit
             }
         }
 
+        /// <summary> Gets URL of the help link to open when requested by the user. </summary>
+        internal static string HelpLinkUrl
+        {
+            get
+            {
+#if ELECTRICAL
+                return "https://help-electrical.evolvemep.com/article/ye5k5bnwu2";
+#elif MECHANICAL
+                return "https://help-mechanical.evolvemep.com/article/g0p7prhwle";
+#else
+                return null;
+#endif
+            }
+        }
+
         /// <inheritdoc/>
         public Result OnStartup(UIControlledApplication application)
         {
@@ -34,7 +49,8 @@ namespace eVolve.CsvDataExchange.Revit
                 typeof(Command),
                 typeof(CommandAvailability),
                 BitmapFrame.Create(IconResource),
-                "Imports/Exports data from Revit using the eVolve Integration Platform.");
+                "Imports/Exports data from Revit using the eVolve Integration Platform.",
+                HelpLinkUrl);
 
             eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(ribbonButton);
 

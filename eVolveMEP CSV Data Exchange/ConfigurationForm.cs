@@ -70,8 +70,9 @@ namespace eVolve.CsvDataExchange.Revit
                 .ToArray());
 
             this.FormClosing += ConfigurationForm_FormClosing;
+            this.HelpRequested += ConfigurationForm_HelpRequested;
         }
-
+        
         /// <summary> Loads saved configuration values into the editors. </summary>
         ///
         /// <param name="sender"> Source of the event. </param>
@@ -98,6 +99,25 @@ namespace eVolve.CsvDataExchange.Revit
                     e.Cancel = true;
                 }
             }
+        }
+
+        /// <summary> Opens help information when F1 is pressed on the form. </summary>
+        ///
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e"> Help event information. </param>
+        private void ConfigurationForm_HelpRequested(object sender, HelpEventArgs e)
+        {
+            e.Handled = true;
+            OpenHelpLink();
+        }
+
+        /// <summary> Opens help information. </summary>
+        ///
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e"> Event information. </param>
+        private void HelpLinkPictureBox_Click(object sender, EventArgs e)
+        {
+            OpenHelpLink();
         }
 
         /// <summary> Rebuilds the <see cref="ProfileComboBox"/> selections based on the selected direction. </summary>
@@ -302,6 +322,12 @@ namespace eVolve.CsvDataExchange.Revit
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return !messages.Any();
+        }
+
+        /// <summary> Opens <see cref="Application.HelpLinkUrl"/> in the default application. </summary>
+        private void OpenHelpLink()
+        {
+            System.Diagnostics.Process.Start(Application.HelpLinkUrl);
         }
     }
 }
