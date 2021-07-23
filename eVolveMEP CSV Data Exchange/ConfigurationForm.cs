@@ -129,11 +129,11 @@ namespace eVolve.CsvDataExchange.Revit
             ProfileComboBox.Items.Clear();
             if (sender.Equals(ExportRadioButton))
             {
-                ProfileComboBox.Items.AddRange(Document.GetProfileNames(IntegrationDirection.Export));
+                ProfileComboBox.Items.AddRange(Document.GetProfileNames(IntegrationDirection.Export, null));
             }
             else if (sender.Equals(ImportRadioButton))
             {
-                ProfileComboBox.Items.AddRange(Document.GetProfileNames(IntegrationDirection.Import));
+                ProfileComboBox.Items.AddRange(Document.GetProfileNames(IntegrationDirection.Import, null));
             }
         }
 
