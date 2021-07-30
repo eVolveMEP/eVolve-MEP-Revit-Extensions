@@ -205,7 +205,7 @@ namespace eVolve.CsvDataExchange.Revit
             }
 
             // Write data back to Revit.
-            var elementsProcessed = document.WriteData(settings.ProfileName, importData, API.UnmappedFieldAction.Ignore, out _, ElementProcessedHandler);
+            var elementsProcessed = document.WriteData(settings.ProfileName, importData, true, API.UnmappedFieldAction.Ignore, out _, ElementProcessedHandler);
             MessageBox.Show($"{elementsProcessed} element(s) processed.", "Import Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return Result.Succeeded;
