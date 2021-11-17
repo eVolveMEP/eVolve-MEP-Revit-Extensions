@@ -4,6 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
+extern alias eVolve;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using eVolve.Core.Revit.Integration;
+using eVolve::eVolve.Core.Revit.Integration;
 
 namespace eVolve.CsvDataExchange.Revit
 {
@@ -204,7 +205,7 @@ namespace eVolve.CsvDataExchange.Revit
             }
 
             // Write data back to Revit.
-            var elementsProcessed = document.WriteData(settings.ProfileName, importData, API.UnmappedFieldAction.Ignore, out _, ElementProcessedHandler);
+            var elementsProcessed = document.WriteData(settings.ProfileName, importData, true, API.UnmappedFieldAction.Ignore, out _, ElementProcessedHandler);
             MessageBox.Show($"{elementsProcessed} element(s) processed.", "Import Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return Result.Succeeded;

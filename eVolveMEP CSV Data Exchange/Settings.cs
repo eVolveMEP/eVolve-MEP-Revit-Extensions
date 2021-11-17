@@ -4,6 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE.txt file in the root directory of this source tree.
 
+extern alias eVolve;
 using System;
 
 namespace eVolve.CsvDataExchange.Revit
@@ -23,7 +24,7 @@ namespace eVolve.CsvDataExchange.Revit
     public class Settings
     {
         /// <summary> Gets or sets the exchange direction. </summary>
-        public eVolve.Core.Revit.Integration.IntegrationDirection Direction { get; set; }
+        public eVolve::eVolve.Core.Revit.Integration.IntegrationDirection Direction { get; set; }
 
         /// <summary> Gets or sets the name of the profile. </summary>
         public string ProfileName { get; set; }

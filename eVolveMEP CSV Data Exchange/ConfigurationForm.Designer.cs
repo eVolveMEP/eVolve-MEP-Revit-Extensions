@@ -46,12 +46,14 @@
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.OptionalExportColumnsGroupBox = new System.Windows.Forms.GroupBox();
             this.OptionalExportColumnsCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.HelpLinkPictureBox = new System.Windows.Forms.PictureBox();
             this.DirectionGroupBox.SuspendLayout();
             this.ProfileGroupBox.SuspendLayout();
             this.FileGroupBox.SuspendLayout();
             this.DelimiterGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.OptionalExportColumnsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ProfileComboBox
@@ -244,6 +246,17 @@
             this.OptionalExportColumnsCheckedListBox.Size = new System.Drawing.Size(283, 109);
             this.OptionalExportColumnsCheckedListBox.TabIndex = 0;
             // 
+            // HelpLinkPictureBox
+            // 
+            this.HelpLinkPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.HelpLinkPictureBox.Image = global::eVolve.CsvDataExchange.Revit.Properties.Resources.Help_Medium_20x20;
+            this.HelpLinkPictureBox.Location = new System.Drawing.Point(764, 0);
+            this.HelpLinkPictureBox.Name = "HelpLinkPictureBox";
+            this.HelpLinkPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.HelpLinkPictureBox.TabIndex = 8;
+            this.HelpLinkPictureBox.TabStop = false;
+            this.HelpLinkPictureBox.Click += new System.EventHandler(this.HelpLinkPictureBox_Click);
+            // 
             // ConfigurationForm
             // 
             this.AcceptButton = this.OK_Button;
@@ -251,6 +264,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel_Button;
             this.ClientSize = new System.Drawing.Size(784, 388);
+            this.Controls.Add(this.HelpLinkPictureBox);
             this.Controls.Add(this.OptionalExportColumnsGroupBox);
             this.Controls.Add(this.LogoPictureBox);
             this.Controls.Add(this.ApplyButton);
@@ -275,6 +289,7 @@
             this.DelimiterGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.OptionalExportColumnsGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -298,5 +313,6 @@
         private System.Windows.Forms.PictureBox LogoPictureBox;
         private System.Windows.Forms.GroupBox OptionalExportColumnsGroupBox;
         private System.Windows.Forms.CheckedListBox OptionalExportColumnsCheckedListBox;
+        private System.Windows.Forms.PictureBox HelpLinkPictureBox;
     }
 }

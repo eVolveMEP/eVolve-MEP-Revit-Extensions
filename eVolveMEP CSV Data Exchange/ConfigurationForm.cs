@@ -4,11 +4,12 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
+extern alias eVolve;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using eVolve.Core.Revit.Integration;
+using eVolve::eVolve.Core.Revit.Integration;
 using RevitDB = Autodesk.Revit.DB;
 
 namespace eVolve.CsvDataExchange.Revit
@@ -69,8 +70,9 @@ namespace eVolve.CsvDataExchange.Revit
                 .ToArray());
 
             this.FormClosing += ConfigurationForm_FormClosing;
+            this.HelpRequested += ConfigurationForm_HelpRequested;
         }
-
+        
         /// <summary> Loads saved configuration values into the editors. </summary>
         ///
         /// <param name="sender"> Source of the event. </param>
@@ -99,6 +101,25 @@ namespace eVolve.CsvDataExchange.Revit
             }
         }
 
+        /// <summary> Opens help information when F1 is pressed on the form. </summary>
+        ///
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e"> Help event information. </param>
+        private void ConfigurationForm_HelpRequested(object sender, HelpEventArgs e)
+        {
+            e.Handled = true;
+            OpenHelpLink();
+        }
+
+        /// <summary> Opens help information. </summary>
+        ///
+        /// <param name="sender"> Source of the event. </param>
+        /// <param name="e"> Event information. </param>
+        private void HelpLinkPictureBox_Click(object sender, EventArgs e)
+        {
+            OpenHelpLink();
+        }
+
         /// <summary> Rebuilds the <see cref="ProfileComboBox"/> selections based on the selected direction. </summary>
         ///
         /// <param name="sender"> Source of the event. </param>
@@ -108,11 +129,11 @@ namespace eVolve.CsvDataExchange.Revit
             ProfileComboBox.Items.Clear();
             if (sender.Equals(ExportRadioButton))
             {
-                ProfileComboBox.Items.AddRange(Document.GetProfileNames(IntegrationDirection.Export));
+                ProfileComboBox.Items.AddRange(Document.GetProfileNames(IntegrationDirection.Export, null));
             }
             else if (sender.Equals(ImportRadioButton))
             {
-                ProfileComboBox.Items.AddRange(Document.GetProfileNames(IntegrationDirection.Import));
+                ProfileComboBox.Items.AddRange(Document.GetProfileNames(IntegrationDirection.Import, null));
             }
         }
 
@@ -301,6 +322,12 @@ namespace eVolve.CsvDataExchange.Revit
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return !messages.Any();
+        }
+
+        /// <summary> Opens <see cref="Application.HelpLinkUrl"/> in the default application. </summary>
+        private void OpenHelpLink()
+        {
+            System.Diagnostics.Process.Start(Application.HelpLinkUrl);
         }
     }
 }

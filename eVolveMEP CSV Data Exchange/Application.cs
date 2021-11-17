@@ -4,6 +4,7 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
+extern alias eVolve;
 using System.Linq;
 using System.Windows.Media.Imaging;
 using Autodesk.Revit.UI;
@@ -25,17 +26,33 @@ namespace eVolve.CsvDataExchange.Revit
             }
         }
 
+        /// <summary> Gets URL of the help link to open when requested by the user. </summary>
+        internal static string HelpLinkUrl
+        {
+            get
+            {
+#if ELECTRICAL
+                return "https://help-electrical.evolvemep.com/article/ye5k5bnwu2";
+#elif MECHANICAL
+                return "https://help-mechanical.evolvemep.com/article/g0p7prhwle";
+#else
+                return null;
+#endif
+            }
+        }
+
         /// <inheritdoc/>
         public Result OnStartup(UIControlledApplication application)
         {
-            var ribbonButton = eVolve.Core.Revit.Integration.API.CreateButton("CSV Data\nExchange",
+            var ribbonButton = eVolve::eVolve.Core.Revit.Integration.API.CreateButton("CSV Data\nExchange",
                 System.Reflection.Assembly.GetExecutingAssembly().Location,
                 typeof(Command),
                 typeof(CommandAvailability),
                 BitmapFrame.Create(IconResource),
-                "Imports/Exports data from Revit using the eVolve Integration Platform.");
+                "Imports/Exports data from Revit using the eVolve Integration Platform.",
+                HelpLinkUrl);
 
-            eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(ribbonButton);
+            eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(ribbonButton);
 
             return Result.Succeeded;
         }
