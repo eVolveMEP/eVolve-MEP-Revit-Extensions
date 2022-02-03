@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using eVolve.CsvDataExchange.Revit.Properties;
 using eVolve::eVolve.Core.Revit.Integration;
 
 namespace eVolve.CsvDataExchange.Revit
@@ -22,6 +23,13 @@ namespace eVolve.CsvDataExchange.Revit
     [Regeneration(RegenerationOption.Manual)]
     internal class Command : IExternalCommand
     {
+        /// <summary> Gets the button name of this tool as single line text. </summary>
+        private static string ButtonTextWithNoLineBreaks => Resources.ButtonText
+            .Replace("\r", " ")
+            .Replace("\n", " ")
+            .Replace("  ", " ")
+            .Replace("  ", " ");
+
         /// <summary> Gets the icon resource. </summary>
         internal static System.IO.Stream IconResource
         {
@@ -70,7 +78,7 @@ namespace eVolve.CsvDataExchange.Revit
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred during processing.\n\n{ex.Message}", "CSV Data Exchange", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{Resources.ErrorOccurredNotice}\n\n{ex.Message}", ButtonTextWithNoLineBreaks, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return Result.Failed;
             }
         }
@@ -78,11 +86,11 @@ namespace eVolve.CsvDataExchange.Revit
         /// <summary> Additional columns which can be added to the output of <see cref="ExportData"/>. </summary>
         internal struct OptionalExportColumns
         {
-            public const string ProjectName = "Project Name";
-            public const string ProjectNumber = "Project Number";
-            public const string Timestamp = "Current Date/Time";
-            public const string UserName = "User Name";
-            public const string Workstation = "Workstation Name";
+            public static string ProjectName => Resources.ExportColumn_ProjectName;
+            public static string ProjectNumber => Resources.ExportColumn_ProjectNumber;
+            public static string Timestamp => Resources.ExportColumn_Timestamp;
+            public static string UserName => Resources.ExportColumn_UserName;
+            public static string Workstation => Resources.ExportColumn_WorkstationName;
         }
 
         /// <summary>
@@ -98,13 +106,13 @@ namespace eVolve.CsvDataExchange.Revit
             var dataToExport = document.GetData(settings.ProfileName, ElementProcessedHandler);
             if (!dataToExport.Any())
             {
-                MessageBox.Show("No elements were selected.", "Export CSV Data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Resources.NoElementsSelectedNotice, Resources.ExportCsvData, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return Result.Failed;
             }
 
 
             // Build the header data.
-            var headerList = new List<string>() { "Unique Id" };
+            var headerList = new List<string>() { Resources.UniqueId };
             // Optional columns.
             headerList.AddRange(settings.IncludeExportColumns);
 
@@ -118,23 +126,25 @@ namespace eVolve.CsvDataExchange.Revit
             var optionalValues = new List<string>();
             foreach (var optional in settings.IncludeExportColumns)
             {
-                switch (optional)
+                if (optional == OptionalExportColumns.ProjectName)
                 {
-                    case OptionalExportColumns.ProjectName:
-                        optionalValues.Add(document.ProjectInformation.Name);
-                        break;
-                    case OptionalExportColumns.ProjectNumber:
-                        optionalValues.Add(document.ProjectInformation.Number);
-                        break;
-                    case OptionalExportColumns.Timestamp:
-                        optionalValues.Add(DateTime.Now.ToString("s"));
-                        break;
-                    case OptionalExportColumns.UserName:
-                        optionalValues.Add(Environment.UserName);
-                        break;
-                    case OptionalExportColumns.Workstation:
-                        optionalValues.Add(Environment.MachineName);
-                        break;
+                    optionalValues.Add(document.ProjectInformation.Name);
+                }
+                else if (optional == OptionalExportColumns.ProjectNumber)
+                {
+                    optionalValues.Add(document.ProjectInformation.Number);
+                }
+                else if (optional == OptionalExportColumns.Timestamp)
+                {
+                    optionalValues.Add(DateTime.Now.ToString("s"));
+                }
+                else if (optional == OptionalExportColumns.UserName)
+                {
+                    optionalValues.Add(Environment.UserName);
+                }
+                else if (optional == OptionalExportColumns.Workstation)
+                {
+                    optionalValues.Add(Environment.MachineName);
                 }
             }
 
@@ -148,15 +158,12 @@ namespace eVolve.CsvDataExchange.Revit
                 currentExportRow.AddRange(optionalValues);
 
                 // Structure contains the data.
-                foreach (var exportedValue in entry.Value.Select(data => formatCsvOutput(data.Value)))
-                {
-                    currentExportRow.Add(exportedValue);
-                }
+                currentExportRow.AddRange(entry.Value.Select(data => formatCsvOutput(data.Value)));
                 exportCsvList.Add(string.Join(getDelimiter(), currentExportRow));
             }
 
             System.IO.File.WriteAllText(settings.FilePath, string.Join(Environment.NewLine, exportCsvList));
-            MessageBox.Show($"{dataToExport.Count} element(s) processed.", "Export Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(string.Format(Resources.XElementsProcessedNotice, dataToExport.Count), Resources.ExportCompleted, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return Result.Succeeded;
 
@@ -210,7 +217,7 @@ namespace eVolve.CsvDataExchange.Revit
             if (dataRows.Length <= 1)
             {
                 // No data or header only.
-                MessageBox.Show("CSV file contained no usable data.", "Import CSV Data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Resources.NoDataNotice, Resources.ImportCsvData, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return Result.Failed;
             }
 
@@ -235,7 +242,7 @@ namespace eVolve.CsvDataExchange.Revit
 
             // Write data back to Revit.
             var elementsProcessed = document.WriteData(settings.ProfileName, importData, true, API.UnmappedFieldAction.Ignore, out _, ElementProcessedHandler);
-            MessageBox.Show($"{elementsProcessed} element(s) processed.", "Import Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(string.Format(Resources.XElementsProcessedNotice, elementsProcessed), Resources.ImportCompleted, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return Result.Succeeded;
 
