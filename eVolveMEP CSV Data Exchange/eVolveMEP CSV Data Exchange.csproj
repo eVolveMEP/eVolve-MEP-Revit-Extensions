@@ -13,6 +13,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <LangVersion>9</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,7 +39,6 @@
     <DocumentationFile>bin\eE Debug Revit 2020\eVolveCSVDataExchange.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -48,7 +48,6 @@
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -84,7 +83,6 @@
     <DocumentationFile>bin\Debug Revit 2021\eVolveCSVDataExchange.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -95,7 +93,6 @@
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -131,7 +128,6 @@
     <DocumentationFile>bin\Debug Revit 2022\eVolveCSVDataExchange.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -142,7 +138,6 @@
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -154,7 +149,6 @@
     <DocumentationFile>bin\eM Debug Revit 2022\eVolveCSVDataExchange.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2022|AnyCPU'">
@@ -164,9 +158,30 @@
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
+  <Choose>
+    <When Condition="$(DefineConstants.Contains('ELECTRICAL'))">
+      <ItemGroup>
+        <Reference Include="eVolveElectrical">
+          <HintPath>..\..\eVolve-Revit-Products\eVolve Electrical\bin\Release\eVolveElectrical.dll</HintPath>
+          <Private>False</Private>
+          <Aliases>eVolve</Aliases>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(DefineConstants.Contains('MECHANICAL'))">
+      <ItemGroup>
+        <Reference Include="eVolveMechanical">
+          <HintPath>..\..\eVolve-Revit-Products\eVolve Mechanical\bin\Release\eVolveMechanical.dll</HintPath>
+          <Private>False</Private>
+          <Aliases>eVolve</Aliases>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
   <Choose>
     <When Condition="$(DefineConstants.Contains('REVIT2020'))">
       <ItemGroup>
@@ -228,28 +243,6 @@
           <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\UIFrameworkServices.dll</HintPath>
         </Reference>
       </ItemGroup>
-      <Choose>
-        <When Condition="$(DefineConstants.Contains('ELECTRICAL'))">
-          <ItemGroup>
-            <Reference Include="eVolveElectrical">
-              <HintPath>..\..\eVolve-Revit-Products\eVolve Electrical\bin\Release\eVolveElectrical.dll</HintPath>
-              <Private>False</Private>
-              <Aliases>eVolve</Aliases>
-            </Reference>
-          </ItemGroup>
-        </When>
-      </Choose>
-      <Choose>
-        <When Condition="$(DefineConstants.Contains('MECHANICAL'))">
-          <ItemGroup>
-            <Reference Include="eVolveMechanical">
-              <HintPath>..\..\eVolve-Revit-Products\eVolve Mechanical\bin\Release\eVolveMechanical.dll</HintPath>
-              <Private>False</Private>
-              <Aliases>eVolve</Aliases>
-            </Reference>
-          </ItemGroup>
-        </When>
-      </Choose>
     </When>
   </Choose>
   <Choose>
@@ -313,28 +306,6 @@
           <HintPath>..\packages\Autodesk-Revit-2021-SDK.1.0.0\lib\UIFrameworkServices.dll</HintPath>
         </Reference>
       </ItemGroup>
-      <Choose>
-        <When Condition="$(DefineConstants.Contains('ELECTRICAL'))">
-          <ItemGroup>
-            <Reference Include="eVolveElectrical">
-              <HintPath>..\..\eVolve-Revit-Products\eVolve Electrical\bin\Release\eVolveElectrical.dll</HintPath>
-              <Private>False</Private>
-              <Aliases>eVolve</Aliases>
-            </Reference>
-          </ItemGroup>
-        </When>
-      </Choose>
-      <Choose>
-        <When Condition="$(DefineConstants.Contains('MECHANICAL'))">
-          <ItemGroup>
-            <Reference Include="eVolveMechanical">
-              <HintPath>..\..\eVolve-Revit-Products\eVolve Mechanical\bin\Release\eVolveMechanical.dll</HintPath>
-              <Private>False</Private>
-              <Aliases>eVolve</Aliases>
-            </Reference>
-          </ItemGroup>
-        </When>
-      </Choose>
     </When>
   </Choose>
   <Choose>
@@ -398,28 +369,6 @@
           <HintPath>..\packages\Autodesk-Revit-2022-SDK.1.0.0\lib\UIFrameworkServices.dll</HintPath>
         </Reference>
       </ItemGroup>
-      <Choose>
-        <When Condition="$(DefineConstants.Contains('ELECTRICAL'))">
-          <ItemGroup>
-            <Reference Include="eVolveElectrical">
-              <HintPath>..\..\eVolve-Revit-Products\eVolve Electrical\bin\Release\eVolveElectrical.dll</HintPath>
-              <Private>False</Private>
-              <Aliases>eVolve</Aliases>
-            </Reference>
-          </ItemGroup>
-        </When>
-      </Choose>
-      <Choose>
-        <When Condition="$(DefineConstants.Contains('MECHANICAL'))">
-          <ItemGroup>
-            <Reference Include="eVolveMechanical">
-              <HintPath>..\..\eVolve-Revit-Products\eVolve Mechanical\bin\Release\eVolveMechanical.dll</HintPath>
-              <Private>False</Private>
-              <Aliases>eVolve</Aliases>
-            </Reference>
-          </ItemGroup>
-        </When>
-      </Choose>
     </When>
   </Choose>
   <ItemGroup>

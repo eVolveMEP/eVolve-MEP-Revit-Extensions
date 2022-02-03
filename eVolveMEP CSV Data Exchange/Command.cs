@@ -34,14 +34,12 @@ namespace eVolve.CsvDataExchange.Revit
 
             try
             {
-                switch (settings.Direction)
+                return settings.Direction switch
                 {
-                    case IntegrationDirection.Export:
-                        return ExportData(document, settings);
-                    case IntegrationDirection.Import:
-                        return ImportData(document, settings);
-                }
-                return Result.Succeeded;
+                    IntegrationDirection.Export => ExportData(document, settings),
+                    IntegrationDirection.Import => ImportData(document, settings),
+                    _ => Result.Succeeded,
+                };
             }
             catch (Exception ex)
             {
@@ -84,12 +82,9 @@ namespace eVolve.CsvDataExchange.Revit
             headerList.AddRange(settings.IncludeExportColumns);
 
             // Process the structure of the first row in order to determine the defined column header names.
-            foreach (var exportedColumnName in dataToExport.First().Value.Select(data => formatCsvOutput(data.Key)))
-            {
-                headerList.Add(exportedColumnName);
-            }
+            headerList.AddRange(dataToExport.First().Value.Select(data => formatCsvOutput(data.Key)));
 
-            var exportCsvList = new List<string> { string.Join(GetDelimiter(settings), headerList) };
+            var exportCsvList = new List<string> { string.Join(getDelimiter(), headerList) };
 
             // If optional columns are included, the values being output for each row are going to be identical.
             // Just build once and use repeatedly.
@@ -130,7 +125,7 @@ namespace eVolve.CsvDataExchange.Revit
                 {
                     currentExportRow.Add(exportedValue);
                 }
-                exportCsvList.Add(string.Join(GetDelimiter(settings), currentExportRow));
+                exportCsvList.Add(string.Join(getDelimiter(), currentExportRow));
             }
 
             System.IO.File.WriteAllText(settings.FilePath, string.Join(Environment.NewLine, exportCsvList));
@@ -140,7 +135,7 @@ namespace eVolve.CsvDataExchange.Revit
 
 
             // Formats a line of data so it is properly escaped.
-            string formatCsvOutput(string fieldValue)
+            static string formatCsvOutput(string fieldValue)
             {
                 if (string.IsNullOrEmpty(fieldValue))
                 {
@@ -161,6 +156,13 @@ namespace eVolve.CsvDataExchange.Revit
 
                 return fieldValue;
             }
+
+            // Retrieves the delimiter character based on the user settings.
+            string getDelimiter() => settings.Delimiter switch
+            {
+                DelimiterChars.Tab => "\t",
+                _ => ",",
+            };
         }
 
         /// <summary>
@@ -212,21 +214,14 @@ namespace eVolve.CsvDataExchange.Revit
 
 
             // This takes in the raw line of data and returns the values split by the configured delimiter.
-            IEnumerable<string> splitLineData(string lineFromFile)
+            IEnumerable<string> splitLineData(string lineFromFile) => settings.Delimiter switch
             {
-                switch (settings.Delimiter)
-                {
-                    case DelimiterChars.Tab:
-                        return lineFromFile.Split('\t');
-                    case DelimiterChars.Comma:
-                    default:
-                        const string CsvRegExParse = ",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))";
-                        return Regex.Split(lineFromFile, CsvRegExParse);
-                }
-            }
+                DelimiterChars.Tab => lineFromFile.Split('\t'),
+                _ => Regex.Split(lineFromFile, ",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))"),
+            };
 
             // Removes any quotes which were added to data for the purposes of escaping.
-            string removeEscapeQuotes(string text)
+            static string removeEscapeQuotes(string text)
             {
                 // Remove surrounding quotes.
                 if (text.StartsWith("\"") && text.EndsWith("\"") && text.Length >= 2)
@@ -235,21 +230,6 @@ namespace eVolve.CsvDataExchange.Revit
                 }
                 // Remove escaped quotes.
                 return text.Replace("\"\"", "\"");
-            }
-        }
-
-        /// <summary> Gets the character used as a data separator. </summary>
-        ///
-        /// <param name="settings"> Configured settings. </param>
-        private static string GetDelimiter(Settings settings)
-        {
-            switch (settings.Delimiter)
-            {
-                case DelimiterChars.Tab:
-                    return "\t";
-                case DelimiterChars.Comma:
-                default:
-                    return ",";
             }
         }
 

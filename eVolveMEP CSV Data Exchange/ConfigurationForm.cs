@@ -28,15 +28,13 @@ namespace eVolve.CsvDataExchange.Revit
         public static bool TryGetSettings(RevitDB.Document document, out Settings settings)
         {
             settings = null;
-            using (var dialog = new ConfigurationForm(document))
+            using var dialog = new ConfigurationForm(document);
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    settings = dialog.LastSavedSettings;
-                    return true;
-                }
-                return false;
+                settings = dialog.LastSavedSettings;
+                return true;
             }
+            return false;
         }
 
 
@@ -105,7 +103,7 @@ namespace eVolve.CsvDataExchange.Revit
         ///
         /// <param name="sender"> Source of the event. </param>
         /// <param name="e"> Help event information. </param>
-        private void ConfigurationForm_HelpRequested(object sender, HelpEventArgs e)
+        private static void ConfigurationForm_HelpRequested(object sender, HelpEventArgs e)
         {
             e.Handled = true;
             OpenHelpLink();
@@ -148,32 +146,28 @@ namespace eVolve.CsvDataExchange.Revit
 
             if (ExportRadioButton.Checked)
             {
-                using (var dialog = new SaveFileDialog())
+                using var dialog = new SaveFileDialog();
+                dialog.OverwritePrompt = true;
+                dialog.DefaultExt = FileExtension;
+                dialog.FileName = FileTextBox.Text;
+                dialog.Filter = FileFilter;
+                dialog.Title = "Export File";
+                if (dialog.ShowDialog(this) == DialogResult.OK)
                 {
-                    dialog.OverwritePrompt = true;
-                    dialog.DefaultExt = FileExtension;
-                    dialog.FileName = FileTextBox.Text;
-                    dialog.Filter = FileFilter;
-                    dialog.Title = "Export File";
-                    if (dialog.ShowDialog(this) == DialogResult.OK)
-                    {
-                        FileTextBox.Text = dialog.FileName;
-                    }
+                    FileTextBox.Text = dialog.FileName;
                 }
             }
             else if (ImportRadioButton.Checked)
             {
-                using (var dialog = new OpenFileDialog())
+                using var dialog = new OpenFileDialog();
+                dialog.CheckFileExists = true;
+                dialog.CheckPathExists = true;
+                dialog.FileName = FileTextBox.Text;
+                dialog.Filter = FileFilter;
+                dialog.Title = "Import File";
+                if (dialog.ShowDialog(this) == DialogResult.OK)
                 {
-                    dialog.CheckFileExists = true;
-                    dialog.CheckPathExists = true;
-                    dialog.FileName = FileTextBox.Text;
-                    dialog.Filter = FileFilter;
-                    dialog.Title = "Import File";
-                    if (dialog.ShowDialog(this) == DialogResult.OK)
-                    {
-                        FileTextBox.Text = dialog.FileName;
-                    }
+                    FileTextBox.Text = dialog.FileName;
                 }
             }
         }
@@ -207,10 +201,8 @@ namespace eVolve.CsvDataExchange.Revit
                 if (System.IO.File.Exists(SettingsFilePath))
                 {
                     var data = System.IO.File.ReadAllText(SettingsFilePath);
-                    using (var stream = new System.IO.StringReader(data))
-                    {
-                        settings = (Settings)new System.Xml.Serialization.XmlSerializer(typeof(Settings)).Deserialize(stream);
-                    }
+                    using var stream = new System.IO.StringReader(data);
+                    settings = (Settings)new System.Xml.Serialization.XmlSerializer(typeof(Settings)).Deserialize(stream);
                 }
             }
             catch (Exception ex)
@@ -325,7 +317,7 @@ namespace eVolve.CsvDataExchange.Revit
         }
 
         /// <summary> Opens <see cref="Application.HelpLinkUrl"/> in the default application. </summary>
-        private void OpenHelpLink()
+        private static void OpenHelpLink()
         {
             System.Diagnostics.Process.Start(Application.HelpLinkUrl);
         }

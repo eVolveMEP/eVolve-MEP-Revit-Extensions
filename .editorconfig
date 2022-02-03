@@ -12,62 +12,133 @@ root = true
 ## Editor Warning Suppressions
 
 # CA1031: Do not catch general exception types
-dotnet_diagnostic.CA1031.severity = silent
+dotnet_diagnostic.CA1031.severity = none
 # CA1032: Implement standard exception constructors
-dotnet_diagnostic.CA1032.severity = silent
+dotnet_diagnostic.CA1032.severity = none
 # CA1034: Nested types should not be visible
-dotnet_diagnostic.CA1034.severity = silent
+dotnet_diagnostic.CA1034.severity = none
 # CA1815: Override equals and operator equals on value types
-dotnet_diagnostic.CA1815.severity = silent
+dotnet_diagnostic.CA1815.severity = none
 # CA1819: Properties should not return arrays
-dotnet_diagnostic.CA1819.severity = silent
+dotnet_diagnostic.CA1819.severity = none
+# CA1822: Mark members as static
+dotnet_diagnostic.CA1822.severity = suggestion
 # CA2213: Disposable fields should be disposed
-dotnet_diagnostic.CA2213.severity = silent
+dotnet_diagnostic.CA2213.severity = none
 # CA2229: Implement serialization constructors
-dotnet_diagnostic.CA2229.severity = silent
+dotnet_diagnostic.CA2229.severity = none
+# CA2235: Mark all non-serializable fields
+dotnet_diagnostic.CA2235.severity = none
 # CS0659: Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
-dotnet_diagnostic.CS0659.severity = silent
+dotnet_diagnostic.CS0659.severity = none
 # IDE0067: Dispose objects before losing scope
-dotnet_diagnostic.IDE0067.severity = silent
+dotnet_diagnostic.IDE0067.severity = none
 # IDE0068: Use recommended dispose pattern
-dotnet_diagnostic.IDE0068.severity = silent
-# IDE0074: Use compound assignment
-#	NOTE: Not applicable until C# 8 can be used.
-dotnet_diagnostic.IDE0074.severity = silent
+dotnet_diagnostic.IDE0068.severity = none
+# IDE0079:Remove unnecessary suppression
+dotnet_diagnostic.IDE0079.severity = none
+
+## Roslynator
+
+# RCS1033 Remove redundant 'false ||' / 'true &&'
+dotnet_diagnostic.RCS1033.severity = none
+# RCS1036 Remove redundant empty line
+dotnet_diagnostic.RCS1036.severity = none
+# RCS1037 Remove trailing white-space
+dotnet_diagnostic.RCS1037.severity = none
+# RCS1040 Remove empty 'else' clause
+dotnet_diagnostic.RCS1040.severity = suggestion
+# RCS1052 Declare each attribute separately
+dotnet_diagnostic.RCS1052.severity = warning
+# RCS1055 Avoid semicolon at the end of declaration
+dotnet_diagnostic.RCS1055.severity = suggestion
+# RCS1061 Merge 'if' with nested 'if'
+dotnet_diagnostic.RCS1061.severity = suggestion
+# RCS1066 Remove empty 'finally' clause
+dotnet_diagnostic.RCS1066.severity = suggestion
+# RCS1077 Optimize LINQ method call
+dotnet_diagnostic.RCS1077.severity = none
+# RCS1078 Use "" instead of string.Empty
+dotnet_diagnostic.RCS1078.severity = suggestion
+# RCS1080 Use 'Length' property instead of 'Any' method.
+dotnet_diagnostic.RCS1080.severity = none
+# RCS1081 Split variable declaration
+dotnet_diagnostic.RCS1081.severity = suggestion
+# RCS1089 Use ++/-- operator instead of assignment
+dotnet_diagnostic.RCS1089.severity = none
+# RCS1091 Remove empty region
+dotnet_diagnostic.RCS1091.severity = suggestion
+# RCS1096 Convert 'HasFlag' call to bitwise operation
+dotnet_diagnostic.RCS1096.severity = none
+# RCS1112 Combine 'Enumerable.Where' method chain
+dotnet_diagnostic.RCS1112.severity = none
+# RCS1118 Mark local variable as const
+dotnet_diagnostic.RCS1118.severity = none
+# RCS1133 Remove redundant Dispose/Close call
+dotnet_diagnostic.RCS1133.severity = suggestion
+# RCS1134 Remove redundant statement
+dotnet_diagnostic.RCS1134.severity = suggestion
+# RCS1140 Add exception to documentation comment
+dotnet_diagnostic.RCS1140.severity = warning
+# RCS1141 Add element to documentation comment
+dotnet_diagnostic.RCS1141.severity = warning
+# RCS1159 Use EventHandler<T>
+dotnet_diagnostic.RCS1159.severity = none
+# RCS1162 Avoid chain of assignments
+dotnet_diagnostic.RCS1162.severity = suggestion
+# RCS1175 Unused this parameter
+#   NOTE: Redundany with IDE0060
+dotnet_diagnostic.RCS1175.severity = none
+# RCS1181 Convert comment to documentation comment
+dotnet_diagnostic.RCS1181.severity = suggestion
+# RCS1194 Implement exception constructors
+dotnet_diagnostic.RCS1194.severity = none
+# RCS1198 Avoid unnecessary boxing of value type
+#   NOTE: Conflicts with VS flag of redundant call
+dotnet_diagnostic.RCS1198.severity = none
+# RCS1208 Reduce 'if' nesting
+dotnet_diagnostic.RCS1208.severity = none
+# RCS1211 Remove unnecessary 'else'
+dotnet_diagnostic.RCS1211.severity = suggestion
+# RCS1228 Unused element in documentation comment
+dotnet_diagnostic.RCS1228.severity = warning
+# RCS1246 Use element access
+dotnet_diagnostic.RCS1246.severity = none
+
+## /Roslynator
 
 ## /Editor Warning Suppressions
 
 
-
 ## Code Style
 
-dotnet_style_qualification_for_field = true:none
-dotnet_style_qualification_for_property = true:none
-dotnet_style_qualification_for_method = true:none
-dotnet_style_qualification_for_event = true:none
+dotnet_style_qualification_for_field = false:none
+dotnet_style_qualification_for_property = false:none
+dotnet_style_qualification_for_method = false:none
+dotnet_style_qualification_for_event = false:none
 
 dotnet_style_predefined_type_for_locals_parameters_members = true:warning
 dotnet_style_predefined_type_for_member_access = true:warning
 
 csharp_style_var_for_built_in_types = true:warning
 csharp_style_var_when_type_is_apparent = true:warning
-csharp_style_var_elsewhere = true:silent
+csharp_style_var_elsewhere = true:none
 
 csharp_prefer_braces = true:error
 dotnet_style_prefer_auto_properties = true:warning
 dotnet_style_prefer_compound_assignment = true:suggestion
 
-dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:silent
+dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:none
 dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:suggestion
 dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:suggestion
-dotnet_style_parentheses_in_other_operators = never_if_unnecessary:silent
+dotnet_style_parentheses_in_other_operators = never_if_unnecessary:none
 
-dotnet_style_object_initializer = true:silent
-dotnet_style_collection_initializer = true:silent
+dotnet_style_object_initializer = true:none
+dotnet_style_collection_initializer = true:none
 csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
 csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
-dotnet_style_prefer_conditional_expression_over_assignment = true:silent
-dotnet_style_prefer_conditional_expression_over_return = true:silent
+dotnet_style_prefer_conditional_expression_over_assignment = true:none
+dotnet_style_prefer_conditional_expression_over_return = true:none
 dotnet_style_explicit_tuple_names = true:suggestion
 
 csharp_prefer_simple_default_expression = true:suggestion
@@ -80,22 +151,22 @@ csharp_style_prefer_range_operator = false:suggestion
 csharp_style_prefer_switch_expression = true:suggestion
 csharp_style_throw_expression = true:suggestion
 csharp_style_pattern_local_over_anonymous_function = true:suggestion
-csharp_style_expression_bodied_accessors = when_on_single_line:silent
-csharp_style_expression_bodied_constructors = false:silent
-csharp_style_expression_bodied_indexers = when_on_single_line:silent
-csharp_style_expression_bodied_lambdas = when_on_single_line:silent
-csharp_style_expression_bodied_local_functions = when_on_single_line:silent
-csharp_style_expression_bodied_methods = when_on_single_line:silent
-csharp_style_expression_bodied_operators = when_on_single_line:silent
-csharp_style_expression_bodied_properties = when_on_single_line:silent
+csharp_style_expression_bodied_accessors = when_on_single_line:none
+csharp_style_expression_bodied_constructors = false:none
+csharp_style_expression_bodied_indexers = when_on_single_line:none
+csharp_style_expression_bodied_lambdas = when_on_single_line:none
+csharp_style_expression_bodied_local_functions = when_on_single_line:none
+csharp_style_expression_bodied_methods = when_on_single_line:none
+csharp_style_expression_bodied_operators = when_on_single_line:none
+csharp_style_expression_bodied_properties = when_on_single_line:none
 
-csharp_style_unused_value_assignment_preference = discard_variable:silent
-csharp_style_unused_value_expression_statement_preference = discard_variable:silent
+csharp_style_unused_value_assignment_preference = discard_variable:none
+csharp_style_unused_value_expression_statement_preference = discard_variable:none
 
 csharp_style_inlined_variable_declaration = true:suggestion
-csharp_style_deconstructed_variable_declaration = true:silent
+csharp_style_deconstructed_variable_declaration = true:none
 
-csharp_style_throw_expression = true:silent
+csharp_style_throw_expression = true:none
 csharp_style_conditional_delegate_call = true:suggestion
 dotnet_style_coalesce_expression = true:suggestion
 dotnet_style_null_propagation = true:suggestion
@@ -176,6 +247,9 @@ csharp_preferred_modifier_order = public,private,protected,internal,static,exter
 dotnet_naming_style.interface_style.capitalization = pascal_case
 dotnet_naming_style.interface_style.required_prefix = I
 
+dotnet_naming_style.type_parameter_style.capitalization = pascal_case
+dotnet_naming_style.type_parameter_style.required_prefix = T
+
 dotnet_naming_style.member_style.capitalization = pascal_case
 
 dotnet_naming_style.local_variable_style.capitalization = camel_case
@@ -197,7 +271,7 @@ dotnet_naming_symbols.interface_rule.applicable_accessibilities = *
 dotnet_naming_rule.member_type_rule.symbols = member_type_rule
 dotnet_naming_rule.member_type_rule.style = member_style
 dotnet_naming_rule.member_type_rule.severity = warning
-dotnet_naming_symbols.member_type_rule.applicable_kinds = class,struct,interface,enum,property,method,event,type_parameter
+dotnet_naming_symbols.member_type_rule.applicable_kinds = class,struct,enum,property,method,event
 dotnet_naming_symbols.member_type_rule.applicable_accessibilities = public,internal,private,protected,protected_internal
 
 # Aysnchronous Method
@@ -244,5 +318,11 @@ dotnet_naming_rule.parameter_rule.style = local_variable_style
 dotnet_naming_rule.parameter_rule.severity = warning
 dotnet_naming_symbols.parameter_rule.applicable_kinds = parameter
 
+# Type Parameters
+dotnet_naming_rule.type_parameter_rule.symbols = type_parameter_rule
+dotnet_naming_rule.type_parameter_rule.style = type_parameter_style
+dotnet_naming_rule.type_parameter_rule.severity = warning
+dotnet_naming_symbols.type_parameter_rule.applicable_kinds = type_parameter
+dotnet_naming_symbols.type_parameter_rule.applicable_accessibilities = *
 
 ## /Naming Conventions
