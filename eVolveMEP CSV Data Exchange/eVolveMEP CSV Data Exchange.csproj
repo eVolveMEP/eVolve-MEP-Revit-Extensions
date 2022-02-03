@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>eVolve.CsvDataExchange.Revit</RootNamespace>
-    <AssemblyName>eVolveCSVDataExchange</AssemblyName>
+    <AssemblyName>eVolveCSVDataExchange-UpdateInConditionalProperties</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2020|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eE Debug Revit 2020\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2020;ELECTRICAL</DefineConstants>
@@ -43,6 +44,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2020|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2020;ELECTRICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -52,6 +54,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Debug Revit 2020|AnyCPU' ">
+    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -65,6 +68,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Release Revit 2020|AnyCPU' ">
+    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -76,6 +80,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2021|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eE Debug Revit 2021\</OutputPath>
@@ -87,6 +92,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2021|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2021;ELECTRICAL</DefineConstants>
@@ -97,6 +103,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Debug Revit 2021|AnyCPU' ">
+    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -110,6 +117,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Release Revit 2021|AnyCPU' ">
+    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -121,6 +129,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2022|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eE Debug Revit 2022\</OutputPath>
@@ -132,6 +141,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2022|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2022;ELECTRICAL</DefineConstants>
@@ -142,6 +152,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2022|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eM Debug Revit 2022\</OutputPath>
@@ -152,6 +163,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2022|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2022;MECHANICAL</DefineConstants>
@@ -436,18 +448,23 @@ SET "ProductName=Unknown"
 IF NOT "%25ConfigName:eE=%25"=="%25ConfigName%25" (
     SET "ProductName=eVolveElectrical"
     SET "AssemblyId=A70A6A1A-BF91-C541-158A-5589D57891CB"
+    SET "ApplicationClassName=ApplicationElectrical"
 )
 IF NOT "%25ConfigName:eM=%25"=="%25ConfigName%25" (
     SET "ProductName=eVolveMechanical"
     SET "AssemblyId=9F07922B-CCDF-2290-C059-CC7A8F1FFC78"
+    SET "ApplicationClassName=ApplicationMechanical"
 )
+SET Product=%25ProductName:eVolve=%25
 
 SET "AddinFileName=%25ProductName%25_CSVDataExchange.addin"
 SET "AddinFilePath="$(TargetDir)%25AddinFileName%25""
 MOVE /Y "$(TargetDir)_CSVDataExchange.addin" %25AddinFilePath%25
 COPY /Y %25AddinFilePath%25 %25AddinFilePath%25.deploy &gt;nul
+"$(SolutionDir)BuildTools\fart.exe" %25AddinFilePath%25 "~Product~" "%25Product%25"
 "$(SolutionDir)BuildTools\fart.exe" %25AddinFilePath%25 "~AssemblyLocation~" "$(TargetPath)"
 "$(SolutionDir)BuildTools\fart.exe" %25AddinFilePath%25 "~AssemblyId~" "%25AssemblyId%25"
+"$(SolutionDir)BuildTools\fart.exe" %25AddinFilePath%25 "~ApplicationClassName~" "%25ApplicationClassName%25"
 
 REM Copy to the correct Revit location.
 REM Note, this action may require admin rights.

@@ -2,10 +2,10 @@
 <RevitAddIns>
  
   <AddIn Type="Application">
-    <Name>eVolve MEP CSV Data Exchange</Name>
+    <Name>eVolve MEP CSV Data Exchange for ~Product~</Name>
     <Assembly>~AssemblyLocation~</Assembly>
     <ClientId>~AssemblyId~</ClientId>
-    <FullClassName>eVolve.CsvDataExchange.Revit.Application</FullClassName>
+    <FullClassName>eVolve.CsvDataExchange.Revit.~ApplicationClassName~</FullClassName>
     <VendorId>eVolve</VendorId>
     <VendorDescription>eVolve Solutions, LLC, www.evolvemep.com</VendorDescription>
   </AddIn>

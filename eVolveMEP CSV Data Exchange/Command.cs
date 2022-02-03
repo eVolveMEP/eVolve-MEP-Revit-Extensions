@@ -22,6 +22,33 @@ namespace eVolve.CsvDataExchange.Revit
     [Regeneration(RegenerationOption.Manual)]
     internal class Command : IExternalCommand
     {
+        /// <summary> Gets the icon resource. </summary>
+        internal static System.IO.Stream IconResource
+        {
+            get
+            {
+                var resourceName = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames()
+                    .First(name => name.EndsWith(".CSV_ImportExport_32x32.png"));
+
+                return System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
+            }
+        }
+
+        /// <summary> Gets URL of the help link to open when requested by the user. </summary>
+        internal static string HelpLinkUrl
+        {
+            get
+            {
+#if ELECTRICAL
+                return "https://help-electrical.evolvemep.com/article/ye5k5bnwu2";
+#elif MECHANICAL
+                return "https://help-mechanical.evolvemep.com/article/g0p7prhwle";
+#else
+                return null;
+#endif
+            }
+        }
+
         /// <inheritdoc/>
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {

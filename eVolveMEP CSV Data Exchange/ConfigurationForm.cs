@@ -53,7 +53,7 @@ namespace eVolve.CsvDataExchange.Revit
 
             Document = document;
 
-            Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(Application.IconResource)).GetHicon());
+            Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(Command.IconResource)).GetHicon());
 
             ExportRadioButton.CheckedChanged += DirectionRadioButton_CheckedChanged;
             ImportRadioButton.CheckedChanged += DirectionRadioButton_CheckedChanged;
@@ -316,10 +316,10 @@ namespace eVolve.CsvDataExchange.Revit
             return !messages.Any();
         }
 
-        /// <summary> Opens <see cref="Application.HelpLinkUrl"/> in the default application. </summary>
+        /// <summary> Opens <see cref="Command.HelpLinkUrl"/> in the default application. </summary>
         private static void OpenHelpLink()
         {
-            System.Diagnostics.Process.Start(Application.HelpLinkUrl);
+            System.Diagnostics.Process.Start(Command.HelpLinkUrl);
         }
     }
 }
