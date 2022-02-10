@@ -54,6 +54,7 @@ namespace eVolve.CsvDataExchange.Revit
 
             Document = document;
 
+            Text = Command.ButtonTextWithNoLineBreaks;
             Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(Command.IconResource)).GetHicon());
 
             ExportRadioButton.CheckedChanged += DirectionRadioButton_CheckedChanged;

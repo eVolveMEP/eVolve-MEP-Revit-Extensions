@@ -24,7 +24,7 @@ namespace eVolve.CsvDataExchange.Revit
     internal class Command : IExternalCommand
     {
         /// <summary> Gets the button name of this tool as single line text. </summary>
-        private static string ButtonTextWithNoLineBreaks => Resources.ButtonText
+        internal static string ButtonTextWithNoLineBreaks => Resources.ButtonText
             .Replace("\r", " ")
             .Replace("\n", " ")
             .Replace("  ", " ")
