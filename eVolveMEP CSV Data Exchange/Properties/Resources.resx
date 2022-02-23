@@ -126,7 +126,7 @@
 Exchange</value>
   </data>
   <data name="ToolTipText" xml:space="preserve">
-	  <value>Imports/Exports data from Revit using the eVolve Integration Platform.</value>
+	  <value>Imports/Exports data from Revit using the {0} Integration Platform.</value><comment>Tag is a product name</comment>
   </data>
   <data name="ErrorOccurredNotice" xml:space="preserve">
 	  <value>An error occurred during processing.</value>
@@ -207,5 +207,11 @@ Exchange</value>
   </data>
   <data name="UniqueId" xml:space="preserve">
 	  <value>Unique Id</value>
+  </data>
+  <data name="eVolveElectrical" xml:space="preserve">
+	  <value>eVolve Electrical</value>
+  </data>
+  <data name="eVolveMechanical" xml:space="preserve">
+	  <value>eVolve Mechanical</value>
   </data>
 </root>

@@ -117,4 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApplyButton.Text" xml:space="preserve">
+	  <value>Appliquer</value>
+  </data>
+  <data name="Cancel_Button.Text" xml:space="preserve">
+	  <value>Annuler</value>
+  </data>
+  <data name="DelimiterCommaRadioButton.Text" xml:space="preserve">
+	  <value>Virgule</value>
+  </data>
+  <data name="DelimiterGroupBox.Text" xml:space="preserve">
+	  <value>Séparateur</value>
+  </data>
+  <data name="DelimiterTabRadioButton.Text" xml:space="preserve">
+	  <value>Tabulation</value>
+  </data>
+  <data name="DirectionGroupBox.Text" xml:space="preserve">
+	  <value>Direction</value>
+  </data>
+  <data name="ExportRadioButton.Text" xml:space="preserve">
+	  <value>Exporter</value>
+  </data>
+  <data name="FileBrowseButton.Text" xml:space="preserve">
+	  <value>Parcourir</value>
+  </data>
+  <data name="FileGroupBox.Text" xml:space="preserve">
+	  <value>Fichier cible</value>
+  </data>
+  <data name="ImportRadioButton.Text" xml:space="preserve">
+	  <value>Importer</value>
+  </data>
+  <data name="OK_Button.Text" xml:space="preserve">
+	  <value>OK</value>
+  </data>
+  <data name="OptionalExportColumnsGroupBox.Text" xml:space="preserve">
+	  <value>Colonnes facultatives à inclure dans {0}</value>
+  </data>
+  <data name="ProfileGroupBox.Text" xml:space="preserve">
+	  <value>Profil</value>
+  </data>
 </root>

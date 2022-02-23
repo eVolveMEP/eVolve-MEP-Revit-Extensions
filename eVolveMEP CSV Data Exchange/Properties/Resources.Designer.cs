@@ -89,6 +89,24 @@ namespace eVolve.CsvDataExchange.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to eVolve Electrical.
+        /// </summary>
+        internal static string eVolveElectrical {
+            get {
+                return ResourceManager.GetString("eVolveElectrical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to eVolve Mechanical.
+        /// </summary>
+        internal static string eVolveMechanical {
+            get {
+                return ResourceManager.GetString("eVolveMechanical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Project Name.
         /// </summary>
         internal static string ExportColumn_ProjectName {
@@ -252,7 +270,7 @@ namespace eVolve.CsvDataExchange.Revit.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Imports/Exports data from Revit using the eVolve Integration Platform..
+        ///   Looks up a localized string similar to Imports/Exports data from Revit using the {0} Integration Platform..
         /// </summary>
         internal static string ToolTipText {
             get {

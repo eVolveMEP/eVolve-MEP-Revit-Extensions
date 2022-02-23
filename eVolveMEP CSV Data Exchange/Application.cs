@@ -21,6 +21,14 @@ namespace eVolve.CsvDataExchange.Revit
     public class ApplicationMechanical : IExternalApplication
 #endif
     {
+        /// <summary> Name of the eVolve host product. </summary>
+        internal static string HostProductName =>
+#if ELECTRICAL
+            Resources.eVolveElectrical;
+#elif MECHANICAL
+            Resources.eVolveMechanical;
+#endif
+
         /// <inheritdoc/>
         public Result OnStartup(UIControlledApplication application)
         {
@@ -29,7 +37,7 @@ namespace eVolve.CsvDataExchange.Revit
                 typeof(Command),
                 typeof(CommandAvailability),
                 BitmapFrame.Create(Command.IconResource),
-                Resources.ToolTipText,
+                string.Format(Resources.ToolTipText, HostProductName),
                 Command.HelpLinkUrl);
 
             eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(ribbonButton);

@@ -117,4 +117,92 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ButtonText" xml:space="preserve">
+	  <value>Échange de
+données CSV</value>
+  </data>
+  <data name="CsvFiles" xml:space="preserve">
+	  <value>Fichiers CSV</value>
+  </data>
+  <data name="ErrorOccurredNotice" xml:space="preserve">
+	  <value>Une erreur s'est produite lors du traitement.</value>
+  </data>
+  <data name="ExportColumn_ProjectName" xml:space="preserve">
+	  <value>Nom du projet</value>
+  </data>
+  <data name="ExportColumn_ProjectNumber" xml:space="preserve">
+	  <value>Numéro de projet</value>
+  </data>
+  <data name="ExportColumn_Timestamp" xml:space="preserve">
+	  <value>Date/Heure actuelle</value>
+  </data>
+  <data name="ExportColumn_UserName" xml:space="preserve">
+	  <value>Nom de l'utilisateur</value>
+  </data>
+  <data name="ExportColumn_WorkstationName" xml:space="preserve">
+	  <value>Nom du poste de travail</value>
+  </data>
+  <data name="ExportCompleted" xml:space="preserve">
+	  <value>Exportation terminée</value>
+  </data>
+  <data name="ExportCsvData" xml:space="preserve">
+	  <value>Exporter les données CSV</value>
+  </data>
+  <data name="FileLoadFailure" xml:space="preserve">
+	  <value>Échec du chargement</value>
+  </data>
+  <data name="FileSaveFailure" xml:space="preserve">
+	  <value>Échec de l'enregistrement</value>
+  </data>
+  <data name="ImportCompleted" xml:space="preserve">
+	  <value>Importation terminée</value>
+  </data>
+  <data name="ImportCsvData" xml:space="preserve">
+	  <value>Importer les données CSV</value>
+  </data>
+  <data name="IssuesMustBeAddressedNotice" xml:space="preserve">
+	  <value>Veuillez résoudre les problèmes suivants :</value>
+  </data>
+  <data name="NoDataNotice" xml:space="preserve">
+	  <value>Le fichier CSV ne contenait aucune donnée utile.</value>
+  </data>
+  <data name="NoElementsSelectedNotice" xml:space="preserve">
+	  <value>Aucun élément n'a été sélectionné.</value>
+  </data>
+  <data name="SettingsLoadErrorNotice" xml:space="preserve">
+	  <value>Impossible de charger le fichier de paramètres :</value>
+  </data>
+  <data name="SettingsSaveErrorNotice" xml:space="preserve">
+	  <value>Impossible d'enregistrer le fichier de paramètres :</value>
+  </data>
+  <data name="SingleValueMustBeSelectedError" xml:space="preserve">
+	  <value>Un seul élément {0} doit être sélectionné.</value>
+  </data>
+  <data name="ToolTipText" xml:space="preserve">
+	  <value>Importe/exporte les données issues de Revit via la plateforme d'intégration d'{0}.</value>
+  </data>
+  <data name="UniqueId" xml:space="preserve">
+	  <value>ID unique</value>
+  </data>
+  <data name="ValidationErrors" xml:space="preserve">
+	  <value>Erreurs de validation</value>
+  </data>
+  <data name="ValueMustBeSelectedError" xml:space="preserve">
+	  <value>Un élément {0} doit être sélectionné.</value>
+  </data>
+  <data name="WhenXSelectedFolderYMustExistError" xml:space="preserve">
+	  <value>Lorsque l'élément {0} est sélectionné, l'emplacement du dossier dans {1} doit exister.</value>
+  </data>
+  <data name="WhenXSelectedYMustExistError" xml:space="preserve">
+	  <value>Lorsque l'élément {0} est sélectionné, {1} doit exister.</value>
+  </data>
+  <data name="XElementsProcessedNotice" xml:space="preserve">
+	  <value>{0} élément(s) traité(s).</value>
+  </data>
+  <data name="eVolveElectrical" xml:space="preserve">
+	  <value>eVolve Electrical</value>
+  </data>
+  <data name="eVolveMechanical" xml:space="preserve">
+	  <value>eVolve Mechanical</value>
+  </data>
 </root>
