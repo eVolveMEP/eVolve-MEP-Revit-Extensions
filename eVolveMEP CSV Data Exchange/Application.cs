@@ -5,9 +5,12 @@
 // LICENSE file in the root directory of this source tree.
 
 extern alias eVolve;
+
+using System;
 using System.Linq;
 using System.Windows.Media.Imaging;
 using Autodesk.Revit.UI;
+using eVolve.CsvDataExchange.Revit.Properties;
 
 namespace eVolve.CsvDataExchange.Revit
 {
@@ -18,15 +21,23 @@ namespace eVolve.CsvDataExchange.Revit
     public class ApplicationMechanical : IExternalApplication
 #endif
     {
+        /// <summary> Name of the eVolve host product. </summary>
+        internal static string HostProductName =>
+#if ELECTRICAL
+            Resources.eVolveElectrical;
+#elif MECHANICAL
+            Resources.eVolveMechanical;
+#endif
+
         /// <inheritdoc/>
         public Result OnStartup(UIControlledApplication application)
         {
-            var ribbonButton = eVolve::eVolve.Core.Revit.Integration.API.CreateButton("CSV Data\nExchange",
+            var ribbonButton = eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ButtonText,
                 System.Reflection.Assembly.GetExecutingAssembly().Location,
                 typeof(Command),
                 typeof(CommandAvailability),
                 BitmapFrame.Create(Command.IconResource),
-                "Imports/Exports data from Revit using the eVolve Integration Platform.",
+                string.Format(Resources.ToolTipText, HostProductName),
                 Command.HelpLinkUrl);
 
             eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(ribbonButton);
