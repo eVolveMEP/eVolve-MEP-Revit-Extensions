@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using eVolve.CsvDataExchange.Revit.Properties;
 using eVolve::eVolve.Core.Revit.Integration;
 
 namespace eVolve.CsvDataExchange.Revit
@@ -22,6 +23,40 @@ namespace eVolve.CsvDataExchange.Revit
     [Regeneration(RegenerationOption.Manual)]
     internal class Command : IExternalCommand
     {
+        /// <summary> Gets the button name of this tool as single line text. </summary>
+        internal static string ButtonTextWithNoLineBreaks => Resources.ButtonText
+            .Replace("\r", " ")
+            .Replace("\n", " ")
+            .Replace("  ", " ")
+            .Replace("  ", " ");
+
+        /// <summary> Gets the icon resource. </summary>
+        internal static System.IO.Stream IconResource
+        {
+            get
+            {
+                var resourceName = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames()
+                    .First(name => name.EndsWith(".CSV_ImportExport_32x32.png"));
+
+                return System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
+            }
+        }
+
+        /// <summary> Gets URL of the help link to open when requested by the user. </summary>
+        internal static string HelpLinkUrl
+        {
+            get
+            {
+#if ELECTRICAL
+                return "https://help-electrical.evolvemep.com/article/ye5k5bnwu2";
+#elif MECHANICAL
+                return "https://help-mechanical.evolvemep.com/article/g0p7prhwle";
+#else
+                return null;
+#endif
+            }
+        }
+
         /// <inheritdoc/>
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
@@ -34,18 +69,16 @@ namespace eVolve.CsvDataExchange.Revit
 
             try
             {
-                switch (settings.Direction)
+                return settings.Direction switch
                 {
-                    case IntegrationDirection.Export:
-                        return ExportData(document, settings);
-                    case IntegrationDirection.Import:
-                        return ImportData(document, settings);
-                }
-                return Result.Succeeded;
+                    IntegrationDirection.Export => ExportData(document, settings),
+                    IntegrationDirection.Import => ImportData(document, settings),
+                    _ => Result.Succeeded,
+                };
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred during processing.\n\n{ex.Message}", "CSV Data Exchange", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{Resources.ErrorOccurredNotice}\n\n{ex.Message}", ButtonTextWithNoLineBreaks, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return Result.Failed;
             }
         }
@@ -53,11 +86,11 @@ namespace eVolve.CsvDataExchange.Revit
         /// <summary> Additional columns which can be added to the output of <see cref="ExportData"/>. </summary>
         internal struct OptionalExportColumns
         {
-            public const string ProjectName = "Project Name";
-            public const string ProjectNumber = "Project Number";
-            public const string Timestamp = "Current Date/Time";
-            public const string UserName = "User Name";
-            public const string Workstation = "Workstation Name";
+            public static string ProjectName => Resources.ExportColumn_ProjectName;
+            public static string ProjectNumber => Resources.ExportColumn_ProjectNumber;
+            public static string Timestamp => Resources.ExportColumn_Timestamp;
+            public static string UserName => Resources.ExportColumn_UserName;
+            public static string Workstation => Resources.ExportColumn_WorkstationName;
         }
 
         /// <summary>
@@ -73,46 +106,45 @@ namespace eVolve.CsvDataExchange.Revit
             var dataToExport = document.GetData(settings.ProfileName, ElementProcessedHandler);
             if (!dataToExport.Any())
             {
-                MessageBox.Show("No elements were selected.", "Export CSV Data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Resources.NoElementsSelectedNotice, Resources.ExportCsvData, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return Result.Failed;
             }
 
 
             // Build the header data.
-            var headerList = new List<string>() { "Unique Id" };
+            var headerList = new List<string>() { Resources.UniqueId };
             // Optional columns.
             headerList.AddRange(settings.IncludeExportColumns);
 
             // Process the structure of the first row in order to determine the defined column header names.
-            foreach (var exportedColumnName in dataToExport.First().Value.Select(data => formatCsvOutput(data.Key)))
-            {
-                headerList.Add(exportedColumnName);
-            }
+            headerList.AddRange(dataToExport.First().Value.Select(data => formatCsvOutput(data.Key)));
 
-            var exportCsvList = new List<string> { string.Join(GetDelimiter(settings), headerList) };
+            var exportCsvList = new List<string> { string.Join(getDelimiter(), headerList) };
 
             // If optional columns are included, the values being output for each row are going to be identical.
             // Just build once and use repeatedly.
             var optionalValues = new List<string>();
             foreach (var optional in settings.IncludeExportColumns)
             {
-                switch (optional)
+                if (optional == OptionalExportColumns.ProjectName)
                 {
-                    case OptionalExportColumns.ProjectName:
-                        optionalValues.Add(document.ProjectInformation.Name);
-                        break;
-                    case OptionalExportColumns.ProjectNumber:
-                        optionalValues.Add(document.ProjectInformation.Number);
-                        break;
-                    case OptionalExportColumns.Timestamp:
-                        optionalValues.Add(DateTime.Now.ToString("s"));
-                        break;
-                    case OptionalExportColumns.UserName:
-                        optionalValues.Add(Environment.UserName);
-                        break;
-                    case OptionalExportColumns.Workstation:
-                        optionalValues.Add(Environment.MachineName);
-                        break;
+                    optionalValues.Add(document.ProjectInformation.Name);
+                }
+                else if (optional == OptionalExportColumns.ProjectNumber)
+                {
+                    optionalValues.Add(document.ProjectInformation.Number);
+                }
+                else if (optional == OptionalExportColumns.Timestamp)
+                {
+                    optionalValues.Add(DateTime.Now.ToString("s"));
+                }
+                else if (optional == OptionalExportColumns.UserName)
+                {
+                    optionalValues.Add(Environment.UserName);
+                }
+                else if (optional == OptionalExportColumns.Workstation)
+                {
+                    optionalValues.Add(Environment.MachineName);
                 }
             }
 
@@ -126,21 +158,18 @@ namespace eVolve.CsvDataExchange.Revit
                 currentExportRow.AddRange(optionalValues);
 
                 // Structure contains the data.
-                foreach (var exportedValue in entry.Value.Select(data => formatCsvOutput(data.Value)))
-                {
-                    currentExportRow.Add(exportedValue);
-                }
-                exportCsvList.Add(string.Join(GetDelimiter(settings), currentExportRow));
+                currentExportRow.AddRange(entry.Value.Select(data => formatCsvOutput(data.Value)));
+                exportCsvList.Add(string.Join(getDelimiter(), currentExportRow));
             }
 
             System.IO.File.WriteAllText(settings.FilePath, string.Join(Environment.NewLine, exportCsvList));
-            MessageBox.Show($"{dataToExport.Count} element(s) processed.", "Export Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(string.Format(Resources.XElementsProcessedNotice, dataToExport.Count), Resources.ExportCompleted, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return Result.Succeeded;
 
 
             // Formats a line of data so it is properly escaped.
-            string formatCsvOutput(string fieldValue)
+            static string formatCsvOutput(string fieldValue)
             {
                 if (string.IsNullOrEmpty(fieldValue))
                 {
@@ -161,6 +190,13 @@ namespace eVolve.CsvDataExchange.Revit
 
                 return fieldValue;
             }
+
+            // Retrieves the delimiter character based on the user settings.
+            string getDelimiter() => settings.Delimiter switch
+            {
+                DelimiterChars.Tab => "\t",
+                _ => ",",
+            };
         }
 
         /// <summary>
@@ -181,7 +217,7 @@ namespace eVolve.CsvDataExchange.Revit
             if (dataRows.Length <= 1)
             {
                 // No data or header only.
-                MessageBox.Show("CSV file contained no usable data.", "Import CSV Data", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Resources.NoDataNotice, Resources.ImportCsvData, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return Result.Failed;
             }
 
@@ -206,27 +242,20 @@ namespace eVolve.CsvDataExchange.Revit
 
             // Write data back to Revit.
             var elementsProcessed = document.WriteData(settings.ProfileName, importData, true, API.UnmappedFieldAction.Ignore, out _, ElementProcessedHandler);
-            MessageBox.Show($"{elementsProcessed} element(s) processed.", "Import Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(string.Format(Resources.XElementsProcessedNotice, elementsProcessed), Resources.ImportCompleted, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return Result.Succeeded;
 
 
             // This takes in the raw line of data and returns the values split by the configured delimiter.
-            IEnumerable<string> splitLineData(string lineFromFile)
+            IEnumerable<string> splitLineData(string lineFromFile) => settings.Delimiter switch
             {
-                switch (settings.Delimiter)
-                {
-                    case DelimiterChars.Tab:
-                        return lineFromFile.Split('\t');
-                    case DelimiterChars.Comma:
-                    default:
-                        const string CsvRegExParse = ",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))";
-                        return Regex.Split(lineFromFile, CsvRegExParse);
-                }
-            }
+                DelimiterChars.Tab => lineFromFile.Split('\t'),
+                _ => Regex.Split(lineFromFile, ",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))"),
+            };
 
             // Removes any quotes which were added to data for the purposes of escaping.
-            string removeEscapeQuotes(string text)
+            static string removeEscapeQuotes(string text)
             {
                 // Remove surrounding quotes.
                 if (text.StartsWith("\"") && text.EndsWith("\"") && text.Length >= 2)
@@ -235,21 +264,6 @@ namespace eVolve.CsvDataExchange.Revit
                 }
                 // Remove escaped quotes.
                 return text.Replace("\"\"", "\"");
-            }
-        }
-
-        /// <summary> Gets the character used as a data separator. </summary>
-        ///
-        /// <param name="settings"> Configured settings. </param>
-        private static string GetDelimiter(Settings settings)
-        {
-            switch (settings.Delimiter)
-            {
-                case DelimiterChars.Tab:
-                    return "\t";
-                case DelimiterChars.Comma:
-                default:
-                    return ",";
             }
         }
 

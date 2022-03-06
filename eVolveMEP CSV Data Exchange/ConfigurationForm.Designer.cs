@@ -58,212 +58,137 @@
             // 
             // ProfileComboBox
             // 
-            this.ProfileComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.ProfileComboBox, "ProfileComboBox");
             this.ProfileComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProfileComboBox.FormattingEnabled = true;
-            this.ProfileComboBox.Location = new System.Drawing.Point(13, 26);
             this.ProfileComboBox.Name = "ProfileComboBox";
-            this.ProfileComboBox.Size = new System.Drawing.Size(273, 21);
-            this.ProfileComboBox.TabIndex = 0;
             // 
             // DirectionGroupBox
             // 
             this.DirectionGroupBox.Controls.Add(this.ImportRadioButton);
             this.DirectionGroupBox.Controls.Add(this.ExportRadioButton);
-            this.DirectionGroupBox.Location = new System.Drawing.Point(13, 13);
+            resources.ApplyResources(this.DirectionGroupBox, "DirectionGroupBox");
             this.DirectionGroupBox.Name = "DirectionGroupBox";
-            this.DirectionGroupBox.Padding = new System.Windows.Forms.Padding(10);
-            this.DirectionGroupBox.Size = new System.Drawing.Size(299, 63);
-            this.DirectionGroupBox.TabIndex = 0;
             this.DirectionGroupBox.TabStop = false;
-            this.DirectionGroupBox.Text = "Direction";
             // 
             // ImportRadioButton
             // 
-            this.ImportRadioButton.AutoSize = true;
-            this.ImportRadioButton.Location = new System.Drawing.Point(139, 26);
+            resources.ApplyResources(this.ImportRadioButton, "ImportRadioButton");
             this.ImportRadioButton.Name = "ImportRadioButton";
-            this.ImportRadioButton.Size = new System.Drawing.Size(54, 17);
-            this.ImportRadioButton.TabIndex = 1;
             this.ImportRadioButton.TabStop = true;
-            this.ImportRadioButton.Text = "Import";
             this.ImportRadioButton.UseVisualStyleBackColor = true;
             // 
             // ExportRadioButton
             // 
-            this.ExportRadioButton.AutoSize = true;
-            this.ExportRadioButton.Location = new System.Drawing.Point(13, 26);
+            resources.ApplyResources(this.ExportRadioButton, "ExportRadioButton");
             this.ExportRadioButton.Name = "ExportRadioButton";
-            this.ExportRadioButton.Size = new System.Drawing.Size(55, 17);
-            this.ExportRadioButton.TabIndex = 0;
             this.ExportRadioButton.TabStop = true;
-            this.ExportRadioButton.Text = "Export";
             this.ExportRadioButton.UseVisualStyleBackColor = true;
             // 
             // ProfileGroupBox
             // 
             this.ProfileGroupBox.Controls.Add(this.ProfileComboBox);
-            this.ProfileGroupBox.Location = new System.Drawing.Point(13, 87);
+            resources.ApplyResources(this.ProfileGroupBox, "ProfileGroupBox");
             this.ProfileGroupBox.Name = "ProfileGroupBox";
-            this.ProfileGroupBox.Padding = new System.Windows.Forms.Padding(10);
-            this.ProfileGroupBox.Size = new System.Drawing.Size(299, 63);
-            this.ProfileGroupBox.TabIndex = 1;
             this.ProfileGroupBox.TabStop = false;
-            this.ProfileGroupBox.Text = "Profile";
             // 
             // FileGroupBox
             // 
-            this.FileGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.FileGroupBox, "FileGroupBox");
             this.FileGroupBox.Controls.Add(this.FileBrowseButton);
             this.FileGroupBox.Controls.Add(this.FileTextBox);
-            this.FileGroupBox.Location = new System.Drawing.Point(13, 161);
             this.FileGroupBox.Name = "FileGroupBox";
-            this.FileGroupBox.Padding = new System.Windows.Forms.Padding(10);
-            this.FileGroupBox.Size = new System.Drawing.Size(758, 63);
-            this.FileGroupBox.TabIndex = 3;
             this.FileGroupBox.TabStop = false;
-            this.FileGroupBox.Text = "Target File";
             // 
             // FileBrowseButton
             // 
-            this.FileBrowseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FileBrowseButton.Location = new System.Drawing.Point(630, 24);
+            resources.ApplyResources(this.FileBrowseButton, "FileBrowseButton");
             this.FileBrowseButton.Name = "FileBrowseButton";
-            this.FileBrowseButton.Size = new System.Drawing.Size(115, 23);
-            this.FileBrowseButton.TabIndex = 1;
-            this.FileBrowseButton.Text = "Browse";
             this.FileBrowseButton.UseVisualStyleBackColor = true;
             this.FileBrowseButton.Click += new System.EventHandler(this.FileBrowseButton_Click);
             // 
             // FileTextBox
             // 
-            this.FileTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FileTextBox.Location = new System.Drawing.Point(13, 26);
+            resources.ApplyResources(this.FileTextBox, "FileTextBox");
             this.FileTextBox.Name = "FileTextBox";
-            this.FileTextBox.Size = new System.Drawing.Size(611, 20);
-            this.FileTextBox.TabIndex = 0;
             // 
             // DelimiterGroupBox
             // 
             this.DelimiterGroupBox.Controls.Add(this.DelimiterTabRadioButton);
             this.DelimiterGroupBox.Controls.Add(this.DelimiterCommaRadioButton);
-            this.DelimiterGroupBox.Location = new System.Drawing.Point(13, 235);
+            resources.ApplyResources(this.DelimiterGroupBox, "DelimiterGroupBox");
             this.DelimiterGroupBox.Name = "DelimiterGroupBox";
-            this.DelimiterGroupBox.Padding = new System.Windows.Forms.Padding(10);
-            this.DelimiterGroupBox.Size = new System.Drawing.Size(299, 63);
-            this.DelimiterGroupBox.TabIndex = 4;
             this.DelimiterGroupBox.TabStop = false;
-            this.DelimiterGroupBox.Text = "Delimiter";
             // 
             // DelimiterTabRadioButton
             // 
-            this.DelimiterTabRadioButton.AutoSize = true;
-            this.DelimiterTabRadioButton.Location = new System.Drawing.Point(139, 26);
+            resources.ApplyResources(this.DelimiterTabRadioButton, "DelimiterTabRadioButton");
             this.DelimiterTabRadioButton.Name = "DelimiterTabRadioButton";
-            this.DelimiterTabRadioButton.Size = new System.Drawing.Size(44, 17);
-            this.DelimiterTabRadioButton.TabIndex = 1;
             this.DelimiterTabRadioButton.TabStop = true;
-            this.DelimiterTabRadioButton.Text = "Tab";
             this.DelimiterTabRadioButton.UseVisualStyleBackColor = true;
             // 
             // DelimiterCommaRadioButton
             // 
-            this.DelimiterCommaRadioButton.AutoSize = true;
-            this.DelimiterCommaRadioButton.Location = new System.Drawing.Point(13, 26);
+            resources.ApplyResources(this.DelimiterCommaRadioButton, "DelimiterCommaRadioButton");
             this.DelimiterCommaRadioButton.Name = "DelimiterCommaRadioButton";
-            this.DelimiterCommaRadioButton.Size = new System.Drawing.Size(60, 17);
-            this.DelimiterCommaRadioButton.TabIndex = 0;
             this.DelimiterCommaRadioButton.TabStop = true;
-            this.DelimiterCommaRadioButton.Text = "Comma";
             this.DelimiterCommaRadioButton.UseVisualStyleBackColor = true;
             // 
             // OK_Button
             // 
-            this.OK_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.OK_Button, "OK_Button");
             this.OK_Button.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.OK_Button.Location = new System.Drawing.Point(459, 352);
             this.OK_Button.Name = "OK_Button";
-            this.OK_Button.Size = new System.Drawing.Size(100, 23);
-            this.OK_Button.TabIndex = 5;
-            this.OK_Button.Text = "OK";
             this.OK_Button.UseVisualStyleBackColor = true;
             // 
             // Cancel_Button
             // 
-            this.Cancel_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.Cancel_Button, "Cancel_Button");
             this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cancel_Button.Location = new System.Drawing.Point(565, 352);
             this.Cancel_Button.Name = "Cancel_Button";
-            this.Cancel_Button.Size = new System.Drawing.Size(100, 23);
-            this.Cancel_Button.TabIndex = 6;
-            this.Cancel_Button.Text = "Cancel";
             this.Cancel_Button.UseVisualStyleBackColor = true;
             // 
             // ApplyButton
             // 
-            this.ApplyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ApplyButton.Location = new System.Drawing.Point(671, 352);
+            resources.ApplyResources(this.ApplyButton, "ApplyButton");
             this.ApplyButton.Name = "ApplyButton";
-            this.ApplyButton.Size = new System.Drawing.Size(100, 23);
-            this.ApplyButton.TabIndex = 7;
-            this.ApplyButton.Text = "Apply";
             this.ApplyButton.UseVisualStyleBackColor = true;
             this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
             // LogoPictureBox
             // 
-            this.LogoPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
-            this.LogoPictureBox.Location = new System.Drawing.Point(13, 352);
+            resources.ApplyResources(this.LogoPictureBox, "LogoPictureBox");
             this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(146, 23);
-            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoPictureBox.TabIndex = 7;
             this.LogoPictureBox.TabStop = false;
             // 
             // OptionalExportColumnsGroupBox
             // 
             this.OptionalExportColumnsGroupBox.Controls.Add(this.OptionalExportColumnsCheckedListBox);
-            this.OptionalExportColumnsGroupBox.Location = new System.Drawing.Point(342, 13);
+            resources.ApplyResources(this.OptionalExportColumnsGroupBox, "OptionalExportColumnsGroupBox");
             this.OptionalExportColumnsGroupBox.Name = "OptionalExportColumnsGroupBox";
-            this.OptionalExportColumnsGroupBox.Size = new System.Drawing.Size(295, 137);
-            this.OptionalExportColumnsGroupBox.TabIndex = 2;
             this.OptionalExportColumnsGroupBox.TabStop = false;
-            this.OptionalExportColumnsGroupBox.Text = "Optional columns to include in {0}";
             // 
             // OptionalExportColumnsCheckedListBox
             // 
-            this.OptionalExportColumnsCheckedListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.OptionalExportColumnsCheckedListBox, "OptionalExportColumnsCheckedListBox");
             this.OptionalExportColumnsCheckedListBox.CheckOnClick = true;
             this.OptionalExportColumnsCheckedListBox.FormattingEnabled = true;
-            this.OptionalExportColumnsCheckedListBox.Location = new System.Drawing.Point(6, 19);
             this.OptionalExportColumnsCheckedListBox.Name = "OptionalExportColumnsCheckedListBox";
-            this.OptionalExportColumnsCheckedListBox.Size = new System.Drawing.Size(283, 109);
-            this.OptionalExportColumnsCheckedListBox.TabIndex = 0;
             // 
             // HelpLinkPictureBox
             // 
-            this.HelpLinkPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.HelpLinkPictureBox, "HelpLinkPictureBox");
             this.HelpLinkPictureBox.Image = global::eVolve.CsvDataExchange.Revit.Properties.Resources.Help_Medium_20x20;
-            this.HelpLinkPictureBox.Location = new System.Drawing.Point(764, 0);
             this.HelpLinkPictureBox.Name = "HelpLinkPictureBox";
-            this.HelpLinkPictureBox.Size = new System.Drawing.Size(20, 20);
-            this.HelpLinkPictureBox.TabIndex = 8;
             this.HelpLinkPictureBox.TabStop = false;
             this.HelpLinkPictureBox.Click += new System.EventHandler(this.HelpLinkPictureBox_Click);
             // 
             // ConfigurationForm
             // 
             this.AcceptButton = this.OK_Button;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel_Button;
-            this.ClientSize = new System.Drawing.Size(784, 388);
             this.Controls.Add(this.HelpLinkPictureBox);
             this.Controls.Add(this.OptionalExportColumnsGroupBox);
             this.Controls.Add(this.LogoPictureBox);
@@ -274,11 +199,7 @@
             this.Controls.Add(this.FileGroupBox);
             this.Controls.Add(this.ProfileGroupBox);
             this.Controls.Add(this.DirectionGroupBox);
-            this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "ConfigurationForm";
-            this.Padding = new System.Windows.Forms.Padding(10);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "eVolve CSV Data Exchange Configuration";
             this.Load += new System.EventHandler(this.ConfigurationForm_Load);
             this.DirectionGroupBox.ResumeLayout(false);
             this.DirectionGroupBox.PerformLayout();

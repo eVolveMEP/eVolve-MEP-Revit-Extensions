@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using eVolve.CsvDataExchange.Revit.Properties;
 using eVolve::eVolve.Core.Revit.Integration;
 using RevitDB = Autodesk.Revit.DB;
 
@@ -28,15 +29,13 @@ namespace eVolve.CsvDataExchange.Revit
         public static bool TryGetSettings(RevitDB.Document document, out Settings settings)
         {
             settings = null;
-            using (var dialog = new ConfigurationForm(document))
+            using var dialog = new ConfigurationForm(document);
+            if (dialog.ShowDialog() == DialogResult.OK)
             {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    settings = dialog.LastSavedSettings;
-                    return true;
-                }
-                return false;
+                settings = dialog.LastSavedSettings;
+                return true;
             }
+            return false;
         }
 
 
@@ -55,7 +54,8 @@ namespace eVolve.CsvDataExchange.Revit
 
             Document = document;
 
-            Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(Application.IconResource)).GetHicon());
+            Text = Command.ButtonTextWithNoLineBreaks;
+            Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(Command.IconResource)).GetHicon());
 
             ExportRadioButton.CheckedChanged += DirectionRadioButton_CheckedChanged;
             ImportRadioButton.CheckedChanged += DirectionRadioButton_CheckedChanged;
@@ -64,8 +64,8 @@ namespace eVolve.CsvDataExchange.Revit
             
             // Add all available optional columns to the list for the user to select from.
             OptionalExportColumnsCheckedListBox.Items.Clear();
-            OptionalExportColumnsCheckedListBox.Items.AddRange(typeof(Command.OptionalExportColumns).GetFields()
-                .Select(field => (string)field.GetRawConstantValue())
+            OptionalExportColumnsCheckedListBox.Items.AddRange(typeof(Command.OptionalExportColumns).GetProperties()
+                .Select(propertyInfo => (string)propertyInfo.GetValue(null))
                 .OrderBy(value => value)
                 .ToArray());
 
@@ -105,7 +105,7 @@ namespace eVolve.CsvDataExchange.Revit
         ///
         /// <param name="sender"> Source of the event. </param>
         /// <param name="e"> Help event information. </param>
-        private void ConfigurationForm_HelpRequested(object sender, HelpEventArgs e)
+        private static void ConfigurationForm_HelpRequested(object sender, HelpEventArgs e)
         {
             e.Handled = true;
             OpenHelpLink();
@@ -144,36 +144,32 @@ namespace eVolve.CsvDataExchange.Revit
         private void FileBrowseButton_Click(object sender, EventArgs e)
         {
             const string FileExtension = ".csv";
-            const string FileFilter = "CSV Files|*" + FileExtension;
+            var fileFilter = Resources.CsvFiles + $" (*{FileExtension})|*{FileExtension}";
 
             if (ExportRadioButton.Checked)
             {
-                using (var dialog = new SaveFileDialog())
+                using var dialog = new SaveFileDialog();
+                dialog.OverwritePrompt = true;
+                dialog.DefaultExt = FileExtension;
+                dialog.FileName = FileTextBox.Text;
+                dialog.Filter = fileFilter;
+                dialog.Title = ExportRadioButton.Text;
+                if (dialog.ShowDialog(this) == DialogResult.OK)
                 {
-                    dialog.OverwritePrompt = true;
-                    dialog.DefaultExt = FileExtension;
-                    dialog.FileName = FileTextBox.Text;
-                    dialog.Filter = FileFilter;
-                    dialog.Title = "Export File";
-                    if (dialog.ShowDialog(this) == DialogResult.OK)
-                    {
-                        FileTextBox.Text = dialog.FileName;
-                    }
+                    FileTextBox.Text = dialog.FileName;
                 }
             }
             else if (ImportRadioButton.Checked)
             {
-                using (var dialog = new OpenFileDialog())
+                using var dialog = new OpenFileDialog();
+                dialog.CheckFileExists = true;
+                dialog.CheckPathExists = true;
+                dialog.FileName = FileTextBox.Text;
+                dialog.Filter = fileFilter;
+                dialog.Title = ImportRadioButton.Text;
+                if (dialog.ShowDialog(this) == DialogResult.OK)
                 {
-                    dialog.CheckFileExists = true;
-                    dialog.CheckPathExists = true;
-                    dialog.FileName = FileTextBox.Text;
-                    dialog.Filter = FileFilter;
-                    dialog.Title = "Import File";
-                    if (dialog.ShowDialog(this) == DialogResult.OK)
-                    {
-                        FileTextBox.Text = dialog.FileName;
-                    }
+                    FileTextBox.Text = dialog.FileName;
                 }
             }
         }
@@ -207,15 +203,13 @@ namespace eVolve.CsvDataExchange.Revit
                 if (System.IO.File.Exists(SettingsFilePath))
                 {
                     var data = System.IO.File.ReadAllText(SettingsFilePath);
-                    using (var stream = new System.IO.StringReader(data))
-                    {
-                        settings = (Settings)new System.Xml.Serialization.XmlSerializer(typeof(Settings)).Deserialize(stream);
-                    }
+                    using var stream = new System.IO.StringReader(data);
+                    settings = (Settings)new System.Xml.Serialization.XmlSerializer(typeof(Settings)).Deserialize(stream);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, $"Could not load settings file:\n{SettingsFilePath}\n\n{ex.Message}", "Load Failure",
+                MessageBox.Show(this, $"{Resources.SettingsLoadErrorNotice}\n{SettingsFilePath}\n\n{ex.Message}", Resources.FileLoadFailure,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -268,7 +262,7 @@ namespace eVolve.CsvDataExchange.Revit
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, $"Could not save settings file:\n{SettingsFilePath}\n\n{ex.Message}", "Save Failure",
+                MessageBox.Show(this, $"{Resources.SettingsSaveErrorNotice}\n{SettingsFilePath}\n\n{ex.Message}", Resources.FileSaveFailure,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -283,51 +277,51 @@ namespace eVolve.CsvDataExchange.Revit
 
             if (!(ExportRadioButton.Checked ^ ImportRadioButton.Checked))
             {
-                messages.Add($"A single {DirectionGroupBox.Text} must be selected.");
+                messages.Add(string.Format(Resources.SingleValueMustBeSelectedError, DirectionGroupBox.Text));
             }
             if (string.IsNullOrEmpty(ProfileComboBox.Text))
             {
-                messages.Add($"A {ProfileGroupBox.Text} must be selected.");
+                messages.Add(string.Format(Resources.ValueMustBeSelectedError, ProfileGroupBox.Text));
             }
 
             var filePath = FileTextBox.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(filePath))
             {
-                messages.Add($"A {FileGroupBox.Text} must be selected.");
+                messages.Add(string.Format(Resources.ValueMustBeSelectedError, FileGroupBox.Text));
             }
             else
             {
                 if (ExportRadioButton.Checked
                     && !System.IO.Directory.Exists(System.IO.Path.GetDirectoryName(filePath)))
                 {
-                    messages.Add($"When {ExportRadioButton.Text} is selected, the folder location in {FileGroupBox.Text} must exist.");
+                    messages.Add(string.Format("When {0} is selected, the folder location in {1} must exist.", ExportRadioButton.Text, FileGroupBox.Text));
                 }
                 if (ImportRadioButton.Checked
                     && !System.IO.File.Exists(filePath))
                 {
-                    messages.Add($"When {ImportRadioButton.Text} is selected, {FileGroupBox.Text} must exist.");
+                    messages.Add(string.Format(Resources.WhenXSelectedYMustExistError, ImportRadioButton.Text, FileGroupBox.Text));
                 }
             }
 
             if (!(DelimiterCommaRadioButton.Checked ^ DelimiterTabRadioButton.Checked))
             {
-                messages.Add($"A single {DelimiterGroupBox.Text} must be selected.");
+                messages.Add(string.Format(Resources.SingleValueMustBeSelectedError, DelimiterGroupBox.Text));
             }
 
             if (messages.Any())
             {
-                messages.Insert(0, "Please address the following issues:");
-                MessageBox.Show(this, string.Join("\n - ", messages), "Validation Errors",
+                messages.Insert(0, Resources.IssuesMustBeAddressedNotice);
+                MessageBox.Show(this, string.Join("\n - ", messages), Resources.ValidationErrors,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return !messages.Any();
         }
 
-        /// <summary> Opens <see cref="Application.HelpLinkUrl"/> in the default application. </summary>
-        private void OpenHelpLink()
+        /// <summary> Opens <see cref="Command.HelpLinkUrl"/> in the default application. </summary>
+        private static void OpenHelpLink()
         {
-            System.Diagnostics.Process.Start(Application.HelpLinkUrl);
+            System.Diagnostics.Process.Start(Command.HelpLinkUrl);
         }
     }
 }

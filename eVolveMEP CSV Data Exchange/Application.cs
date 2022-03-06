@@ -5,52 +5,40 @@
 // LICENSE file in the root directory of this source tree.
 
 extern alias eVolve;
+
+using System;
 using System.Linq;
 using System.Windows.Media.Imaging;
 using Autodesk.Revit.UI;
+using eVolve.CsvDataExchange.Revit.Properties;
 
 namespace eVolve.CsvDataExchange.Revit
 {
     /// <summary> Entry point Revit uses to configure this extension. </summary>
-    public class Application : IExternalApplication
-    {
-        /// <summary> Gets the icon resource. </summary>
-        internal static System.IO.Stream IconResource
-        {
-            get
-            {
-                var resourceName = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames()
-                    .First(name => name.EndsWith(".CSV_ImportExport_32x32.png"));
-
-                return System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
-            }
-        }
-
-        /// <summary> Gets URL of the help link to open when requested by the user. </summary>
-        internal static string HelpLinkUrl
-        {
-            get
-            {
 #if ELECTRICAL
-                return "https://help-electrical.evolvemep.com/article/ye5k5bnwu2";
+    public class ApplicationElectrical : IExternalApplication
 #elif MECHANICAL
-                return "https://help-mechanical.evolvemep.com/article/g0p7prhwle";
-#else
-                return null;
+    public class ApplicationMechanical : IExternalApplication
 #endif
-            }
-        }
+    {
+        /// <summary> Name of the eVolve host product. </summary>
+        internal static string HostProductName =>
+#if ELECTRICAL
+            Resources.eVolveElectrical;
+#elif MECHANICAL
+            Resources.eVolveMechanical;
+#endif
 
         /// <inheritdoc/>
         public Result OnStartup(UIControlledApplication application)
         {
-            var ribbonButton = eVolve::eVolve.Core.Revit.Integration.API.CreateButton("CSV Data\nExchange",
+            var ribbonButton = eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ButtonText,
                 System.Reflection.Assembly.GetExecutingAssembly().Location,
                 typeof(Command),
                 typeof(CommandAvailability),
-                BitmapFrame.Create(IconResource),
-                "Imports/Exports data from Revit using the eVolve Integration Platform.",
-                HelpLinkUrl);
+                BitmapFrame.Create(Command.IconResource),
+                string.Format(Resources.ToolTipText, HostProductName),
+                Command.HelpLinkUrl);
 
             eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(ribbonButton);
 

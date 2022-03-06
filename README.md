@@ -25,18 +25,13 @@ However, the file paths to the required assembly references will need to be upda
       ```
       <HintPath>C:\Program Files\Autodesk\Revit 2021\RevitAPI.dll</HintPath>
       ```
-1. Within the `<When>` block of the "REVIT2021" entry, locate the line containing: `DefineConstants.Contains('MECHANICAL')`
-1. Update the `<HintPath>` to point to the location of the installed file on your computer. For example:
-    ```
-    <HintPath>C:\Program Files\eVolve\eVolve Mechanical for Revit 2021\eVolveMechanical.dll</HintPath>
-    ```
 1. Save the changes to your `.csproj` file and reload it in Visual Studio
 
 You should now be able to compile the project (in this example) for both "eM Debug Revit 2021" and "eM Release Revit 2021". Once the project successfully compiles it will attempt to create the appropriate Revit '.addin' file to have Revit load it from your build output location.
  
  > For '.addin' file generation to succeed Visual Studio may need to be running with elevated permissions. Check your Visual Studio build _Output_ window for any messages.
  
-Launch Revit 2021 and when prompted, allow the _eVolveCSVDataExchange.dll_ extension to run (if all went well, the path presented should be the project's build target folder). Once presented with the Revit welcome screen, you can set breakpoints and [attach to the Revit.exe process](https://docs.microsoft.com/en-us/visualstudio/debugger/attach-to-running-processes-with-the-visual-studio-debugger?view=vs-2019#BKMK_Attach_to_a_running_process) to step through the code.
+Launch Revit 2021 and when prompted, allow the _eVolveCSVDataExchange-eVolveMechanical.dll_ extension to run (if all went well, the path presented should be the project's build target folder). Once presented with the Revit welcome screen, you can set breakpoints and [attach to the Revit.exe process](https://docs.microsoft.com/en-us/visualstudio/debugger/attach-to-running-processes-with-the-visual-studio-debugger?view=vs-2019#BKMK_Attach_to_a_running_process) to step through the code.
 
 # Important Notes
 - You must have a license of the respective eVolve MEP product this is built against in order to communicate with the Integration Platform API.
