@@ -71,8 +71,8 @@ namespace eVolve.CsvDataExchange.Revit
             {
                 return settings.Direction switch
                 {
-                    IntegrationDirection.Export => ExportData(document, settings),
-                    IntegrationDirection.Import => ImportData(document, settings),
+                    Direction.Export => ExportData(document, settings),
+                    Direction.Import => ImportData(document, settings),
                     _ => Result.Succeeded,
                 };
             }

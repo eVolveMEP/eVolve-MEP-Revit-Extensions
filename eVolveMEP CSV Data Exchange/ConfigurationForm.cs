@@ -214,8 +214,8 @@ namespace eVolve.CsvDataExchange.Revit
                 return;
             }
 
-            ExportRadioButton.Checked = settings.Direction == IntegrationDirection.Export;
-            ImportRadioButton.Checked = settings.Direction == IntegrationDirection.Import;
+            ExportRadioButton.Checked = settings.Direction == Direction.Export;
+            ImportRadioButton.Checked = settings.Direction == Direction.Import;
             if (!string.IsNullOrEmpty(settings.ProfileName) && ProfileComboBox.Items.Contains(settings.ProfileName))
             {
                 ProfileComboBox.Text = settings.ProfileName;
@@ -238,7 +238,7 @@ namespace eVolve.CsvDataExchange.Revit
         {
             var settings = new Settings()
             {
-                Direction = ExportRadioButton.Checked ? IntegrationDirection.Export : IntegrationDirection.Import,
+                Direction = ExportRadioButton.Checked ? Direction.Export : Direction.Import,
                 ProfileName = ProfileComboBox.Text,
                 FilePath = FileTextBox.Text,
                 Delimiter = DelimiterTabRadioButton.Checked ? DelimiterChars.Tab : DelimiterChars.Comma,
@@ -295,7 +295,7 @@ namespace eVolve.CsvDataExchange.Revit
                 if (ExportRadioButton.Checked
                     && !System.IO.Directory.Exists(System.IO.Path.GetDirectoryName(filePath)))
                 {
-                    messages.Add(string.Format("When {0} is selected, the folder location in {1} must exist.", ExportRadioButton.Text, FileGroupBox.Text));
+                    messages.Add(string.Format(Resources.WhenXSelectedFolderYMustExistError, ExportRadioButton.Text, FileGroupBox.Text));
                 }
                 if (ImportRadioButton.Checked
                     && !System.IO.File.Exists(filePath))

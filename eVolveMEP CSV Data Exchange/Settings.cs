@@ -19,12 +19,22 @@ namespace eVolve.CsvDataExchange.Revit
         Tab,
     }
 
+    /// <summary> Data exchange directions. </summary>
+    [Serializable]
+    public enum Direction
+    {
+        /// <summary> Data is exported out of Revit. </summary>
+        Export,
+        /// <summary> Data is imported to Revit. </summary>
+        Import,
+    }
+
     /// <summary> Stores settings configured on <see cref="ConfigurationForm"/>. </summary>
     [Serializable]
     public class Settings
     {
         /// <summary> Gets or sets the exchange direction. </summary>
-        public eVolve::eVolve.Core.Revit.Integration.IntegrationDirection Direction { get; set; }
+        public Direction Direction { get; set; }
 
         /// <summary> Gets or sets the name of the profile. </summary>
         public string ProfileName { get; set; }
