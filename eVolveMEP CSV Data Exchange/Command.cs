@@ -271,10 +271,7 @@ namespace eVolve.CsvDataExchange.Revit
         ///
         /// <remarks> This method does nothing, but it is included to demonstrate how to get incremental feedback. </remarks>
         ///
-        /// <param name="totalRecords"> The total number of records being processed. </param>
-        /// <param name="recordNumber"> The record number which just completed processing. </param>
-        /// <param name="element"> The element which completed processing. It is possible this could be <c>null</c> if a record sent for
-        ///     processing no longer exists. </param>
-        private static bool ElementProcessedHandler(int totalRecords, int recordNumber, Element element) => true;
+        /// <inheritdoc cref="API.OnElementProcessed"/>
+        private static bool ElementProcessedHandler(int totalElements, int recordNumber, Element element, Dictionary<string, string> fieldData, HashSet<string> stopProcessingFields) => true;
     }
 }
