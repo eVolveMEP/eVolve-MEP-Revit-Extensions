@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("eVolve CSV Data Exchange")]
 [assembly: AssemblyDescription("CSV file importer/exporter for use with the eVolve Revit product line.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("eVolve Solutions, LLC")]
+[assembly: AssemblyCompany("eVolve MEP, LLC")]
 [assembly: AssemblyProduct("eVolve CSV Data Exchange")]
-[assembly: AssemblyCopyright("Copyright © 2020 eVolve Solutions, LLC")]
+[assembly: AssemblyCopyright("Copyright © 2022 eVolve MEP, LLC")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
