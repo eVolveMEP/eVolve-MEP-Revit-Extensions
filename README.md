@@ -6,10 +6,10 @@ This _exact_ codebase ships with the eVolve products so it serves as a real work
 
 # Project Details
 - Compatible with:
-  - Revit 2020, 2021, 2022
-  - eVolve Electrical 5.0+
-  - eVolve Mechanical 5.0+
-- Visual Studio 2019 format
+  - Revit 2020, 2021, 2022, 2023
+  - eVolve Electrical 6.0+
+  - eVolve Mechanical 6.0+
+- Visual Studio 2022 format
 
 # Building and Running
 
