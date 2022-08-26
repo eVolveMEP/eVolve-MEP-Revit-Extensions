@@ -7,7 +7,7 @@
     <ClientId>~AssemblyId~</ClientId>
     <FullClassName>eVolve.CsvDataExchange.Revit.~ApplicationClassName~</FullClassName>
     <VendorId>eVolve</VendorId>
-    <VendorDescription>eVolve Solutions, LLC, www.evolvemep.com</VendorDescription>
+    <VendorDescription>eVolve MEP, LLC, www.evolvemep.com</VendorDescription>
   </AddIn>
 
 </RevitAddIns>

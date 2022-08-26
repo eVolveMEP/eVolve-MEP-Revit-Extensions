@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("eVolve CSV Data Exchange")]
 [assembly: AssemblyDescription("CSV file importer/exporter for use with the eVolve Revit product line.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("eVolve Solutions, LLC")]
+[assembly: AssemblyCompany("eVolve MEP, LLC")]
 [assembly: AssemblyProduct("eVolve CSV Data Exchange")]
-[assembly: AssemblyCopyright("Copyright © 2020 eVolve Solutions, LLC")]
+[assembly: AssemblyCopyright("Copyright © 2022 eVolve MEP, LLC")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,5 +28,5 @@ using System.Runtime.InteropServices;
 //      Revision
 //      Build Date (MMDDY)
 //
-[assembly: AssemblyVersion("1.2.1.04132")]
-[assembly: AssemblyFileVersion("1.2.1.04132")]
+[assembly: AssemblyVersion("2.0.0.05182")]
+[assembly: AssemblyFileVersion("2.0.0.05182")]
