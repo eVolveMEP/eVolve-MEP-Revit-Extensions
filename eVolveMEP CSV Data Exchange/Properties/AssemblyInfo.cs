@@ -28,5 +28,5 @@ using System.Runtime.InteropServices;
 //      Revision
 //      Build Date (MMDDY)
 //
-[assembly: AssemblyVersion("2.0.0.05182")]
-[assembly: AssemblyFileVersion("2.0.0.05182")]
+[assembly: AssemblyVersion("6.2.0.10282")]
+[assembly: AssemblyFileVersion("6.2.0.10282")]
