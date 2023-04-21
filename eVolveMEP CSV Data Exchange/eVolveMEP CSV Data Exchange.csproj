@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>eVolve.CsvDataExchange.Revit</RootNamespace>
     <AssemblyName>eVolveCSVDataExchange-UpdateInConditionalProperties</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <LangVersion>11</LangVersion>
@@ -32,56 +32,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2020|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\eE Debug Revit 2020\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2020;ELECTRICAL</DefineConstants>
-    <DocumentationFile>bin\eE Debug Revit 2020\eVolveCSVDataExchange.xml</DocumentationFile>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2020|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;REVIT2020;ELECTRICAL</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Debug Revit 2020|AnyCPU' ">
-    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2020;MECHANICAL</DefineConstants>
-    <OutputPath>bin\eM Debug Revit 2020\</OutputPath>
-    <DocumentationFile>bin\eM Debug Revit 2020\eVolveCSVDataExchange.xml</DocumentationFile>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Release Revit 2020|AnyCPU' ">
-    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;REVIT2020;MECHANICAL</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2021|AnyCPU'">
     <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eE Debug Revit 2021\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2021;ELECTRICAL</DefineConstants>
@@ -93,7 +45,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2021|AnyCPU'">
     <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2021;ELECTRICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -104,7 +55,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Debug Revit 2021|AnyCPU' ">
     <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -118,7 +68,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Release Revit 2021|AnyCPU' ">
     <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -130,7 +79,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2022|AnyCPU'">
     <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eE Debug Revit 2022\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2022;ELECTRICAL</DefineConstants>
@@ -142,7 +90,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2022|AnyCPU'">
     <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2022;ELECTRICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -153,7 +100,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2022|AnyCPU'">
     <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eM Debug Revit 2022\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2022;MECHANICAL</DefineConstants>
@@ -164,7 +110,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2022|AnyCPU'">
     <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2022;MECHANICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -174,7 +119,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2023|AnyCPU'">
     <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eE Debug Revit 2023\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2023;ELECTRICAL</DefineConstants>
@@ -186,7 +130,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2023|AnyCPU'">
     <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2023;ELECTRICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -197,7 +140,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2023|AnyCPU'">
     <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eM Debug Revit 2023\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2023;MECHANICAL</DefineConstants>
@@ -208,9 +150,48 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2023|AnyCPU'">
     <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2023;MECHANICAL</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2024|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\eE Debug Revit 2024\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2024;ELECTRICAL</DefineConstants>
+    <DocumentationFile>bin\Debug Revit 2024\eVolveCSVDataExchange.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2024|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;REVIT2024;ELECTRICAL</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2024|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\eM Debug Revit 2024\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2024;MECHANICAL</DefineConstants>
+    <DocumentationFile>bin\eM Debug Revit 2024\eVolveCSVDataExchange.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2024|AnyCPU'">
+    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;REVIT2024;MECHANICAL</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -234,69 +215,6 @@
           <HintPath>..\..\eVolve-Revit-Products\eVolve Mechanical\bin\Release\eVolveMechanical.dll</HintPath>
           <Private>False</Private>
           <Aliases>eVolve</Aliases>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(DefineConstants.Contains('REVIT2020'))">
-      <ItemGroup>
-        <Reference Include="AdWindows, Version=2018.11.1.0, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\AdWindows.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAddInUtility, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAddInUtility.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAPI, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAPI.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAPIBrowserUtils, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAPIBrowserUtils.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAPIFoundation, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAPIFoundation.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAPIIFC, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAPIIFC.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAPIMacros, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAPIMacros.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAPIMacrosInterop, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAPIMacrosInterop.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAPIMacrosInteropAPI, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAPIMacrosInteropAPI.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAPIUI, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAPIUI.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAPIUIMacros, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAPIUIMacros.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAPIUIMacrosInterop, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAPIUIMacrosInterop.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitAPIUIMacrosInteropAPI, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitAPIUIMacrosInteropAPI.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitDBAPI, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitDBAPI.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitMFCAPI, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitMFCAPI.dll</HintPath>
-        </Reference>
-        <Reference Include="RevitUIAPI, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\RevitUIAPI.dll</HintPath>
-        </Reference>
-        <Reference Include="UIFramework, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\UIFramework.dll</HintPath>
-        </Reference>
-        <Reference Include="UIFrameworkInterop, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\UIFrameworkInterop.dll</HintPath>
-        </Reference>
-        <Reference Include="UIFrameworkServices, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-          <HintPath>..\packages\Autodesk-Revit-2020-SDK.1.0.0\lib\UIFrameworkServices.dll</HintPath>
         </Reference>
       </ItemGroup>
     </When>
@@ -490,6 +408,69 @@
       </ItemGroup>
     </When>
   </Choose>
+  <Choose>
+    <When Condition="$(DefineConstants.Contains('REVIT2024'))">
+      <ItemGroup>
+        <Reference Include="AdWindows, Version=5.0.3.1, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\AdWindows.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAddInUtility, Version=24.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAddInUtility.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAPI, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAPI.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAPIBrowserUtils, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAPIBrowserUtils.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAPIFoundation, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAPIFoundation.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAPIIFC, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAPIIFC.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAPIMacros, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAPIMacros.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAPIMacrosInterop, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAPIMacrosInterop.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAPIMacrosInteropAPI, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAPIMacrosInteropAPI.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAPIUI, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAPIUI.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAPIUIMacros, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAPIUIMacros.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAPIUIMacrosInterop, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAPIUIMacrosInterop.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitAPIUIMacrosInteropAPI, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitAPIUIMacrosInteropAPI.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitDBAPI, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitDBAPI.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitMFCAPI, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitMFCAPI.dll</HintPath>
+        </Reference>
+        <Reference Include="RevitUIAPI, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\RevitUIAPI.dll</HintPath>
+        </Reference>
+        <Reference Include="UIFramework, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\UIFramework.dll</HintPath>
+        </Reference>
+        <Reference Include="UIFrameworkInterop, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\UIFrameworkInterop.dll</HintPath>
+        </Reference>
+        <Reference Include="UIFrameworkServices, Version=24.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+          <HintPath>..\packages\Autodesk-Revit-2024-SDK.1.0.0\lib\UIFrameworkServices.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -552,9 +533,10 @@
     <PostBuildEvent>SET "ConfigName=$(ConfigurationName)"
 
 SET "VersionYear=Unknown"
-IF NOT "%25ConfigName:2020=%25"=="%25ConfigName%25" SET "VersionYear=2020"
 IF NOT "%25ConfigName:2021=%25"=="%25ConfigName%25" SET "VersionYear=2021"
 IF NOT "%25ConfigName:2022=%25"=="%25ConfigName%25" SET "VersionYear=2022"
+IF NOT "%25ConfigName:2023=%25"=="%25ConfigName%25" SET "VersionYear=2023"
+IF NOT "%25ConfigName:2024=%25"=="%25ConfigName%25" SET "VersionYear=2024"
 
 SET "ProductName=Unknown"
 IF NOT "%25ConfigName:eE=%25"=="%25ConfigName%25" (
@@ -588,7 +570,6 @@ DEL /Q "%25TargetDir%25UIFramework*"
 DEL /Q "%25TargetDir%25AdWindows.*"
 
 ECHO.
-ECHO $(ConfigurationName)
-TIME /T</PostBuildEvent>
+ECHO $(ConfigurationName)</PostBuildEvent>
   </PropertyGroup>
 </Project>
