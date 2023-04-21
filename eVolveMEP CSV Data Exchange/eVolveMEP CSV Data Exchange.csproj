@@ -528,6 +528,9 @@
   <ItemGroup>
     <None Include="Help_Medium_20x20.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Settings_20x20.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>SET "ConfigName=$(ConfigurationName)"

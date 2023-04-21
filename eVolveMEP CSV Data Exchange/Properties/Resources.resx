@@ -122,96 +122,100 @@
     <value>..\help_medium_20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ButtonText" xml:space="preserve">
-	  <value>CSV Data
+    <value>CSV Data
 Exchange</value>
   </data>
   <data name="ToolTipText" xml:space="preserve">
-	  <value>Imports/Exports data from Revit using the {0} Integration Platform.</value><comment>Tag is a product name</comment>
+    <value>Imports/Exports data from Revit using the {0} Integration Platform.</value>
+    <comment>Tag is a product name</comment>
   </data>
   <data name="ErrorOccurredNotice" xml:space="preserve">
-	  <value>An error occurred during processing.</value>
+    <value>An error occurred during processing.</value>
   </data>
   <data name="CsvFiles" xml:space="preserve">
-	  <value>CSV Files</value>
+    <value>CSV Files</value>
   </data>
   <data name="FileLoadFailure" xml:space="preserve">
-	  <value>Load Failure</value>
+    <value>Load Failure</value>
   </data>
   <data name="SettingsLoadErrorNotice" xml:space="preserve">
-	  <value>Could not load settings file:</value>
+    <value>Could not load settings file:</value>
   </data>
   <data name="SettingsSaveErrorNotice" xml:space="preserve">
-	  <value>Could not save settings file:</value>
+    <value>Could not save settings file:</value>
   </data>
   <data name="FileSaveFailure" xml:space="preserve">
-	  <value>Save Failure</value>
+    <value>Save Failure</value>
   </data>
   <data name="ValidationErrors" xml:space="preserve">
-	  <value>Validation Errors</value>
+    <value>Validation Errors</value>
   </data>
   <data name="IssuesMustBeAddressedNotice" xml:space="preserve">
-	  <value>Please address the following issues:</value>
+    <value>Please address the following issues:</value>
   </data>
   <data name="SingleValueMustBeSelectedError" xml:space="preserve">
-	  <value>A single {0} must be selected.</value>
-	  <comment>Tag refers to a data entry field</comment>
+    <value>A single {0} must be selected.</value>
+    <comment>Tag refers to a data entry field</comment>
   </data>
   <data name="ValueMustBeSelectedError" xml:space="preserve">
-	  <value>A {0} must be selected.</value>
-	  <comment>Tag refers to a data entry field</comment>
+    <value>A {0} must be selected.</value>
+    <comment>Tag refers to a data entry field</comment>
   </data>
   <data name="WhenXSelectedYMustExistError" xml:space="preserve">
-	  <value>When {0} is selected, {1} must exist.</value>
-	  <comment>Tags refer to data entry fields</comment>
+    <value>When {0} is selected, {1} must exist.</value>
+    <comment>Tags refer to data entry fields</comment>
   </data>
   <data name="WhenXSelectedFolderYMustExistError" xml:space="preserve">
-	  <value>When {0} is selected, the folder location in {1} must exist.</value>
-	  <comment>Tags refer to data entry fields</comment>
+    <value>When {0} is selected, the folder location in {1} must exist.</value>
+    <comment>Tags refer to data entry fields</comment>
   </data>
   <data name="ExportColumn_ProjectName" xml:space="preserve">
-	  <value>Project Name</value>
+    <value>Project Name</value>
   </data>
   <data name="ExportColumn_ProjectNumber" xml:space="preserve">
-	  <value>Project Number</value>
+    <value>Project Number</value>
   </data>
   <data name="ExportColumn_Timestamp" xml:space="preserve">
-	  <value>Current Date/Time</value>
+    <value>Current Date/Time</value>
   </data>
   <data name="ExportColumn_UserName" xml:space="preserve">
-	  <value>User Name</value>
+    <value>User Name</value>
   </data>
   <data name="ExportColumn_WorkstationName" xml:space="preserve">
-	  <value>Workstation Name</value>
+    <value>Workstation Name</value>
   </data>
   <data name="ImportCsvData" xml:space="preserve">
-	  <value>Import CSV Data</value>
+    <value>Import CSV Data</value>
   </data>
   <data name="NoDataNotice" xml:space="preserve">
-	  <value>CSV file contained no usable data.</value>
+    <value>CSV file contained no usable data.</value>
   </data>
   <data name="ImportCompleted" xml:space="preserve">
-	  <value>Import Completed</value>
+    <value>Import Completed</value>
   </data>
   <data name="ExportCompleted" xml:space="preserve">
-	  <value>Export Completed</value>
+    <value>Export Completed</value>
   </data>
   <data name="XElementsProcessedNotice" xml:space="preserve">
-	  <value>{0} element(s) processed.</value>
-	  <comment>Tag is a number</comment>
+    <value>{0} element(s) processed.</value>
+    <comment>Tag is a number</comment>
   </data>
   <data name="ExportCsvData" xml:space="preserve">
-	  <value>Export CSV Data</value>
+    <value>Export CSV Data</value>
   </data>
   <data name="NoElementsSelectedNotice" xml:space="preserve">
-	  <value>No elements were selected.</value>
+    <value>No elements were selected.</value>
   </data>
   <data name="UniqueId" xml:space="preserve">
-	  <value>Unique Id</value>
+    <value>Unique Id</value>
   </data>
   <data name="eVolveElectrical" xml:space="preserve">
-	  <value>eVolve Electrical</value>
+    <value>eVolve Electrical</value>
   </data>
   <data name="eVolveMechanical" xml:space="preserve">
-	  <value>eVolve Mechanical</value>
+    <value>eVolve Mechanical</value>
+  </data>
+  <data name="Settings_20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\settings_20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

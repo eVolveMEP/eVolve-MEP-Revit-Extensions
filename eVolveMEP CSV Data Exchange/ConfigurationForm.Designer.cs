@@ -47,6 +47,7 @@
             this.OptionalExportColumnsGroupBox = new System.Windows.Forms.GroupBox();
             this.OptionalExportColumnsCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.HelpLinkPictureBox = new System.Windows.Forms.PictureBox();
+            this.OpenConfigurationPictureBox = new System.Windows.Forms.PictureBox();
             this.DirectionGroupBox.SuspendLayout();
             this.ProfileGroupBox.SuspendLayout();
             this.FileGroupBox.SuspendLayout();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.OptionalExportColumnsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ProfileComboBox
@@ -183,12 +185,21 @@
             this.HelpLinkPictureBox.TabStop = false;
             this.HelpLinkPictureBox.Click += new System.EventHandler(this.HelpLinkPictureBox_Click);
             // 
+            // OpenConfigurationPictureBox
+            // 
+            resources.ApplyResources(this.OpenConfigurationPictureBox, "OpenConfigurationPictureBox");
+            this.OpenConfigurationPictureBox.Image = global::eVolve.CsvDataExchange.Revit.Properties.Resources.Settings_20x20;
+            this.OpenConfigurationPictureBox.Name = "OpenConfigurationPictureBox";
+            this.OpenConfigurationPictureBox.TabStop = false;
+            this.OpenConfigurationPictureBox.Click += new System.EventHandler(this.OpenConfigurationPictureBox_Click);
+            // 
             // ConfigurationForm
             // 
             this.AcceptButton = this.OK_Button;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel_Button;
+            this.Controls.Add(this.OpenConfigurationPictureBox);
             this.Controls.Add(this.HelpLinkPictureBox);
             this.Controls.Add(this.OptionalExportColumnsGroupBox);
             this.Controls.Add(this.LogoPictureBox);
@@ -211,6 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.OptionalExportColumnsGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -235,5 +247,6 @@
         private System.Windows.Forms.GroupBox OptionalExportColumnsGroupBox;
         private System.Windows.Forms.CheckedListBox OptionalExportColumnsCheckedListBox;
         private System.Windows.Forms.PictureBox HelpLinkPictureBox;
+        private System.Windows.Forms.PictureBox OpenConfigurationPictureBox;
     }
 }

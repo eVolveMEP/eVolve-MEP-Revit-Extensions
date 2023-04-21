@@ -116,6 +116,23 @@ internal sealed partial class ConfigurationForm : Form
         OpenHelpLink();
     }
 
+    /// <summary> Opens the Data Profiles configuration dialog and refreshes available selections. </summary>
+    ///
+    /// <param name="sender"> Source of the event. </param>
+    /// <param name="e"> Event information. </param>
+    private void OpenConfigurationPictureBox_Click(object sender, EventArgs e)
+    {
+        Document.OpenDataProfilesDialog();
+
+        // Refresh the profiles list, preserving the existing selection if possible.
+        var currentProfileSelection = ProfileComboBox.Text;
+        DirectionRadioButton_CheckedChanged(ExportRadioButton.Checked ? ExportRadioButton : ImportRadioButton.Checked ? ImportRadioButton : null, EventArgs.Empty);
+        if (ProfileComboBox.Items.Contains(currentProfileSelection))
+        {
+            ProfileComboBox.Text = currentProfileSelection;
+        }
+    }
+
     /// <summary> Rebuilds the <see cref="ProfileComboBox"/> selections based on the selected direction. </summary>
     ///
     /// <param name="sender"> Source of the event. </param>
