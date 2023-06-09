@@ -1,6 +1,6 @@
 ﻿// Copyright (c) 2023 eVolve MEP, LLC
 // All rights reserved.
-//
+// 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
@@ -78,6 +78,7 @@ internal class Command : IExternalCommand
     }
 
     /// <summary> Additional columns which can be added to the output of <see cref="ExportData"/>. </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("ReSharper", "MissingXmlDoc", Justification = "Meaning is obvious")]
     internal struct OptionalExportColumns
     {
         public static string ProjectName => Resources.ExportColumn_ProjectName;

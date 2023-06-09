@@ -1,4 +1,4 @@
-# Copyright (c) 2022 eVolve MEP, LLC
+# Copyright (c) 2023 eVolve MEP, LLC
 # All rights reserved.
 #
 # This source code is licensed under the BSD-style license found in the
@@ -83,6 +83,9 @@ dotnet_diagnostic.RCS1141.severity = warning
 dotnet_diagnostic.RCS1159.severity = none
 # RCS1162 Avoid chain of assignments
 dotnet_diagnostic.RCS1162.severity = suggestion
+# RCS1163 Unused parameter
+#   NOTE: Redundany with IDE0060
+dotnet_diagnostic.RCS1163.severity = none
 # RCS1175 Unused this parameter
 #   NOTE: Redundany with IDE0060
 dotnet_diagnostic.RCS1175.severity = none
