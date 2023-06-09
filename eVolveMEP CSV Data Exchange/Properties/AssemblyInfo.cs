@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("eVolve MEP, LLC")]
 [assembly: AssemblyProduct("eVolve CSV Data Exchange")]
-[assembly: AssemblyCopyright("Copyright © 2022 eVolve MEP, LLC")]
+[assembly: AssemblyCopyright("Copyright © 2023 eVolve MEP, LLC")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,5 +28,5 @@ using System.Runtime.InteropServices;
 //      Revision
 //      Build Date (MMDDY)
 //
-[assembly: AssemblyVersion("6.2.0.10282")]
-[assembly: AssemblyFileVersion("6.2.0.10282")]
+[assembly: AssemblyVersion("7.0.0.04213")]
+[assembly: AssemblyFileVersion("7.0.0.04213")]
