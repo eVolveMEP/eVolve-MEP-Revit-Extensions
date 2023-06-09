@@ -463,18 +463,19 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Common\CommandAvailablity.cs">
+      <Link>CommandAvailablity.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\Methods.cs">
+      <Link>Methods.cs</Link>
+    </Compile>
     <Compile Include="Command.cs" />
     <Compile Include="Application.cs" />
-    <Compile Include="CommandAvailablity.cs" />
     <Compile Include="ConfigurationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -497,7 +498,9 @@
     <EmbeddedResource Include="ConfigurationForm.resx">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.fr-FR.resx" />
+    <EmbeddedResource Include="Properties\Resources.fr-FR.resx">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -530,46 +533,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>SET "ConfigName=$(ConfigurationName)"
-
-SET "VersionYear=Unknown"
-IF NOT "%25ConfigName:2021=%25"=="%25ConfigName%25" SET "VersionYear=2021"
-IF NOT "%25ConfigName:2022=%25"=="%25ConfigName%25" SET "VersionYear=2022"
-IF NOT "%25ConfigName:2023=%25"=="%25ConfigName%25" SET "VersionYear=2023"
-IF NOT "%25ConfigName:2024=%25"=="%25ConfigName%25" SET "VersionYear=2024"
-
-SET "ProductName=Unknown"
-IF NOT "%25ConfigName:eE=%25"=="%25ConfigName%25" (
-    SET "ProductName=eVolveElectrical"
-    SET "AssemblyId=A70A6A1A-BF91-C541-158A-5589D57891CB"
-    SET "ApplicationClassName=ApplicationElectrical"
-)
-IF NOT "%25ConfigName:eM=%25"=="%25ConfigName%25" (
-    SET "ProductName=eVolveMechanical"
-    SET "AssemblyId=9F07922B-CCDF-2290-C059-CC7A8F1FFC78"
-    SET "ApplicationClassName=ApplicationMechanical"
-)
-SET Product=%25ProductName:eVolve=%25
-
-SET "AddinFileName=%25ProductName%25_CSVDataExchange.addin"
-SET "AddinFilePath="$(TargetDir)%25AddinFileName%25""
-MOVE /Y "$(TargetDir)_CSVDataExchange.addin" %25AddinFilePath%25
-COPY /Y %25AddinFilePath%25 %25AddinFilePath%25.deploy &gt;nul
-"$(SolutionDir)BuildTools\fart.exe" %25AddinFilePath%25 "~Product~" "%25Product%25"
-"$(SolutionDir)BuildTools\fart.exe" %25AddinFilePath%25 "~AssemblyLocation~" "$(TargetPath)"
-"$(SolutionDir)BuildTools\fart.exe" %25AddinFilePath%25 "~AssemblyId~" "%25AssemblyId%25"
-"$(SolutionDir)BuildTools\fart.exe" %25AddinFilePath%25 "~ApplicationClassName~" "%25ApplicationClassName%25"
-
-REM Copy to the correct Revit location.
-REM Note, this action may require admin rights.
-COPY /Y %25AddinFilePath%25 "%25ALLUSERSPROFILE%25\Autodesk\Revit\Addins\%25VersionYear%25\%25AddinFileName%25" &gt;nul
-
-REM Revit API references.
-DEL /Q "%25TargetDir%25Revit*"
-DEL /Q "%25TargetDir%25UIFramework*"
-DEL /Q "%25TargetDir%25AdWindows.*"
-
-ECHO.
-ECHO $(ConfigurationName)</PostBuildEvent>
+    <PostBuildEvent>CALL "$(SolutionDir)BuildTools\PostBuild.bat" "$(ConfigurationName)" "$(TargetDir)" "$(TargetPath)" "A70A6A1A-BF91-C541-158A-5589D57891CB" "9F07922B-CCDF-2290-C059-CC7A8F1FFC78"
+</PostBuildEvent>
   </PropertyGroup>
 </Project>

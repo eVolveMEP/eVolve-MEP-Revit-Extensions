@@ -18,23 +18,10 @@ namespace eVolve.CsvDataExchange.Revit;
 internal class Command : IExternalCommand
 {
     /// <summary> Gets the button name of this tool as single line text. </summary>
-    internal static string ButtonTextWithNoLineBreaks => Resources.ButtonText
-        .Replace("\r", " ")
-        .Replace("\n", " ")
-        .Replace("  ", " ")
-        .Replace("  ", " ");
+    internal static string ButtonTextWithNoLineBreaks => ExtensionsCommon.Revit.Methods.GetButtonTextWithNoLineBreaks(Resources.ButtonText);
 
     /// <summary> Gets the icon resource. </summary>
-    internal static System.IO.Stream IconResource
-    {
-        get
-        {
-            var resourceName = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames()
-                .First(name => name.EndsWith(".CSV_ImportExport_32x32.png"));
-
-            return System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
-        }
-    }
+    internal static System.IO.Stream IconResource => ExtensionsCommon.Revit.Methods.GetIconResource("CSV_ImportExport_32x32.png");
 
     /// <summary> Gets URL of the help link to open when requested by the user. </summary>
     internal static string HelpLinkUrl
