@@ -4,8 +4,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("eVolve CSV Data Exchange")]
-[assembly: AssemblyDescription("CSV file importer/exporter for use with the eVolve Revit product line.")]
+[assembly: AssemblyTitle("eVolve Data Table Tools")]
+[assembly: AssemblyDescription("Advanced tools for working with Data Tables within the eVolve Revit product line.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("eVolve MEP, LLC")]
 [assembly: AssemblyProduct("eVolve Revit Extensions")]
@@ -19,14 +19,17 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8d6f812d-459d-4931-bd54-cebaa484ede8")]
+[assembly: Guid("85de10a1-786e-45ef-992a-80e3815a5a4d")]
 
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
 //      Minor Version
+//      Build Number
 //      Revision
-//      Build Date (MMDDY)
 //
-[assembly: AssemblyVersion("7.0.0.04213")]
-[assembly: AssemblyFileVersion("7.0.0.04213")]
+// You can specify all the values or you can default the Build and Revision Numbers
+// by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
