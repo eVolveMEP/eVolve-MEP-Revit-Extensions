@@ -1,18 +1,18 @@
 ﻿// Copyright (c) 2023 eVolve MEP, LLC
 // All rights reserved.
-//
+// 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
 extern alias eVolve;
 using eVolve::eVolve.Core.Revit.Integration;
+using eVolve.ExtensionsCommon.Revit;
 using System.Windows.Forms;
-using Form = System.Windows.Forms.Form;
 
 namespace eVolve.CsvDataExchange.Revit;
 
 /// <summary> Configures and saves <see cref="Settings"/>. Use <see cref="TryGetSettings"/> to consume. </summary>
-internal sealed partial class ConfigurationForm : Form
+internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
 {
     /// <summary>
     /// Displays the dialog to the user and returns if the user accepted the dialog/clicked OK. If the user cancels, <c>false</c> is
@@ -203,44 +203,31 @@ internal sealed partial class ConfigurationForm : Form
     #region Settings
 
     /// <summary> Gets the full pathname of the settings file store location on disk. </summary>
-    private static string SettingsFilePath { get; } = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "eVolve", "CSV Data Exchange", "Settings.xml");
+    private static string SettingsFilePath { get; } = System.IO.Path.Combine(ExtensionsCommon.Revit.Methods.BaseSaveSettingsFileFolder, "CSV Data Exchange", "Settings.xml");
 
     /// <summary>
     /// Saves the saved options from <see cref="SettingsFilePath"/> into the form. If an error occurs, the user is notified.
     /// </summary>
     private void LoadSettings()
     {
-        var settings = new Settings();
-        try
+        if (Methods.LoadSettings<Settings>(SettingsFilePath) is { } settings)
         {
-            if (System.IO.File.Exists(SettingsFilePath))
+            ExportRadioButton.Checked = settings.Direction == Direction.Export;
+            ImportRadioButton.Checked = settings.Direction == Direction.Import;
+            if (!string.IsNullOrEmpty(settings.ProfileName) && ProfileComboBox.Items.Contains(settings.ProfileName))
             {
-                var data = System.IO.File.ReadAllText(SettingsFilePath);
-                using var stream = new System.IO.StringReader(data);
-                settings = (Settings)new System.Xml.Serialization.XmlSerializer(typeof(Settings)).Deserialize(stream);
+                ProfileComboBox.Text = settings.ProfileName;
             }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(this, $"{Resources.SettingsLoadErrorNotice}\n{SettingsFilePath}\n\n{ex.Message}", Resources.FileLoadFailure,
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
-        }
 
-        ExportRadioButton.Checked = settings.Direction == Direction.Export;
-        ImportRadioButton.Checked = settings.Direction == Direction.Import;
-        if (!string.IsNullOrEmpty(settings.ProfileName) && ProfileComboBox.Items.Contains(settings.ProfileName))
-        {
-            ProfileComboBox.Text = settings.ProfileName;
-        }
-        FileTextBox.Text = settings.FilePath ?? "";
-        DelimiterCommaRadioButton.Checked = settings.Delimiter == DelimiterChars.Comma;
-        DelimiterTabRadioButton.Checked = settings.Delimiter == DelimiterChars.Tab;
+            FileTextBox.Text = settings.FilePath ?? "";
+            DelimiterCommaRadioButton.Checked = settings.Delimiter == DelimiterChars.Comma;
+            DelimiterTabRadioButton.Checked = settings.Delimiter == DelimiterChars.Tab;
 
-        for (var index = 0; index < OptionalExportColumnsCheckedListBox.Items.Count; index++)
-        {
-            var entryText = OptionalExportColumnsCheckedListBox.Items[index].ToString();
-            OptionalExportColumnsCheckedListBox.SetItemChecked(index, settings.IncludeExportColumns.Contains(entryText));
+            for (var index = 0; index < OptionalExportColumnsCheckedListBox.Items.Count; index++)
+            {
+                var entryText = OptionalExportColumnsCheckedListBox.Items[index].ToString();
+                OptionalExportColumnsCheckedListBox.SetItemChecked(index, settings.IncludeExportColumns.Contains(entryText));
+            }
         }
     }
 
@@ -258,25 +245,9 @@ internal sealed partial class ConfigurationForm : Form
             IncludeExportColumns = OptionalExportColumnsCheckedListBox.CheckedItems.Cast<string>().ToArray(),
         };
 
-        try
+        if (Methods.SaveSettings(settings, SettingsFilePath))
         {
-            using (var stream = new System.IO.StringWriter())
-            {
-                new System.Xml.Serialization.XmlSerializer(typeof(Settings)).Serialize(stream, settings);
-
-                var targetDirectory = System.IO.Path.GetDirectoryName(SettingsFilePath);
-                if (!System.IO.Directory.Exists(targetDirectory))
-                {
-                    System.IO.Directory.CreateDirectory(targetDirectory);
-                }
-                System.IO.File.WriteAllText(SettingsFilePath, stream.ToString());
-            }
             LastSavedSettings = settings;
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(this, $"{Resources.SettingsSaveErrorNotice}\n{SettingsFilePath}\n\n{ex.Message}", Resources.FileSaveFailure,
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 

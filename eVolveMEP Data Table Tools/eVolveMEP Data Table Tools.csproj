@@ -476,8 +476,22 @@
     <Compile Include="..\Common\Methods.cs">
       <Link>Methods.cs</Link>
     </Compile>
+    <Compile Include="Application.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="GlobalUsings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="ToolsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolsDialog.Designer.cs">
+      <DependentUpon>ToolsDialog.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -495,6 +509,33 @@
     <Analyzer Include="..\packages\Roslynator.Analyzers.4.3.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Common.dll" />
     <Analyzer Include="..\packages\Roslynator.Analyzers.4.3.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Core.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.fr-FR.resx">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolsDialog.fr-FR.resx">
+      <DependentUpon>ToolsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolsDialog.resx">
+      <DependentUpon>ToolsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataTableTools_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Help_Medium_20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Settings_20x20.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>CALL "$(SolutionDir)BuildTools\PostBuild.bat" "$(ConfigurationName)" "$(TargetDir)" "$(TargetPath)" "25A711AA-ED48-9295-1F5B-537895FD333D" "DF781AB8-5BB8-D0AC-C0FA-CBA28623BEF6"
