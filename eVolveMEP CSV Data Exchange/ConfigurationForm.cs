@@ -1,6 +1,6 @@
 ﻿// Copyright (c) 2023 eVolve MEP, LLC
 // All rights reserved.
-//
+// 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
@@ -142,11 +142,11 @@ internal sealed partial class ConfigurationForm : Form
         ProfileComboBox.Items.Clear();
         if (sender.Equals(ExportRadioButton))
         {
-            ProfileComboBox.Items.AddRange(Document.GetProfileNames(ProfileDirection.Export, null));
+            ProfileComboBox.Items.AddRange(Document.GetProfileNames(ProfileDirection.Export, Command.FeatureId, null));
         }
         else if (sender.Equals(ImportRadioButton))
         {
-            ProfileComboBox.Items.AddRange(Document.GetProfileNames(ProfileDirection.Import, null));
+            ProfileComboBox.Items.AddRange(Document.GetProfileNames(ProfileDirection.Import, Command.FeatureId, null));
         }
     }
 
