@@ -142,11 +142,11 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
         ProfileComboBox.Items.Clear();
         if (sender.Equals(ExportRadioButton))
         {
-            ProfileComboBox.Items.AddRange(Document.GetProfileNames(ProfileDirection.Export, null));
+            ProfileComboBox.Items.AddRange(Document.GetProfileNames(ProfileDirection.Export, Command.FeatureId, null));
         }
         else if (sender.Equals(ImportRadioButton))
         {
-            ProfileComboBox.Items.AddRange(Document.GetProfileNames(ProfileDirection.Import, null));
+            ProfileComboBox.Items.AddRange(Document.GetProfileNames(ProfileDirection.Import, Command.FeatureId, null));
         }
     }
 

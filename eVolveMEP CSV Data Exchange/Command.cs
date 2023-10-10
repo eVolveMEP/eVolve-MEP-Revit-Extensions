@@ -38,6 +38,9 @@ internal class Command : IExternalCommand
         }
     }
 
+    /// <summary> (Immutable) Identifier for <see cref="API.RegisterImplementingFeature"/>. </summary>
+    internal const string FeatureId = "2AF3CB23-40C1-DD71-1251-3D146744C67C";
+
     /// <inheritdoc/>
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {

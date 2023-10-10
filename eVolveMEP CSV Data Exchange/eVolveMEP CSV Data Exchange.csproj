@@ -456,7 +456,7 @@
   </Choose>
   <ItemGroup>
     <Reference Include="JetBrains.Annotations, Version=4242.42.42.42, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
-      <HintPath>..\packages\JetBrains.Annotations.2022.3.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+      <HintPath>..\packages\JetBrains.Annotations.2023.2.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -522,14 +522,14 @@
     <None Include="Settings_20x20.png" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\Roslynator.Analyzers.4.3.0\analyzers\dotnet\cs\Roslynator.CSharp.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="..\packages\Roslynator.Analyzers.4.3.0\analyzers\dotnet\cs\Roslynator.CSharp.Analyzers.dll" />
-    <Analyzer Include="..\packages\Roslynator.Analyzers.4.3.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Common.dll" />
-    <Analyzer Include="..\packages\Roslynator.Analyzers.4.3.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Core.dll" />
-    <Analyzer Include="..\packages\Roslynator.Analyzers.4.3.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.CSharp.dll" />
-    <Analyzer Include="..\packages\Roslynator.Analyzers.4.3.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.CSharp.Workspaces.dll" />
-    <Analyzer Include="..\packages\Roslynator.Analyzers.4.3.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Common.dll" />
-    <Analyzer Include="..\packages\Roslynator.Analyzers.4.3.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Core.dll" />
+    <Analyzer Include="..\packages\Roslynator.Analyzers.4.5.0\analyzers\dotnet\cs\Roslynator.CSharp.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\Roslynator.Analyzers.4.5.0\analyzers\dotnet\cs\Roslynator.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Roslynator.Analyzers.4.5.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Common.dll" />
+    <Analyzer Include="..\packages\Roslynator.Analyzers.4.5.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Core.dll" />
+    <Analyzer Include="..\packages\Roslynator.Analyzers.4.5.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.CSharp.dll" />
+    <Analyzer Include="..\packages\Roslynator.Analyzers.4.5.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.CSharp.Workspaces.dll" />
+    <Analyzer Include="..\packages\Roslynator.Analyzers.4.5.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Common.dll" />
+    <Analyzer Include="..\packages\Roslynator.Analyzers.4.5.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Core.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
