@@ -36,6 +36,8 @@ partial class ToolsDialog
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.ColumnToolsTabPage = new System.Windows.Forms.TabPage();
             this.ExpressionColumnGroupBox = new System.Windows.Forms.GroupBox();
+            this.ExpressionColumnDataTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.ExpressionColumnDataTypeLabel = new System.Windows.Forms.Label();
             this.ExpressionColumnExpressionGroupBox = new System.Windows.Forms.GroupBox();
             this.ExpressionColumnExpressionTextBox = new System.Windows.Forms.TextBox();
             this.ExpressionColumnNameTextBox = new System.Windows.Forms.TextBox();
@@ -49,6 +51,7 @@ partial class ToolsDialog
             this.ChangeColumnTypeColumnLabel = new System.Windows.Forms.Label();
             this.SqlServerToolsTabPage = new System.Windows.Forms.TabPage();
             this.SQLExportDataGroupBox = new System.Windows.Forms.GroupBox();
+            this.SQLExportExecuteButton = new System.Windows.Forms.Button();
             this.SQLExportPostEventButton = new System.Windows.Forms.Button();
             this.SQLExportPreEventButton = new System.Windows.Forms.Button();
             this.SQLExportPostEventCheckBox = new System.Windows.Forms.CheckBox();
@@ -60,6 +63,7 @@ partial class ToolsDialog
             this.SQLExportTargetComboBox = new System.Windows.Forms.ComboBox();
             this.SQLExportTargetLabel = new System.Windows.Forms.Label();
             this.SQLImportDataGroupBox = new System.Windows.Forms.GroupBox();
+            this.SQLImportExecuteButton = new System.Windows.Forms.Button();
             this.SQLImportSourceGroupBox = new System.Windows.Forms.GroupBox();
             this.SQLImportSourceCustomButton = new System.Windows.Forms.Button();
             this.SQLImportSourceViewComboBox = new System.Windows.Forms.ComboBox();
@@ -139,6 +143,8 @@ partial class ToolsDialog
             // 
             // ExpressionColumnGroupBox
             // 
+            this.ExpressionColumnGroupBox.Controls.Add(this.ExpressionColumnDataTypeComboBox);
+            this.ExpressionColumnGroupBox.Controls.Add(this.ExpressionColumnDataTypeLabel);
             this.ExpressionColumnGroupBox.Controls.Add(this.ExpressionColumnExpressionGroupBox);
             this.ExpressionColumnGroupBox.Controls.Add(this.ExpressionColumnNameTextBox);
             this.ExpressionColumnGroupBox.Controls.Add(this.ExpressionColumnAddButton);
@@ -146,6 +152,18 @@ partial class ToolsDialog
             resources.ApplyResources(this.ExpressionColumnGroupBox, "ExpressionColumnGroupBox");
             this.ExpressionColumnGroupBox.Name = "ExpressionColumnGroupBox";
             this.ExpressionColumnGroupBox.TabStop = false;
+            // 
+            // ExpressionColumnDataTypeComboBox
+            // 
+            resources.ApplyResources(this.ExpressionColumnDataTypeComboBox, "ExpressionColumnDataTypeComboBox");
+            this.ExpressionColumnDataTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ExpressionColumnDataTypeComboBox.FormattingEnabled = true;
+            this.ExpressionColumnDataTypeComboBox.Name = "ExpressionColumnDataTypeComboBox";
+            // 
+            // ExpressionColumnDataTypeLabel
+            // 
+            resources.ApplyResources(this.ExpressionColumnDataTypeLabel, "ExpressionColumnDataTypeLabel");
+            this.ExpressionColumnDataTypeLabel.Name = "ExpressionColumnDataTypeLabel";
             // 
             // ExpressionColumnExpressionGroupBox
             // 
@@ -169,6 +187,7 @@ partial class ToolsDialog
             resources.ApplyResources(this.ExpressionColumnAddButton, "ExpressionColumnAddButton");
             this.ExpressionColumnAddButton.Name = "ExpressionColumnAddButton";
             this.ExpressionColumnAddButton.UseVisualStyleBackColor = true;
+            this.ExpressionColumnAddButton.Click += new System.EventHandler(this.ExpressionColumnAddButton_Click);
             // 
             // ExpressionColumnNameLabel
             // 
@@ -228,6 +247,7 @@ partial class ToolsDialog
             // 
             // SQLExportDataGroupBox
             // 
+            this.SQLExportDataGroupBox.Controls.Add(this.SQLExportExecuteButton);
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportPostEventButton);
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportPreEventButton);
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportPostEventCheckBox);
@@ -238,6 +258,13 @@ partial class ToolsDialog
             resources.ApplyResources(this.SQLExportDataGroupBox, "SQLExportDataGroupBox");
             this.SQLExportDataGroupBox.Name = "SQLExportDataGroupBox";
             this.SQLExportDataGroupBox.TabStop = false;
+            // 
+            // SQLExportExecuteButton
+            // 
+            resources.ApplyResources(this.SQLExportExecuteButton, "SQLExportExecuteButton");
+            this.SQLExportExecuteButton.Name = "SQLExportExecuteButton";
+            this.SQLExportExecuteButton.UseVisualStyleBackColor = true;
+            this.SQLExportExecuteButton.Click += new System.EventHandler(this.SQLExportExecuteButton_Click);
             // 
             // SQLExportPostEventButton
             // 
@@ -277,22 +304,26 @@ partial class ToolsDialog
             resources.ApplyResources(this.SQLExportFieldMappingRemoveButton, "SQLExportFieldMappingRemoveButton");
             this.SQLExportFieldMappingRemoveButton.Name = "SQLExportFieldMappingRemoveButton";
             this.SQLExportFieldMappingRemoveButton.UseVisualStyleBackColor = true;
+            this.SQLExportFieldMappingRemoveButton.Click += new System.EventHandler(this.SQLExportFieldMappingRemoveButton_Click);
             // 
             // SQLExportFieldMappingAddButton
             // 
             resources.ApplyResources(this.SQLExportFieldMappingAddButton, "SQLExportFieldMappingAddButton");
             this.SQLExportFieldMappingAddButton.Name = "SQLExportFieldMappingAddButton";
             this.SQLExportFieldMappingAddButton.UseVisualStyleBackColor = true;
+            this.SQLExportFieldMappingAddButton.Click += new System.EventHandler(this.SQLExportFieldMappingAddButton_Click);
             // 
             // SQLExportFieldMappingListBox
             // 
             this.SQLExportFieldMappingListBox.FormattingEnabled = true;
             resources.ApplyResources(this.SQLExportFieldMappingListBox, "SQLExportFieldMappingListBox");
             this.SQLExportFieldMappingListBox.Name = "SQLExportFieldMappingListBox";
+            this.SQLExportFieldMappingListBox.Sorted = true;
             // 
             // SQLExportTargetComboBox
             // 
             resources.ApplyResources(this.SQLExportTargetComboBox, "SQLExportTargetComboBox");
+            this.SQLExportTargetComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SQLExportTargetComboBox.FormattingEnabled = true;
             this.SQLExportTargetComboBox.Name = "SQLExportTargetComboBox";
             // 
@@ -303,12 +334,20 @@ partial class ToolsDialog
             // 
             // SQLImportDataGroupBox
             // 
+            this.SQLImportDataGroupBox.Controls.Add(this.SQLImportExecuteButton);
             this.SQLImportDataGroupBox.Controls.Add(this.SQLImportSourceGroupBox);
             this.SQLImportDataGroupBox.Controls.Add(this.SQLImportTargetComboBox);
             this.SQLImportDataGroupBox.Controls.Add(this.SQLImportTargetLabel);
             resources.ApplyResources(this.SQLImportDataGroupBox, "SQLImportDataGroupBox");
             this.SQLImportDataGroupBox.Name = "SQLImportDataGroupBox";
             this.SQLImportDataGroupBox.TabStop = false;
+            // 
+            // SQLImportExecuteButton
+            // 
+            resources.ApplyResources(this.SQLImportExecuteButton, "SQLImportExecuteButton");
+            this.SQLImportExecuteButton.Name = "SQLImportExecuteButton";
+            this.SQLImportExecuteButton.UseVisualStyleBackColor = true;
+            this.SQLImportExecuteButton.Click += new System.EventHandler(this.SQLImportExecuteButton_Click);
             // 
             // SQLImportSourceGroupBox
             // 
@@ -400,7 +439,9 @@ partial class ToolsDialog
             // 
             resources.ApplyResources(this.SQLConnectButton, "SQLConnectButton");
             this.SQLConnectButton.Name = "SQLConnectButton";
+            this.SQLConnectButton.Tag = "";
             this.SQLConnectButton.UseVisualStyleBackColor = true;
+            this.SQLConnectButton.Click += new System.EventHandler(this.SQLConnectButton_Click);
             // 
             // SQLConnectionStringTextBox
             // 
@@ -508,4 +549,8 @@ partial class ToolsDialog
     private System.Windows.Forms.ListBox SQLExportFieldMappingListBox;
     private System.Windows.Forms.Button SQLExportFieldMappingRemoveButton;
     private System.Windows.Forms.Button SQLExportFieldMappingAddButton;
+    private System.Windows.Forms.ComboBox ExpressionColumnDataTypeComboBox;
+    private System.Windows.Forms.Label ExpressionColumnDataTypeLabel;
+    private System.Windows.Forms.Button SQLExportExecuteButton;
+    private System.Windows.Forms.Button SQLImportExecuteButton;
 }

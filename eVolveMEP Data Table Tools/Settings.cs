@@ -12,4 +12,14 @@ public class Settings
 {
     /// <summary> Gets or sets the SQL Server connection string. </summary>
     public string SqlConnectionString { get; set; }
+
+    /// <summary> Gets or sets the custom SQL command to run for data import. </summary>
+    public string SqlCustomImport { get; set; }
+
+    /// <summary> Gets or sets the SQL command to optionally run before exporting a data table to a SQL table. </summary>
+    public string SqlExportPreCommand { get; set; }
+
+    /// <summary> Gets or sets the SQL command to optionally run after exporting a data table to a SQL table. </summary>
+    public string SqlExportPostCommand { get; set; }
+
 }

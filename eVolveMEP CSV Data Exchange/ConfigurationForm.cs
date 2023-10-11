@@ -6,7 +6,6 @@
 
 extern alias eVolve;
 using eVolve::eVolve.Core.Revit.Integration;
-using eVolve.ExtensionsCommon.Revit;
 using System.Windows.Forms;
 
 namespace eVolve.CsvDataExchange.Revit;
@@ -203,14 +202,14 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
     #region Settings
 
     /// <summary> Gets the full pathname of the settings file store location on disk. </summary>
-    private static string SettingsFilePath { get; } = System.IO.Path.Combine(ExtensionsCommon.Revit.Methods.BaseSaveSettingsFileFolder, "CSV Data Exchange", "Settings.xml");
+    private static string SettingsFilePath { get; } = System.IO.Path.Combine(BaseSaveSettingsFileFolder, "CSV Data Exchange", "Settings.xml");
 
     /// <summary>
     /// Saves the saved options from <see cref="SettingsFilePath"/> into the form. If an error occurs, the user is notified.
     /// </summary>
     private void LoadSettings()
     {
-        if (Methods.LoadSettings<Settings>(SettingsFilePath) is { } settings)
+        if (LoadSettings<Settings>(SettingsFilePath) is { } settings)
         {
             ExportRadioButton.Checked = settings.Direction == Direction.Export;
             ImportRadioButton.Checked = settings.Direction == Direction.Import;
@@ -245,7 +244,7 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
             IncludeExportColumns = OptionalExportColumnsCheckedListBox.CheckedItems.Cast<string>().ToArray(),
         };
 
-        if (Methods.SaveSettings(settings, SettingsFilePath))
+        if (ExtensionsCommon.Revit.Methods.SaveSettings(settings, SettingsFilePath))
         {
             LastSavedSettings = settings;
         }

@@ -71,6 +71,43 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connect.
+        /// </summary>
+        internal static string Connect {
+            get {
+                return ResourceManager.GetString("Connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connected.
+        /// </summary>
+        internal static string Connected {
+            get {
+                return ResourceManager.GetString("Connected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to One or more values were not able to be converted to the target type.
+        ///The default value was used in this situation..
+        /// </summary>
+        internal static string CouldNotConvertValueWarning {
+            get {
+                return ResourceManager.GetString("CouldNotConvertValueWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disconnect.
+        /// </summary>
+        internal static string Disconnect {
+            get {
+                return ResourceManager.GetString("Disconnect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to eVolve Electrical.
         /// </summary>
         internal static string eVolveElectrical {
@@ -85,6 +122,15 @@ namespace eVolve.DataTableTools.Revit.Properties {
         internal static string eVolveMechanical {
             get {
                 return ResourceManager.GetString("eVolveMechanical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The column &apos;{0}&apos; was not found in {1} &apos;{2}&apos;..
+        /// </summary>
+        internal static string ExportColumnNotFoundError {
+            get {
+                return ResourceManager.GetString("ExportColumnNotFoundError", resourceCulture);
             }
         }
         
@@ -117,6 +163,53 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter the SQL Select statement which will be used to populate the selected data table. The SQL results will be used to define the column names and their respective data type.
+        ///
+        ///If an existing data table is selected, it will be overwritten with the result..
+        /// </summary>
+        internal static string ImportStatementPromptInfo {
+            get {
+                return ResourceManager.GetString("ImportStatementPromptInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No {0} entries are defined..
+        /// </summary>
+        internal static string NoEntriesDefinedError {
+            get {
+                return ResourceManager.GetString("NoEntriesDefinedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not connected.
+        /// </summary>
+        internal static string NotConnected {
+            get {
+                return ResourceManager.GetString("NotConnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No {0} is selected..
+        /// </summary>
+        internal static string NoValueSelectedError {
+            get {
+                return ResourceManager.GetString("NoValueSelectedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If this produces an error, the operation will cancel..
+        /// </summary>
+        internal static string OperationCancelsOnErrorNotice {
+            get {
+                return ResourceManager.GetString("OperationCancelsOnErrorNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Settings_20x20 {
@@ -145,11 +238,65 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter the SQL statement to execute after to importing data..
+        /// </summary>
+        internal static string StatementToRunAfterImport {
+            get {
+                return ResourceManager.GetString("StatementToRunAfterImport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the SQL statement to execute prior to importing data..
+        /// </summary>
+        internal static string StatementToRunPriorToImport {
+            get {
+                return ResourceManager.GetString("StatementToRunPriorToImport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advanced tools for working with {0} Data Tables..
         /// </summary>
         internal static string ToolTipText {
             get {
                 return ResourceManager.GetString("ToolTipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A value must be provided for &apos;{0}&apos;..
+        /// </summary>
+        internal static string ValueMustBeProvided1Error {
+            get {
+                return ResourceManager.GetString("ValueMustBeProvided1Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A value must be provided for &apos;{0}&apos; and &apos;{1}&apos;..
+        /// </summary>
+        internal static string ValueMustBeProvided2Error {
+            get {
+                return ResourceManager.GetString("ValueMustBeProvided2Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A value must be provided for &apos;{0}&apos;, &apos;{1}&apos; and &apos;{2}&apos;..
+        /// </summary>
+        internal static string ValueMustBeProvided3Error {
+            get {
+                return ResourceManager.GetString("ValueMustBeProvided3Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A value must be provided for &apos;{0}&apos; when enabled..
+        /// </summary>
+        internal static string ValueMustBeProvidedWhenEnabledError {
+            get {
+                return ResourceManager.GetString("ValueMustBeProvidedWhenEnabledError", resourceCulture);
             }
         }
     }

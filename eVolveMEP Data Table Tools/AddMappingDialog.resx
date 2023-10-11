@@ -118,61 +118,85 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="OpenConfigurationPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="OpenConfigurationPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="DataTableColumnComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="OpenConfigurationPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>835, 0</value>
+  <data name="DataTableColumnComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 31</value>
   </data>
-  <data name="OpenConfigurationPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+  <data name="DataTableColumnComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 21</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="OpenConfigurationPictureBox.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="DataTableColumnComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;OpenConfigurationPictureBox.Name" xml:space="preserve">
-    <value>OpenConfigurationPictureBox</value>
+  <data name="&gt;&gt;DataTableColumnComboBox.Name" xml:space="preserve">
+    <value>DataTableColumnComboBox</value>
   </data>
-  <data name="&gt;&gt;OpenConfigurationPictureBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;DataTableColumnComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;OpenConfigurationPictureBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;DataTableColumnComboBox.Parent" xml:space="preserve">
+    <value>DataTableColumnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;DataTableColumnComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="DataTableColumnGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="DataTableColumnGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 77</value>
+  </data>
+  <data name="DataTableColumnGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="DataTableColumnGroupBox.Text" xml:space="preserve">
+    <value>Source Data Table Column</value>
+  </data>
+  <data name="&gt;&gt;DataTableColumnGroupBox.Name" xml:space="preserve">
+    <value>DataTableColumnGroupBox</value>
+  </data>
+  <data name="&gt;&gt;DataTableColumnGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataTableColumnGroupBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;OpenConfigurationPictureBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;DataTableColumnGroupBox.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="HelpLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="Cancel_Button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
-  <data name="HelpLinkPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="Cancel_Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="HelpLinkPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>857, 0</value>
+  <data name="Cancel_Button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>545, 132</value>
   </data>
-  <data name="HelpLinkPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+  <data name="Cancel_Button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
-  <data name="HelpLinkPictureBox.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="Cancel_Button.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
-  <data name="&gt;&gt;HelpLinkPictureBox.Name" xml:space="preserve">
-    <value>HelpLinkPictureBox</value>
+  <data name="Cancel_Button.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
-  <data name="&gt;&gt;HelpLinkPictureBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;Cancel_Button.Name" xml:space="preserve">
+    <value>Cancel_Button</value>
   </data>
-  <data name="&gt;&gt;HelpLinkPictureBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Cancel_Button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Cancel_Button.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;HelpLinkPictureBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;Cancel_Button.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="LogoPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -768,7 +792,7 @@
     <value>NoControl</value>
   </data>
   <data name="LogoPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 668</value>
+    <value>12, 132</value>
   </data>
   <data name="LogoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 23</value>
@@ -777,7 +801,7 @@
     <value>Zoom</value>
   </data>
   <data name="LogoPictureBox.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;LogoPictureBox.Name" xml:space="preserve">
     <value>LogoPictureBox</value>
@@ -789,1293 +813,84 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LogoPictureBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
-  <data name="CloseButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="OKButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="CloseButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="OKButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="CloseButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>765, 668</value>
+  <data name="OKButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>439, 132</value>
   </data>
-  <data name="CloseButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="OKButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
   </data>
-  <data name="CloseButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="OKButton.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
-  <data name="CloseButton.Text" xml:space="preserve">
-    <value>Close</value>
+  <data name="OKButton.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="&gt;&gt;CloseButton.Name" xml:space="preserve">
-    <value>CloseButton</value>
+  <data name="&gt;&gt;OKButton.Name" xml:space="preserve">
+    <value>OKButton</value>
   </data>
-  <data name="&gt;&gt;CloseButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;OKButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CloseButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;OKButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;CloseButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="MainTabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="ExpressionColumnDataTypeComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="ExpressionColumnDataTypeComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 64</value>
-  </data>
-  <data name="ExpressionColumnDataTypeComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
-  </data>
-  <data name="ExpressionColumnDataTypeComboBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;OKButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;ExpressionColumnDataTypeComboBox.Name" xml:space="preserve">
-    <value>ExpressionColumnDataTypeComboBox</value>
+  <data name="SQLTableColumnComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;ExpressionColumnDataTypeComboBox.Type" xml:space="preserve">
+  <data name="SQLTableColumnComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 31</value>
+  </data>
+  <data name="SQLTableColumnComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 21</value>
+  </data>
+  <data name="SQLTableColumnComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;SQLTableColumnComboBox.Name" xml:space="preserve">
+    <value>SQLTableColumnComboBox</value>
+  </data>
+  <data name="&gt;&gt;SQLTableColumnComboBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ExpressionColumnDataTypeComboBox.Parent" xml:space="preserve">
-    <value>ExpressionColumnGroupBox</value>
+  <data name="&gt;&gt;SQLTableColumnComboBox.Parent" xml:space="preserve">
+    <value>SQLTableColumnGroupBox</value>
   </data>
-  <data name="&gt;&gt;ExpressionColumnDataTypeComboBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SQLTableColumnComboBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ExpressionColumnDataTypeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="SQLTableColumnGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>341, 23</value>
   </data>
-  <data name="ExpressionColumnDataTypeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="SQLTableColumnGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 77</value>
   </data>
-  <data name="ExpressionColumnDataTypeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 67</value>
+  <data name="SQLTableColumnGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="ExpressionColumnDataTypeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
+  <data name="SQLTableColumnGroupBox.Text" xml:space="preserve">
+    <value>Destination SQL Table Column</value>
   </data>
-  <data name="ExpressionColumnDataTypeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;SQLTableColumnGroupBox.Name" xml:space="preserve">
+    <value>SQLTableColumnGroupBox</value>
   </data>
-  <data name="ExpressionColumnDataTypeLabel.Text" xml:space="preserve">
-    <value>Data Type</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnDataTypeLabel.Name" xml:space="preserve">
-    <value>ExpressionColumnDataTypeLabel</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnDataTypeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnDataTypeLabel.Parent" xml:space="preserve">
-    <value>ExpressionColumnGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnDataTypeLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ExpressionColumnExpressionTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="ExpressionColumnExpressionTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 28</value>
-  </data>
-  <data name="ExpressionColumnExpressionTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 20</value>
-  </data>
-  <data name="ExpressionColumnExpressionTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnExpressionTextBox.Name" xml:space="preserve">
-    <value>ExpressionColumnExpressionTextBox</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnExpressionTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnExpressionTextBox.Parent" xml:space="preserve">
-    <value>ExpressionColumnExpressionGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnExpressionTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ExpressionColumnExpressionGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 101</value>
-  </data>
-  <data name="ExpressionColumnExpressionGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 67</value>
-  </data>
-  <data name="ExpressionColumnExpressionGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="ExpressionColumnExpressionGroupBox.Text" xml:space="preserve">
-    <value>Expression</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnExpressionGroupBox.Name" xml:space="preserve">
-    <value>ExpressionColumnExpressionGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnExpressionGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;SQLTableColumnGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ExpressionColumnExpressionGroupBox.Parent" xml:space="preserve">
-    <value>ExpressionColumnGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnExpressionGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ExpressionColumnNameTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="ExpressionColumnNameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 28</value>
-  </data>
-  <data name="ExpressionColumnNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 20</value>
-  </data>
-  <data name="ExpressionColumnNameTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnNameTextBox.Name" xml:space="preserve">
-    <value>ExpressionColumnNameTextBox</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnNameTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnNameTextBox.Parent" xml:space="preserve">
-    <value>ExpressionColumnGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnNameTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ExpressionColumnAddButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ExpressionColumnAddButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ExpressionColumnAddButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 185</value>
-  </data>
-  <data name="ExpressionColumnAddButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="ExpressionColumnAddButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="ExpressionColumnAddButton.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnAddButton.Name" xml:space="preserve">
-    <value>ExpressionColumnAddButton</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnAddButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnAddButton.Parent" xml:space="preserve">
-    <value>ExpressionColumnGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnAddButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ExpressionColumnNameLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ExpressionColumnNameLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ExpressionColumnNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 31</value>
-  </data>
-  <data name="ExpressionColumnNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
-  </data>
-  <data name="ExpressionColumnNameLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ExpressionColumnNameLabel.Text" xml:space="preserve">
-    <value>Column Name</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnNameLabel.Name" xml:space="preserve">
-    <value>ExpressionColumnNameLabel</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnNameLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnNameLabel.Parent" xml:space="preserve">
-    <value>ExpressionColumnGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnNameLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="ExpressionColumnGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 187</value>
-  </data>
-  <data name="ExpressionColumnGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 236</value>
-  </data>
-  <data name="ExpressionColumnGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ExpressionColumnGroupBox.Text" xml:space="preserve">
-    <value>Add Expression Column</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnGroupBox.Name" xml:space="preserve">
-    <value>ExpressionColumnGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnGroupBox.Parent" xml:space="preserve">
-    <value>ColumnToolsTabPage</value>
-  </data>
-  <data name="&gt;&gt;ExpressionColumnGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ChangeColumnTypeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ChangeColumnTypeButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ChangeColumnTypeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 107</value>
-  </data>
-  <data name="ChangeColumnTypeButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="ChangeColumnTypeButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="ChangeColumnTypeButton.Text" xml:space="preserve">
-    <value>Apply</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeButton.Name" xml:space="preserve">
-    <value>ChangeColumnTypeButton</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeButton.Parent" xml:space="preserve">
-    <value>ChangeColumnTypeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ChangeColumnTypeDataTypeComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="ChangeColumnTypeDataTypeComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 67</value>
-  </data>
-  <data name="ChangeColumnTypeDataTypeComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
-  </data>
-  <data name="ChangeColumnTypeDataTypeComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeDataTypeComboBox.Name" xml:space="preserve">
-    <value>ChangeColumnTypeDataTypeComboBox</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeDataTypeComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeDataTypeComboBox.Parent" xml:space="preserve">
-    <value>ChangeColumnTypeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeDataTypeComboBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ChangeColumnTypeDataTypeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ChangeColumnTypeDataTypeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ChangeColumnTypeDataTypeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 70</value>
-  </data>
-  <data name="ChangeColumnTypeDataTypeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="ChangeColumnTypeDataTypeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="ChangeColumnTypeDataTypeLabel.Text" xml:space="preserve">
-    <value>Change To</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeDataTypeLabel.Name" xml:space="preserve">
-    <value>ChangeColumnTypeDataTypeLabel</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeDataTypeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeDataTypeLabel.Parent" xml:space="preserve">
-    <value>ChangeColumnTypeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeDataTypeLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ChangeColumnTypeColumnComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="ChangeColumnTypeColumnComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 28</value>
-  </data>
-  <data name="ChangeColumnTypeColumnComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
-  </data>
-  <data name="ChangeColumnTypeColumnComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeColumnComboBox.Name" xml:space="preserve">
-    <value>ChangeColumnTypeColumnComboBox</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeColumnComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeColumnComboBox.Parent" xml:space="preserve">
-    <value>ChangeColumnTypeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeColumnComboBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="ChangeColumnTypeColumnLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ChangeColumnTypeColumnLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ChangeColumnTypeColumnLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 31</value>
-  </data>
-  <data name="ChangeColumnTypeColumnLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
-  </data>
-  <data name="ChangeColumnTypeColumnLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ChangeColumnTypeColumnLabel.Text" xml:space="preserve">
-    <value>Column</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeColumnLabel.Name" xml:space="preserve">
-    <value>ChangeColumnTypeColumnLabel</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeColumnLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeColumnLabel.Parent" xml:space="preserve">
-    <value>ChangeColumnTypeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeColumnLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="ChangeColumnTypeGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 15</value>
-  </data>
-  <data name="ChangeColumnTypeGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>398, 154</value>
-  </data>
-  <data name="ChangeColumnTypeGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ChangeColumnTypeGroupBox.Text" xml:space="preserve">
-    <value>Change Column Type</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeGroupBox.Name" xml:space="preserve">
-    <value>ChangeColumnTypeGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeGroupBox.Parent" xml:space="preserve">
-    <value>ColumnToolsTabPage</value>
-  </data>
-  <data name="&gt;&gt;ChangeColumnTypeGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ColumnToolsTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="ColumnToolsTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="ColumnToolsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>845, 551</value>
-  </data>
-  <data name="ColumnToolsTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ColumnToolsTabPage.Text" xml:space="preserve">
-    <value>Column Tools</value>
-  </data>
-  <data name="&gt;&gt;ColumnToolsTabPage.Name" xml:space="preserve">
-    <value>ColumnToolsTabPage</value>
-  </data>
-  <data name="&gt;&gt;ColumnToolsTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnToolsTabPage.Parent" xml:space="preserve">
-    <value>MainTabControl</value>
-  </data>
-  <data name="&gt;&gt;ColumnToolsTabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SQLExportExecuteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="SQLExportExecuteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLExportExecuteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 341</value>
-  </data>
-  <data name="SQLExportExecuteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="SQLExportExecuteButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="SQLExportExecuteButton.Text" xml:space="preserve">
-    <value>Execute</value>
-  </data>
-  <data name="&gt;&gt;SQLExportExecuteButton.Name" xml:space="preserve">
-    <value>SQLExportExecuteButton</value>
-  </data>
-  <data name="&gt;&gt;SQLExportExecuteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportExecuteButton.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportExecuteButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SQLExportPostEventButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLExportPostEventButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 283</value>
-  </data>
-  <data name="SQLExportPostEventButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 23</value>
-  </data>
-  <data name="SQLExportPostEventButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="SQLExportPostEventButton.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.Name" xml:space="preserve">
-    <value>SQLExportPostEventButton</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SQLExportPreEventButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLExportPreEventButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 248</value>
-  </data>
-  <data name="SQLExportPreEventButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 23</value>
-  </data>
-  <data name="SQLExportPreEventButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="SQLExportPreEventButton.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.Name" xml:space="preserve">
-    <value>SQLExportPreEventButton</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 287</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.Text" xml:space="preserve">
-    <value>Run Custom SQL After Export</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.Name" xml:space="preserve">
-    <value>SQLExportPostEventCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SQLExportPreEventCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLExportPreEventCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 254</value>
-  </data>
-  <data name="SQLExportPreEventCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 17</value>
-  </data>
-  <data name="SQLExportPreEventCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="SQLExportPreEventCheckBox.Text" xml:space="preserve">
-    <value>Run Custom SQL Before Export</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.Name" xml:space="preserve">
-    <value>SQLExportPreEventCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="SQLExportFieldMappingGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="SQLExportFieldMappingRemoveButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLExportFieldMappingRemoveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 65</value>
-  </data>
-  <data name="SQLExportFieldMappingRemoveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 23</value>
-  </data>
-  <data name="SQLExportFieldMappingRemoveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SQLExportFieldMappingRemoveButton.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.Name" xml:space="preserve">
-    <value>SQLExportFieldMappingRemoveButton</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.Parent" xml:space="preserve">
-    <value>SQLExportFieldMappingGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SQLExportFieldMappingAddButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLExportFieldMappingAddButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 29</value>
-  </data>
-  <data name="SQLExportFieldMappingAddButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 23</value>
-  </data>
-  <data name="SQLExportFieldMappingAddButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SQLExportFieldMappingAddButton.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingAddButton.Name" xml:space="preserve">
-    <value>SQLExportFieldMappingAddButton</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingAddButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingAddButton.Parent" xml:space="preserve">
-    <value>SQLExportFieldMappingGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingAddButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SQLExportFieldMappingListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 29</value>
-  </data>
-  <data name="SQLExportFieldMappingListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 108</value>
-  </data>
-  <data name="SQLExportFieldMappingListBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingListBox.Name" xml:space="preserve">
-    <value>SQLExportFieldMappingListBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingListBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingListBox.Parent" xml:space="preserve">
-    <value>SQLExportFieldMappingGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingListBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SQLExportFieldMappingGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 75</value>
-  </data>
-  <data name="SQLExportFieldMappingGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 153</value>
-  </data>
-  <data name="SQLExportFieldMappingGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SQLExportFieldMappingGroupBox.Text" xml:space="preserve">
-    <value>Field Mapping</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingGroupBox.Name" xml:space="preserve">
-    <value>SQLExportFieldMappingGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingGroupBox.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingGroupBox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="SQLExportTargetComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="SQLExportTargetComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 35</value>
-  </data>
-  <data name="SQLExportTargetComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 21</value>
-  </data>
-  <data name="SQLExportTargetComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetComboBox.Name" xml:space="preserve">
-    <value>SQLExportTargetComboBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetComboBox.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetComboBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="SQLExportTargetLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLExportTargetLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLExportTargetLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 38</value>
-  </data>
-  <data name="SQLExportTargetLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
-  <data name="SQLExportTargetLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="SQLExportTargetLabel.Text" xml:space="preserve">
-    <value>Target</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetLabel.Name" xml:space="preserve">
-    <value>SQLExportTargetLabel</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetLabel.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="SQLExportDataGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>438, 140</value>
-  </data>
-  <data name="SQLExportDataGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>388, 386</value>
-  </data>
-  <data name="SQLExportDataGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SQLExportDataGroupBox.Text" xml:space="preserve">
-    <value>Export Data</value>
-  </data>
-  <data name="&gt;&gt;SQLExportDataGroupBox.Name" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportDataGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportDataGroupBox.Parent" xml:space="preserve">
-    <value>SqlServerToolsTabPage</value>
-  </data>
-  <data name="&gt;&gt;SQLExportDataGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SQLImportExecuteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="SQLImportExecuteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLImportExecuteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 236</value>
-  </data>
-  <data name="SQLImportExecuteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="SQLImportExecuteButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="SQLImportExecuteButton.Text" xml:space="preserve">
-    <value>Execute</value>
-  </data>
-  <data name="&gt;&gt;SQLImportExecuteButton.Name" xml:space="preserve">
-    <value>SQLImportExecuteButton</value>
-  </data>
-  <data name="&gt;&gt;SQLImportExecuteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportExecuteButton.Parent" xml:space="preserve">
-    <value>SQLImportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportExecuteButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SQLImportSourceGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="SQLImportSourceCustomButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLImportSourceCustomButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 99</value>
-  </data>
-  <data name="SQLImportSourceCustomButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="SQLImportSourceCustomButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="SQLImportSourceCustomButton.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomButton.Name" xml:space="preserve">
-    <value>SQLImportSourceCustomButton</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomButton.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SQLImportSourceViewComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="SQLImportSourceViewComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 66</value>
-  </data>
-  <data name="SQLImportSourceViewComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 21</value>
-  </data>
-  <data name="SQLImportSourceViewComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewComboBox.Name" xml:space="preserve">
-    <value>SQLImportSourceViewComboBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewComboBox.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewComboBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SQLImportSourceTableComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="SQLImportSourceTableComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 31</value>
-  </data>
-  <data name="SQLImportSourceTableComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 21</value>
-  </data>
-  <data name="SQLImportSourceTableComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableComboBox.Name" xml:space="preserve">
-    <value>SQLImportSourceTableComboBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableComboBox.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableComboBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 102</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 17</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.Text" xml:space="preserve">
-    <value>Custom SQL</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Name" xml:space="preserve">
-    <value>SQLImportSourceCustomRadioButton</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 67</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 17</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.Text" xml:space="preserve">
-    <value>View</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Name" xml:space="preserve">
-    <value>SQLImportSourceViewRadioButton</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewRadioButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="SQLImportSourceTableRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLImportSourceTableRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 32</value>
-  </data>
-  <data name="SQLImportSourceTableRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 17</value>
-  </data>
-  <data name="SQLImportSourceTableRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="SQLImportSourceTableRadioButton.Text" xml:space="preserve">
-    <value>Table</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Name" xml:space="preserve">
-    <value>SQLImportSourceTableRadioButton</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableRadioButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="SQLImportSourceGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 75</value>
-  </data>
-  <data name="SQLImportSourceGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 139</value>
-  </data>
-  <data name="SQLImportSourceGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SQLImportSourceGroupBox.Text" xml:space="preserve">
-    <value>Source</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceGroupBox.Name" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceGroupBox.Parent" xml:space="preserve">
-    <value>SQLImportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SQLImportTargetComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="SQLImportTargetComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 35</value>
-  </data>
-  <data name="SQLImportTargetComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 21</value>
-  </data>
-  <data name="SQLImportTargetComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SQLImportTargetComboBox.Name" xml:space="preserve">
-    <value>SQLImportTargetComboBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportTargetComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportTargetComboBox.Parent" xml:space="preserve">
-    <value>SQLImportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportTargetComboBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SQLImportTargetLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLImportTargetLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLImportTargetLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 38</value>
-  </data>
-  <data name="SQLImportTargetLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
-  <data name="SQLImportTargetLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="SQLImportTargetLabel.Text" xml:space="preserve">
-    <value>Target</value>
-  </data>
-  <data name="&gt;&gt;SQLImportTargetLabel.Name" xml:space="preserve">
-    <value>SQLImportTargetLabel</value>
-  </data>
-  <data name="&gt;&gt;SQLImportTargetLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportTargetLabel.Parent" xml:space="preserve">
-    <value>SQLImportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportTargetLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SQLImportDataGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 140</value>
-  </data>
-  <data name="SQLImportDataGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>388, 279</value>
-  </data>
-  <data name="SQLImportDataGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SQLImportDataGroupBox.Text" xml:space="preserve">
-    <value>Import Data</value>
-  </data>
-  <data name="&gt;&gt;SQLImportDataGroupBox.Name" xml:space="preserve">
-    <value>SQLImportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportDataGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportDataGroupBox.Parent" xml:space="preserve">
-    <value>SqlServerToolsTabPage</value>
-  </data>
-  <data name="&gt;&gt;SQLImportDataGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SQLConnectionStringHelpLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLConnectionStringHelpLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Underline</value>
-  </data>
-  <data name="SQLConnectionStringHelpLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 62</value>
-  </data>
-  <data name="SQLConnectionStringHelpLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 13</value>
-  </data>
-  <data name="SQLConnectionStringHelpLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SQLConnectionStringHelpLabel.Text" xml:space="preserve">
-    <value>View example values</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringHelpLabel.Name" xml:space="preserve">
-    <value>SQLConnectionStringHelpLabel</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringHelpLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringHelpLabel.Parent" xml:space="preserve">
-    <value>SQLConnectionStringGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringHelpLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SQLConnectionStatusLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="SQLConnectionStatusLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
-  </data>
-  <data name="SQLConnectionStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>522, 62</value>
-  </data>
-  <data name="SQLConnectionStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 23</value>
-  </data>
-  <data name="SQLConnectionStatusLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SQLConnectionStatusLabel.Text" xml:space="preserve">
-    <value>SQLConnectionStatusLabel</value>
-  </data>
-  <data name="SQLConnectionStatusLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStatusLabel.Name" xml:space="preserve">
-    <value>SQLConnectionStatusLabel</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStatusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStatusLabel.Parent" xml:space="preserve">
-    <value>SQLConnectionStringGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStatusLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SQLConnectButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="SQLConnectButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLConnectButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>670, 62</value>
-  </data>
-  <data name="SQLConnectButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 23</value>
-  </data>
-  <data name="SQLConnectButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="SQLConnectButton.Text" xml:space="preserve">
-    <value>SQLConnectButton</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectButton.Name" xml:space="preserve">
-    <value>SQLConnectButton</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectButton.Parent" xml:space="preserve">
-    <value>SQLConnectionStringGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SQLConnectionStringTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="SQLConnectionStringTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 30</value>
-  </data>
-  <data name="SQLConnectionStringTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>779, 20</value>
-  </data>
-  <data name="SQLConnectionStringTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringTextBox.Name" xml:space="preserve">
-    <value>SQLConnectionStringTextBox</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringTextBox.Parent" xml:space="preserve">
-    <value>SQLConnectionStringGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SQLConnectionStringGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 17</value>
-  </data>
-  <data name="SQLConnectionStringGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>810, 96</value>
-  </data>
-  <data name="SQLConnectionStringGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="SQLConnectionStringGroupBox.Text" xml:space="preserve">
-    <value>SQL Server Connection String</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringGroupBox.Name" xml:space="preserve">
-    <value>SQLConnectionStringGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringGroupBox.Parent" xml:space="preserve">
-    <value>SqlServerToolsTabPage</value>
-  </data>
-  <data name="&gt;&gt;SQLConnectionStringGroupBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SqlServerToolsTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="SqlServerToolsTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="SqlServerToolsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>845, 551</value>
-  </data>
-  <data name="SqlServerToolsTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SqlServerToolsTabPage.Text" xml:space="preserve">
-    <value>SQL Server Tools</value>
-  </data>
-  <data name="&gt;&gt;SqlServerToolsTabPage.Name" xml:space="preserve">
-    <value>SqlServerToolsTabPage</value>
-  </data>
-  <data name="&gt;&gt;SqlServerToolsTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SqlServerToolsTabPage.Parent" xml:space="preserve">
-    <value>MainTabControl</value>
-  </data>
-  <data name="&gt;&gt;SqlServerToolsTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="MainTabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 64</value>
-  </data>
-  <data name="MainTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>853, 577</value>
-  </data>
-  <data name="MainTabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;MainTabControl.Name" xml:space="preserve">
-    <value>MainTabControl</value>
-  </data>
-  <data name="&gt;&gt;MainTabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MainTabControl.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SQLTableColumnGroupBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;MainTabControl.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="DataTableLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DataTableLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 22</value>
-  </data>
-  <data name="DataTableLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="DataTableLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="DataTableLabel.Text" xml:space="preserve">
-    <value>Data Table</value>
-  </data>
-  <data name="&gt;&gt;DataTableLabel.Name" xml:space="preserve">
-    <value>DataTableLabel</value>
-  </data>
-  <data name="&gt;&gt;DataTableLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataTableLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;DataTableLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="DataTableComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 19</value>
-  </data>
-  <data name="DataTableComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 21</value>
-  </data>
-  <data name="DataTableComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;DataTableComboBox.Name" xml:space="preserve">
-    <value>DataTableComboBox</value>
-  </data>
-  <data name="&gt;&gt;DataTableComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DataTableComboBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;DataTableComboBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SQLTableColumnGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -2085,16 +900,16 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>877, 703</value>
-  </data>
-  <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
-    <value>True</value>
+    <value>657, 167</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Add Column Mapping</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ToolsDialog</value>
+    <value>AddMappingDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

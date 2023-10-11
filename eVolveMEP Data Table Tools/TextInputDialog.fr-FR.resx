@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,88 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ButtonText" xml:space="preserve">
-    <value>Data Table
-Tools</value>
-  </data>
-  <data name="eVolveElectrical" xml:space="preserve">
-    <value>eVolve Electrical</value>
-  </data>
-  <data name="eVolveMechanical" xml:space="preserve">
-    <value>eVolve Mechanical</value>
-  </data>
-  <data name="FileLoadFailure" xml:space="preserve">
-	  <value>Load Failure</value>
-  </data>
-  <data name="FileSaveFailure" xml:space="preserve">
-	  <value>Save Failure</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Help_Medium_20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Help_Medium_20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SettingsLoadErrorNotice" xml:space="preserve">
-	  <value>Could not load settings file:</value>
-  </data>
-  <data name="SettingsSaveErrorNotice" xml:space="preserve">
-	  <value>Could not save settings file:</value>
-  </data>
-  <data name="Settings_20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Settings_20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ToolTipText" xml:space="preserve">
-    <value>Advanced tools for working with {0} Data Tables.</value>
-    <comment>Tag is a product name</comment>
-  </data>
-  <data name="Connect" xml:space="preserve">
-	  <value>Connect</value>
-  </data>
-  <data name="ValueMustBeProvided2Error" xml:space="preserve">
-	  <value>A value must be provided for '{0}' and '{1}'.</value>
-  </data>
-  <data name="CouldNotConvertValueWarning" xml:space="preserve">
-	  <value>One or more values were not able to be converted to the target type.
-The default value was used in this situation.</value>
-  </data>
-  <data name="ValueMustBeProvided1Error" xml:space="preserve">
-	  <value>A value must be provided for '{0}'.</value>
-  </data>
-  <data name="ValueMustBeProvided3Error" xml:space="preserve">
-	  <value>A value must be provided for '{0}', '{1}' and '{2}'.</value>
-  </data>
-  <data name="NotConnected" xml:space="preserve">
-	  <value>Not connected</value>
-  </data>
-  <data name="Connected" xml:space="preserve">
-	  <value>Connected</value>
-  </data>
-  <data name="Disconnect" xml:space="preserve">
-	  <value>Disconnect</value>
-  </data>
-  <data name="NoValueSelectedError" xml:space="preserve">
-	  <value>No {0} is selected.</value>
-  </data>
-  <data name="OperationCancelsOnErrorNotice" xml:space="preserve">
-	  <value>If this produces an error, the operation will cancel.</value>
-  </data>
-  <data name="StatementToRunPriorToImport" xml:space="preserve">
-	  <value>Enter the SQL statement to execute prior to importing data.</value>
-  </data>
-  <data name="StatementToRunAfterImport" xml:space="preserve">
-	  <value>Enter the SQL statement to execute after to importing data.</value>
-  </data>
-  <data name="ImportStatementPromptInfo" xml:space="preserve">
-	  <value>Enter the SQL Select statement which will be used to populate the selected data table. The SQL results will be used to define the column names and their respective data type.
-
-If an existing data table is selected, it will be overwritten with the result.</value>
-  </data>
-  <data name="ValueMustBeProvidedWhenEnabledError" xml:space="preserve">
-	  <value>A value must be provided for '{0}' when enabled.</value>
-  </data>
-  <data name="ExportColumnNotFoundError" xml:space="preserve">
-	  <value>The column '{0}' was not found in {1} '{2}'.</value>
-  </data>
-  <data name="NoEntriesDefinedError" xml:space="preserve">
-	  <value>No {0} entries are defined.</value>
-  </data>
 </root>

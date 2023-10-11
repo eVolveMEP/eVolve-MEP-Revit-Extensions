@@ -460,7 +460,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -476,6 +478,12 @@
     <Compile Include="..\Common\Methods.cs">
       <Link>Methods.cs</Link>
     </Compile>
+    <Compile Include="AddMappingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMappingDialog.Designer.cs">
+      <DependentUpon>AddMappingDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Application.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="GlobalUsings.cs" />
@@ -486,6 +494,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="TextInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextInputDialog.Designer.cs">
+      <DependentUpon>TextInputDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -510,6 +524,9 @@
     <Analyzer Include="..\packages\Roslynator.Analyzers.4.5.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Core.dll" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddMappingDialog.resx">
+      <DependentUpon>AddMappingDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.fr-FR.resx">
       <DependentUpon>Resources.resx</DependentUpon>
     </EmbeddedResource>
@@ -517,6 +534,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextInputDialog.fr-FR.resx">
+      <DependentUpon>TextInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextInputDialog.resx">
+      <DependentUpon>TextInputDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ToolsDialog.fr-FR.resx">
       <DependentUpon>ToolsDialog.cs</DependentUpon>
