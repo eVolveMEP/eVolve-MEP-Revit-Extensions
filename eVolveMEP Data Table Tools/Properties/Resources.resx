@@ -201,4 +201,7 @@ If an existing data table is selected, it will be overwritten with the result.</
   <data name="NoEntriesDefinedError" xml:space="preserve">
 	  <value>No {0} entries are defined.</value>
   </data>
+  <data name="OperationCompleted" xml:space="preserve">
+	  <value>Process completed.</value>
+  </data>
 </root>

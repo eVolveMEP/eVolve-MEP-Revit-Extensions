@@ -185,7 +185,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         }
         catch (Exception ex)
         {
-            MessageBox.Show(this, ex.Message, DataTableLabel.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ShowErrorMessage(this, ex.Message, DataTableLabel.Text);
         }
     }
 
@@ -197,14 +197,13 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// <param name="e"> Event information. </param>
     private void ChangeColumnTypeButton_Click(object sender, EventArgs e)
     {
-        if (string.IsNullOrEmpty(ChangeColumnTypeColumnComboBox.Text) || string.IsNullOrEmpty(ChangeColumnTypeDataTypeComboBox.Text))
-        {
-            MessageBox.Show(this, string.Format(Resources.ValueMustBeProvided2Error, ChangeColumnTypeColumnLabel.Text, ChangeColumnTypeDataTypeLabel.Text), ChangeColumnTypeGroupBox.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
-        }
-
         try
         {
+            if (string.IsNullOrEmpty(ChangeColumnTypeColumnComboBox.Text) || string.IsNullOrEmpty(ChangeColumnTypeDataTypeComboBox.Text))
+            {
+                throw new Exception(string.Format(Resources.ValueMustBeProvided2Error, ChangeColumnTypeColumnLabel.Text, ChangeColumnTypeDataTypeLabel.Text));
+            }
+
             var table = Document.GetTable(DataTableComboBox.Text, out var metadata).Copy();
 
             var conversionFailedAtLeastOnce = false;
@@ -255,12 +254,15 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
             if (conversionFailedAtLeastOnce)
             {
-                MessageBox.Show(this, Resources.CouldNotConvertValueWarning, ChangeColumnTypeGroupBox.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ShowWarningMessage(this, Resources.CouldNotConvertValueWarning, ChangeColumnTypeGroupBox.Text);
             }
+
+            RefreshColumnInfo(table);
+            ShowNoticeMessage(this, Resources.OperationCompleted, ChangeColumnTypeGroupBox.Text);
         }
         catch (Exception ex)
         {
-            MessageBox.Show(this, ex.Message, ChangeColumnTypeGroupBox.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ShowErrorMessage(this, ex.Message, ChangeColumnTypeGroupBox.Text);
         }
     }
 
@@ -284,10 +286,11 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             var table = Document.GetTable(DataTableComboBox.Text, out var metadata).Copy();
             table.Columns.Add(ExpressionColumnNameTextBox.Text.Trim(), ColumnDataTypeLookup[ExpressionColumnDataTypeComboBox.Text], ExpressionColumnExpressionTextBox.Text.Trim());
             Document.SaveTable(table.TableName, null, false, table, metadata);
+            ShowNoticeMessage(this, Resources.OperationCompleted, ExpressionColumnGroupBox.Text);
         }
         catch (Exception ex)
         {
-            MessageBox.Show(this, ex.Message, ExpressionColumnGroupBox.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ShowErrorMessage(this, ex.Message, ExpressionColumnGroupBox.Text);
         }
     }
 
@@ -322,7 +325,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         }
         catch (Exception ex)
         {
-            MessageBox.Show(this, ex.Message, SqlServerToolsTabPage.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ShowErrorMessage(this, ex.Message, SqlServerToolsTabPage.Text);
         }
 
         if (SQLConnectionStatusLabel.Text == Resources.Connected)
@@ -432,17 +435,15 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             var results = new DataSet();
             adapter.Fill(results);
 
-            var tableName = SQLImportTargetComboBox.Text.Trim();
-            string existingMetadata = null;
-            if (DataTableComboBox.Items.Contains(tableName))
-            {
-                Document.GetTable(tableName, out existingMetadata);
-            }
-            Document.SaveTable(tableName, null, false, results.Tables[0], existingMetadata);
+            var tableName = DataTableComboBox.Text;
+            _ = Document.GetTable(tableName, out var metadata);
+            Document.SaveTable(tableName, null, false, results.Tables[0], metadata);
+
+            ShowNoticeMessage(this, Resources.OperationCompleted, SQLImportDataGroupBox.Text);
         }
         catch (Exception ex)
         {
-            MessageBox.Show(this, ex.Message, SQLImportDataGroupBox.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ShowErrorMessage(this, ex.Message, SQLImportDataGroupBox.Text);
         }
     }
 
@@ -474,7 +475,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         }
         catch (Exception ex)
         {
-            MessageBox.Show(this, ex.Message, SQLExportFieldMappingGroupBox.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ShowErrorMessage(this, ex.Message, SQLExportFieldMappingGroupBox.Text);
         }
     }
 
@@ -601,11 +602,13 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             }
 
             transaction.Commit();
+
+            ShowNoticeMessage(this, Resources.OperationCompleted, SQLExportDataGroupBox.Text);
         }
         catch (Exception ex)
         {
             transaction?.Rollback();
-            MessageBox.Show(this, ex.Message, SQLExportDataGroupBox.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ShowErrorMessage(this, ex.Message, SQLExportDataGroupBox.Text);
         }
     }
 

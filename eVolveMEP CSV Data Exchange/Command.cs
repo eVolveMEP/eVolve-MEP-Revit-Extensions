@@ -6,8 +6,6 @@
 
 extern alias eVolve;
 using eVolve::eVolve.Core.Revit.Integration;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 using Autodesk.Revit.Attributes;
 
 namespace eVolve.CsvDataExchange.Revit;
@@ -18,10 +16,10 @@ namespace eVolve.CsvDataExchange.Revit;
 internal class Command : IExternalCommand
 {
     /// <summary> Gets the button name of this tool as single line text. </summary>
-    internal static string ButtonTextWithNoLineBreaks => ExtensionsCommon.Revit.Methods.GetButtonTextWithNoLineBreaks(Resources.ButtonText);
+    internal static string ButtonTextWithNoLineBreaks => GetButtonTextWithNoLineBreaks(Resources.ButtonText);
 
     /// <summary> Gets the icon resource. </summary>
-    internal static System.IO.Stream IconResource => ExtensionsCommon.Revit.Methods.GetIconResource("CSV_ImportExport_32x32.png");
+    internal static System.IO.Stream IconResource => GetIconResource("CSV_ImportExport_32x32.png");
 
     /// <summary> Gets URL of the help link to open when requested by the user. </summary>
     internal static string HelpLinkUrl
@@ -32,8 +30,6 @@ internal class Command : IExternalCommand
             return "https://help-electrical.evolvemep.com/article/ye5k5bnwu2";
 #elif MECHANICAL
             return "https://help-mechanical.evolvemep.com/article/g0p7prhwle";
-#else
-            return null;
 #endif
         }
     }
@@ -62,7 +58,7 @@ internal class Command : IExternalCommand
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"{Resources.ErrorOccurredNotice}\n\n{ex.Message}", ButtonTextWithNoLineBreaks, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ShowErrorMessage(null, $"{Resources.ErrorOccurredNotice}\n\n{ex.Message}", ButtonTextWithNoLineBreaks);
             return Result.Failed;
         }
     }
@@ -91,7 +87,7 @@ internal class Command : IExternalCommand
         var dataToExport = document.GetData(settings.ProfileName, ElementProcessedHandler);
         if (!dataToExport.Any())
         {
-            MessageBox.Show(Resources.NoElementsSelectedNotice, Resources.ExportCsvData, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            ShowWarningMessage(null, Resources.NoElementsSelectedNotice, Resources.ExportCsvData);
             return Result.Failed;
         }
 
@@ -148,7 +144,7 @@ internal class Command : IExternalCommand
         }
 
         System.IO.File.WriteAllText(settings.FilePath, string.Join(Environment.NewLine, exportCsvList));
-        MessageBox.Show(string.Format(Resources.XElementsProcessedNotice, dataToExport.Count), Resources.ExportCompleted, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        ShowNoticeMessage(null, string.Format(Resources.XElementsProcessedNotice, dataToExport.Count), Resources.ExportCompleted);
 
         return Result.Succeeded;
 
@@ -202,7 +198,7 @@ internal class Command : IExternalCommand
         if (dataRows.Length <= 1)
         {
             // No data or header only.
-            MessageBox.Show(Resources.NoDataNotice, Resources.ImportCsvData, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            ShowWarningMessage(null, Resources.NoDataNotice, Resources.ImportCsvData);
             return Result.Failed;
         }
 
@@ -227,7 +223,7 @@ internal class Command : IExternalCommand
 
         // Write data back to Revit.
         var elementsProcessed = document.WriteData(settings.ProfileName, importData, true, API.UnmappedFieldAction.Ignore, out _, ElementProcessedHandler);
-        MessageBox.Show(string.Format(Resources.XElementsProcessedNotice, elementsProcessed), Resources.ImportCompleted, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        ShowNoticeMessage(null, string.Format(Resources.XElementsProcessedNotice, elementsProcessed), Resources.ImportCompleted);
 
         return Result.Succeeded;
 
@@ -236,7 +232,7 @@ internal class Command : IExternalCommand
         IEnumerable<string> splitLineData(string lineFromFile) => settings.Delimiter switch
         {
             DelimiterChars.Tab => lineFromFile.Split('\t'),
-            _ => Regex.Split(lineFromFile, ",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))"),
+            _ => System.Text.RegularExpressions.Regex.Split(lineFromFile, ",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))"),
         };
 
         // Removes any quotes which were added to data for the purposes of escaping.

@@ -4,6 +4,8 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
+using System.Windows.Forms;
+
 namespace eVolve.ExtensionsCommon.Revit;
 
 /// <summary> Common methods useful across all projects in this solution. </summary>
@@ -54,8 +56,7 @@ internal static class Methods
         }
         catch (Exception ex)
         {
-            System.Windows.Forms.MessageBox.Show($"{Resources.SettingsLoadErrorNotice}\n{filePath}\n\n{ex.Message}", Resources.FileLoadFailure,
-                System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            ShowErrorMessage(null, $"{Resources.SettingsLoadErrorNotice}\n{filePath}\n\n{ex.Message}", Resources.FileLoadFailure);
         }
         return null;
     }
@@ -86,9 +87,34 @@ internal static class Methods
         }
         catch (Exception ex)
         {
-            System.Windows.Forms.MessageBox.Show($"{Resources.SettingsSaveErrorNotice}\n{filePath}\n\n{ex.Message}", Resources.FileSaveFailure,
-                System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            ShowErrorMessage(null, $"{Resources.SettingsSaveErrorNotice}\n{filePath}\n\n{ex.Message}", Resources.FileSaveFailure);
             return false;
         }
+    }
+
+    /// <summary> Shows an error message dialog box. </summary>
+    ///
+    /// <inheritdoc cref="ShowMessage"/>
+    internal static void ShowErrorMessage(System.Windows.Forms.Form owner, string message, string title = null) => ShowMessage(MessageBoxIcon.Error, owner, message, title);
+
+    /// <summary> Shows an informational message dialog box. </summary>
+    ///
+    /// <inheritdoc cref="ShowMessage"/>
+    internal static void ShowNoticeMessage(System.Windows.Forms.Form owner, string message, string title = null) => ShowMessage(MessageBoxIcon.Information, owner, message, title);
+
+    /// <summary> Shows a warning message dialog box. </summary>
+    ///
+    /// <inheritdoc cref="ShowMessage"/>
+    internal static void ShowWarningMessage(System.Windows.Forms.Form owner, string message, string title = null) => ShowMessage(MessageBoxIcon.Warning, owner, message, title);
+
+    /// <summary> Shows a dialog message box to the user. </summary>
+    ///
+    /// <param name="icon"> Icon to display. </param>
+    /// <param name="owner"> Dialog owner. </param>
+    /// <param name="message"> Text message to display to the user. </param>
+    /// <param name="title"> Dialog title. </param>
+    private static void ShowMessage(MessageBoxIcon icon, System.Windows.Forms.Form owner, string message, string title)
+    {
+        MessageBox.Show(owner, message, title ?? owner?.Text ?? icon.ToString(), MessageBoxButtons.OK, icon);
     }
 }

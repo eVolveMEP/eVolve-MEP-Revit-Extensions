@@ -295,8 +295,7 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
         if (messages.Any())
         {
             messages.Insert(0, Resources.IssuesMustBeAddressedNotice);
-            MessageBox.Show(this, string.Join("\n - ", messages), Resources.ValidationErrors,
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ShowErrorMessage(this, string.Join("\n - ", messages), Resources.ValidationErrors);
         }
         return !messages.Any();
     }

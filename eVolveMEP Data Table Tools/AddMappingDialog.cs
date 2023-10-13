@@ -53,7 +53,7 @@ internal sealed partial class AddMappingDialog : System.Windows.Forms.Form
         if (DialogResult == DialogResult.OK
             && (string.IsNullOrEmpty(DataTableColumnComboBox.Text) || string.IsNullOrEmpty(SQLTableColumnComboBox.Text)))
         {
-            MessageBox.Show(this, $"A value must be provided for '{DataTableColumnGroupBox.Text}' and '{SQLTableColumnGroupBox.Text}'.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ShowErrorMessage(this, string.Format(Resources.ValueMustBeProvided2Error, DataTableColumnGroupBox.Text, SQLTableColumnGroupBox.Text), Text);
             e.Cancel = true;
         }
     }

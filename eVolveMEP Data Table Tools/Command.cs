@@ -15,10 +15,10 @@ namespace eVolve.DataTableTools.Revit;
 internal class Command : IExternalCommand
 {
     /// <summary> Gets the button name of this tool as single line text. </summary>
-    internal static string ButtonTextWithNoLineBreaks => ExtensionsCommon.Revit.Methods.GetButtonTextWithNoLineBreaks(Resources.ButtonText);
+    internal static string ButtonTextWithNoLineBreaks => GetButtonTextWithNoLineBreaks(Resources.ButtonText);
 
     /// <summary> Gets the icon resource. </summary>
-    internal static System.IO.Stream IconResource => ExtensionsCommon.Revit.Methods.GetIconResource("DataTableTools_32x32.png");
+    internal static System.IO.Stream IconResource => GetIconResource("DataTableTools_32x32.png");
 
     /// <summary> Gets URL of the help link to open when requested by the user. </summary>
     internal static string HelpLinkUrl
@@ -29,8 +29,6 @@ internal class Command : IExternalCommand
             return "";
 #elif MECHANICAL
             return "";
-#else
-            return null;
 #endif
         }
     }
