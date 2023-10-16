@@ -27,6 +27,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         { nameof(Double), typeof(double) },
         { nameof(Decimal), typeof(decimal) },
         { nameof(Boolean), typeof(bool) },
+        { nameof(DateTime), typeof(DateTime) },
     };
 
     /// <summary> Constructor. </summary>
@@ -70,6 +71,16 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     private void ToolsDialog_Load(object sender, EventArgs e)
     {
         LoadSettings();
+
+        static void openHelpLink(object s1, EventArgs e1) => System.Diagnostics.Process.Start(((Label)s1).Tag.ToString());
+        foreach (var helpLabel in new[] { DataTableExpressionHelpLabel, SQLConnectionStringHelpLabel })
+        {
+            helpLabel.Cursor = Cursors.Hand;
+            helpLabel.Click += openHelpLink;
+        }
+
+        MainTabControl.TabIndexChanged += ColumnToolsTabFocused;
+        RefreshColumnInfo(null);
     }
 
     /// <summary> Saves settings when the dialog is closed. </summary>
@@ -84,14 +95,9 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// <summary> Refreshes the list of eVolve data tables available within all applicable controls on the form. </summary>
     private void RefreshDataTables()
     {
-        var tableNames = Document.GetTableNames();
-
-        foreach (var combobox in new[] { DataTableComboBox, SQLImportTargetComboBox })
-        {
-            combobox.Text = "";
-            combobox.Items.Clear();
-            combobox.Items.AddRange(tableNames);
-        }
+        DataTableComboBox.Text = "";
+        DataTableComboBox.Items.Clear();
+        DataTableComboBox.Items.AddRange(Document.GetTableNames());
     }
 
     /// <summary> Opens the Data Tables configuration dialog and refreshes available selections. </summary>
@@ -179,19 +185,35 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// <param name="e"> Event information. </param>
     private void DataTableComboBox_SelectedIndexChanged(object sender, EventArgs e)
     {
-        ChangeColumnTypeColumnComboBox.Items.Clear();
+        ColumnToolsTabFocused(MainTabControl, EventArgs.Empty);
+    }
+
+    #region Column Tools
+
+    /// <summary> Runs <see cref="RefreshColumnInfo"/> as needed when <see cref="ColumnToolsTabPage"/> gets focus. </summary>
+    ///
+    /// <param name="sender"> Source of the event. </param>
+    /// <param name="e"> Event information. </param>
+    private void ColumnToolsTabFocused(object sender, EventArgs e)
+    {
+        var table = true
+            && MainTabControl.SelectedTab == ColumnToolsTabPage
+            && !string.IsNullOrEmpty(DataTableComboBox.Text)
+            ? Document.GetTable(DataTableComboBox.Text, out _)
+            : null;
 
         try
         {
-            ChangeColumnTypeColumnComboBox.Items.AddRange(GetDataTableColumnNames());
+            ChangeColumnTypeColumnComboBox.Items.Clear();
+            ChangeColumnTypeColumnComboBox.Items.AddRange(GetDataTableColumnNames(table));
         }
         catch (Exception ex)
         {
             ShowErrorMessage(this, ex.Message, DataTableLabel.Text);
         }
-    }
 
-    #region Column Tools
+        RefreshColumnInfo(table);
+    }
 
     /// <summary> Performs a column data type change based on user provided input. </summary>
     ///
@@ -237,20 +259,27 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                     conversionFailedAtLeastOnce |= !bool.TryParse(existing.ToString(), out var value);
                     return value;
                 },
+                nameof(DateTime) => existing =>
+                {
+                    conversionFailedAtLeastOnce |= !DateTime.TryParse(existing.ToString(), out var value);
+                    return value;
+                },
                 _ => throw new Exception(ChangeColumnTypeDataTypeComboBox.Text),
             };
 
+            // Create a new column with the new type and copy 
             var sourceColumnIndex = table.Columns.IndexOf(ChangeColumnTypeColumnComboBox.Text);
-            table.Columns[ChangeColumnTypeColumnComboBox.Text].DataType = ColumnDataTypeLookup[ChangeColumnTypeDataTypeComboBox.Text];
-
+            var sourceColumnName = table.Columns[sourceColumnIndex].ColumnName;
+            var newColumn = table.Columns.Add($"new_{sourceColumnName}", ColumnDataTypeLookup[ChangeColumnTypeDataTypeComboBox.Text]);
             foreach (var row in table.Rows.Cast<DataRow>())
             {
-                var newRow = table.Rows.Add();
-                for (var i = 0; i < table.Columns.Count; i++)
-                {
-                    newRow[i] = i == sourceColumnIndex ? convertToNewType(row[i]) : row[i];
-                }
+                row[newColumn] = convertToNewType(row[sourceColumnIndex]);
             }
+
+            // Remove source column and move the new column into its place.
+            table.Columns.RemoveAt(sourceColumnIndex);
+            newColumn.ColumnName = sourceColumnName;
+            newColumn.SetOrdinal(sourceColumnIndex);
 
             Document.SaveTable(table.TableName, null, false, table, metadata);
 
@@ -288,12 +317,46 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             var table = Document.GetTable(DataTableComboBox.Text, out var metadata).Copy();
             table.Columns.Add(ExpressionColumnNameTextBox.Text.Trim(), ColumnDataTypeLookup[ExpressionColumnDataTypeComboBox.Text], ExpressionColumnExpressionTextBox.Text.Trim());
             Document.SaveTable(table.TableName, null, false, table, metadata);
+
+            RefreshColumnInfo(table);
             ShowNoticeMessage(this, Resources.OperationCompleted, ExpressionColumnGroupBox.Text);
         }
         catch (Exception ex)
         {
             ShowErrorMessage(this, ex.Message, ExpressionColumnGroupBox.Text);
         }
+    }
+
+    /// <summary> Rebuilds the current column information of the provided <paramref name="table"/>. </summary>
+    ///
+    /// <param name="table"> The table to display column information for.
+    ///     <para>Provide <see langword="null"/> to clear this information.</para> </param>
+    private void RefreshColumnInfo(DataTable table)
+    {
+        var columnInfoTable = new DataTable();
+        columnInfoTable.Columns.Add(Resources.ColumnInfoName_Order, typeof(int));
+        columnInfoTable.Columns.Add(Resources.ColumnInfoName_Name, typeof(string));
+        columnInfoTable.Columns.Add(Resources.ColumnInfoName_DataType, typeof(string));
+        columnInfoTable.Columns.Add(Resources.ColumnInfoName_Expression, typeof(string));
+
+        if (table != null)
+        {
+            for (var columnIndex = 0; columnIndex < table.Columns.Count; columnIndex++)
+            {
+                var column = table.Columns[columnIndex];
+                // Values are added in the order of column creation.
+                columnInfoTable.Rows.Add(
+                    columnIndex + 1,
+                    column.ColumnName,
+                    column.DataType.Name,
+                    column.Expression);
+            }
+        }
+
+        ColumnInfoDataGridView.Columns.Clear();
+        ColumnInfoDataGridView.AutoGenerateColumns = true;
+        ColumnInfoDataGridView.DataSource = columnInfoTable;
+        ColumnInfoDataGridView.AutoResizeColumns();
     }
 
     #endregion
@@ -396,11 +459,6 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                 throw new Exception(string.Format(Resources.ValueMustBeProvided1Error, DataTableComboBox.Text));
             }
 
-            if (string.IsNullOrWhiteSpace(SQLImportTargetComboBox.Text))
-            {
-                throw new Exception(string.Format(Resources.ValueMustBeProvided1Error, SQLImportTargetLabel.Text));
-            }
-
             string source;
             if (SQLImportSourceTableRadioButton.Checked)
             {
@@ -465,7 +523,8 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                 throw new Exception(string.Format(Resources.ValueMustBeProvided1Error, SQLExportTargetLabel.Text));
             }
 
-            if (AddMappingDialog.GetMapping(this, GetDataTableColumnNames(), GetSqlTableColumnNames(SQLExportTargetComboBox.Text)) is var mapping
+            var table = Document.GetTable(DataTableComboBox.Text, out _);
+            if (AddMappingDialog.GetMapping(this, GetDataTableColumnNames(table), GetSqlTableColumnNames(SQLExportTargetComboBox.Text)) is var mapping
                 && !string.IsNullOrEmpty(mapping.DataTableColumnName))
             {
                 var mappingEntry = mapping.DataTableColumnName + FieldMappingDelimiter + mapping.SQLTableColumnName;
@@ -490,11 +549,12 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         return GetSingleStringData($"SELECT sys.columns.[name] FROM sys.columns INNER JOIN sys.tables ON sys.columns.object_id=sys.tables.object_id WHERE sys.tables.[name]={SanitizeSqlText(sqlTableName)}", connection);
     }
 
-    /// <summary> Gets all column names from the selected <see cref="DataTableComboBox"/>. </summary>
-    private string[] GetDataTableColumnNames()
+    /// <summary> Gets a list of all column names from the provided <paramref name="table"/>. </summary>
+    ///
+    /// <param name="table"> The table get the columns information from. </param>
+    private static string[] GetDataTableColumnNames(DataTable table)
     {
-        return Document.GetTable(DataTableComboBox.Text, out _)
-            .Columns.Cast<DataColumn>()
+        return table.Columns.Cast<DataColumn>()
             .Select(column => column.ColumnName)
             .ToArray();
     }
@@ -533,7 +593,8 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                 throw new Exception(string.Format(Resources.ValueMustBeProvided1Error, SQLExportTargetLabel.Text));
             }
 
-            var dataTableColumns = GetDataTableColumnNames();
+            var table = Document.GetTable(DataTableComboBox.Text, out _);
+            var dataTableColumns = GetDataTableColumnNames(table);
             var sqlTableColumns = GetSqlTableColumnNames(SQLExportTargetComboBox.Text);
             foreach (var mappingEntry in SQLExportFieldMappingListBox.Items.Cast<string>().Select(text => (text + FieldMappingDelimiter).Split(FieldMappingDelimiter)))
             {
@@ -581,7 +642,6 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                 command.ExecuteNonQuery();
             }
 
-            var table = Document.GetTable(DataTableComboBox.Text, out _);
             var insertCommand = new SqlCommand("INSERT INTO"
                 + $" {SanitizeSqlObject(SQLExportTargetComboBox.Text)} ({string.Join(",", mappings.Select(mapping => SanitizeSqlObject(mapping.SqlTableColumnName)))})"
                 + $" VALUES ({string.Join(",", Enumerable.Range(0, mappings.Count).Select(i => "@Value" + i))})",

@@ -35,10 +35,13 @@ partial class ToolsDialog
             this.CloseButton = new System.Windows.Forms.Button();
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.ColumnToolsTabPage = new System.Windows.Forms.TabPage();
+            this.ColumnInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.ColumnInfoDataGridView = new System.Windows.Forms.DataGridView();
             this.ExpressionColumnGroupBox = new System.Windows.Forms.GroupBox();
             this.ExpressionColumnDataTypeComboBox = new System.Windows.Forms.ComboBox();
             this.ExpressionColumnDataTypeLabel = new System.Windows.Forms.Label();
             this.ExpressionColumnExpressionGroupBox = new System.Windows.Forms.GroupBox();
+            this.DataTableExpressionHelpLabel = new System.Windows.Forms.Label();
             this.ExpressionColumnExpressionTextBox = new System.Windows.Forms.TextBox();
             this.ExpressionColumnNameTextBox = new System.Windows.Forms.TextBox();
             this.ExpressionColumnAddButton = new System.Windows.Forms.Button();
@@ -71,8 +74,6 @@ partial class ToolsDialog
             this.SQLImportSourceCustomRadioButton = new System.Windows.Forms.RadioButton();
             this.SQLImportSourceViewRadioButton = new System.Windows.Forms.RadioButton();
             this.SQLImportSourceTableRadioButton = new System.Windows.Forms.RadioButton();
-            this.SQLImportTargetComboBox = new System.Windows.Forms.ComboBox();
-            this.SQLImportTargetLabel = new System.Windows.Forms.Label();
             this.SQLConnectionStringGroupBox = new System.Windows.Forms.GroupBox();
             this.SQLConnectionStringHelpLabel = new System.Windows.Forms.Label();
             this.SQLConnectionStatusLabel = new System.Windows.Forms.Label();
@@ -86,6 +87,8 @@ partial class ToolsDialog
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.MainTabControl.SuspendLayout();
             this.ColumnToolsTabPage.SuspendLayout();
+            this.ColumnInfoGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ColumnInfoDataGridView)).BeginInit();
             this.ExpressionColumnGroupBox.SuspendLayout();
             this.ExpressionColumnExpressionGroupBox.SuspendLayout();
             this.ChangeColumnTypeGroupBox.SuspendLayout();
@@ -136,11 +139,28 @@ partial class ToolsDialog
             // 
             // ColumnToolsTabPage
             // 
+            this.ColumnToolsTabPage.Controls.Add(this.ColumnInfoGroupBox);
             this.ColumnToolsTabPage.Controls.Add(this.ExpressionColumnGroupBox);
             this.ColumnToolsTabPage.Controls.Add(this.ChangeColumnTypeGroupBox);
             resources.ApplyResources(this.ColumnToolsTabPage, "ColumnToolsTabPage");
             this.ColumnToolsTabPage.Name = "ColumnToolsTabPage";
             this.ColumnToolsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // ColumnInfoGroupBox
+            // 
+            resources.ApplyResources(this.ColumnInfoGroupBox, "ColumnInfoGroupBox");
+            this.ColumnInfoGroupBox.Controls.Add(this.ColumnInfoDataGridView);
+            this.ColumnInfoGroupBox.Name = "ColumnInfoGroupBox";
+            this.ColumnInfoGroupBox.TabStop = false;
+            // 
+            // ColumnInfoDataGridView
+            // 
+            this.ColumnInfoDataGridView.AllowUserToAddRows = false;
+            this.ColumnInfoDataGridView.AllowUserToDeleteRows = false;
+            resources.ApplyResources(this.ColumnInfoDataGridView, "ColumnInfoDataGridView");
+            this.ColumnInfoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ColumnInfoDataGridView.Name = "ColumnInfoDataGridView";
+            this.ColumnInfoDataGridView.ReadOnly = true;
             // 
             // ExpressionColumnGroupBox
             // 
@@ -168,10 +188,19 @@ partial class ToolsDialog
             // 
             // ExpressionColumnExpressionGroupBox
             // 
+            this.ExpressionColumnExpressionGroupBox.Controls.Add(this.DataTableExpressionHelpLabel);
             this.ExpressionColumnExpressionGroupBox.Controls.Add(this.ExpressionColumnExpressionTextBox);
             resources.ApplyResources(this.ExpressionColumnExpressionGroupBox, "ExpressionColumnExpressionGroupBox");
             this.ExpressionColumnExpressionGroupBox.Name = "ExpressionColumnExpressionGroupBox";
             this.ExpressionColumnExpressionGroupBox.TabStop = false;
+            // 
+            // DataTableExpressionHelpLabel
+            // 
+            resources.ApplyResources(this.DataTableExpressionHelpLabel, "DataTableExpressionHelpLabel");
+            this.DataTableExpressionHelpLabel.ForeColor = System.Drawing.Color.Blue;
+            this.DataTableExpressionHelpLabel.Name = "DataTableExpressionHelpLabel";
+            this.DataTableExpressionHelpLabel.Tag = "https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/dataset-datatable-" +
+    "dataview/creating-expression-columns";
             // 
             // ExpressionColumnExpressionTextBox
             // 
@@ -248,6 +277,7 @@ partial class ToolsDialog
             // 
             // SQLExportDataGroupBox
             // 
+            resources.ApplyResources(this.SQLExportDataGroupBox, "SQLExportDataGroupBox");
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportExecuteButton);
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportPostEventButton);
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportPreEventButton);
@@ -256,7 +286,6 @@ partial class ToolsDialog
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportFieldMappingGroupBox);
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportTargetComboBox);
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportTargetLabel);
-            resources.ApplyResources(this.SQLExportDataGroupBox, "SQLExportDataGroupBox");
             this.SQLExportDataGroupBox.Name = "SQLExportDataGroupBox";
             this.SQLExportDataGroupBox.TabStop = false;
             // 
@@ -337,8 +366,6 @@ partial class ToolsDialog
             // 
             this.SQLImportDataGroupBox.Controls.Add(this.SQLImportExecuteButton);
             this.SQLImportDataGroupBox.Controls.Add(this.SQLImportSourceGroupBox);
-            this.SQLImportDataGroupBox.Controls.Add(this.SQLImportTargetComboBox);
-            this.SQLImportDataGroupBox.Controls.Add(this.SQLImportTargetLabel);
             resources.ApplyResources(this.SQLImportDataGroupBox, "SQLImportDataGroupBox");
             this.SQLImportDataGroupBox.Name = "SQLImportDataGroupBox";
             this.SQLImportDataGroupBox.TabStop = false;
@@ -403,33 +430,22 @@ partial class ToolsDialog
             this.SQLImportSourceTableRadioButton.TabStop = true;
             this.SQLImportSourceTableRadioButton.UseVisualStyleBackColor = true;
             // 
-            // SQLImportTargetComboBox
-            // 
-            resources.ApplyResources(this.SQLImportTargetComboBox, "SQLImportTargetComboBox");
-            this.SQLImportTargetComboBox.FormattingEnabled = true;
-            this.SQLImportTargetComboBox.Name = "SQLImportTargetComboBox";
-            // 
-            // SQLImportTargetLabel
-            // 
-            resources.ApplyResources(this.SQLImportTargetLabel, "SQLImportTargetLabel");
-            this.SQLImportTargetLabel.Name = "SQLImportTargetLabel";
-            // 
             // SQLConnectionStringGroupBox
             // 
+            resources.ApplyResources(this.SQLConnectionStringGroupBox, "SQLConnectionStringGroupBox");
             this.SQLConnectionStringGroupBox.Controls.Add(this.SQLConnectionStringHelpLabel);
             this.SQLConnectionStringGroupBox.Controls.Add(this.SQLConnectionStatusLabel);
             this.SQLConnectionStringGroupBox.Controls.Add(this.SQLConnectButton);
             this.SQLConnectionStringGroupBox.Controls.Add(this.SQLConnectionStringTextBox);
-            resources.ApplyResources(this.SQLConnectionStringGroupBox, "SQLConnectionStringGroupBox");
             this.SQLConnectionStringGroupBox.Name = "SQLConnectionStringGroupBox";
             this.SQLConnectionStringGroupBox.TabStop = false;
             // 
             // SQLConnectionStringHelpLabel
             // 
             resources.ApplyResources(this.SQLConnectionStringHelpLabel, "SQLConnectionStringHelpLabel");
-            this.SQLConnectionStringHelpLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SQLConnectionStringHelpLabel.ForeColor = System.Drawing.Color.Blue;
             this.SQLConnectionStringHelpLabel.Name = "SQLConnectionStringHelpLabel";
+            this.SQLConnectionStringHelpLabel.Tag = "https://www.connectionstrings.com/microsoft-data-sqlclient/";
             // 
             // SQLConnectionStatusLabel
             // 
@@ -488,6 +504,8 @@ partial class ToolsDialog
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.MainTabControl.ResumeLayout(false);
             this.ColumnToolsTabPage.ResumeLayout(false);
+            this.ColumnInfoGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ColumnInfoDataGridView)).EndInit();
             this.ExpressionColumnGroupBox.ResumeLayout(false);
             this.ExpressionColumnGroupBox.PerformLayout();
             this.ExpressionColumnExpressionGroupBox.ResumeLayout(false);
@@ -499,7 +517,6 @@ partial class ToolsDialog
             this.SQLExportDataGroupBox.PerformLayout();
             this.SQLExportFieldMappingGroupBox.ResumeLayout(false);
             this.SQLImportDataGroupBox.ResumeLayout(false);
-            this.SQLImportDataGroupBox.PerformLayout();
             this.SQLImportSourceGroupBox.ResumeLayout(false);
             this.SQLImportSourceGroupBox.PerformLayout();
             this.SQLConnectionStringGroupBox.ResumeLayout(false);
@@ -532,8 +549,6 @@ partial class ToolsDialog
     private System.Windows.Forms.Label SQLConnectionStatusLabel;
     private System.Windows.Forms.Label SQLConnectionStringHelpLabel;
     private System.Windows.Forms.GroupBox SQLImportDataGroupBox;
-    private System.Windows.Forms.ComboBox SQLImportTargetComboBox;
-    private System.Windows.Forms.Label SQLImportTargetLabel;
     private System.Windows.Forms.GroupBox SQLImportSourceGroupBox;
     private System.Windows.Forms.ComboBox SQLImportSourceTableComboBox;
     private System.Windows.Forms.RadioButton SQLImportSourceCustomRadioButton;
@@ -563,4 +578,7 @@ partial class ToolsDialog
     private System.Windows.Forms.Button SQLExportExecuteButton;
     private System.Windows.Forms.Button SQLImportExecuteButton;
     private System.Windows.Forms.Label ViewSourceCodeLabel;
+    private System.Windows.Forms.Label DataTableExpressionHelpLabel;
+    private System.Windows.Forms.GroupBox ColumnInfoGroupBox;
+    private System.Windows.Forms.DataGridView ColumnInfoDataGridView;
 }

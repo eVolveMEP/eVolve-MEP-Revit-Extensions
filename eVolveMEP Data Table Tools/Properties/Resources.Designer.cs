@@ -71,6 +71,42 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data Type.
+        /// </summary>
+        internal static string ColumnInfoName_DataType {
+            get {
+                return ResourceManager.GetString("ColumnInfoName_DataType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expression.
+        /// </summary>
+        internal static string ColumnInfoName_Expression {
+            get {
+                return ResourceManager.GetString("ColumnInfoName_Expression", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string ColumnInfoName_Name {
+            get {
+                return ResourceManager.GetString("ColumnInfoName_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order.
+        /// </summary>
+        internal static string ColumnInfoName_Order {
+            get {
+                return ResourceManager.GetString("ColumnInfoName_Order", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connect.
         /// </summary>
         internal static string Connect {

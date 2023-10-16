@@ -144,57 +144,6 @@
   <data name="&gt;&gt;ProfileComboBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;ImportRadioButton.Name" xml:space="preserve">
-    <value>ImportRadioButton</value>
-  </data>
-  <data name="&gt;&gt;ImportRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImportRadioButton.Parent" xml:space="preserve">
-    <value>DirectionGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ImportRadioButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ExportRadioButton.Name" xml:space="preserve">
-    <value>ExportRadioButton</value>
-  </data>
-  <data name="&gt;&gt;ExportRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExportRadioButton.Parent" xml:space="preserve">
-    <value>DirectionGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ExportRadioButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="DirectionGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="DirectionGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="DirectionGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 63</value>
-  </data>
-  <data name="DirectionGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="DirectionGroupBox.Text" xml:space="preserve">
-    <value>Direction</value>
-  </data>
-  <data name="&gt;&gt;DirectionGroupBox.Name" xml:space="preserve">
-    <value>DirectionGroupBox</value>
-  </data>
-  <data name="&gt;&gt;DirectionGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DirectionGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;DirectionGroupBox.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
   <data name="ImportRadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -249,6 +198,33 @@
   <data name="&gt;&gt;ExportRadioButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="DirectionGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="DirectionGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="DirectionGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 63</value>
+  </data>
+  <data name="DirectionGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="DirectionGroupBox.Text" xml:space="preserve">
+    <value>Direction</value>
+  </data>
+  <data name="&gt;&gt;DirectionGroupBox.Name" xml:space="preserve">
+    <value>DirectionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;DirectionGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DirectionGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DirectionGroupBox.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
   <data name="ProfileGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 87</value>
   </data>
@@ -278,57 +254,6 @@
   </data>
   <data name="FileGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;FileBrowseButton.Name" xml:space="preserve">
-    <value>FileBrowseButton</value>
-  </data>
-  <data name="&gt;&gt;FileBrowseButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FileBrowseButton.Parent" xml:space="preserve">
-    <value>FileGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FileBrowseButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;FileTextBox.Name" xml:space="preserve">
-    <value>FileTextBox</value>
-  </data>
-  <data name="&gt;&gt;FileTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FileTextBox.Parent" xml:space="preserve">
-    <value>FileGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FileTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="FileGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 161</value>
-  </data>
-  <data name="FileGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 10</value>
-  </data>
-  <data name="FileGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>758, 63</value>
-  </data>
-  <data name="FileGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="FileGroupBox.Text" xml:space="preserve">
-    <value>Target File</value>
-  </data>
-  <data name="&gt;&gt;FileGroupBox.Name" xml:space="preserve">
-    <value>FileGroupBox</value>
-  </data>
-  <data name="&gt;&gt;FileGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FileGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;FileGroupBox.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="FileBrowseButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -381,56 +306,32 @@
   <data name="&gt;&gt;FileTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;DelimiterTabRadioButton.Name" xml:space="preserve">
-    <value>DelimiterTabRadioButton</value>
+  <data name="FileGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 161</value>
   </data>
-  <data name="&gt;&gt;DelimiterTabRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DelimiterTabRadioButton.Parent" xml:space="preserve">
-    <value>DelimiterGroupBox</value>
-  </data>
-  <data name="&gt;&gt;DelimiterTabRadioButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;DelimiterCommaRadioButton.Name" xml:space="preserve">
-    <value>DelimiterCommaRadioButton</value>
-  </data>
-  <data name="&gt;&gt;DelimiterCommaRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DelimiterCommaRadioButton.Parent" xml:space="preserve">
-    <value>DelimiterGroupBox</value>
-  </data>
-  <data name="&gt;&gt;DelimiterCommaRadioButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="DelimiterGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 235</value>
-  </data>
-  <data name="DelimiterGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="FileGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 10, 10, 10</value>
   </data>
-  <data name="DelimiterGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 63</value>
+  <data name="FileGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>758, 63</value>
   </data>
-  <data name="DelimiterGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="FileGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="DelimiterGroupBox.Text" xml:space="preserve">
-    <value>Delimiter</value>
+  <data name="FileGroupBox.Text" xml:space="preserve">
+    <value>Target File</value>
   </data>
-  <data name="&gt;&gt;DelimiterGroupBox.Name" xml:space="preserve">
-    <value>DelimiterGroupBox</value>
+  <data name="&gt;&gt;FileGroupBox.Name" xml:space="preserve">
+    <value>FileGroupBox</value>
   </data>
-  <data name="&gt;&gt;DelimiterGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;FileGroupBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DelimiterGroupBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;FileGroupBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;DelimiterGroupBox.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;FileGroupBox.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="DelimiterTabRadioButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -485,6 +386,33 @@
   </data>
   <data name="&gt;&gt;DelimiterCommaRadioButton.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="DelimiterGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 235</value>
+  </data>
+  <data name="DelimiterGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 10</value>
+  </data>
+  <data name="DelimiterGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 63</value>
+  </data>
+  <data name="DelimiterGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="DelimiterGroupBox.Text" xml:space="preserve">
+    <value>Delimiter</value>
+  </data>
+  <data name="&gt;&gt;DelimiterGroupBox.Name" xml:space="preserve">
+    <value>DelimiterGroupBox</value>
+  </data>
+  <data name="&gt;&gt;DelimiterGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DelimiterGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DelimiterGroupBox.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="OK_Button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -1181,6 +1109,18 @@
   <data name="&gt;&gt;LogoPictureBox.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="OptionalExportColumnsCheckedListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="OptionalExportColumnsCheckedListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="OptionalExportColumnsCheckedListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 109</value>
+  </data>
+  <data name="OptionalExportColumnsCheckedListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;OptionalExportColumnsCheckedListBox.Name" xml:space="preserve">
     <value>OptionalExportColumnsCheckedListBox</value>
   </data>
@@ -1216,30 +1156,6 @@
   </data>
   <data name="&gt;&gt;OptionalExportColumnsGroupBox.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="OptionalExportColumnsCheckedListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="OptionalExportColumnsCheckedListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="OptionalExportColumnsCheckedListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 109</value>
-  </data>
-  <data name="OptionalExportColumnsCheckedListBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;OptionalExportColumnsCheckedListBox.Name" xml:space="preserve">
-    <value>OptionalExportColumnsCheckedListBox</value>
-  </data>
-  <data name="&gt;&gt;OptionalExportColumnsCheckedListBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OptionalExportColumnsCheckedListBox.Parent" xml:space="preserve">
-    <value>OptionalExportColumnsGroupBox</value>
-  </data>
-  <data name="&gt;&gt;OptionalExportColumnsCheckedListBox.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="HelpLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>

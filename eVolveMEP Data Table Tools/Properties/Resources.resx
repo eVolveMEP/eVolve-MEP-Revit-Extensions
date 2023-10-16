@@ -204,4 +204,18 @@ If an existing data table is selected, it will be overwritten with the result.</
   <data name="OperationCompleted" xml:space="preserve">
 	  <value>Process completed.</value>
   </data>
+  <data name="ColumnInfoName_Order" xml:space="preserve">
+	  <value>Order</value>
+	  <comment>As in sequence</comment>
+  </data>
+  <data name="ColumnInfoName_Name" xml:space="preserve">
+	  <value>Name</value>
+  </data>
+  <data name="ColumnInfoName_DataType" xml:space="preserve">
+	  <value>Data Type</value>
+  </data>
+  <data name="ColumnInfoName_Expression" xml:space="preserve">
+	  <value>Expression</value>
+	  <comment>As in formula expression, ex. Col1+Col2</comment>
+  </data>
 </root>
