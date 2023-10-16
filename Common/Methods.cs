@@ -117,4 +117,10 @@ internal static class Methods
     {
         MessageBox.Show(owner, message, title ?? owner?.Text ?? icon.ToString(), MessageBoxButtons.OK, icon);
     }
+
+    /// <summary> Opens a browser to the page containing the source code. </summary>
+    ///
+    /// <param name="sender"> Source of the event. </param>
+    /// <param name="e"> Event information. </param>
+    internal static void ViewSourceCodeHandler(object sender, EventArgs e) => System.Diagnostics.Process.Start("https://github.com/eVolveMEP/eVolve-MEP-Revit-Extensions");
 }

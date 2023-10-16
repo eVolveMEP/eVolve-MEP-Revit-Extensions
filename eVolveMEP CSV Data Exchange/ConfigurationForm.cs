@@ -64,6 +64,8 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
             .OrderBy(value => value)
             .ToArray());
 
+        ViewSourceCodeLabel.Click += ViewSourceCodeHandler;
+
         this.FormClosing += ConfigurationForm_FormClosing;
         this.HelpRequested += ConfigurationForm_HelpRequested;
     }

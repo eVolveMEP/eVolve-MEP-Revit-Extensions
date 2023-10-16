@@ -80,6 +80,7 @@ partial class ToolsDialog
             this.SQLConnectionStringTextBox = new System.Windows.Forms.TextBox();
             this.DataTableLabel = new System.Windows.Forms.Label();
             this.DataTableComboBox = new System.Windows.Forms.ComboBox();
+            this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -461,10 +462,18 @@ partial class ToolsDialog
             this.DataTableComboBox.Name = "DataTableComboBox";
             this.DataTableComboBox.SelectedIndexChanged += new System.EventHandler(this.DataTableComboBox_SelectedIndexChanged);
             // 
+            // ViewSourceCodeLabel
+            // 
+            resources.ApplyResources(this.ViewSourceCodeLabel, "ViewSourceCodeLabel");
+            this.ViewSourceCodeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ViewSourceCodeLabel.ForeColor = System.Drawing.Color.Blue;
+            this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
+            // 
             // ToolsDialog
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ViewSourceCodeLabel);
             this.Controls.Add(this.DataTableComboBox);
             this.Controls.Add(this.DataTableLabel);
             this.Controls.Add(this.MainTabControl);
@@ -553,4 +562,5 @@ partial class ToolsDialog
     private System.Windows.Forms.Label ExpressionColumnDataTypeLabel;
     private System.Windows.Forms.Button SQLExportExecuteButton;
     private System.Windows.Forms.Button SQLImportExecuteButton;
+    private System.Windows.Forms.Label ViewSourceCodeLabel;
 }

@@ -50,11 +50,14 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         }
 
         SQLConnectButton.Text = Resources.Connect;
+        SQLConnectionStatusLabel.Text = Resources.NotConnected;
 
         foreach (var button in new[] { SQLImportSourceCustomButton, SQLExportPreEventButton, SQLExportPostEventButton })
         {
             button.Click += EditSqlButton_Click;
         }
+
+        ViewSourceCodeLabel.Click += ViewSourceCodeHandler;
 
         this.FormClosing += ToolsDialog_FormClosing;
         this.HelpRequested += ToolsDialog_HelpRequested;
@@ -66,7 +69,6 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// <param name="e"> Event information. </param>
     private void ToolsDialog_Load(object sender, EventArgs e)
     {
-        SQLConnectionStatusLabel.Text = Resources.NotConnected;
         LoadSettings();
     }
 
