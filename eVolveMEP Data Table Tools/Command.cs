@@ -4,7 +4,6 @@
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-extern alias eVolve;
 using Autodesk.Revit.Attributes;
 
 namespace eVolve.DataTableTools.Revit;
@@ -26,9 +25,9 @@ internal class Command : IExternalCommand
         get
         {
 #if ELECTRICAL
-            return "";
+            return "https://help-electrical.evolvemep.com/article/q68ll2jlyf";
 #elif MECHANICAL
-            return "";
+            return "https://help-mechanical.evolvemep.com/article/9mgugym789";
 #endif
         }
     }
