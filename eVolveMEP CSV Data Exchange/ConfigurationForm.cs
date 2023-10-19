@@ -66,6 +66,7 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
 
         ViewSourceCodeLabel.Click += ViewSourceCodeHandler;
 
+        this.Shown += (_, _) => MinimumSize = Size;
         this.FormClosing += ConfigurationForm_FormClosing;
         this.HelpRequested += ConfigurationForm_HelpRequested;
     }

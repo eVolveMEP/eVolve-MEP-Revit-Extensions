@@ -255,6 +255,25 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Warning: This will delete ALL saved configuration data.
+        ///Would you like to continue?.
+        /// </summary>
+        internal static string ResetEntireConfigPrompt {
+            get {
+                return ResourceManager.GetString("ResetEntireConfigPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete saved configuration for the selected {0}?.
+        /// </summary>
+        internal static string ResetSelectedDataTableConfigPrompt {
+            get {
+                return ResourceManager.GetString("ResetSelectedDataTableConfigPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Settings_20x20 {
@@ -279,6 +298,17 @@ namespace eVolve.DataTableTools.Revit.Properties {
         internal static string SettingsSaveErrorNotice {
             get {
                 return ResourceManager.GetString("SettingsSaveErrorNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: This operation will completely overwrite the structure and contents the selected {0} and rebuild with the {1} selections.
+        ///
+        ///Would you like to continue?.
+        /// </summary>
+        internal static string SQLImportConfirmationPrompt {
+            get {
+                return ResourceManager.GetString("SQLImportConfirmationPrompt", resourceCulture);
             }
         }
         

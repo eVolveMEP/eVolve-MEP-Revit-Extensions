@@ -30,6 +30,21 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         { nameof(DateTime), typeof(DateTime) },
     };
 
+    /// <summary>
+    /// Gets a lookup by data table name (key) of the active <see cref="SqlTableSettings"/> currently respresented on
+    /// this form (value).
+    /// </summary>
+    ///
+    /// <remarks>
+    /// This can be different from what is currently saved since the user may not yet have applied settings.
+    /// </remarks>
+    private Dictionary<string, SqlTableSettings> ActiveSqlTableSettings { get; } = new();
+
+    /// <summary>
+    /// Gets the value to use as the key for capturing default values as they will be stored by this configuration.
+    /// </summary>
+    private string DefaultSettingsKey => $"___{nameof(DefaultSettingsKey)}";
+
     /// <summary> Constructor. </summary>
     ///
     /// <param name="document"> The current Revit document. </param>
@@ -43,6 +58,10 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(Command.IconResource)).GetHicon());
         RefreshDataTables();
 
+        // Capture the default values.
+        PreviouslySelectedDataTableName = DefaultSettingsKey;
+        DataTableChangedSqlHandler(null, EventArgs.Empty);
+
         var datatypeNames = ColumnDataTypeLookup.Keys.ToArray();
         foreach (var combobox in new[] { ChangeColumnTypeDataTypeComboBox, ExpressionColumnDataTypeComboBox })
         {
@@ -50,8 +69,15 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             combobox.Items.AddRange(datatypeNames);
         }
 
-        SQLConnectButton.Text = Resources.Connect;
-        SQLConnectionStatusLabel.Text = Resources.NotConnected;
+        SQLConnectionStatusLabel.TextChanged += SQLConnectionStatusLabel_TextChanged;
+
+        ResetSelectedConfigurationButton.Text = string.Format(ResetSelectedConfigurationButton.Text, DataTableLabel.Text);
+        ResetEntireConfigurationGroupBox.Text = string.Format(ResetEntireConfigurationGroupBox.Text, Text);
+
+        // TextChanged occurs before SelectedIndexChanged so consumers interested in the previous value need to consider this.
+        DataTableComboBox.TextChanged += DataTableChangedToolsHandler;
+        DataTableComboBox.TextChanged += DataTableChangedSqlHandler;
+        DataTableComboBox.SelectedIndexChanged += (_, _) => PreviouslySelectedDataTableName = DataTableComboBox.Text;
 
         foreach (var button in new[] { SQLImportSourceCustomButton, SQLExportPreEventButton, SQLExportPostEventButton })
         {
@@ -60,6 +86,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
         ViewSourceCodeLabel.Click += ViewSourceCodeHandler;
 
+        this.Shown += (_, _) => MinimumSize = Size;
         this.FormClosing += ToolsDialog_FormClosing;
         this.HelpRequested += ToolsDialog_HelpRequested;
     }
@@ -72,6 +99,9 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     {
         LoadSettings();
 
+        SQLConnectButton.Text = Resources.Connect;
+        SQLConnectionStatusLabel.Text = Resources.NotConnected;
+
         static void openHelpLink(object s1, EventArgs e1) => System.Diagnostics.Process.Start(((Label)s1).Tag.ToString());
         foreach (var helpLabel in new[] { DataTableExpressionHelpLabel, SQLConnectionStringHelpLabel })
         {
@@ -79,8 +109,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             helpLabel.Click += openHelpLink;
         }
 
-        MainTabControl.TabIndexChanged += ColumnToolsTabFocused;
-        RefreshColumnInfo(null);
+        DataTableComboBox_SelectedIndexChanged(this, EventArgs.Empty);
     }
 
     /// <summary> Saves settings when the dialog is closed. </summary>
@@ -88,6 +117,18 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Form closing event information. </param>
     private void ToolsDialog_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        if (DialogResult == DialogResult.OK)
+        {
+            SaveSettings();
+        }
+    }
+
+    /// <summary> Saves the current configuration settings on the form. </summary>
+    ///
+    /// <param name="sender"> Source of the event. </param>
+    /// <param name="e"> Event information. </param>
+    private void ApplyButton_Click(object sender, EventArgs e)
     {
         SaveSettings();
     }
@@ -148,16 +189,27 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     private static string SettingsFilePath { get; } = System.IO.Path.Combine(BaseSaveSettingsFileFolder, "Data Table Tools", "Settings.xml");
 
     /// <summary>
-    /// Saves the saved options from <see cref="SettingsFilePath"/> into the form. If an error occurs, the user is notified.
+    /// Saves the saved options from <see cref="SettingsFilePath"/> into the form. If an error occurs, the user is
+    /// notified.
     /// </summary>
-    private void LoadSettings()
+    ///
+    /// <param name="settings"> (Optional) If provided, this is used in place of loading from <see cref="SettingsFilePath"/>. </param>
+    private void LoadSettings(Settings settings = null)
     {
-        if (LoadSettings<Settings>(SettingsFilePath) is { } settings)
+        settings ??= LoadSettings<Settings>(SettingsFilePath);
+        if (settings != null)
         {
-            SQLConnectionStringTextBox.Text = settings.SqlConnectionString;
-            SQLImportSourceCustomButton.Tag = settings.SqlCustomImport;
-            SQLExportPreEventButton.Tag = settings.SqlExportPreCommand;
-            SQLExportPostEventButton.Tag = settings.SqlExportPostCommand;
+            SQLConnectionStringTextBox.Text = FromBase64(settings.SqlConnectionString);
+
+            // Remove all active state information except for the default state.
+            foreach (var key in ActiveSqlTableSettings.Keys.Where(key => key != DefaultSettingsKey).ToArray())
+            {
+                ActiveSqlTableSettings.Remove(key);
+            }
+            foreach (var sqlTableSettings in settings.SqlTableSettings)
+            {
+                ActiveSqlTableSettings.Add(sqlTableSettings.TableName, sqlTableSettings);
+            }
         }
     }
 
@@ -166,15 +218,35 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// </summary>
     private void SaveSettings()
     {
+        DataTableChangedSqlHandler(nameof(SaveSettings), EventArgs.Empty);
         var settings = new Settings()
         {
-            SqlConnectionString = SQLConnectionStringTextBox.Text,
-            SqlCustomImport = SQLImportSourceCustomButton.Tag?.ToString(),
-            SqlExportPreCommand = SQLExportPreEventButton.Tag?.ToString(),
-            SqlExportPostCommand = SQLExportPostEventButton.Tag?.ToString(),
+            SqlConnectionString = ToBase64(SQLConnectionStringTextBox.Text),
+            SqlTableSettings = ActiveSqlTableSettings
+                .Where(entry => !string.IsNullOrEmpty(entry.Key))
+                .Where(entry => entry.Key != DefaultSettingsKey)
+                .Select(entry => entry.Value)
+                .Where(sqlTableSettings => !isSqlSettingsDefault(sqlTableSettings))
+                .ToArray(),
         };
 
         ExtensionsCommon.Revit.Methods.SaveSettings(settings, SettingsFilePath);
+
+        bool isSqlSettingsDefault(SqlTableSettings sqlTableSettings)
+        {
+            static string serializedValue(SqlTableSettings data)
+            {
+                using var stream = new System.IO.StringWriter();
+                new System.Xml.Serialization.XmlSerializer(typeof(SqlTableSettings)).Serialize(stream, data);
+                return stream.ToString();
+            }
+
+            // Source table will always be different, so set it to the same value to remove it from consideration.
+            var defaultSettings = ActiveSqlTableSettings[DefaultSettingsKey];
+            defaultSettings.TableName = sqlTableSettings.TableName;
+
+            return serializedValue(sqlTableSettings) == serializedValue(defaultSettings);
+        }
     }
 
     #endregion
@@ -185,27 +257,48 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// <param name="e"> Event information. </param>
     private void DataTableComboBox_SelectedIndexChanged(object sender, EventArgs e)
     {
-        ColumnToolsTabFocused(MainTabControl, EventArgs.Empty);
+        MainTabControl.Enabled = !string.IsNullOrEmpty(DataTableComboBox.Text);
+    }
+
+    /// <summary>
+    /// Gets or sets the name of the previously selected data table on <see cref="DataTableComboBox"/>.
+    /// </summary>
+    ///
+    /// <remarks>
+    /// In practice this is set on <see cref="DataTableComboBox"/> value change to capture what is the current (at the
+    /// time) value and then consumed on the next value change.
+    /// </remarks>
+    private string PreviouslySelectedDataTableName
+    {
+        get => (string)DataTableComboBox.Tag;
+        set => DataTableComboBox.Tag = value;
     }
 
     #region Column Tools
 
-    /// <summary> Runs <see cref="RefreshColumnInfo"/> as needed when <see cref="ColumnToolsTabPage"/> gets focus. </summary>
+    /// <summary>
+    /// Handles the change of the source data table. This method saves the current configuration within the UI to the
+    /// previously selected value and then restores the UI to the newly selected value.
+    /// </summary>
     ///
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Event information. </param>
-    private void ColumnToolsTabFocused(object sender, EventArgs e)
+    private void DataTableChangedToolsHandler(object sender, EventArgs e)
     {
-        var table = true
-            && MainTabControl.SelectedTab == ColumnToolsTabPage
-            && !string.IsNullOrEmpty(DataTableComboBox.Text)
+        ChangeColumnTypeColumnComboBox.Text = null;
+        ChangeColumnTypeDataTypeComboBox.Text = null;
+        ExpressionColumnNameTextBox.Text = null;
+        ExpressionColumnDataTypeComboBox.Text = null;
+        ExpressionColumnExpressionTextBox.Text = null;
+
+        var table = !string.IsNullOrEmpty(DataTableComboBox.Text)
             ? Document.GetTable(DataTableComboBox.Text, out _)
             : null;
 
         try
         {
             ChangeColumnTypeColumnComboBox.Items.Clear();
-            ChangeColumnTypeColumnComboBox.Items.AddRange(GetDataTableColumnNames(table));
+            ChangeColumnTypeColumnComboBox.Items.AddRange(GetDataTableColumnNames(table) ?? Array.Empty<string>());
         }
         catch (Exception ex)
         {
@@ -363,13 +456,133 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
     #region SQL Server
 
+    /// <summary>
+    /// Handles the change of the source data table with respect to the <see cref="SqlServerToolsTabPage"/>.
+    /// <para>This method saves the current configuration within the UI to the previously selected value and then
+    /// restores the UI to the newly selected value.</para>
+    /// </summary>
+    ///
+    /// <param name="sender"> Source of the event. </param>
+    /// <param name="e"> Event information. </param>
+    private void DataTableChangedSqlHandler(object sender, EventArgs e)
+    {
+        if (sender != null && !IsSqlConnected)
+        {
+            return;
+        }
+
+        var previousTableName = 0 switch
+        {
+            // Use the current value on an explicit save operation.
+            _ when (sender?.ToString() == nameof(SaveSettings)) => DataTableComboBox.Text,
+            // Disconnecting from current SQL connection - save the current value.
+            _ when (sender == SQLConnectButton && e == null) => DataTableComboBox.Text,
+            // Connecting to SQL - the selection did not change in this situation.
+            _ when (sender == SQLConnectButton && e != null) => "",
+            // Reset the selected data tabl - do not save the current data.
+            _ when (sender == ResetSelectedConfigurationButton) => "",
+            _ => PreviouslySelectedDataTableName,
+        };
+
+        // Save existing configuration for the previously selected table.
+        if (!string.IsNullOrEmpty(previousTableName))
+        {
+            ActiveSqlTableSettings[previousTableName] = new SqlTableSettings()
+            {
+                TableName = previousTableName,
+                ImportSource = SQLImportSourceTableRadioButton.Checked ? SqlImportSource.Table
+                    : SQLImportSourceViewRadioButton.Checked ? SqlImportSource.View
+                    : SQLImportSourceCustomRadioButton.Checked ? SqlImportSource.CustomSql
+                    : SqlImportSource.Table,
+                ImportSourceTableName = SQLImportSourceTableComboBox.Text,
+                ImportSourceViewName = SQLImportSourceViewComboBox.Text,
+                ImportSourceCustomSql = ToBase64((string)SQLImportSourceCustomButton.Tag),
+                ExportSourceTargetName = SQLExportTargetComboBox.Text,
+                ExportFieldMappings = GetCurrentFieldMappings().ToArray(),
+                ExportSqlPreCommandEnabled = SQLExportPreEventCheckBox.Checked,
+                ExportSqlPreCommand = ToBase64((string)SQLExportPreEventButton.Tag),
+                ExportSqlPostCommandEnabled = SQLExportPostEventCheckBox.Checked,
+                ExportSqlPostCommand = ToBase64((string)SQLExportPostEventButton.Tag),
+            };
+        }
+
+        // Restore the configuration for the newly selected table.
+        if (sender != null)
+        {
+            var restoreTableName = e == null ? DefaultSettingsKey : DataTableComboBox.Text;
+            if (!ActiveSqlTableSettings.TryGetValue(restoreTableName, out var settings))
+            {
+                settings = new SqlTableSettings();
+            }
+
+            SQLImportSourceTableRadioButton.Checked = settings.ImportSource == SqlImportSource.Table;
+            SQLImportSourceViewRadioButton.Checked = settings.ImportSource == SqlImportSource.View;
+            SQLImportSourceCustomRadioButton.Checked = settings.ImportSource == SqlImportSource.CustomSql;
+            SQLImportSourceTableComboBox.Text = settings.ImportSourceTableName;
+            SQLImportSourceViewComboBox.Text = settings.ImportSourceViewName;
+            SQLImportSourceCustomButton.Tag = FromBase64(settings.ImportSourceCustomSql);
+            SQLExportTargetComboBox.Text = settings.ExportSourceTargetName;
+            SQLExportPreEventCheckBox.Checked = settings.ExportSqlPreCommandEnabled;
+            SQLExportPreEventButton.Tag = FromBase64(settings.ExportSqlPreCommand);
+            SQLExportPostEventCheckBox.Checked = settings.ExportSqlPostCommandEnabled;
+            SQLExportPostEventButton.Tag = FromBase64(settings.ExportSqlPostCommand);
+
+            SQLExportFieldMappingListBox.Items.Clear();
+            foreach (var fieldMapping in settings.ExportFieldMappings)
+            {
+                AddSqlFieldMappingEntry(fieldMapping);
+            }
+        }
+    }
+
+    /// <summary> Gets a value indicating whether SQL is currently connected. </summary>
+    private bool IsSqlConnected => SQLConnectionStatusLabel.Text == Resources.Connected;
+
+    /// <summary>
+    /// Updates the <see cref="SqlServerToolsTabPage"/> based on the current value of <see cref="IsSqlConnected"/>.
+    /// </summary>
+    ///
+    /// <param name="sender"> Source of the event. </param>
+    /// <param name="e"> Event information. </param>
+    private void SQLConnectionStatusLabel_TextChanged(object sender, EventArgs e)
+    {
+        if (IsSqlConnected)
+        {
+            SQLConnectionStringTextBox.ReadOnly = true;
+            SQLConnectButton.Text = Resources.Disconnect;
+
+            SQLImportDataGroupBox.Enabled = true;
+            SQLExportDataGroupBox.Enabled = true;
+        }
+        else
+        {
+            SQLConnectionStringTextBox.ReadOnly = false;
+            SQLConnectButton.Text = Resources.Connect;
+
+            SQLImportSourceTableComboBox.Items.Clear();
+            SQLImportSourceViewComboBox.Items.Clear();
+            SQLExportTargetComboBox.Items.Clear();
+            SQLExportFieldMappingListBox.Items.Clear();
+
+            SQLImportDataGroupBox.Enabled = false;
+            SQLExportDataGroupBox.Enabled = false;
+        }
+    }
+
     /// <summary> Connects to SQL using the provided connection string and updates data selection values. </summary>
     ///
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Event information. </param>
     private void SQLConnectButton_Click(object sender, EventArgs e)
     {
-        SQLConnectionStatusLabel.Text = Resources.NotConnected;
+        if (IsSqlConnected)
+        {
+            // Capture what is current for the selected data table before disconnection.
+            DataTableChangedSqlHandler(SQLConnectButton, null);
+
+            SQLConnectionStatusLabel.Text = Resources.NotConnected;
+            return;
+        }
 
         try
         {
@@ -378,13 +591,9 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             var tables = GetSingleStringData("SELECT [name] FROM sys.tables ORDER BY [name] ASC", connection);
             var views = GetSingleStringData("SELECT [name] FROM sys.views ORDER BY [name] ASC", connection);
 
-            SQLImportSourceTableComboBox.Items.Clear();
             SQLImportSourceTableComboBox.Items.AddRange(tables);
-            SQLImportSourceViewComboBox.Items.Clear();
             SQLImportSourceViewComboBox.Items.AddRange(views);
-            SQLExportTargetComboBox.Items.Clear();
             SQLExportTargetComboBox.Items.AddRange(tables);
-            SQLExportFieldMappingListBox.Items.Clear();
             
             SQLConnectionStatusLabel.Text = Resources.Connected;
         }
@@ -393,17 +602,11 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             ShowErrorMessage(this, ex.Message, SqlServerToolsTabPage.Text);
         }
 
-        if (SQLConnectionStatusLabel.Text == Resources.Connected)
+        if (IsSqlConnected)
         {
-            SQLConnectionStringTextBox.ReadOnly = true;
-            SQLConnectButton.Text = Resources.Disconnect;
+            // Restore the configuration of the currently selected data table.
+            DataTableChangedSqlHandler(SQLConnectButton, EventArgs.Empty);
         }
-        else
-        {
-            SQLConnectionStringTextBox.ReadOnly = false;
-            SQLConnectButton.Text = Resources.Connect;
-        }
-
     }
 
     /// <summary>
@@ -489,6 +692,11 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                 throw new Exception(string.Format(Resources.NoValueSelectedError, SQLImportSourceGroupBox.Text));
             }
 
+            if (!ShowConfirmationPrompt(this, string.Format(Resources.SQLImportConfirmationPrompt, DataTableLabel.Text, SQLImportSourceGroupBox.Text), SQLImportDataGroupBox.Text))
+            {
+                return;
+            }
+
             using var connection = GetSqlConnection();
             using var command = new SqlCommand(source, connection);
             using var adapter = new SqlDataAdapter(command);
@@ -507,9 +715,6 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         }
     }
 
-    /// <summary> (Immutable) Delimiter used in field mappings to separate the source and destination column names. </summary>
-    private const char FieldMappingDelimiter = '=';
-
     /// <summary> Prompts the user to add a new data table to SQL table mapping entry. </summary>
     ///
     /// <param name="sender"> Source of the event. </param>
@@ -524,19 +729,26 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             }
 
             var table = Document.GetTable(DataTableComboBox.Text, out _);
-            if (AddMappingDialog.GetMapping(this, GetDataTableColumnNames(table), GetSqlTableColumnNames(SQLExportTargetComboBox.Text)) is var mapping
-                && !string.IsNullOrEmpty(mapping.DataTableColumnName))
+            if (AddMappingDialog.GetMapping(this, GetDataTableColumnNames(table), GetSqlTableColumnNames(SQLExportTargetComboBox.Text)) is { } mapping)
             {
-                var mappingEntry = mapping.DataTableColumnName + FieldMappingDelimiter + mapping.SQLTableColumnName;
-                if (!SQLExportFieldMappingListBox.Items.Contains(mappingEntry))
-                {
-                    SQLExportFieldMappingListBox.Items.Add(mappingEntry);
-                }
+                AddSqlFieldMappingEntry(mapping);
             }
         }
         catch (Exception ex)
         {
             ShowErrorMessage(this, ex.Message, SQLExportFieldMappingGroupBox.Text);
+        }
+    }
+
+    /// <summary> Removes the selected data table to SQL table mapping entries. </summary>
+    ///
+    /// <param name="sender"> Source of the event. </param>
+    /// <param name="e"> Event information. </param>
+    private void SQLExportFieldMappingRemoveButton_Click(object sender, EventArgs e)
+    {
+        foreach (var index in SQLExportFieldMappingListBox.SelectedIndices.Cast<int>().OrderByDescending(i => i))
+        {
+            SQLExportFieldMappingListBox.Items.RemoveAt(index);
         }
     }
 
@@ -554,21 +766,9 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// <param name="table"> The table get the columns information from. </param>
     private static string[] GetDataTableColumnNames(DataTable table)
     {
-        return table.Columns.Cast<DataColumn>()
+        return table?.Columns.Cast<DataColumn>()
             .Select(column => column.ColumnName)
             .ToArray();
-    }
-
-    /// <summary> Removes the selected data table to SQL table mapping entries. </summary>
-    ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Event information. </param>
-    private void SQLExportFieldMappingRemoveButton_Click(object sender, EventArgs e)
-    {
-        foreach (var index in SQLExportFieldMappingListBox.SelectedIndices.Cast<int>().OrderByDescending(i => i))
-        {
-            SQLExportFieldMappingListBox.Items.RemoveAt(index);
-        }
     }
 
     /// <summary> Performs an export operation where a data table rows are copied to a SQL table. </summary>
@@ -577,7 +777,6 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// <param name="e"> Event information. </param>
     private void SQLExportExecuteButton_Click(object sender, EventArgs e)
     {
-        var mappings = new List<(string DataTableColumnName, string SqlTableColumnName)>();
         string preCommand = null;
         string postCommand = null;
         SqlTransaction transaction = null;
@@ -596,22 +795,21 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             var table = Document.GetTable(DataTableComboBox.Text, out _);
             var dataTableColumns = GetDataTableColumnNames(table);
             var sqlTableColumns = GetSqlTableColumnNames(SQLExportTargetComboBox.Text);
-            foreach (var mappingEntry in SQLExportFieldMappingListBox.Items.Cast<string>().Select(text => (text + FieldMappingDelimiter).Split(FieldMappingDelimiter)))
-            {
-                var (dataTableColumn, sqlTableColumn) = (mappingEntry[0], mappingEntry[1]);
-                if (!dataTableColumns.Contains(dataTableColumn))
-                {
-                    throw new Exception(string.Format(Resources.ExportColumnNotFoundError, dataTableColumn, DataTableLabel.Text, DataTableComboBox.Text));
-                }
-                if (!sqlTableColumns.Contains(sqlTableColumn))
-                {
-                    throw new Exception(string.Format(Resources.ExportColumnNotFoundError, sqlTableColumn, SQLExportTargetLabel.Text, SQLExportTargetComboBox.Text));
-                }
-                mappings.Add((dataTableColumn, sqlTableColumn));
-            }
-            if (mappings.Count == 0)
+            var mappings = GetCurrentFieldMappings().ToArray();
+            if (!mappings.Any())
             {
                 throw new Exception(string.Format(Resources.NoEntriesDefinedError, SQLExportFieldMappingGroupBox.Text));
+            }
+            foreach (var fieldMapping in GetCurrentFieldMappings())
+            {
+                if (!dataTableColumns.Contains(fieldMapping.SourceFieldName))
+                {
+                    throw new Exception(string.Format(Resources.ExportColumnNotFoundError, fieldMapping.SourceFieldName, DataTableLabel.Text, DataTableComboBox.Text));
+                }
+                if (!sqlTableColumns.Contains(fieldMapping.TargetFieldName))
+                {
+                    throw new Exception(string.Format(Resources.ExportColumnNotFoundError, fieldMapping.TargetFieldName, SQLExportTargetLabel.Text, SQLExportTargetComboBox.Text));
+                }
             }
 
             if (SQLExportPreEventCheckBox.Checked)
@@ -643,16 +841,16 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             }
 
             var insertCommand = new SqlCommand("INSERT INTO"
-                + $" {SanitizeSqlObject(SQLExportTargetComboBox.Text)} ({string.Join(",", mappings.Select(mapping => SanitizeSqlObject(mapping.SqlTableColumnName)))})"
-                + $" VALUES ({string.Join(",", Enumerable.Range(0, mappings.Count).Select(i => "@Value" + i))})",
+                + $" {SanitizeSqlObject(SQLExportTargetComboBox.Text)} ({string.Join(",", mappings.Select(mapping => SanitizeSqlObject(mapping.TargetFieldName)))})"
+                + $" VALUES ({string.Join(",", Enumerable.Range(0, mappings.Length).Select(i => "@Value" + i))})",
                 connection, transaction);
 
             foreach (var row in table.Rows.Cast<DataRow>())
             {
                 insertCommand.Parameters.Clear();
-                for (var i = 0; i < mappings.Count; i++)
+                for (var i = 0; i < mappings.Length; i++)
                 {
-                    insertCommand.Parameters.AddWithValue("@Value" + i, row[mappings[i].DataTableColumnName]);
+                    insertCommand.Parameters.AddWithValue("@Value" + i, row[mappings[i].SourceFieldName]);
                 }
                 insertCommand.ExecuteNonQuery();
             }
@@ -674,12 +872,45 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         }
     }
 
-    /// <summary> Creates and opens a new SQL Server connection to the current value of <see cref="SQLConnectionStringTextBox"/>. </summary>
+    /// <summary>
+    /// Creates and opens a new SQL Server connection to the current value of <see cref="SQLConnectionStringTextBox"/>.
+    /// </summary>
     private SqlConnection GetSqlConnection()
     {
         var connection = new SqlConnection(SQLConnectionStringTextBox.Text);
         connection.Open();
         return connection;
+    }
+
+    /// <summary> (Immutable) Delimiter used in field mappings to separate the source and destination column names. </summary>
+    private const char FieldMappingDelimiter = '=';
+
+    /// <summary>
+    /// Gets the <see cref="TableFieldMapping"/> entries for the current items within <see cref="SQLExportFieldMappingListBox"/>.
+    /// </summary>
+    private IEnumerable<TableFieldMapping> GetCurrentFieldMappings()
+    {
+        return SQLExportFieldMappingListBox.Items.Cast<string>()
+            .Select(text => (text + FieldMappingDelimiter).Split(FieldMappingDelimiter))
+            .Select(mappingEntry => new TableFieldMapping()
+            {
+                SourceFieldName = mappingEntry[0],
+                TargetFieldName = mappingEntry[1],
+            });
+    }
+
+    /// <summary>
+    /// Adds an entry for the provided <paramref name="mappingEntry"/> in <see cref="SQLExportFieldMappingListBox"/>.
+    /// </summary>
+    ///
+    /// <param name="mappingEntry"> Data to create the entry for. </param>
+    private void AddSqlFieldMappingEntry(TableFieldMapping mappingEntry)
+    {
+        var entryText = mappingEntry.SourceFieldName + FieldMappingDelimiter + mappingEntry.TargetFieldName;
+        if (!SQLExportFieldMappingListBox.Items.Contains(entryText))
+        {
+            SQLExportFieldMappingListBox.Items.Add(entryText);
+        }
     }
 
     /// <summary> Gets a list of all text values from the first column of each resulting data row. </summary>
@@ -708,6 +939,41 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     ///
     /// <param name="value"> Text value to be used in a SQL statement. </param>
     private static string SanitizeSqlText(string value) => $"'{value.Replace("'", "''")}'";
+
+    #endregion
+
+    #region Reset Saved Data
+
+    /// <summary> Prompts the user and deletes configuration information for the current data table. </summary>
+    ///
+    /// <param name="sender"> Source of the event. </param>
+    /// <param name="e"> Event information. </param>
+    private void ResetSelectedConfigurationButton_Click(object sender, EventArgs e)
+    {
+        if (ShowConfirmationPrompt(this, string.Format(Resources.ResetSelectedDataTableConfigPrompt + $"\n{DataTableComboBox.Text}", DataTableLabel.Text)))
+        {
+            ActiveSqlTableSettings.Remove(DataTableComboBox.Text);
+            DataTableChangedSqlHandler(ResetSelectedConfigurationButton, EventArgs.Empty);
+
+            ShowNoticeMessage(this, Resources.OperationCompleted, ResetSelectedConfigurationButton.Text);
+        }
+    }
+
+    /// <summary> Prompts the user and resets all configuration data for this tool. </summary>
+    ///
+    /// <param name="sender"> Source of the event. </param>
+    /// <param name="e"> Event information. </param>
+    private void ResetEntireConfigurationButton_Click(object sender, EventArgs e)
+    {
+        if (ShowConfirmationPrompt(this, Resources.ResetEntireConfigPrompt))
+        {
+            DataTableComboBox.Text = null;
+            LoadSettings(new Settings());
+            DataTableChangedSqlHandler(ResetEntireConfigurationButton, EventArgs.Empty);
+
+            ShowNoticeMessage(this, Resources.OperationCompleted, ResetEntireConfigurationButton.Text);
+        }
+    }
 
     #endregion
 }

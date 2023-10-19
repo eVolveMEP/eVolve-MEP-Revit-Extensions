@@ -22,7 +22,7 @@ internal sealed partial class AddMappingDialog : System.Windows.Forms.Form
     /// <param name="owner"> Owner of this dialog. </param>
     /// <param name="dataTableFieldNames"> List of column names available within the source data table. </param>
     /// <param name="sqlTableColumnNames"> List of column names available within the destination SQL table. </param>
-    public static (string DataTableColumnName, string SQLTableColumnName) GetMapping(System.Windows.Forms.Form owner, IEnumerable<string> dataTableFieldNames, IEnumerable<string> sqlTableColumnNames)
+    public static TableFieldMapping GetMapping(System.Windows.Forms.Form owner, IEnumerable<string> dataTableFieldNames, IEnumerable<string> sqlTableColumnNames)
     {
         using var dialog = new AddMappingDialog();
         dialog.Owner = owner;
@@ -33,7 +33,13 @@ internal sealed partial class AddMappingDialog : System.Windows.Forms.Form
         dialog.SQLTableColumnComboBox.Items.Clear();
         dialog.SQLTableColumnComboBox.Items.AddRange(sqlTableColumnNames.OrderBy(name => name).ToArray());
 
-        return dialog.ShowDialog(owner) == DialogResult.OK ? (dialog.DataTableColumnComboBox.Text, dialog.SQLTableColumnComboBox.Text) : default;
+        return dialog.ShowDialog(owner) == DialogResult.OK
+            ? new TableFieldMapping()
+            {
+                SourceFieldName = dialog.DataTableColumnComboBox.Text,
+                TargetFieldName = dialog.SQLTableColumnComboBox.Text,
+            }
+            : default;
     }
 
     /// <summary> Constructor that prevents a default instance of this class from being created. </summary>

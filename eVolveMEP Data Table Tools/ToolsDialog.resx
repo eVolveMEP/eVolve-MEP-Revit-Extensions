@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="OpenConfigurationPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>835, 0</value>
+    <value>889, 0</value>
   </data>
   <data name="OpenConfigurationPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -145,7 +145,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;OpenConfigurationPictureBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="HelpLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -154,7 +154,7 @@
     <value>NoControl</value>
   </data>
   <data name="HelpLinkPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>857, 0</value>
+    <value>911, 0</value>
   </data>
   <data name="HelpLinkPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -172,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;HelpLinkPictureBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="LogoPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -768,7 +768,7 @@
     <value>NoControl</value>
   </data>
   <data name="LogoPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 668</value>
+    <value>12, 661</value>
   </data>
   <data name="LogoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 23</value>
@@ -789,37 +789,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LogoPictureBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="CloseButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="CloseButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="CloseButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>765, 668</value>
-  </data>
-  <data name="CloseButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="CloseButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="CloseButton.Text" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="&gt;&gt;CloseButton.Name" xml:space="preserve">
-    <value>CloseButton</value>
-  </data>
-  <data name="&gt;&gt;CloseButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CloseButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;CloseButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="MainTabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -867,7 +837,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="ColumnToolsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>845, 551</value>
+    <value>899, 544</value>
   </data>
   <data name="ColumnToolsTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -888,7 +858,175 @@
     <value>0</value>
   </data>
   <data name="SQLExportDataGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="SQLCustomOperationsGoupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="SQLExportPreEventCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="SQLExportPreEventCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SQLExportPreEventCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 32</value>
+  </data>
+  <data name="SQLExportPreEventCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 17</value>
+  </data>
+  <data name="SQLExportPreEventCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SQLExportPreEventCheckBox.Text" xml:space="preserve">
+    <value>Run SQL Before Export</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPreEventCheckBox.Name" xml:space="preserve">
+    <value>SQLExportPreEventCheckBox</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPreEventCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPreEventCheckBox.Parent" xml:space="preserve">
+    <value>SQLCustomOperationsGoupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPreEventCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SQLExportPostEventCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="SQLExportPostEventCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SQLExportPostEventCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SQLExportPostEventCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 67</value>
+  </data>
+  <data name="SQLExportPostEventCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 17</value>
+  </data>
+  <data name="SQLExportPostEventCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SQLExportPostEventCheckBox.Text" xml:space="preserve">
+    <value>Run SQL After Export</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPostEventCheckBox.Name" xml:space="preserve">
+    <value>SQLExportPostEventCheckBox</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPostEventCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPostEventCheckBox.Parent" xml:space="preserve">
+    <value>SQLCustomOperationsGoupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPostEventCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SQLExportPostEventButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="SQLExportPostEventButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SQLExportPostEventButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 63</value>
+  </data>
+  <data name="SQLExportPostEventButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 23</value>
+  </data>
+  <data name="SQLExportPostEventButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SQLExportPostEventButton.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPostEventButton.Name" xml:space="preserve">
+    <value>SQLExportPostEventButton</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPostEventButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPostEventButton.Parent" xml:space="preserve">
+    <value>SQLCustomOperationsGoupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPostEventButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SQLExportPreEventButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="SQLExportPreEventButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SQLExportPreEventButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 28</value>
+  </data>
+  <data name="SQLExportPreEventButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 23</value>
+  </data>
+  <data name="SQLExportPreEventButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SQLExportPreEventButton.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPreEventButton.Name" xml:space="preserve">
+    <value>SQLExportPreEventButton</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPreEventButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPreEventButton.Parent" xml:space="preserve">
+    <value>SQLCustomOperationsGoupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLExportPreEventButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SQLCustomOperationsGoupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 227</value>
+  </data>
+  <data name="SQLCustomOperationsGoupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 100</value>
+  </data>
+  <data name="SQLCustomOperationsGoupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SQLCustomOperationsGoupBox.Text" xml:space="preserve">
+    <value>Custom Operations</value>
+  </data>
+  <data name="&gt;&gt;SQLCustomOperationsGoupBox.Name" xml:space="preserve">
+    <value>SQLCustomOperationsGoupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLCustomOperationsGoupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLCustomOperationsGoupBox.Parent" xml:space="preserve">
+    <value>SQLExportDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLCustomOperationsGoupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SQLExportExecuteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="SQLExportExecuteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SQLExportExecuteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>321, 343</value>
+  </data>
+  <data name="SQLExportExecuteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="SQLExportExecuteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="SQLExportExecuteButton.Text" xml:space="preserve">
+    <value>Execute</value>
   </data>
   <data name="&gt;&gt;SQLExportExecuteButton.Name" xml:space="preserve">
     <value>SQLExportExecuteButton</value>
@@ -900,55 +1038,58 @@
     <value>SQLExportDataGroupBox</value>
   </data>
   <data name="&gt;&gt;SQLExportExecuteButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.Name" xml:space="preserve">
-    <value>SQLExportPostEventButton</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.Name" xml:space="preserve">
-    <value>SQLExportPreEventButton</value>
+  <data name="SQLExportFieldMappingGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.Name" xml:space="preserve">
+    <value>SQLExportFieldMappingRemoveButton</value>
+  </data>
+  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
+  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.Parent" xml:space="preserve">
+    <value>SQLExportFieldMappingGroupBox</value>
   </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SQLExportFieldMappingAddButton.Name" xml:space="preserve">
+    <value>SQLExportFieldMappingAddButton</value>
+  </data>
+  <data name="&gt;&gt;SQLExportFieldMappingAddButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLExportFieldMappingAddButton.Parent" xml:space="preserve">
+    <value>SQLExportFieldMappingGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLExportFieldMappingAddButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;SQLExportFieldMappingListBox.Name" xml:space="preserve">
+    <value>SQLExportFieldMappingListBox</value>
+  </data>
+  <data name="&gt;&gt;SQLExportFieldMappingListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLExportFieldMappingListBox.Parent" xml:space="preserve">
+    <value>SQLExportFieldMappingGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLExportFieldMappingListBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.Name" xml:space="preserve">
-    <value>SQLExportPostEventCheckBox</value>
+  <data name="SQLExportFieldMappingGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 75</value>
   </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="SQLExportFieldMappingGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>405, 137</value>
   </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
+  <data name="SQLExportFieldMappingGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.Name" xml:space="preserve">
-    <value>SQLExportPreEventCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="SQLExportFieldMappingGroupBox.Text" xml:space="preserve">
+    <value>Field Mapping</value>
   </data>
   <data name="&gt;&gt;SQLExportFieldMappingGroupBox.Name" xml:space="preserve">
     <value>SQLExportFieldMappingGroupBox</value>
@@ -960,7 +1101,19 @@
     <value>SQLExportDataGroupBox</value>
   </data>
   <data name="&gt;&gt;SQLExportFieldMappingGroupBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
+  </data>
+  <data name="SQLExportTargetComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="SQLExportTargetComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>134, 35</value>
+  </data>
+  <data name="SQLExportTargetComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 21</value>
+  </data>
+  <data name="SQLExportTargetComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;SQLExportTargetComboBox.Name" xml:space="preserve">
     <value>SQLExportTargetComboBox</value>
@@ -972,7 +1125,25 @@
     <value>SQLExportDataGroupBox</value>
   </data>
   <data name="&gt;&gt;SQLExportTargetComboBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
+  </data>
+  <data name="SQLExportTargetLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SQLExportTargetLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SQLExportTargetLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 38</value>
+  </data>
+  <data name="SQLExportTargetLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="SQLExportTargetLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SQLExportTargetLabel.Text" xml:space="preserve">
+    <value>Target</value>
   </data>
   <data name="&gt;&gt;SQLExportTargetLabel.Name" xml:space="preserve">
     <value>SQLExportTargetLabel</value>
@@ -984,13 +1155,13 @@
     <value>SQLExportDataGroupBox</value>
   </data>
   <data name="&gt;&gt;SQLExportTargetLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="SQLExportDataGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>438, 140</value>
   </data>
   <data name="SQLExportDataGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>388, 386</value>
+    <value>442, 388</value>
   </data>
   <data name="SQLExportDataGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1010,24 +1181,6 @@
   <data name="&gt;&gt;SQLExportDataGroupBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="SQLImportExecuteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="SQLImportExecuteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLImportExecuteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 189</value>
-  </data>
-  <data name="SQLImportExecuteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="SQLImportExecuteButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SQLImportExecuteButton.Text" xml:space="preserve">
-    <value>Execute</value>
-  </data>
   <data name="&gt;&gt;SQLImportExecuteButton.Name" xml:space="preserve">
     <value>SQLImportExecuteButton</value>
   </data>
@@ -1039,183 +1192,6 @@
   </data>
   <data name="&gt;&gt;SQLImportExecuteButton.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="SQLImportSourceGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="SQLImportSourceCustomButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLImportSourceCustomButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 99</value>
-  </data>
-  <data name="SQLImportSourceCustomButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="SQLImportSourceCustomButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="SQLImportSourceCustomButton.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomButton.Name" xml:space="preserve">
-    <value>SQLImportSourceCustomButton</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomButton.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SQLImportSourceViewComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="SQLImportSourceViewComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 66</value>
-  </data>
-  <data name="SQLImportSourceViewComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 21</value>
-  </data>
-  <data name="SQLImportSourceViewComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewComboBox.Name" xml:space="preserve">
-    <value>SQLImportSourceViewComboBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewComboBox.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewComboBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SQLImportSourceTableComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="SQLImportSourceTableComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 31</value>
-  </data>
-  <data name="SQLImportSourceTableComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 21</value>
-  </data>
-  <data name="SQLImportSourceTableComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableComboBox.Name" xml:space="preserve">
-    <value>SQLImportSourceTableComboBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableComboBox.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableComboBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 102</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 17</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="SQLImportSourceCustomRadioButton.Text" xml:space="preserve">
-    <value>Custom SQL</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Name" xml:space="preserve">
-    <value>SQLImportSourceCustomRadioButton</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 67</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 17</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SQLImportSourceViewRadioButton.Text" xml:space="preserve">
-    <value>View</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Name" xml:space="preserve">
-    <value>SQLImportSourceViewRadioButton</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceViewRadioButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="SQLImportSourceTableRadioButton.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLImportSourceTableRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 32</value>
-  </data>
-  <data name="SQLImportSourceTableRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 17</value>
-  </data>
-  <data name="SQLImportSourceTableRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="SQLImportSourceTableRadioButton.Text" xml:space="preserve">
-    <value>Table</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Name" xml:space="preserve">
-    <value>SQLImportSourceTableRadioButton</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Parent" xml:space="preserve">
-    <value>SQLImportSourceGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLImportSourceTableRadioButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="SQLImportSourceGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 35</value>
-  </data>
-  <data name="SQLImportSourceGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 139</value>
-  </data>
-  <data name="SQLImportSourceGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="SQLImportSourceGroupBox.Text" xml:space="preserve">
-    <value>Source</value>
   </data>
   <data name="&gt;&gt;SQLImportSourceGroupBox.Name" xml:space="preserve">
     <value>SQLImportSourceGroupBox</value>
@@ -1308,7 +1284,7 @@
     <value>16, 17</value>
   </data>
   <data name="SQLConnectionStringGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>810, 96</value>
+    <value>864, 96</value>
   </data>
   <data name="SQLConnectionStringGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1335,7 +1311,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="SqlServerToolsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>845, 551</value>
+    <value>899, 544</value>
   </data>
   <data name="SqlServerToolsTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1355,11 +1331,62 @@
   <data name="&gt;&gt;SqlServerToolsTabPage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;ResetEntireConfigurationGroupBox.Name" xml:space="preserve">
+    <value>ResetEntireConfigurationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationGroupBox.Parent" xml:space="preserve">
+    <value>ResetDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ResetSelectedConfigurationButton.Name" xml:space="preserve">
+    <value>ResetSelectedConfigurationButton</value>
+  </data>
+  <data name="&gt;&gt;ResetSelectedConfigurationButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ResetSelectedConfigurationButton.Parent" xml:space="preserve">
+    <value>ResetDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;ResetSelectedConfigurationButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ResetDataTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="ResetDataTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="ResetDataTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>899, 544</value>
+  </data>
+  <data name="ResetDataTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ResetDataTabPage.Text" xml:space="preserve">
+    <value>Reset Saved Data</value>
+  </data>
+  <data name="&gt;&gt;ResetDataTabPage.Name" xml:space="preserve">
+    <value>ResetDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;ResetDataTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ResetDataTabPage.Parent" xml:space="preserve">
+    <value>MainTabControl</value>
+  </data>
+  <data name="&gt;&gt;ResetDataTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="MainTabControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 64</value>
   </data>
   <data name="MainTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>853, 577</value>
+    <value>907, 570</value>
   </data>
   <data name="MainTabControl.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1374,7 +1401,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MainTabControl.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <data name="ColumnInfoGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1395,7 +1422,7 @@
     <value>435, 15</value>
   </data>
   <data name="ColumnInfoGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>392, 516</value>
+    <value>448, 509</value>
   </data>
   <data name="ColumnInfoGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1422,7 +1449,7 @@
     <value>6, 19</value>
   </data>
   <data name="ColumnInfoDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 491</value>
+    <value>436, 484</value>
   </data>
   <data name="ColumnInfoDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2000,215 +2027,14 @@
   <data name="&gt;&gt;ChangeColumnTypeColumnLabel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="SQLExportExecuteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="SQLExportFieldMappingRemoveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
-  </data>
-  <data name="SQLExportExecuteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLExportExecuteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 341</value>
-  </data>
-  <data name="SQLExportExecuteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="SQLExportExecuteButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="SQLExportExecuteButton.Text" xml:space="preserve">
-    <value>Execute</value>
-  </data>
-  <data name="&gt;&gt;SQLExportExecuteButton.Name" xml:space="preserve">
-    <value>SQLExportExecuteButton</value>
-  </data>
-  <data name="&gt;&gt;SQLExportExecuteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportExecuteButton.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportExecuteButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SQLExportPostEventButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLExportPostEventButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 283</value>
-  </data>
-  <data name="SQLExportPostEventButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 23</value>
-  </data>
-  <data name="SQLExportPostEventButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="SQLExportPostEventButton.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.Name" xml:space="preserve">
-    <value>SQLExportPostEventButton</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SQLExportPreEventButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLExportPreEventButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 248</value>
-  </data>
-  <data name="SQLExportPreEventButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 23</value>
-  </data>
-  <data name="SQLExportPreEventButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="SQLExportPreEventButton.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.Name" xml:space="preserve">
-    <value>SQLExportPreEventButton</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 287</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="SQLExportPostEventCheckBox.Text" xml:space="preserve">
-    <value>Run Custom SQL After Export</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.Name" xml:space="preserve">
-    <value>SQLExportPostEventCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPostEventCheckBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="SQLExportPreEventCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLExportPreEventCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 254</value>
-  </data>
-  <data name="SQLExportPreEventCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 17</value>
-  </data>
-  <data name="SQLExportPreEventCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="SQLExportPreEventCheckBox.Text" xml:space="preserve">
-    <value>Run Custom SQL Before Export</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.Name" xml:space="preserve">
-    <value>SQLExportPreEventCheckBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportPreEventCheckBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="SQLExportFieldMappingGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.Name" xml:space="preserve">
-    <value>SQLExportFieldMappingRemoveButton</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.Parent" xml:space="preserve">
-    <value>SQLExportFieldMappingGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingAddButton.Name" xml:space="preserve">
-    <value>SQLExportFieldMappingAddButton</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingAddButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingAddButton.Parent" xml:space="preserve">
-    <value>SQLExportFieldMappingGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingAddButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingListBox.Name" xml:space="preserve">
-    <value>SQLExportFieldMappingListBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingListBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingListBox.Parent" xml:space="preserve">
-    <value>SQLExportFieldMappingGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingListBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SQLExportFieldMappingGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 75</value>
-  </data>
-  <data name="SQLExportFieldMappingGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>351, 153</value>
-  </data>
-  <data name="SQLExportFieldMappingGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SQLExportFieldMappingGroupBox.Text" xml:space="preserve">
-    <value>Field Mapping</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingGroupBox.Name" xml:space="preserve">
-    <value>SQLExportFieldMappingGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingGroupBox.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportFieldMappingGroupBox.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="SQLExportFieldMappingRemoveButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="SQLExportFieldMappingRemoveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 65</value>
+    <value>294, 65</value>
   </data>
   <data name="SQLExportFieldMappingRemoveButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 23</value>
@@ -2231,11 +2057,14 @@
   <data name="&gt;&gt;SQLExportFieldMappingRemoveButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="SQLExportFieldMappingAddButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="SQLExportFieldMappingAddButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="SQLExportFieldMappingAddButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 29</value>
+    <value>294, 29</value>
   </data>
   <data name="SQLExportFieldMappingAddButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 23</value>
@@ -2258,11 +2087,14 @@
   <data name="&gt;&gt;SQLExportFieldMappingAddButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="SQLExportFieldMappingListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="SQLExportFieldMappingListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 29</value>
   </data>
   <data name="SQLExportFieldMappingListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 108</value>
+    <value>263, 82</value>
   </data>
   <data name="SQLExportFieldMappingListBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2279,59 +2111,296 @@
   <data name="&gt;&gt;SQLExportFieldMappingListBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="SQLExportTargetComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="SQLImportExecuteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
-  <data name="SQLExportTargetComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 35</value>
-  </data>
-  <data name="SQLExportTargetComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 21</value>
-  </data>
-  <data name="SQLExportTargetComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetComboBox.Name" xml:space="preserve">
-    <value>SQLExportTargetComboBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetComboBox.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SQLExportTargetComboBox.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="SQLExportTargetLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SQLExportTargetLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="SQLImportExecuteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="SQLExportTargetLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 38</value>
+  <data name="SQLImportExecuteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>267, 189</value>
   </data>
-  <data name="SQLExportTargetLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
+  <data name="SQLImportExecuteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
-  <data name="SQLExportTargetLabel.TabIndex" type="System.Int32, mscorlib">
+  <data name="SQLImportExecuteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SQLImportExecuteButton.Text" xml:space="preserve">
+    <value>Execute</value>
+  </data>
+  <data name="&gt;&gt;SQLImportExecuteButton.Name" xml:space="preserve">
+    <value>SQLImportExecuteButton</value>
+  </data>
+  <data name="&gt;&gt;SQLImportExecuteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportExecuteButton.Parent" xml:space="preserve">
+    <value>SQLImportDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportExecuteButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="SQLExportTargetLabel.Text" xml:space="preserve">
-    <value>Target</value>
+  <data name="SQLImportSourceGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;SQLExportTargetLabel.Name" xml:space="preserve">
-    <value>SQLExportTargetLabel</value>
+  <data name="&gt;&gt;SQLImportSourceCustomButton.Name" xml:space="preserve">
+    <value>SQLImportSourceCustomButton</value>
   </data>
-  <data name="&gt;&gt;SQLExportTargetLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;SQLImportSourceCustomButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SQLExportTargetLabel.Parent" xml:space="preserve">
-    <value>SQLExportDataGroupBox</value>
+  <data name="&gt;&gt;SQLImportSourceCustomButton.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
   </data>
-  <data name="&gt;&gt;SQLExportTargetLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;SQLImportSourceCustomButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewComboBox.Name" xml:space="preserve">
+    <value>SQLImportSourceViewComboBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewComboBox.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewComboBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableComboBox.Name" xml:space="preserve">
+    <value>SQLImportSourceTableComboBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableComboBox.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableComboBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Name" xml:space="preserve">
+    <value>SQLImportSourceCustomRadioButton</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Name" xml:space="preserve">
+    <value>SQLImportSourceViewRadioButton</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewRadioButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Name" xml:space="preserve">
+    <value>SQLImportSourceTableRadioButton</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableRadioButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="SQLImportSourceGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 35</value>
+  </data>
+  <data name="SQLImportSourceGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 139</value>
+  </data>
+  <data name="SQLImportSourceGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SQLImportSourceGroupBox.Text" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceGroupBox.Name" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceGroupBox.Parent" xml:space="preserve">
+    <value>SQLImportDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SQLImportSourceCustomButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SQLImportSourceCustomButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 99</value>
+  </data>
+  <data name="SQLImportSourceCustomButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="SQLImportSourceCustomButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="SQLImportSourceCustomButton.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomButton.Name" xml:space="preserve">
+    <value>SQLImportSourceCustomButton</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomButton.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SQLImportSourceViewComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="SQLImportSourceViewComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 66</value>
+  </data>
+  <data name="SQLImportSourceViewComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 21</value>
+  </data>
+  <data name="SQLImportSourceViewComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewComboBox.Name" xml:space="preserve">
+    <value>SQLImportSourceViewComboBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewComboBox.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewComboBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SQLImportSourceTableComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="SQLImportSourceTableComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 31</value>
+  </data>
+  <data name="SQLImportSourceTableComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 21</value>
+  </data>
+  <data name="SQLImportSourceTableComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableComboBox.Name" xml:space="preserve">
+    <value>SQLImportSourceTableComboBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableComboBox.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableComboBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SQLImportSourceCustomRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SQLImportSourceCustomRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SQLImportSourceCustomRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 102</value>
+  </data>
+  <data name="SQLImportSourceCustomRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 17</value>
+  </data>
+  <data name="SQLImportSourceCustomRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="SQLImportSourceCustomRadioButton.Text" xml:space="preserve">
+    <value>Custom SQL</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Name" xml:space="preserve">
+    <value>SQLImportSourceCustomRadioButton</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceCustomRadioButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SQLImportSourceViewRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SQLImportSourceViewRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SQLImportSourceViewRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 67</value>
+  </data>
+  <data name="SQLImportSourceViewRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 17</value>
+  </data>
+  <data name="SQLImportSourceViewRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SQLImportSourceViewRadioButton.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Name" xml:space="preserve">
+    <value>SQLImportSourceViewRadioButton</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewRadioButton.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceViewRadioButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SQLImportSourceTableRadioButton.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SQLImportSourceTableRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 32</value>
+  </data>
+  <data name="SQLImportSourceTableRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 17</value>
+  </data>
+  <data name="SQLImportSourceTableRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SQLImportSourceTableRadioButton.Text" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Name" xml:space="preserve">
+    <value>SQLImportSourceTableRadioButton</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableRadioButton.Parent" xml:space="preserve">
+    <value>SQLImportSourceGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLImportSourceTableRadioButton.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="SQLConnectionStringHelpLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2370,7 +2439,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
   </data>
   <data name="SQLConnectionStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 62</value>
+    <value>456, 62</value>
   </data>
   <data name="SQLConnectionStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 23</value>
@@ -2403,7 +2472,7 @@
     <value>NoControl</value>
   </data>
   <data name="SQLConnectButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>670, 62</value>
+    <value>724, 62</value>
   </data>
   <data name="SQLConnectButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 23</value>
@@ -2433,7 +2502,7 @@
     <value>13, 30</value>
   </data>
   <data name="SQLConnectionStringTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>779, 20</value>
+    <value>833, 20</value>
   </data>
   <data name="SQLConnectionStringTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2449,6 +2518,96 @@
   </data>
   <data name="&gt;&gt;SQLConnectionStringTextBox.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationButton.Name" xml:space="preserve">
+    <value>ResetEntireConfigurationButton</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationButton.Parent" xml:space="preserve">
+    <value>ResetEntireConfigurationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ResetEntireConfigurationGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 145</value>
+  </data>
+  <data name="ResetEntireConfigurationGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>435, 72</value>
+  </data>
+  <data name="ResetEntireConfigurationGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ResetEntireConfigurationGroupBox.Text" xml:space="preserve">
+    <value>Delete {0} Configuration</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationGroupBox.Name" xml:space="preserve">
+    <value>ResetEntireConfigurationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationGroupBox.Parent" xml:space="preserve">
+    <value>ResetDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ResetEntireConfigurationButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ResetEntireConfigurationButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ResetEntireConfigurationButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 28</value>
+  </data>
+  <data name="ResetEntireConfigurationButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>404, 23</value>
+  </data>
+  <data name="ResetEntireConfigurationButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ResetEntireConfigurationButton.Text" xml:space="preserve">
+    <value>Reset Entire Saved Configuration</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationButton.Name" xml:space="preserve">
+    <value>ResetEntireConfigurationButton</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationButton.Parent" xml:space="preserve">
+    <value>ResetEntireConfigurationGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ResetEntireConfigurationButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ResetSelectedConfigurationButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 41</value>
+  </data>
+  <data name="ResetSelectedConfigurationButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>435, 23</value>
+  </data>
+  <data name="ResetSelectedConfigurationButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ResetSelectedConfigurationButton.Text" xml:space="preserve">
+    <value>Reset Saved Configuration for Selected {0} Only</value>
+  </data>
+  <data name="&gt;&gt;ResetSelectedConfigurationButton.Name" xml:space="preserve">
+    <value>ResetSelectedConfigurationButton</value>
+  </data>
+  <data name="&gt;&gt;ResetSelectedConfigurationButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ResetSelectedConfigurationButton.Parent" xml:space="preserve">
+    <value>ResetDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;ResetSelectedConfigurationButton.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="DataTableLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2475,7 +2634,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DataTableLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="DataTableComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 19</value>
@@ -2496,7 +2655,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DataTableComboBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="ViewSourceCodeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -2511,7 +2670,7 @@
     <value>NoControl</value>
   </data>
   <data name="ViewSourceCodeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 673</value>
+    <value>190, 666</value>
   </data>
   <data name="ViewSourceCodeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 13</value>
@@ -2532,7 +2691,97 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ViewSourceCodeLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ApplyButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ApplyButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ApplyButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>819, 661</value>
+  </data>
+  <data name="ApplyButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="ApplyButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ApplyButton.Text" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="&gt;&gt;ApplyButton.Name" xml:space="preserve">
+    <value>ApplyButton</value>
+  </data>
+  <data name="&gt;&gt;ApplyButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ApplyButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ApplyButton.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="Cancel_Button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="Cancel_Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Cancel_Button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>713, 661</value>
+  </data>
+  <data name="Cancel_Button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="Cancel_Button.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="Cancel_Button.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;Cancel_Button.Name" xml:space="preserve">
+    <value>Cancel_Button</value>
+  </data>
+  <data name="&gt;&gt;Cancel_Button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Cancel_Button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Cancel_Button.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="OK_Button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="OK_Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="OK_Button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>607, 661</value>
+  </data>
+  <data name="OK_Button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="OK_Button.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="OK_Button.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;OK_Button.Name" xml:space="preserve">
+    <value>OK_Button</value>
+  </data>
+  <data name="&gt;&gt;OK_Button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OK_Button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;OK_Button.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2541,7 +2790,10 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>877, 703</value>
+    <value>931, 696</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
     <value>True</value>

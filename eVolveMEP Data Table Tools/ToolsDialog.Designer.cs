@@ -32,7 +32,6 @@ partial class ToolsDialog
             this.OpenConfigurationPictureBox = new System.Windows.Forms.PictureBox();
             this.HelpLinkPictureBox = new System.Windows.Forms.PictureBox();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.CloseButton = new System.Windows.Forms.Button();
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.ColumnToolsTabPage = new System.Windows.Forms.TabPage();
             this.ColumnInfoGroupBox = new System.Windows.Forms.GroupBox();
@@ -79,9 +78,17 @@ partial class ToolsDialog
             this.SQLConnectionStatusLabel = new System.Windows.Forms.Label();
             this.SQLConnectButton = new System.Windows.Forms.Button();
             this.SQLConnectionStringTextBox = new System.Windows.Forms.TextBox();
+            this.ResetDataTabPage = new System.Windows.Forms.TabPage();
+            this.ResetEntireConfigurationGroupBox = new System.Windows.Forms.GroupBox();
+            this.ResetEntireConfigurationButton = new System.Windows.Forms.Button();
+            this.ResetSelectedConfigurationButton = new System.Windows.Forms.Button();
             this.DataTableLabel = new System.Windows.Forms.Label();
             this.DataTableComboBox = new System.Windows.Forms.ComboBox();
             this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
+            this.ApplyButton = new System.Windows.Forms.Button();
+            this.Cancel_Button = new System.Windows.Forms.Button();
+            this.OK_Button = new System.Windows.Forms.Button();
+            this.SQLCustomOperationsGoupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -98,6 +105,9 @@ partial class ToolsDialog
             this.SQLImportDataGroupBox.SuspendLayout();
             this.SQLImportSourceGroupBox.SuspendLayout();
             this.SQLConnectionStringGroupBox.SuspendLayout();
+            this.ResetDataTabPage.SuspendLayout();
+            this.ResetEntireConfigurationGroupBox.SuspendLayout();
+            this.SQLCustomOperationsGoupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // OpenConfigurationPictureBox
@@ -122,18 +132,12 @@ partial class ToolsDialog
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.TabStop = false;
             // 
-            // CloseButton
-            // 
-            resources.ApplyResources(this.CloseButton, "CloseButton");
-            this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.UseVisualStyleBackColor = true;
-            // 
             // MainTabControl
             // 
             resources.ApplyResources(this.MainTabControl, "MainTabControl");
             this.MainTabControl.Controls.Add(this.ColumnToolsTabPage);
             this.MainTabControl.Controls.Add(this.SqlServerToolsTabPage);
+            this.MainTabControl.Controls.Add(this.ResetDataTabPage);
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
             // 
@@ -199,8 +203,8 @@ partial class ToolsDialog
             resources.ApplyResources(this.DataTableExpressionHelpLabel, "DataTableExpressionHelpLabel");
             this.DataTableExpressionHelpLabel.ForeColor = System.Drawing.Color.Blue;
             this.DataTableExpressionHelpLabel.Name = "DataTableExpressionHelpLabel";
-            this.DataTableExpressionHelpLabel.Tag = "https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/dataset-datatable-" +
-    "dataview/creating-expression-columns";
+            this.DataTableExpressionHelpLabel.Tag = "https://learn.microsoft.com/en-us/dotnet/api/system.data.datacolumn.expression?vi" +
+    "ew=netframework-4.8#expression-syntax";
             // 
             // ExpressionColumnExpressionTextBox
             // 
@@ -278,11 +282,8 @@ partial class ToolsDialog
             // SQLExportDataGroupBox
             // 
             resources.ApplyResources(this.SQLExportDataGroupBox, "SQLExportDataGroupBox");
+            this.SQLExportDataGroupBox.Controls.Add(this.SQLCustomOperationsGoupBox);
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportExecuteButton);
-            this.SQLExportDataGroupBox.Controls.Add(this.SQLExportPostEventButton);
-            this.SQLExportDataGroupBox.Controls.Add(this.SQLExportPreEventButton);
-            this.SQLExportDataGroupBox.Controls.Add(this.SQLExportPostEventCheckBox);
-            this.SQLExportDataGroupBox.Controls.Add(this.SQLExportPreEventCheckBox);
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportFieldMappingGroupBox);
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportTargetComboBox);
             this.SQLExportDataGroupBox.Controls.Add(this.SQLExportTargetLabel);
@@ -345,15 +346,14 @@ partial class ToolsDialog
             // 
             // SQLExportFieldMappingListBox
             // 
-            this.SQLExportFieldMappingListBox.FormattingEnabled = true;
             resources.ApplyResources(this.SQLExportFieldMappingListBox, "SQLExportFieldMappingListBox");
+            this.SQLExportFieldMappingListBox.FormattingEnabled = true;
             this.SQLExportFieldMappingListBox.Name = "SQLExportFieldMappingListBox";
             this.SQLExportFieldMappingListBox.Sorted = true;
             // 
             // SQLExportTargetComboBox
             // 
             resources.ApplyResources(this.SQLExportTargetComboBox, "SQLExportTargetComboBox");
-            this.SQLExportTargetComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SQLExportTargetComboBox.FormattingEnabled = true;
             this.SQLExportTargetComboBox.Name = "SQLExportTargetComboBox";
             // 
@@ -398,14 +398,12 @@ partial class ToolsDialog
             // SQLImportSourceViewComboBox
             // 
             resources.ApplyResources(this.SQLImportSourceViewComboBox, "SQLImportSourceViewComboBox");
-            this.SQLImportSourceViewComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SQLImportSourceViewComboBox.FormattingEnabled = true;
             this.SQLImportSourceViewComboBox.Name = "SQLImportSourceViewComboBox";
             // 
             // SQLImportSourceTableComboBox
             // 
             resources.ApplyResources(this.SQLImportSourceTableComboBox, "SQLImportSourceTableComboBox");
-            this.SQLImportSourceTableComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SQLImportSourceTableComboBox.FormattingEnabled = true;
             this.SQLImportSourceTableComboBox.Name = "SQLImportSourceTableComboBox";
             // 
@@ -465,6 +463,35 @@ partial class ToolsDialog
             resources.ApplyResources(this.SQLConnectionStringTextBox, "SQLConnectionStringTextBox");
             this.SQLConnectionStringTextBox.Name = "SQLConnectionStringTextBox";
             // 
+            // ResetDataTabPage
+            // 
+            this.ResetDataTabPage.Controls.Add(this.ResetEntireConfigurationGroupBox);
+            this.ResetDataTabPage.Controls.Add(this.ResetSelectedConfigurationButton);
+            resources.ApplyResources(this.ResetDataTabPage, "ResetDataTabPage");
+            this.ResetDataTabPage.Name = "ResetDataTabPage";
+            this.ResetDataTabPage.UseVisualStyleBackColor = true;
+            // 
+            // ResetEntireConfigurationGroupBox
+            // 
+            this.ResetEntireConfigurationGroupBox.Controls.Add(this.ResetEntireConfigurationButton);
+            resources.ApplyResources(this.ResetEntireConfigurationGroupBox, "ResetEntireConfigurationGroupBox");
+            this.ResetEntireConfigurationGroupBox.Name = "ResetEntireConfigurationGroupBox";
+            this.ResetEntireConfigurationGroupBox.TabStop = false;
+            // 
+            // ResetEntireConfigurationButton
+            // 
+            resources.ApplyResources(this.ResetEntireConfigurationButton, "ResetEntireConfigurationButton");
+            this.ResetEntireConfigurationButton.Name = "ResetEntireConfigurationButton";
+            this.ResetEntireConfigurationButton.UseVisualStyleBackColor = true;
+            this.ResetEntireConfigurationButton.Click += new System.EventHandler(this.ResetEntireConfigurationButton_Click);
+            // 
+            // ResetSelectedConfigurationButton
+            // 
+            resources.ApplyResources(this.ResetSelectedConfigurationButton, "ResetSelectedConfigurationButton");
+            this.ResetSelectedConfigurationButton.Name = "ResetSelectedConfigurationButton";
+            this.ResetSelectedConfigurationButton.UseVisualStyleBackColor = true;
+            this.ResetSelectedConfigurationButton.Click += new System.EventHandler(this.ResetSelectedConfigurationButton_Click);
+            // 
             // DataTableLabel
             // 
             resources.ApplyResources(this.DataTableLabel, "DataTableLabel");
@@ -485,16 +512,51 @@ partial class ToolsDialog
             this.ViewSourceCodeLabel.ForeColor = System.Drawing.Color.Blue;
             this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
             // 
+            // ApplyButton
+            // 
+            resources.ApplyResources(this.ApplyButton, "ApplyButton");
+            this.ApplyButton.Name = "ApplyButton";
+            this.ApplyButton.UseVisualStyleBackColor = true;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
+            // 
+            // Cancel_Button
+            // 
+            resources.ApplyResources(this.Cancel_Button, "Cancel_Button");
+            this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Cancel_Button.Name = "Cancel_Button";
+            this.Cancel_Button.UseVisualStyleBackColor = true;
+            // 
+            // OK_Button
+            // 
+            resources.ApplyResources(this.OK_Button, "OK_Button");
+            this.OK_Button.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.OK_Button.Name = "OK_Button";
+            this.OK_Button.UseVisualStyleBackColor = true;
+            // 
+            // SQLCustomOperationsGoupBox
+            // 
+            resources.ApplyResources(this.SQLCustomOperationsGoupBox, "SQLCustomOperationsGoupBox");
+            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPreEventCheckBox);
+            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPostEventCheckBox);
+            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPostEventButton);
+            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPreEventButton);
+            this.SQLCustomOperationsGoupBox.Name = "SQLCustomOperationsGoupBox";
+            this.SQLCustomOperationsGoupBox.TabStop = false;
+            // 
             // ToolsDialog
             // 
+            this.AcceptButton = this.OK_Button;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.Cancel_Button;
+            this.Controls.Add(this.ApplyButton);
+            this.Controls.Add(this.Cancel_Button);
+            this.Controls.Add(this.OK_Button);
             this.Controls.Add(this.ViewSourceCodeLabel);
             this.Controls.Add(this.DataTableComboBox);
             this.Controls.Add(this.DataTableLabel);
             this.Controls.Add(this.MainTabControl);
             this.Controls.Add(this.LogoPictureBox);
-            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.OpenConfigurationPictureBox);
             this.Controls.Add(this.HelpLinkPictureBox);
             this.Name = "ToolsDialog";
@@ -521,6 +583,10 @@ partial class ToolsDialog
             this.SQLImportSourceGroupBox.PerformLayout();
             this.SQLConnectionStringGroupBox.ResumeLayout(false);
             this.SQLConnectionStringGroupBox.PerformLayout();
+            this.ResetDataTabPage.ResumeLayout(false);
+            this.ResetEntireConfigurationGroupBox.ResumeLayout(false);
+            this.SQLCustomOperationsGoupBox.ResumeLayout(false);
+            this.SQLCustomOperationsGoupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,7 +597,6 @@ partial class ToolsDialog
     private System.Windows.Forms.PictureBox OpenConfigurationPictureBox;
     private System.Windows.Forms.PictureBox HelpLinkPictureBox;
     private System.Windows.Forms.PictureBox LogoPictureBox;
-    private System.Windows.Forms.Button CloseButton;
     private System.Windows.Forms.TabControl MainTabControl;
     private System.Windows.Forms.TabPage ColumnToolsTabPage;
     private System.Windows.Forms.TabPage SqlServerToolsTabPage;
@@ -581,4 +646,12 @@ partial class ToolsDialog
     private System.Windows.Forms.Label DataTableExpressionHelpLabel;
     private System.Windows.Forms.GroupBox ColumnInfoGroupBox;
     private System.Windows.Forms.DataGridView ColumnInfoDataGridView;
+    private System.Windows.Forms.Button ApplyButton;
+    private System.Windows.Forms.Button Cancel_Button;
+    private System.Windows.Forms.Button OK_Button;
+    private System.Windows.Forms.TabPage ResetDataTabPage;
+    private System.Windows.Forms.Button ResetEntireConfigurationButton;
+    private System.Windows.Forms.Button ResetSelectedConfigurationButton;
+    private System.Windows.Forms.GroupBox ResetEntireConfigurationGroupBox;
+    private System.Windows.Forms.GroupBox SQLCustomOperationsGoupBox;
 }

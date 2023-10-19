@@ -92,6 +92,29 @@ internal static class Methods
         }
     }
 
+    /// <summary> Performs base64 encoding on the specified <paramref name="text"/>. </summary>
+    ///
+    /// <param name="text"> Value to encode. </param>
+    public static string ToBase64(string text) => string.IsNullOrEmpty(text) ? "" : Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(text.ToCharArray()));
+
+    /// <summary>
+    /// Performs base64 decoding on the specified <paramref name="text"/>. If the provided value is malformed, an empty
+    /// string is returned.
+    /// </summary>
+    ///
+    /// <param name="text"> Value to decode. </param>
+    public static string FromBase64(string text)
+    {
+        try
+        {
+            return System.Text.Encoding.Default.GetString(Convert.FromBase64String(text));
+        }
+        catch (Exception)
+        {
+            return "";
+        }
+    }
+
     /// <summary> Shows an error message dialog box. </summary>
     ///
     /// <inheritdoc cref="ShowMessage"/>
@@ -107,15 +130,21 @@ internal static class Methods
     /// <inheritdoc cref="ShowMessage"/>
     internal static void ShowWarningMessage(System.Windows.Forms.Form owner, string message, string title = null) => ShowMessage(MessageBoxIcon.Warning, owner, message, title);
 
-    /// <summary> Shows a dialog message box to the user. </summary>
+    /// <summary> Shows a prompt which offers a Yes/No response. Returns if the user selected Yes. </summary>
+    ///
+    /// <inheritdoc cref="ShowMessage"/>
+    internal static bool ShowConfirmationPrompt(System.Windows.Forms.Form owner, string message, string title = null) => ShowMessage(MessageBoxIcon.Question, owner, message, title, MessageBoxButtons.YesNo) == DialogResult.Yes;
+
+    /// <summary> Shows a dialog message box to the user and returns the response result. </summary>
     ///
     /// <param name="icon"> Icon to display. </param>
     /// <param name="owner"> Dialog owner. </param>
     /// <param name="message"> Text message to display to the user. </param>
     /// <param name="title"> Dialog title. </param>
-    private static void ShowMessage(MessageBoxIcon icon, System.Windows.Forms.Form owner, string message, string title)
+    /// <param name="buttons"> (Optional) Buttons available. </param>
+    private static DialogResult ShowMessage(MessageBoxIcon icon, System.Windows.Forms.Form owner, string message, string title, MessageBoxButtons buttons = MessageBoxButtons.OK)
     {
-        MessageBox.Show(owner, message, title ?? owner?.Text ?? icon.ToString(), MessageBoxButtons.OK, icon);
+        return MessageBox.Show(owner, message, title ?? owner?.Text ?? icon.ToString(), buttons, icon);
     }
 
     /// <summary> Opens a browser to the page containing the source code. </summary>

@@ -218,4 +218,16 @@ If an existing data table is selected, it will be overwritten with the result.</
 	  <value>Expression</value>
 	  <comment>As in formula expression, ex. Col1+Col2</comment>
   </data>
+  <data name="ResetSelectedDataTableConfigPrompt" xml:space="preserve">
+	  <value>Delete saved configuration for the selected {0}?</value>
+  </data>
+  <data name="ResetEntireConfigPrompt" xml:space="preserve">
+	  <value>Warning: This will delete ALL saved configuration data.
+Would you like to continue?</value>
+  </data>
+  <data name="SQLImportConfirmationPrompt" xml:space="preserve">
+	  <value>Warning: This operation will completely overwrite the structure and contents the selected {0} and rebuild with the {1} selections.
+
+Would you like to continue?</value>
+  </data>
 </root>
