@@ -158,7 +158,7 @@ Tools</value>
   </data>
   <data name="CouldNotConvertValueWarning" xml:space="preserve">
 	  <value>One or more values were not able to be converted to the target type.
-The default value was used in this situation.</value>
+The default value was applied in this situation.</value>
   </data>
   <data name="ValueMustBeProvided1Error" xml:space="preserve">
 	  <value>A value must be provided for '{0}'.</value>
@@ -185,12 +185,10 @@ The default value was used in this situation.</value>
 	  <value>Enter the SQL statement to execute prior to importing data.</value>
   </data>
   <data name="StatementToRunAfterImport" xml:space="preserve">
-	  <value>Enter the SQL statement to execute after to importing data.</value>
+	  <value>Enter the SQL statement to execute after importing data.</value>
   </data>
   <data name="ImportStatementPromptInfo" xml:space="preserve">
-	  <value>Enter the SQL Select statement which will be used to populate the selected data table. The SQL results will be used to define the column names and their respective data type.
-
-If an existing data table is selected, it will be overwritten with the result.</value>
+	  <value>Enter the SQL Select statement which will be used to populate the selected {0}. The SQL results will be used to define the column names and their respective data type.</value>
   </data>
   <data name="ValueMustBeProvidedWhenEnabledError" xml:space="preserve">
 	  <value>A value must be provided for '{0}' when enabled.</value>
@@ -206,7 +204,7 @@ If an existing data table is selected, it will be overwritten with the result.</
   </data>
   <data name="ColumnInfoName_Order" xml:space="preserve">
 	  <value>Order</value>
-	  <comment>As in sequence</comment>
+	  <comment>Sequential order</comment>
   </data>
   <data name="ColumnInfoName_Name" xml:space="preserve">
 	  <value>Name</value>
@@ -216,7 +214,7 @@ If an existing data table is selected, it will be overwritten with the result.</
   </data>
   <data name="ColumnInfoName_Expression" xml:space="preserve">
 	  <value>Expression</value>
-	  <comment>As in formula expression, ex. Col1+Col2</comment>
+	  <comment>Formula expression, ex. Col1+Col2</comment>
   </data>
   <data name="ResetSelectedDataTableConfigPrompt" xml:space="preserve">
 	  <value>Delete saved configuration for the selected {0}?</value>

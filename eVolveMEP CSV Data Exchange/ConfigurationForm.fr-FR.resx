@@ -133,7 +133,7 @@
 	  <value>Tabulation</value>
   </data>
   <data name="DirectionGroupBox.Text" xml:space="preserve">
-	  <value>Direction</value>
+	  <value>Sens</value>
   </data>
   <data name="ExportRadioButton.Text" xml:space="preserve">
 	  <value>Exporter</value>
@@ -155,5 +155,8 @@
   </data>
   <data name="ProfileGroupBox.Text" xml:space="preserve">
 	  <value>Profil</value>
+  </data>
+  <data name="ViewSourceCodeLabel.Text" xml:space="preserve">
+	  <value>Afficher le code source sur GitHub</value>
   </data>
 </root>

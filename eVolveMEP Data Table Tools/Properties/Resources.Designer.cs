@@ -126,7 +126,7 @@ namespace eVolve.DataTableTools.Revit.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to One or more values were not able to be converted to the target type.
-        ///The default value was used in this situation..
+        ///The default value was applied in this situation..
         /// </summary>
         internal static string CouldNotConvertValueWarning {
             get {
@@ -199,9 +199,7 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter the SQL Select statement which will be used to populate the selected data table. The SQL results will be used to define the column names and their respective data type.
-        ///
-        ///If an existing data table is selected, it will be overwritten with the result..
+        ///   Looks up a localized string similar to Enter the SQL Select statement which will be used to populate the selected {0}. The SQL results will be used to define the column names and their respective data type..
         /// </summary>
         internal static string ImportStatementPromptInfo {
             get {
@@ -313,7 +311,7 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter the SQL statement to execute after to importing data..
+        ///   Looks up a localized string similar to Enter the SQL statement to execute after importing data..
         /// </summary>
         internal static string StatementToRunAfterImport {
             get {

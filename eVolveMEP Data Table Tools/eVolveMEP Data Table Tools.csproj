@@ -524,6 +524,9 @@
     <Analyzer Include="..\packages\Roslynator.Analyzers.4.5.0\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Core.dll" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddMappingDialog.fr-fr.resx">
+      <DependentUpon>AddMappingDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddMappingDialog.resx">
       <DependentUpon>AddMappingDialog.cs</DependentUpon>
     </EmbeddedResource>

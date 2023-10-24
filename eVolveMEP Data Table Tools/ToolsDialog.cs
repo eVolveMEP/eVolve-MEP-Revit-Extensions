@@ -626,7 +626,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         if (button == SQLImportSourceCustomButton)
         {
             title = $"{SQLImportDataGroupBox.Text}: {SQLImportSourceCustomRadioButton.Text}";
-            instructions = Resources.ImportStatementPromptInfo;
+            instructions = string.Format(Resources.ImportStatementPromptInfo, DataTableLabel.Text);
         }
         else if (button == SQLExportPreEventButton)
         {

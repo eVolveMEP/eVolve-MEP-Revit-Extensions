@@ -53,11 +53,12 @@ partial class ToolsDialog
             this.ChangeColumnTypeColumnLabel = new System.Windows.Forms.Label();
             this.SqlServerToolsTabPage = new System.Windows.Forms.TabPage();
             this.SQLExportDataGroupBox = new System.Windows.Forms.GroupBox();
-            this.SQLExportExecuteButton = new System.Windows.Forms.Button();
+            this.SQLCustomOperationsGoupBox = new System.Windows.Forms.GroupBox();
+            this.SQLExportPreEventCheckBox = new System.Windows.Forms.CheckBox();
+            this.SQLExportPostEventCheckBox = new System.Windows.Forms.CheckBox();
             this.SQLExportPostEventButton = new System.Windows.Forms.Button();
             this.SQLExportPreEventButton = new System.Windows.Forms.Button();
-            this.SQLExportPostEventCheckBox = new System.Windows.Forms.CheckBox();
-            this.SQLExportPreEventCheckBox = new System.Windows.Forms.CheckBox();
+            this.SQLExportExecuteButton = new System.Windows.Forms.Button();
             this.SQLExportFieldMappingGroupBox = new System.Windows.Forms.GroupBox();
             this.SQLExportFieldMappingRemoveButton = new System.Windows.Forms.Button();
             this.SQLExportFieldMappingAddButton = new System.Windows.Forms.Button();
@@ -88,7 +89,6 @@ partial class ToolsDialog
             this.ApplyButton = new System.Windows.Forms.Button();
             this.Cancel_Button = new System.Windows.Forms.Button();
             this.OK_Button = new System.Windows.Forms.Button();
-            this.SQLCustomOperationsGoupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -101,13 +101,13 @@ partial class ToolsDialog
             this.ChangeColumnTypeGroupBox.SuspendLayout();
             this.SqlServerToolsTabPage.SuspendLayout();
             this.SQLExportDataGroupBox.SuspendLayout();
+            this.SQLCustomOperationsGoupBox.SuspendLayout();
             this.SQLExportFieldMappingGroupBox.SuspendLayout();
             this.SQLImportDataGroupBox.SuspendLayout();
             this.SQLImportSourceGroupBox.SuspendLayout();
             this.SQLConnectionStringGroupBox.SuspendLayout();
             this.ResetDataTabPage.SuspendLayout();
             this.ResetEntireConfigurationGroupBox.SuspendLayout();
-            this.SQLCustomOperationsGoupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // OpenConfigurationPictureBox
@@ -290,12 +290,27 @@ partial class ToolsDialog
             this.SQLExportDataGroupBox.Name = "SQLExportDataGroupBox";
             this.SQLExportDataGroupBox.TabStop = false;
             // 
-            // SQLExportExecuteButton
+            // SQLCustomOperationsGoupBox
             // 
-            resources.ApplyResources(this.SQLExportExecuteButton, "SQLExportExecuteButton");
-            this.SQLExportExecuteButton.Name = "SQLExportExecuteButton";
-            this.SQLExportExecuteButton.UseVisualStyleBackColor = true;
-            this.SQLExportExecuteButton.Click += new System.EventHandler(this.SQLExportExecuteButton_Click);
+            resources.ApplyResources(this.SQLCustomOperationsGoupBox, "SQLCustomOperationsGoupBox");
+            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPreEventCheckBox);
+            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPostEventCheckBox);
+            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPostEventButton);
+            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPreEventButton);
+            this.SQLCustomOperationsGoupBox.Name = "SQLCustomOperationsGoupBox";
+            this.SQLCustomOperationsGoupBox.TabStop = false;
+            // 
+            // SQLExportPreEventCheckBox
+            // 
+            resources.ApplyResources(this.SQLExportPreEventCheckBox, "SQLExportPreEventCheckBox");
+            this.SQLExportPreEventCheckBox.Name = "SQLExportPreEventCheckBox";
+            this.SQLExportPreEventCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // SQLExportPostEventCheckBox
+            // 
+            resources.ApplyResources(this.SQLExportPostEventCheckBox, "SQLExportPostEventCheckBox");
+            this.SQLExportPostEventCheckBox.Name = "SQLExportPostEventCheckBox";
+            this.SQLExportPostEventCheckBox.UseVisualStyleBackColor = true;
             // 
             // SQLExportPostEventButton
             // 
@@ -309,17 +324,12 @@ partial class ToolsDialog
             this.SQLExportPreEventButton.Name = "SQLExportPreEventButton";
             this.SQLExportPreEventButton.UseVisualStyleBackColor = true;
             // 
-            // SQLExportPostEventCheckBox
+            // SQLExportExecuteButton
             // 
-            resources.ApplyResources(this.SQLExportPostEventCheckBox, "SQLExportPostEventCheckBox");
-            this.SQLExportPostEventCheckBox.Name = "SQLExportPostEventCheckBox";
-            this.SQLExportPostEventCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // SQLExportPreEventCheckBox
-            // 
-            resources.ApplyResources(this.SQLExportPreEventCheckBox, "SQLExportPreEventCheckBox");
-            this.SQLExportPreEventCheckBox.Name = "SQLExportPreEventCheckBox";
-            this.SQLExportPreEventCheckBox.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.SQLExportExecuteButton, "SQLExportExecuteButton");
+            this.SQLExportExecuteButton.Name = "SQLExportExecuteButton";
+            this.SQLExportExecuteButton.UseVisualStyleBackColor = true;
+            this.SQLExportExecuteButton.Click += new System.EventHandler(this.SQLExportExecuteButton_Click);
             // 
             // SQLExportFieldMappingGroupBox
             // 
@@ -533,16 +543,6 @@ partial class ToolsDialog
             this.OK_Button.Name = "OK_Button";
             this.OK_Button.UseVisualStyleBackColor = true;
             // 
-            // SQLCustomOperationsGoupBox
-            // 
-            resources.ApplyResources(this.SQLCustomOperationsGoupBox, "SQLCustomOperationsGoupBox");
-            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPreEventCheckBox);
-            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPostEventCheckBox);
-            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPostEventButton);
-            this.SQLCustomOperationsGoupBox.Controls.Add(this.SQLExportPreEventButton);
-            this.SQLCustomOperationsGoupBox.Name = "SQLCustomOperationsGoupBox";
-            this.SQLCustomOperationsGoupBox.TabStop = false;
-            // 
             // ToolsDialog
             // 
             this.AcceptButton = this.OK_Button;
@@ -577,6 +577,8 @@ partial class ToolsDialog
             this.SqlServerToolsTabPage.ResumeLayout(false);
             this.SQLExportDataGroupBox.ResumeLayout(false);
             this.SQLExportDataGroupBox.PerformLayout();
+            this.SQLCustomOperationsGoupBox.ResumeLayout(false);
+            this.SQLCustomOperationsGoupBox.PerformLayout();
             this.SQLExportFieldMappingGroupBox.ResumeLayout(false);
             this.SQLImportDataGroupBox.ResumeLayout(false);
             this.SQLImportSourceGroupBox.ResumeLayout(false);
@@ -585,8 +587,6 @@ partial class ToolsDialog
             this.SQLConnectionStringGroupBox.PerformLayout();
             this.ResetDataTabPage.ResumeLayout(false);
             this.ResetEntireConfigurationGroupBox.ResumeLayout(false);
-            this.SQLCustomOperationsGoupBox.ResumeLayout(false);
-            this.SQLCustomOperationsGoupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

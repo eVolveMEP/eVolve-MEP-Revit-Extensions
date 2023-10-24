@@ -179,7 +179,7 @@ données CSV</value>
 	  <value>Un seul élément {0} doit être sélectionné.</value>
   </data>
   <data name="ToolTipText" xml:space="preserve">
-	  <value>Importe/exporte les données issues de Revit via la plateforme d'intégration d'{0}.</value>
+	  <value>Importe/exporte les données Revit via la plateforme d'intégration {0}.</value>
   </data>
   <data name="UniqueId" xml:space="preserve">
 	  <value>ID unique</value>
