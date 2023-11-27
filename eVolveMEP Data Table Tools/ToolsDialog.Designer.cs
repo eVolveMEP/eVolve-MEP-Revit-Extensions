@@ -45,12 +45,17 @@ partial class ToolsDialog
             this.ExpressionColumnNameTextBox = new System.Windows.Forms.TextBox();
             this.ExpressionColumnAddButton = new System.Windows.Forms.Button();
             this.ExpressionColumnNameLabel = new System.Windows.Forms.Label();
-            this.ChangeColumnTypeGroupBox = new System.Windows.Forms.GroupBox();
-            this.ChangeColumnTypeButton = new System.Windows.Forms.Button();
-            this.ChangeColumnTypeDataTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.ChangeColumnTypeDataTypeLabel = new System.Windows.Forms.Label();
-            this.ChangeColumnTypeColumnComboBox = new System.Windows.Forms.ComboBox();
-            this.ChangeColumnTypeColumnLabel = new System.Windows.Forms.Label();
+            this.ChangeColumnGroupBox = new System.Windows.Forms.GroupBox();
+            this.ChangeColumnNoticeLabel = new System.Windows.Forms.Label();
+            this.ChangeColumnSequenceComboBox = new System.Windows.Forms.ComboBox();
+            this.ChangeColumnSequenceLabel = new System.Windows.Forms.Label();
+            this.ChangeColumnNameTextBox = new System.Windows.Forms.TextBox();
+            this.ChangeColumnNameLabel = new System.Windows.Forms.Label();
+            this.ChangeColumnButton = new System.Windows.Forms.Button();
+            this.ChangeColumnDataTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.ChangeColumnDataTypeLabel = new System.Windows.Forms.Label();
+            this.ChangeColumnColumnComboBox = new System.Windows.Forms.ComboBox();
+            this.ChangeColumnColumnLabel = new System.Windows.Forms.Label();
             this.SqlServerToolsTabPage = new System.Windows.Forms.TabPage();
             this.SQLExportDataGroupBox = new System.Windows.Forms.GroupBox();
             this.SQLCustomOperationsGoupBox = new System.Windows.Forms.GroupBox();
@@ -86,9 +91,7 @@ partial class ToolsDialog
             this.DataTableLabel = new System.Windows.Forms.Label();
             this.DataTableComboBox = new System.Windows.Forms.ComboBox();
             this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
-            this.ApplyButton = new System.Windows.Forms.Button();
-            this.Cancel_Button = new System.Windows.Forms.Button();
-            this.OK_Button = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -98,7 +101,7 @@ partial class ToolsDialog
             ((System.ComponentModel.ISupportInitialize)(this.ColumnInfoDataGridView)).BeginInit();
             this.ExpressionColumnGroupBox.SuspendLayout();
             this.ExpressionColumnExpressionGroupBox.SuspendLayout();
-            this.ChangeColumnTypeGroupBox.SuspendLayout();
+            this.ChangeColumnGroupBox.SuspendLayout();
             this.SqlServerToolsTabPage.SuspendLayout();
             this.SQLExportDataGroupBox.SuspendLayout();
             this.SQLCustomOperationsGoupBox.SuspendLayout();
@@ -145,7 +148,7 @@ partial class ToolsDialog
             // 
             this.ColumnToolsTabPage.Controls.Add(this.ColumnInfoGroupBox);
             this.ColumnToolsTabPage.Controls.Add(this.ExpressionColumnGroupBox);
-            this.ColumnToolsTabPage.Controls.Add(this.ChangeColumnTypeGroupBox);
+            this.ColumnToolsTabPage.Controls.Add(this.ChangeColumnGroupBox);
             resources.ApplyResources(this.ColumnToolsTabPage, "ColumnToolsTabPage");
             this.ColumnToolsTabPage.Name = "ColumnToolsTabPage";
             this.ColumnToolsTabPage.UseVisualStyleBackColor = true;
@@ -228,47 +231,79 @@ partial class ToolsDialog
             resources.ApplyResources(this.ExpressionColumnNameLabel, "ExpressionColumnNameLabel");
             this.ExpressionColumnNameLabel.Name = "ExpressionColumnNameLabel";
             // 
-            // ChangeColumnTypeGroupBox
+            // ChangeColumnGroupBox
             // 
-            this.ChangeColumnTypeGroupBox.Controls.Add(this.ChangeColumnTypeButton);
-            this.ChangeColumnTypeGroupBox.Controls.Add(this.ChangeColumnTypeDataTypeComboBox);
-            this.ChangeColumnTypeGroupBox.Controls.Add(this.ChangeColumnTypeDataTypeLabel);
-            this.ChangeColumnTypeGroupBox.Controls.Add(this.ChangeColumnTypeColumnComboBox);
-            this.ChangeColumnTypeGroupBox.Controls.Add(this.ChangeColumnTypeColumnLabel);
-            resources.ApplyResources(this.ChangeColumnTypeGroupBox, "ChangeColumnTypeGroupBox");
-            this.ChangeColumnTypeGroupBox.Name = "ChangeColumnTypeGroupBox";
-            this.ChangeColumnTypeGroupBox.TabStop = false;
+            this.ChangeColumnGroupBox.Controls.Add(this.ChangeColumnNoticeLabel);
+            this.ChangeColumnGroupBox.Controls.Add(this.ChangeColumnSequenceComboBox);
+            this.ChangeColumnGroupBox.Controls.Add(this.ChangeColumnSequenceLabel);
+            this.ChangeColumnGroupBox.Controls.Add(this.ChangeColumnNameTextBox);
+            this.ChangeColumnGroupBox.Controls.Add(this.ChangeColumnNameLabel);
+            this.ChangeColumnGroupBox.Controls.Add(this.ChangeColumnButton);
+            this.ChangeColumnGroupBox.Controls.Add(this.ChangeColumnDataTypeComboBox);
+            this.ChangeColumnGroupBox.Controls.Add(this.ChangeColumnDataTypeLabel);
+            this.ChangeColumnGroupBox.Controls.Add(this.ChangeColumnColumnComboBox);
+            this.ChangeColumnGroupBox.Controls.Add(this.ChangeColumnColumnLabel);
+            resources.ApplyResources(this.ChangeColumnGroupBox, "ChangeColumnGroupBox");
+            this.ChangeColumnGroupBox.Name = "ChangeColumnGroupBox";
+            this.ChangeColumnGroupBox.TabStop = false;
             // 
-            // ChangeColumnTypeButton
+            // ChangeColumnNoticeLabel
             // 
-            resources.ApplyResources(this.ChangeColumnTypeButton, "ChangeColumnTypeButton");
-            this.ChangeColumnTypeButton.Name = "ChangeColumnTypeButton";
-            this.ChangeColumnTypeButton.UseVisualStyleBackColor = true;
-            this.ChangeColumnTypeButton.Click += new System.EventHandler(this.ChangeColumnTypeButton_Click);
+            resources.ApplyResources(this.ChangeColumnNoticeLabel, "ChangeColumnNoticeLabel");
+            this.ChangeColumnNoticeLabel.Name = "ChangeColumnNoticeLabel";
             // 
-            // ChangeColumnTypeDataTypeComboBox
+            // ChangeColumnSequenceComboBox
             // 
-            resources.ApplyResources(this.ChangeColumnTypeDataTypeComboBox, "ChangeColumnTypeDataTypeComboBox");
-            this.ChangeColumnTypeDataTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ChangeColumnTypeDataTypeComboBox.FormattingEnabled = true;
-            this.ChangeColumnTypeDataTypeComboBox.Name = "ChangeColumnTypeDataTypeComboBox";
+            resources.ApplyResources(this.ChangeColumnSequenceComboBox, "ChangeColumnSequenceComboBox");
+            this.ChangeColumnSequenceComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ChangeColumnSequenceComboBox.FormattingEnabled = true;
+            this.ChangeColumnSequenceComboBox.Name = "ChangeColumnSequenceComboBox";
             // 
-            // ChangeColumnTypeDataTypeLabel
+            // ChangeColumnSequenceLabel
             // 
-            resources.ApplyResources(this.ChangeColumnTypeDataTypeLabel, "ChangeColumnTypeDataTypeLabel");
-            this.ChangeColumnTypeDataTypeLabel.Name = "ChangeColumnTypeDataTypeLabel";
+            resources.ApplyResources(this.ChangeColumnSequenceLabel, "ChangeColumnSequenceLabel");
+            this.ChangeColumnSequenceLabel.Name = "ChangeColumnSequenceLabel";
             // 
-            // ChangeColumnTypeColumnComboBox
+            // ChangeColumnNameTextBox
             // 
-            resources.ApplyResources(this.ChangeColumnTypeColumnComboBox, "ChangeColumnTypeColumnComboBox");
-            this.ChangeColumnTypeColumnComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ChangeColumnTypeColumnComboBox.FormattingEnabled = true;
-            this.ChangeColumnTypeColumnComboBox.Name = "ChangeColumnTypeColumnComboBox";
+            resources.ApplyResources(this.ChangeColumnNameTextBox, "ChangeColumnNameTextBox");
+            this.ChangeColumnNameTextBox.Name = "ChangeColumnNameTextBox";
             // 
-            // ChangeColumnTypeColumnLabel
+            // ChangeColumnNameLabel
             // 
-            resources.ApplyResources(this.ChangeColumnTypeColumnLabel, "ChangeColumnTypeColumnLabel");
-            this.ChangeColumnTypeColumnLabel.Name = "ChangeColumnTypeColumnLabel";
+            resources.ApplyResources(this.ChangeColumnNameLabel, "ChangeColumnNameLabel");
+            this.ChangeColumnNameLabel.Name = "ChangeColumnNameLabel";
+            // 
+            // ChangeColumnButton
+            // 
+            resources.ApplyResources(this.ChangeColumnButton, "ChangeColumnButton");
+            this.ChangeColumnButton.Name = "ChangeColumnButton";
+            this.ChangeColumnButton.UseVisualStyleBackColor = true;
+            this.ChangeColumnButton.Click += new System.EventHandler(this.ChangeColumnButton_Click);
+            // 
+            // ChangeColumnDataTypeComboBox
+            // 
+            resources.ApplyResources(this.ChangeColumnDataTypeComboBox, "ChangeColumnDataTypeComboBox");
+            this.ChangeColumnDataTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ChangeColumnDataTypeComboBox.FormattingEnabled = true;
+            this.ChangeColumnDataTypeComboBox.Name = "ChangeColumnDataTypeComboBox";
+            // 
+            // ChangeColumnDataTypeLabel
+            // 
+            resources.ApplyResources(this.ChangeColumnDataTypeLabel, "ChangeColumnDataTypeLabel");
+            this.ChangeColumnDataTypeLabel.Name = "ChangeColumnDataTypeLabel";
+            // 
+            // ChangeColumnColumnComboBox
+            // 
+            resources.ApplyResources(this.ChangeColumnColumnComboBox, "ChangeColumnColumnComboBox");
+            this.ChangeColumnColumnComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ChangeColumnColumnComboBox.FormattingEnabled = true;
+            this.ChangeColumnColumnComboBox.Name = "ChangeColumnColumnComboBox";
+            // 
+            // ChangeColumnColumnLabel
+            // 
+            resources.ApplyResources(this.ChangeColumnColumnLabel, "ChangeColumnColumnLabel");
+            this.ChangeColumnColumnLabel.Name = "ChangeColumnColumnLabel";
             // 
             // SqlServerToolsTabPage
             // 
@@ -522,36 +557,19 @@ partial class ToolsDialog
             this.ViewSourceCodeLabel.ForeColor = System.Drawing.Color.Blue;
             this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
             // 
-            // ApplyButton
+            // CloseButton
             // 
-            resources.ApplyResources(this.ApplyButton, "ApplyButton");
-            this.ApplyButton.Name = "ApplyButton";
-            this.ApplyButton.UseVisualStyleBackColor = true;
-            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
-            // 
-            // Cancel_Button
-            // 
-            resources.ApplyResources(this.Cancel_Button, "Cancel_Button");
-            this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cancel_Button.Name = "Cancel_Button";
-            this.Cancel_Button.UseVisualStyleBackColor = true;
-            // 
-            // OK_Button
-            // 
-            resources.ApplyResources(this.OK_Button, "OK_Button");
-            this.OK_Button.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.OK_Button.Name = "OK_Button";
-            this.OK_Button.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.CloseButton, "CloseButton");
+            this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.UseVisualStyleBackColor = true;
             // 
             // ToolsDialog
             // 
-            this.AcceptButton = this.OK_Button;
+            this.AcceptButton = this.CloseButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.Cancel_Button;
-            this.Controls.Add(this.ApplyButton);
-            this.Controls.Add(this.Cancel_Button);
-            this.Controls.Add(this.OK_Button);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.ViewSourceCodeLabel);
             this.Controls.Add(this.DataTableComboBox);
             this.Controls.Add(this.DataTableLabel);
@@ -572,8 +590,8 @@ partial class ToolsDialog
             this.ExpressionColumnGroupBox.PerformLayout();
             this.ExpressionColumnExpressionGroupBox.ResumeLayout(false);
             this.ExpressionColumnExpressionGroupBox.PerformLayout();
-            this.ChangeColumnTypeGroupBox.ResumeLayout(false);
-            this.ChangeColumnTypeGroupBox.PerformLayout();
+            this.ChangeColumnGroupBox.ResumeLayout(false);
+            this.ChangeColumnGroupBox.PerformLayout();
             this.SqlServerToolsTabPage.ResumeLayout(false);
             this.SQLExportDataGroupBox.ResumeLayout(false);
             this.SQLExportDataGroupBox.PerformLayout();
@@ -602,12 +620,12 @@ partial class ToolsDialog
     private System.Windows.Forms.TabPage SqlServerToolsTabPage;
     private System.Windows.Forms.Label DataTableLabel;
     private System.Windows.Forms.ComboBox DataTableComboBox;
-    private System.Windows.Forms.GroupBox ChangeColumnTypeGroupBox;
-    private System.Windows.Forms.ComboBox ChangeColumnTypeColumnComboBox;
-    private System.Windows.Forms.Label ChangeColumnTypeColumnLabel;
-    private System.Windows.Forms.ComboBox ChangeColumnTypeDataTypeComboBox;
-    private System.Windows.Forms.Label ChangeColumnTypeDataTypeLabel;
-    private System.Windows.Forms.Button ChangeColumnTypeButton;
+    private System.Windows.Forms.GroupBox ChangeColumnGroupBox;
+    private System.Windows.Forms.ComboBox ChangeColumnColumnComboBox;
+    private System.Windows.Forms.Label ChangeColumnColumnLabel;
+    private System.Windows.Forms.ComboBox ChangeColumnDataTypeComboBox;
+    private System.Windows.Forms.Label ChangeColumnDataTypeLabel;
+    private System.Windows.Forms.Button ChangeColumnButton;
     private System.Windows.Forms.TextBox SQLConnectionStringTextBox;
     private System.Windows.Forms.GroupBox SQLConnectionStringGroupBox;
     private System.Windows.Forms.Button SQLConnectButton;
@@ -646,12 +664,15 @@ partial class ToolsDialog
     private System.Windows.Forms.Label DataTableExpressionHelpLabel;
     private System.Windows.Forms.GroupBox ColumnInfoGroupBox;
     private System.Windows.Forms.DataGridView ColumnInfoDataGridView;
-    private System.Windows.Forms.Button ApplyButton;
-    private System.Windows.Forms.Button Cancel_Button;
-    private System.Windows.Forms.Button OK_Button;
+    private System.Windows.Forms.Button CloseButton;
     private System.Windows.Forms.TabPage ResetDataTabPage;
     private System.Windows.Forms.Button ResetEntireConfigurationButton;
     private System.Windows.Forms.Button ResetSelectedConfigurationButton;
     private System.Windows.Forms.GroupBox ResetEntireConfigurationGroupBox;
     private System.Windows.Forms.GroupBox SQLCustomOperationsGoupBox;
+    private System.Windows.Forms.ComboBox ChangeColumnSequenceComboBox;
+    private System.Windows.Forms.Label ChangeColumnSequenceLabel;
+    private System.Windows.Forms.TextBox ChangeColumnNameTextBox;
+    private System.Windows.Forms.Label ChangeColumnNameLabel;
+    private System.Windows.Forms.Label ChangeColumnNoticeLabel;
 }

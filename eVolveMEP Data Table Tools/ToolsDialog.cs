@@ -62,8 +62,8 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         PreviouslySelectedDataTableName = DefaultSettingsKey;
         DataTableChangedSqlHandler(null, EventArgs.Empty);
 
-        var datatypeNames = ColumnDataTypeLookup.Keys.ToArray();
-        foreach (var combobox in new[] { ChangeColumnTypeDataTypeComboBox, ExpressionColumnDataTypeComboBox })
+        var datatypeNames = ColumnDataTypeLookup.Keys.Prepend("").ToArray();
+        foreach (var combobox in new[] { ChangeColumnDataTypeComboBox, ExpressionColumnDataTypeComboBox })
         {
             combobox.Items.Clear();
             combobox.Items.AddRange(datatypeNames);
@@ -117,18 +117,6 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Form closing event information. </param>
     private void ToolsDialog_FormClosing(object sender, FormClosingEventArgs e)
-    {
-        if (DialogResult == DialogResult.OK)
-        {
-            SaveSettings();
-        }
-    }
-
-    /// <summary> Saves the current configuration settings on the form. </summary>
-    ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Event information. </param>
-    private void ApplyButton_Click(object sender, EventArgs e)
     {
         SaveSettings();
     }
@@ -276,17 +264,16 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
     #region Column Tools
 
-    /// <summary>
-    /// Handles the change of the source data table. This method saves the current configuration within the UI to the
-    /// previously selected value and then restores the UI to the newly selected value.
-    /// </summary>
+    /// <summary> Handles the change of the source data table. </summary>
     ///
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Event information. </param>
     private void DataTableChangedToolsHandler(object sender, EventArgs e)
     {
-        ChangeColumnTypeColumnComboBox.Text = null;
-        ChangeColumnTypeDataTypeComboBox.Text = null;
+        ChangeColumnColumnComboBox.Text = null;
+        ChangeColumnNameTextBox.Text = null;
+        ChangeColumnSequenceComboBox.Text = null;
+        ChangeColumnDataTypeComboBox.Text = null;
         ExpressionColumnNameTextBox.Text = null;
         ExpressionColumnDataTypeComboBox.Text = null;
         ExpressionColumnExpressionTextBox.Text = null;
@@ -297,8 +284,16 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
         try
         {
-            ChangeColumnTypeColumnComboBox.Items.Clear();
-            ChangeColumnTypeColumnComboBox.Items.AddRange(GetDataTableColumnNames(table) ?? Array.Empty<string>());
+            var columnNames = GetDataTableColumnNames(table) ?? Array.Empty<string>();
+
+            ChangeColumnColumnComboBox.Items.Clear();
+            ChangeColumnColumnComboBox.Items.AddRange(columnNames);
+
+            ChangeColumnSequenceComboBox.Items.Clear();
+            ChangeColumnSequenceComboBox.Items.AddRange(Enumerable.Range(1, columnNames.Length)
+                .Select(order => order.ToString())
+                .Prepend("")
+                .ToArray());
         }
         catch (Exception ex)
         {
@@ -308,85 +303,132 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         RefreshColumnInfo(table);
     }
 
-    /// <summary> Performs a column data type change based on user provided input. </summary>
+    /// <summary> Performs a column change based on user provided input. </summary>
     ///
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Event information. </param>
-    private void ChangeColumnTypeButton_Click(object sender, EventArgs e)
+    private void ChangeColumnButton_Click(object sender, EventArgs e)
     {
         try
         {
-            if (string.IsNullOrEmpty(ChangeColumnTypeColumnComboBox.Text) || string.IsNullOrEmpty(ChangeColumnTypeDataTypeComboBox.Text))
+            var originalColumnName = ChangeColumnColumnComboBox.Text;
+            if (string.IsNullOrEmpty(originalColumnName))
             {
-                throw new Exception(string.Format(Resources.ValueMustBeProvided2Error, ChangeColumnTypeColumnLabel.Text, ChangeColumnTypeDataTypeLabel.Text));
+                throw new Exception(string.Format(Resources.ValueMustBeProvided1Error, ChangeColumnColumnLabel.Text));
             }
 
+            var sourceColumnName = originalColumnName;
+            var actionsPerformed = new List<string>();
             var table = Document.GetTable(DataTableComboBox.Text, out var metadata).Copy();
 
-            var conversionFailedAtLeastOnce = false;
-            Func<object, object> convertToNewType = ChangeColumnTypeDataTypeComboBox.Text switch
-            {
-                nameof(String) => existing => existing.ToString(),
-                nameof(Int32) => existing =>
-                {
-                    conversionFailedAtLeastOnce |= !int.TryParse(existing.ToString(), out var value);
-                    return value;
-                },
-                nameof(Int64) => existing =>
-                {
-                    conversionFailedAtLeastOnce |= !long.TryParse(existing.ToString(), out var value);
-                    return value;
-                },
-                nameof(Double) => existing =>
-                {
-                    conversionFailedAtLeastOnce |= !double.TryParse(existing.ToString(), out var value);
-                    return value;
-                },
-                nameof(Decimal) => existing =>
-                {
-                    conversionFailedAtLeastOnce |= !decimal.TryParse(existing.ToString(), out var value);
-                    return value;
-                },
-                nameof(Boolean) => existing =>
-                {
-                    conversionFailedAtLeastOnce |= !bool.TryParse(existing.ToString(), out var value);
-                    return value;
-                },
-                nameof(DateTime) => existing =>
-                {
-                    conversionFailedAtLeastOnce |= !DateTime.TryParse(existing.ToString(), out var value);
-                    return value;
-                },
-                _ => throw new Exception(ChangeColumnTypeDataTypeComboBox.Text),
-            };
 
-            // Create a new column with the new type and copy 
-            var sourceColumnIndex = table.Columns.IndexOf(ChangeColumnTypeColumnComboBox.Text);
-            var sourceColumnName = table.Columns[sourceColumnIndex].ColumnName;
-            var newColumn = table.Columns.Add($"new_{sourceColumnName}", ColumnDataTypeLookup[ChangeColumnTypeDataTypeComboBox.Text]);
-            foreach (var row in table.Rows.Cast<DataRow>())
+            #region Change Name
+            var newName = ChangeColumnNameTextBox.Text.Trim();
+            if (!string.IsNullOrEmpty(newName))
             {
-                row[newColumn] = convertToNewType(row[sourceColumnIndex]);
+                table.Columns[sourceColumnName].ColumnName = newName;
+                sourceColumnName = newName;
+
+                actionsPerformed.Add($"{ChangeColumnNameLabel.Text}: {newName}");
             }
+            #endregion
 
-            // Remove source column and move the new column into its place.
-            table.Columns.RemoveAt(sourceColumnIndex);
-            newColumn.ColumnName = sourceColumnName;
-            newColumn.SetOrdinal(sourceColumnIndex);
 
-            Document.SaveTable(table.TableName, null, false, table, metadata);
-
-            if (conversionFailedAtLeastOnce)
+            #region Change Sequence
+            if (!string.IsNullOrEmpty(ChangeColumnSequenceComboBox.Text))
             {
-                ShowWarningMessage(this, Resources.CouldNotConvertValueWarning, ChangeColumnTypeGroupBox.Text);
-            }
+                var newSequence = int.Parse(ChangeColumnSequenceComboBox.Text);
+                table.Columns[sourceColumnName].SetOrdinal(newSequence - 1);
 
-            RefreshColumnInfo(table);
-            ShowNoticeMessage(this, Resources.OperationCompleted, ChangeColumnTypeGroupBox.Text);
+                actionsPerformed.Add($"{ChangeColumnSequenceLabel.Text}: {newSequence}");
+            }
+            #endregion
+
+
+            #region Change Data Type
+            var newDataType = ChangeColumnDataTypeComboBox.Text;
+            if (!string.IsNullOrEmpty(newDataType))
+            {
+                var conversionFailedAtLeastOnce = false;
+                Func<object, object> convertToNewType = newDataType switch
+                {
+                    nameof(String) => existing => existing.ToString(),
+                    nameof(Int32) => existing =>
+                    {
+                        conversionFailedAtLeastOnce |= !int.TryParse(existing.ToString(), out var value);
+                        return value;
+                    }
+                    ,
+                    nameof(Int64) => existing =>
+                    {
+                        conversionFailedAtLeastOnce |= !long.TryParse(existing.ToString(), out var value);
+                        return value;
+                    }
+                    ,
+                    nameof(Double) => existing =>
+                    {
+                        conversionFailedAtLeastOnce |= !double.TryParse(existing.ToString(), out var value);
+                        return value;
+                    }
+                    ,
+                    nameof(Decimal) => existing =>
+                    {
+                        conversionFailedAtLeastOnce |= !decimal.TryParse(existing.ToString(), out var value);
+                        return value;
+                    }
+                    ,
+                    nameof(Boolean) => existing =>
+                    {
+                        conversionFailedAtLeastOnce |= !bool.TryParse(existing.ToString(), out var value);
+                        return value;
+                    }
+                    ,
+                    nameof(DateTime) => existing =>
+                    {
+                        conversionFailedAtLeastOnce |= !DateTime.TryParse(existing.ToString(), out var value);
+                        return value;
+                    }
+                    ,
+                    _ => throw new Exception(newDataType),
+                };
+
+                // Create a new column with the new type and copy 
+                var sourceColumnIndex = table.Columns.IndexOf(sourceColumnName);
+                var newColumn = table.Columns.Add($"new_{sourceColumnName}", ColumnDataTypeLookup[newDataType]);
+                foreach (var row in table.Rows.Cast<DataRow>())
+                {
+                    row[newColumn] = convertToNewType(row[sourceColumnIndex]);
+                }
+
+                // Remove source column and move the new column into its place.
+                table.Columns.RemoveAt(sourceColumnIndex);
+                newColumn.ColumnName = sourceColumnName;
+                newColumn.SetOrdinal(sourceColumnIndex);
+
+                if (conversionFailedAtLeastOnce)
+                {
+                    ShowWarningMessage(this, Resources.CouldNotConvertValueWarning, ChangeColumnDataTypeLabel.Text);
+                }
+
+                actionsPerformed.Add($"{ChangeColumnDataTypeLabel.Text}: {newDataType}");
+            }
+            #endregion
+
+
+            if (actionsPerformed.Any())
+            {
+                Document.SaveTable(table.TableName, null, false, table, metadata);
+
+                DataTableChangedToolsHandler(ChangeColumnGroupBox, EventArgs.Empty);
+
+                ShowNoticeMessage(this,
+                    Resources.OperationCompleted + "\n\n" + string.Join("\n", actionsPerformed.Prepend($"{ChangeColumnGroupBox.Text}: {originalColumnName}")),
+                    ChangeColumnGroupBox.Text);
+            }
         }
         catch (Exception ex)
         {
-            ShowErrorMessage(this, ex.Message, ChangeColumnTypeGroupBox.Text);
+            ShowErrorMessage(this, ex.Message, ChangeColumnGroupBox.Text);
         }
     }
 
