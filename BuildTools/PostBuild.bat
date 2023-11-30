@@ -43,5 +43,8 @@ DEL /Q "%TargetDir%Revit*"
 DEL /Q "%TargetDir%UIFramework*"
 DEL /Q "%TargetDir%AdWindows.*"
 
+REM Misc references.
+DEL /Q "%TargetDir%JetBrains.Annotations.*"
+
 ECHO.
 ECHO %ConfigName%
