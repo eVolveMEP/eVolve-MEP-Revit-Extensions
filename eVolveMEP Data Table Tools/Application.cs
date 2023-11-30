@@ -5,9 +5,8 @@
 // LICENSE file in the root directory of this source tree.
 
 extern alias eVolve;
-using eVolve::eVolve.Core.Revit.Integration;
 
-namespace eVolve.CsvDataExchange.Revit;
+namespace eVolve.DataTableTools.Revit;
 
 /// <summary> Entry point Revit uses to configure this extension. </summary>
 #if ELECTRICAL
@@ -27,7 +26,7 @@ public class ApplicationMechanical : IExternalApplication
     /// <inheritdoc/>
     public Result OnStartup(UIControlledApplication application)
     {
-        var ribbonButton = API.CreateButton(Resources.ButtonText,
+        var ribbonButton = eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ButtonText,
             System.Reflection.Assembly.GetExecutingAssembly().Location,
             typeof(Command),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
@@ -35,9 +34,7 @@ public class ApplicationMechanical : IExternalApplication
             string.Format(Resources.ToolTipText, HostProductName),
             Command.HelpLinkUrl);
 
-        API.IntegrationRibbonPanel.AddItem(ribbonButton);
-
-        API.RegisterImplementingFeature(Command.FeatureId, Command.ButtonTextWithNoLineBreaks);
+        eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(ribbonButton);
 
         return Result.Succeeded;
     }

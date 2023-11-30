@@ -1,0 +1,146 @@
+﻿Path,Name,Default Culture,Key,en,Comment,fr-fr
+eVolveMEP Data Table Tools/AddMappingDialog,$this.Text,Add Column Mapping,eVolveMEP Data Table Tools/AddMappingDialog!$this.Text,Add Column Mapping,,Ajouter une correspondance des colonnes
+eVolveMEP Data Table Tools/ToolsDialog,ApplyButton.Text,Apply,eVolveMEP Data Table Tools/ToolsDialog!ApplyButton.Text,Apply,,Appliquer
+eVolveMEP CSV Data Exchange/ConfigurationForm,ApplyButton.Text,Apply,eVolveMEP CSV Data Exchange/ConfigurationForm!ApplyButton.Text,Apply,,Appliquer
+eVolveMEP Data Table Tools/Properties/Resources,ButtonText,"Data Table
+Tools",eVolveMEP Data Table Tools/Properties/Resources!ButtonText,"Data Table
+Tools",,"Tableau de données
+Outils"
+eVolveMEP CSV Data Exchange/Properties/Resources,ButtonText,"CSV Data
+Exchange",eVolveMEP CSV Data Exchange/Properties/Resources!ButtonText,"CSV Data
+Exchange",,"Échange de
+données CSV"
+eVolveMEP Data Table Tools/ToolsDialog,Cancel_Button.Text,Cancel,eVolveMEP Data Table Tools/ToolsDialog!Cancel_Button.Text,Cancel,,Annuler
+eVolveMEP Data Table Tools/TextInputDialog,Cancel_Button.Text,Cancel,eVolveMEP Data Table Tools/TextInputDialog!Cancel_Button.Text,Cancel,,Annuler
+eVolveMEP Data Table Tools/AddMappingDialog,Cancel_Button.Text,Cancel,eVolveMEP Data Table Tools/AddMappingDialog!Cancel_Button.Text,Cancel,,Annuler
+eVolveMEP CSV Data Exchange/ConfigurationForm,Cancel_Button.Text,Cancel,eVolveMEP CSV Data Exchange/ConfigurationForm!Cancel_Button.Text,Cancel,,Annuler
+eVolveMEP Data Table Tools/ToolsDialog,ChangeColumnTypeButton.Text,Apply,eVolveMEP Data Table Tools/ToolsDialog!ChangeColumnTypeButton.Text,Apply,,Appliquer
+eVolveMEP Data Table Tools/ToolsDialog,ChangeColumnTypeColumnLabel.Text,Column,eVolveMEP Data Table Tools/ToolsDialog!ChangeColumnTypeColumnLabel.Text,Column,,Colonne
+eVolveMEP Data Table Tools/ToolsDialog,ChangeColumnTypeDataTypeLabel.Text,Change To,eVolveMEP Data Table Tools/ToolsDialog!ChangeColumnTypeDataTypeLabel.Text,Change To,,Remplacer par
+eVolveMEP Data Table Tools/ToolsDialog,ChangeColumnTypeGroupBox.Text,Change Column Type,eVolveMEP Data Table Tools/ToolsDialog!ChangeColumnTypeGroupBox.Text,Change Column Type,,Modifier le type de colonne
+eVolveMEP Data Table Tools/ToolsDialog,ColumnInfoGroupBox.Text,Column Information,eVolveMEP Data Table Tools/ToolsDialog!ColumnInfoGroupBox.Text,Column Information,,Informations sur la colonne
+eVolveMEP Data Table Tools/Properties/Resources,ColumnInfoName_DataType,Data Type,eVolveMEP Data Table Tools/Properties/Resources!ColumnInfoName_DataType,Data Type,,Type de données
+eVolveMEP Data Table Tools/Properties/Resources,ColumnInfoName_Expression,Expression,eVolveMEP Data Table Tools/Properties/Resources!ColumnInfoName_Expression,Expression,"Formula expression, ex. Col1+Col2",Expression
+eVolveMEP Data Table Tools/Properties/Resources,ColumnInfoName_Name,Name,eVolveMEP Data Table Tools/Properties/Resources!ColumnInfoName_Name,Name,,Nom
+eVolveMEP Data Table Tools/Properties/Resources,ColumnInfoName_Order,Order,eVolveMEP Data Table Tools/Properties/Resources!ColumnInfoName_Order,Order,Sequential order,Ordre
+eVolveMEP Data Table Tools/ToolsDialog,ColumnToolsTabPage.Text,Column Tools,eVolveMEP Data Table Tools/ToolsDialog!ColumnToolsTabPage.Text,Column Tools,,Outils des colonnes
+eVolveMEP Data Table Tools/Properties/Resources,Connect,Connect,eVolveMEP Data Table Tools/Properties/Resources!Connect,Connect,,Se connecter
+eVolveMEP Data Table Tools/Properties/Resources,Connected,Connected,eVolveMEP Data Table Tools/Properties/Resources!Connected,Connected,,Connecté
+eVolveMEP Data Table Tools/Properties/Resources,CouldNotConvertValueWarning,"One or more values were not able to be converted to the target type.
+The default value was applied in this situation.",eVolveMEP Data Table Tools/Properties/Resources!CouldNotConvertValueWarning,"One or more values were not able to be converted to the target type.
+The default value was applied in this situation.",,"Une ou plusieurs valeurs n'ont pas pu être converties dans le type cible.
+La valeur par défaut est appliquée dans cette situation."
+eVolveMEP CSV Data Exchange/Properties/Resources,CsvFiles,CSV Files,eVolveMEP CSV Data Exchange/Properties/Resources!CsvFiles,CSV Files,,Fichiers CSV
+eVolveMEP Data Table Tools/AddMappingDialog,DataTableColumnGroupBox.Text,Source Data Table Column,eVolveMEP Data Table Tools/AddMappingDialog!DataTableColumnGroupBox.Text,Source Data Table Column,,Colonne du tableau de données source
+eVolveMEP Data Table Tools/ToolsDialog,DataTableExpressionHelpLabel.Text,View syntax,eVolveMEP Data Table Tools/ToolsDialog!DataTableExpressionHelpLabel.Text,View syntax,,Voir la syntaxe
+eVolveMEP Data Table Tools/ToolsDialog,DataTableLabel.Text,Data Table,eVolveMEP Data Table Tools/ToolsDialog!DataTableLabel.Text,Data Table,,Tableau des données
+eVolveMEP CSV Data Exchange/ConfigurationForm,DelimiterCommaRadioButton.Text,Comma,eVolveMEP CSV Data Exchange/ConfigurationForm!DelimiterCommaRadioButton.Text,Comma,,Virgule
+eVolveMEP CSV Data Exchange/ConfigurationForm,DelimiterGroupBox.Text,Delimiter,eVolveMEP CSV Data Exchange/ConfigurationForm!DelimiterGroupBox.Text,Delimiter,,Séparateur
+eVolveMEP CSV Data Exchange/ConfigurationForm,DelimiterTabRadioButton.Text,Tab,eVolveMEP CSV Data Exchange/ConfigurationForm!DelimiterTabRadioButton.Text,Tab,,Tabulation
+eVolveMEP CSV Data Exchange/ConfigurationForm,DirectionGroupBox.Text,Direction,eVolveMEP CSV Data Exchange/ConfigurationForm!DirectionGroupBox.Text,Direction,,Sens
+eVolveMEP Data Table Tools/Properties/Resources,Disconnect,Disconnect,eVolveMEP Data Table Tools/Properties/Resources!Disconnect,Disconnect,,Déconnecter
+eVolveMEP CSV Data Exchange/Properties/Resources,ErrorOccurredNotice,An error occurred during processing.,eVolveMEP CSV Data Exchange/Properties/Resources!ErrorOccurredNotice,An error occurred during processing.,,Une erreur s'est produite lors du traitement.
+eVolveMEP Data Table Tools/Properties/Resources,eVolveElectrical,eVolve Electrical,eVolveMEP Data Table Tools/Properties/Resources!eVolveElectrical,eVolve Electrical,,eVolve Electrical
+eVolveMEP CSV Data Exchange/Properties/Resources,eVolveElectrical,eVolve Electrical,eVolveMEP CSV Data Exchange/Properties/Resources!eVolveElectrical,eVolve Electrical,,eVolve Electrical
+eVolveMEP Data Table Tools/Properties/Resources,eVolveMechanical,eVolve Mechanical,eVolveMEP Data Table Tools/Properties/Resources!eVolveMechanical,eVolve Mechanical,,eVolve Mechanical
+eVolveMEP CSV Data Exchange/Properties/Resources,eVolveMechanical,eVolve Mechanical,eVolveMEP CSV Data Exchange/Properties/Resources!eVolveMechanical,eVolve Mechanical,,eVolve Mechanical
+eVolveMEP Data Table Tools/Properties/Resources,ExportColumnNotFoundError,The column '{0}' was not found in {1} '{2}'.,eVolveMEP Data Table Tools/Properties/Resources!ExportColumnNotFoundError,The column '{0}' was not found in {1} '{2}'.,,La colonne « {0} » a été trouvée dans {1} « {2} ».
+eVolveMEP CSV Data Exchange/Properties/Resources,ExportColumn_ProjectName,Project Name,eVolveMEP CSV Data Exchange/Properties/Resources!ExportColumn_ProjectName,Project Name,,Nom du projet
+eVolveMEP CSV Data Exchange/Properties/Resources,ExportColumn_ProjectNumber,Project Number,eVolveMEP CSV Data Exchange/Properties/Resources!ExportColumn_ProjectNumber,Project Number,,Numéro de projet
+eVolveMEP CSV Data Exchange/Properties/Resources,ExportColumn_Timestamp,Current Date/Time,eVolveMEP CSV Data Exchange/Properties/Resources!ExportColumn_Timestamp,Current Date/Time,,Date/Heure actuelle
+eVolveMEP CSV Data Exchange/Properties/Resources,ExportColumn_UserName,User Name,eVolveMEP CSV Data Exchange/Properties/Resources!ExportColumn_UserName,User Name,,Nom de l'utilisateur
+eVolveMEP CSV Data Exchange/Properties/Resources,ExportColumn_WorkstationName,Workstation Name,eVolveMEP CSV Data Exchange/Properties/Resources!ExportColumn_WorkstationName,Workstation Name,,Nom du poste de travail
+eVolveMEP CSV Data Exchange/Properties/Resources,ExportCompleted,Export Completed,eVolveMEP CSV Data Exchange/Properties/Resources!ExportCompleted,Export Completed,,Exportation terminée
+eVolveMEP CSV Data Exchange/Properties/Resources,ExportCsvData,Export CSV Data,eVolveMEP CSV Data Exchange/Properties/Resources!ExportCsvData,Export CSV Data,,Exporter les données CSV
+eVolveMEP CSV Data Exchange/ConfigurationForm,ExportRadioButton.Text,Export,eVolveMEP CSV Data Exchange/ConfigurationForm!ExportRadioButton.Text,Export,,Exporter
+eVolveMEP Data Table Tools/ToolsDialog,ExpressionColumnAddButton.Text,Add,eVolveMEP Data Table Tools/ToolsDialog!ExpressionColumnAddButton.Text,Add,,Ajouter
+eVolveMEP Data Table Tools/ToolsDialog,ExpressionColumnDataTypeLabel.Text,Data Type,eVolveMEP Data Table Tools/ToolsDialog!ExpressionColumnDataTypeLabel.Text,Data Type,,Type de données
+eVolveMEP Data Table Tools/ToolsDialog,ExpressionColumnExpressionGroupBox.Text,Expression,eVolveMEP Data Table Tools/ToolsDialog!ExpressionColumnExpressionGroupBox.Text,Expression,,Expression
+eVolveMEP Data Table Tools/ToolsDialog,ExpressionColumnGroupBox.Text,Add Expression Column,eVolveMEP Data Table Tools/ToolsDialog!ExpressionColumnGroupBox.Text,Add Expression Column,,Ajouter une colonne d'expression
+eVolveMEP Data Table Tools/ToolsDialog,ExpressionColumnNameLabel.Text,Column Name,eVolveMEP Data Table Tools/ToolsDialog!ExpressionColumnNameLabel.Text,Column Name,,Nom de la colonne
+eVolveMEP CSV Data Exchange/ConfigurationForm,FileBrowseButton.Text,Browse,eVolveMEP CSV Data Exchange/ConfigurationForm!FileBrowseButton.Text,Browse,,Parcourir
+eVolveMEP CSV Data Exchange/ConfigurationForm,FileGroupBox.Text,Target File,eVolveMEP CSV Data Exchange/ConfigurationForm!FileGroupBox.Text,Target File,,Fichier cible
+eVolveMEP Data Table Tools/Properties/Resources,FileLoadFailure,Load Failure,eVolveMEP Data Table Tools/Properties/Resources!FileLoadFailure,Load Failure,,Échec du chargement
+eVolveMEP CSV Data Exchange/Properties/Resources,FileLoadFailure,Load Failure,eVolveMEP CSV Data Exchange/Properties/Resources!FileLoadFailure,Load Failure,,Échec du chargement
+eVolveMEP Data Table Tools/Properties/Resources,FileSaveFailure,Save Failure,eVolveMEP Data Table Tools/Properties/Resources!FileSaveFailure,Save Failure,,Échec de l'enregistrement
+eVolveMEP CSV Data Exchange/Properties/Resources,FileSaveFailure,Save Failure,eVolveMEP CSV Data Exchange/Properties/Resources!FileSaveFailure,Save Failure,,Échec de l'enregistrement
+eVolveMEP CSV Data Exchange/Properties/Resources,ImportCompleted,Import Completed,eVolveMEP CSV Data Exchange/Properties/Resources!ImportCompleted,Import Completed,,Importation terminée
+eVolveMEP CSV Data Exchange/Properties/Resources,ImportCsvData,Import CSV Data,eVolveMEP CSV Data Exchange/Properties/Resources!ImportCsvData,Import CSV Data,,Importer les données CSV
+eVolveMEP CSV Data Exchange/ConfigurationForm,ImportRadioButton.Text,Import,eVolveMEP CSV Data Exchange/ConfigurationForm!ImportRadioButton.Text,Import,,Importer
+eVolveMEP Data Table Tools/Properties/Resources,ImportStatementPromptInfo,Enter the SQL Select statement which will be used to populate the selected {0}. The SQL results will be used to define the column names and their respective data type.,eVolveMEP Data Table Tools/Properties/Resources!ImportStatementPromptInfo,Enter the SQL Select statement which will be used to populate the selected {0}. The SQL results will be used to define the column names and their respective data type.,,Saisissez l'énoncé SQL Select à utiliser pour remplir le {0} sélectionné. Les résultats SQL seront utilisés pour définir les noms des colonnes et leur type de données respectif.
+eVolveMEP Data Table Tools/TextInputDialog,InstructionsLabel.Text,InstructionsLabel,eVolveMEP Data Table Tools/TextInputDialog!InstructionsLabel.Text,InstructionsLabel,,InstructionsLabel
+eVolveMEP CSV Data Exchange/Properties/Resources,IssuesMustBeAddressedNotice,Please address the following issues:,eVolveMEP CSV Data Exchange/Properties/Resources!IssuesMustBeAddressedNotice,Please address the following issues:,,Veuillez résoudre les problèmes suivants :
+eVolveMEP CSV Data Exchange/Properties/Resources,NoDataNotice,CSV file contained no usable data.,eVolveMEP CSV Data Exchange/Properties/Resources!NoDataNotice,CSV file contained no usable data.,,Le fichier CSV ne contenait aucune donnée utile.
+eVolveMEP CSV Data Exchange/Properties/Resources,NoElementsSelectedNotice,No elements were selected.,eVolveMEP CSV Data Exchange/Properties/Resources!NoElementsSelectedNotice,No elements were selected.,,Aucun élément n'a été sélectionné.
+eVolveMEP Data Table Tools/Properties/Resources,NoEntriesDefinedError,No {0} entries are defined.,eVolveMEP Data Table Tools/Properties/Resources!NoEntriesDefinedError,No {0} entries are defined.,,Aucune entrée {0} n'est sélectionnée.
+eVolveMEP Data Table Tools/Properties/Resources,NotConnected,Not connected,eVolveMEP Data Table Tools/Properties/Resources!NotConnected,Not connected,,Non connecté
+eVolveMEP Data Table Tools/Properties/Resources,NoValueSelectedError,No {0} is selected.,eVolveMEP Data Table Tools/Properties/Resources!NoValueSelectedError,No {0} is selected.,,Aucun {0} sélectionné.
+eVolveMEP Data Table Tools/TextInputDialog,OKButton.Text,OK,eVolveMEP Data Table Tools/TextInputDialog!OKButton.Text,OK,,OK
+eVolveMEP Data Table Tools/AddMappingDialog,OKButton.Text,OK,eVolveMEP Data Table Tools/AddMappingDialog!OKButton.Text,OK,,OK
+eVolveMEP Data Table Tools/ToolsDialog,OK_Button.Text,OK,eVolveMEP Data Table Tools/ToolsDialog!OK_Button.Text,OK,,OK
+eVolveMEP CSV Data Exchange/ConfigurationForm,OK_Button.Text,OK,eVolveMEP CSV Data Exchange/ConfigurationForm!OK_Button.Text,OK,,OK
+eVolveMEP Data Table Tools/Properties/Resources,OperationCancelsOnErrorNotice,"If this produces an error, the operation will cancel.",eVolveMEP Data Table Tools/Properties/Resources!OperationCancelsOnErrorNotice,"If this produces an error, the operation will cancel.",,"En cas d'erreur, l'opération sera annulée."
+eVolveMEP Data Table Tools/Properties/Resources,OperationCompleted,Process completed.,eVolveMEP Data Table Tools/Properties/Resources!OperationCompleted,Process completed.,,Traitement terminé.
+eVolveMEP CSV Data Exchange/ConfigurationForm,OptionalExportColumnsGroupBox.Text,Optional columns to include in {0},eVolveMEP CSV Data Exchange/ConfigurationForm!OptionalExportColumnsGroupBox.Text,Optional columns to include in {0},,Colonnes facultatives à inclure dans {0}
+eVolveMEP CSV Data Exchange/ConfigurationForm,ProfileGroupBox.Text,Profile,eVolveMEP CSV Data Exchange/ConfigurationForm!ProfileGroupBox.Text,Profile,,Profil
+eVolveMEP Data Table Tools/ToolsDialog,ResetDataTabPage.Text,Reset Saved Data,eVolveMEP Data Table Tools/ToolsDialog!ResetDataTabPage.Text,Reset Saved Data,,Réinitialiser les données enregistrées
+eVolveMEP Data Table Tools/Properties/Resources,ResetEntireConfigPrompt,"Warning: This will delete ALL saved configuration data.
+Would you like to continue?",eVolveMEP Data Table Tools/Properties/Resources!ResetEntireConfigPrompt,"Warning: This will delete ALL saved configuration data.
+Would you like to continue?",,"Avertissement : TOUTES les données de la configuration enregistrée seront supprimées.
+Voulez-vous continuer ?"
+eVolveMEP Data Table Tools/ToolsDialog,ResetEntireConfigurationButton.Text,Reset Entire Saved Configuration,eVolveMEP Data Table Tools/ToolsDialog!ResetEntireConfigurationButton.Text,Reset Entire Saved Configuration,,Réinitialiser l'intégralité de la configuration enregistrée
+eVolveMEP Data Table Tools/ToolsDialog,ResetEntireConfigurationGroupBox.Text,Delete {0} Configuration,eVolveMEP Data Table Tools/ToolsDialog!ResetEntireConfigurationGroupBox.Text,Delete {0} Configuration,,Supprimer la configuration {0}
+eVolveMEP Data Table Tools/ToolsDialog,ResetSelectedConfigurationButton.Text,Reset Saved Configuration for Selected {0} Only,eVolveMEP Data Table Tools/ToolsDialog!ResetSelectedConfigurationButton.Text,Reset Saved Configuration for Selected {0} Only,,Réinitialiser la configuration enregistrée pour le {0} uniquement
+eVolveMEP Data Table Tools/Properties/Resources,ResetSelectedDataTableConfigPrompt,Delete saved configuration for the selected {0}?,eVolveMEP Data Table Tools/Properties/Resources!ResetSelectedDataTableConfigPrompt,Delete saved configuration for the selected {0}?,,Réinitialiser la configuration enregistrée pour le {0} sélectionné ?
+eVolveMEP Data Table Tools/Properties/Resources,SettingsLoadErrorNotice,Could not load settings file:,eVolveMEP Data Table Tools/Properties/Resources!SettingsLoadErrorNotice,Could not load settings file:,,Impossible de charger le fichier de paramètres :
+eVolveMEP CSV Data Exchange/Properties/Resources,SettingsLoadErrorNotice,Could not load settings file:,eVolveMEP CSV Data Exchange/Properties/Resources!SettingsLoadErrorNotice,Could not load settings file:,,Impossible de charger le fichier de paramètres :
+eVolveMEP Data Table Tools/Properties/Resources,SettingsSaveErrorNotice,Could not save settings file:,eVolveMEP Data Table Tools/Properties/Resources!SettingsSaveErrorNotice,Could not save settings file:,,Impossible d'enregistrer le fichier de paramètres :
+eVolveMEP CSV Data Exchange/Properties/Resources,SettingsSaveErrorNotice,Could not save settings file:,eVolveMEP CSV Data Exchange/Properties/Resources!SettingsSaveErrorNotice,Could not save settings file:,,Impossible d'enregistrer le fichier de paramètres :
+eVolveMEP CSV Data Exchange/Properties/Resources,SingleValueMustBeSelectedError,A single {0} must be selected.,eVolveMEP CSV Data Exchange/Properties/Resources!SingleValueMustBeSelectedError,A single {0} must be selected.,Tag refers to a data entry field,Un seul élément {0} doit être sélectionné.
+eVolveMEP Data Table Tools/ToolsDialog,SQLConnectButton.Text,SQLConnectButton,eVolveMEP Data Table Tools/ToolsDialog!SQLConnectButton.Text,SQLConnectButton,,SQLConnectButton
+eVolveMEP Data Table Tools/ToolsDialog,SQLConnectionStatusLabel.Text,SQLConnectionStatusLabel,eVolveMEP Data Table Tools/ToolsDialog!SQLConnectionStatusLabel.Text,SQLConnectionStatusLabel,,SQLConnectionStatusLabel
+eVolveMEP Data Table Tools/ToolsDialog,SQLConnectionStringGroupBox.Text,SQL Server Connection String,eVolveMEP Data Table Tools/ToolsDialog!SQLConnectionStringGroupBox.Text,SQL Server Connection String,,Chaîne de connexion au serveur SQL
+eVolveMEP Data Table Tools/ToolsDialog,SQLConnectionStringHelpLabel.Text,View example values,eVolveMEP Data Table Tools/ToolsDialog!SQLConnectionStringHelpLabel.Text,View example values,,Afficher les exemples de valeurs
+eVolveMEP Data Table Tools/ToolsDialog,SQLCustomOperationsGoupBox.Text,Custom Operations,eVolveMEP Data Table Tools/ToolsDialog!SQLCustomOperationsGoupBox.Text,Custom Operations,,Opérations personnalisées
+eVolveMEP Data Table Tools/ToolsDialog,SQLExportDataGroupBox.Text,Export Data,eVolveMEP Data Table Tools/ToolsDialog!SQLExportDataGroupBox.Text,Export Data,,Exporter les données
+eVolveMEP Data Table Tools/ToolsDialog,SQLExportExecuteButton.Text,Execute,eVolveMEP Data Table Tools/ToolsDialog!SQLExportExecuteButton.Text,Execute,,Exécuter
+eVolveMEP Data Table Tools/ToolsDialog,SQLExportFieldMappingAddButton.Text,Add,eVolveMEP Data Table Tools/ToolsDialog!SQLExportFieldMappingAddButton.Text,Add,,Ajouter
+eVolveMEP Data Table Tools/ToolsDialog,SQLExportFieldMappingGroupBox.Text,Field Mapping,eVolveMEP Data Table Tools/ToolsDialog!SQLExportFieldMappingGroupBox.Text,Field Mapping,,Correspondance des champs
+eVolveMEP Data Table Tools/ToolsDialog,SQLExportFieldMappingRemoveButton.Text,Remove,eVolveMEP Data Table Tools/ToolsDialog!SQLExportFieldMappingRemoveButton.Text,Remove,,Retirer
+eVolveMEP Data Table Tools/ToolsDialog,SQLExportPostEventButton.Text,Edit,eVolveMEP Data Table Tools/ToolsDialog!SQLExportPostEventButton.Text,Edit,,Modifier
+eVolveMEP Data Table Tools/ToolsDialog,SQLExportPostEventCheckBox.Text,Run SQL After Export,eVolveMEP Data Table Tools/ToolsDialog!SQLExportPostEventCheckBox.Text,Run SQL After Export,,Exécuter SQL après l'exportation
+eVolveMEP Data Table Tools/ToolsDialog,SQLExportPreEventButton.Text,Edit,eVolveMEP Data Table Tools/ToolsDialog!SQLExportPreEventButton.Text,Edit,,Modifier
+eVolveMEP Data Table Tools/ToolsDialog,SQLExportPreEventCheckBox.Text,Run SQL Before Export,eVolveMEP Data Table Tools/ToolsDialog!SQLExportPreEventCheckBox.Text,Run SQL Before Export,,Exécuter SQL avant l'exportation
+eVolveMEP Data Table Tools/ToolsDialog,SQLExportTargetLabel.Text,Target,eVolveMEP Data Table Tools/ToolsDialog!SQLExportTargetLabel.Text,Target,,Cible
+eVolveMEP Data Table Tools/Properties/Resources,SQLImportConfirmationPrompt,"Warning: This operation will completely overwrite the structure and contents the selected {0} and rebuild with the {1} selections.
+
+Would you like to continue?",eVolveMEP Data Table Tools/Properties/Resources!SQLImportConfirmationPrompt,"Warning: This operation will completely overwrite the structure and contents the selected {0} and rebuild with the {1} selections.
+
+Would you like to continue?",,"Avertissement : Cette opération écrasera complètement la structure et le contenu du {0} sélectionné et effectuera une reconstruction avec les sélections {1}.
+
+Voulez-vous continuer ?"
+eVolveMEP Data Table Tools/ToolsDialog,SQLImportDataGroupBox.Text,Import Data,eVolveMEP Data Table Tools/ToolsDialog!SQLImportDataGroupBox.Text,Import Data,,Importer les données
+eVolveMEP Data Table Tools/ToolsDialog,SQLImportExecuteButton.Text,Execute,eVolveMEP Data Table Tools/ToolsDialog!SQLImportExecuteButton.Text,Execute,,Exécuter
+eVolveMEP Data Table Tools/ToolsDialog,SQLImportSourceCustomButton.Text,Edit,eVolveMEP Data Table Tools/ToolsDialog!SQLImportSourceCustomButton.Text,Edit,,Modifier
+eVolveMEP Data Table Tools/ToolsDialog,SQLImportSourceCustomRadioButton.Text,Custom SQL,eVolveMEP Data Table Tools/ToolsDialog!SQLImportSourceCustomRadioButton.Text,Custom SQL,,SQL personnalisé
+eVolveMEP Data Table Tools/ToolsDialog,SQLImportSourceGroupBox.Text,Source,eVolveMEP Data Table Tools/ToolsDialog!SQLImportSourceGroupBox.Text,Source,,Source
+eVolveMEP Data Table Tools/ToolsDialog,SQLImportSourceTableRadioButton.Text,Table,eVolveMEP Data Table Tools/ToolsDialog!SQLImportSourceTableRadioButton.Text,Table,,Tableau
+eVolveMEP Data Table Tools/ToolsDialog,SQLImportSourceViewRadioButton.Text,View,eVolveMEP Data Table Tools/ToolsDialog!SQLImportSourceViewRadioButton.Text,View,,Vue
+eVolveMEP Data Table Tools/ToolsDialog,SqlServerToolsTabPage.Text,SQL Server Tools,eVolveMEP Data Table Tools/ToolsDialog!SqlServerToolsTabPage.Text,SQL Server Tools,,Outils du serveur SQL
+eVolveMEP Data Table Tools/AddMappingDialog,SQLTableColumnGroupBox.Text,Destination SQL Table Column,eVolveMEP Data Table Tools/AddMappingDialog!SQLTableColumnGroupBox.Text,Destination SQL Table Column,,Colonne du tableau SQL de destination
+eVolveMEP Data Table Tools/Properties/Resources,StatementToRunAfterImport,Enter the SQL statement to execute after importing data.,eVolveMEP Data Table Tools/Properties/Resources!StatementToRunAfterImport,Enter the SQL statement to execute after importing data.,,Saisissez l'énoncé SQL à exécuter après l'importation des données.
+eVolveMEP Data Table Tools/Properties/Resources,StatementToRunPriorToImport,Enter the SQL statement to execute prior to importing data.,eVolveMEP Data Table Tools/Properties/Resources!StatementToRunPriorToImport,Enter the SQL statement to execute prior to importing data.,,Saisissez l'énoncé SQL à exécuter avant l'importation des données.
+eVolveMEP Data Table Tools/Properties/Resources,ToolTipText,Advanced tools for working with {0} Data Tables.,eVolveMEP Data Table Tools/Properties/Resources!ToolTipText,Advanced tools for working with {0} Data Tables.,Tag is a product name,Outils avancés pour travailler avec les tableaux de données {0}.
+eVolveMEP CSV Data Exchange/Properties/Resources,ToolTipText,Imports/Exports data from Revit using the {0} Integration Platform.,eVolveMEP CSV Data Exchange/Properties/Resources!ToolTipText,Imports/Exports data from Revit using the {0} Integration Platform.,Tag is a product name,Importe/exporte les données Revit via la plateforme d'intégration {0}.
+eVolveMEP CSV Data Exchange/Properties/Resources,UniqueId,Unique Id,eVolveMEP CSV Data Exchange/Properties/Resources!UniqueId,Unique Id,,ID unique
+eVolveMEP CSV Data Exchange/Properties/Resources,ValidationErrors,Validation Errors,eVolveMEP CSV Data Exchange/Properties/Resources!ValidationErrors,Validation Errors,,Erreurs de validation
+eVolveMEP Data Table Tools/Properties/Resources,ValueMustBeProvided1Error,A value must be provided for '{0}'.,eVolveMEP Data Table Tools/Properties/Resources!ValueMustBeProvided1Error,A value must be provided for '{0}'.,,Une valeur doit être indiquée pour « {0} ».
+eVolveMEP Data Table Tools/Properties/Resources,ValueMustBeProvided2Error,A value must be provided for '{0}' and '{1}'.,eVolveMEP Data Table Tools/Properties/Resources!ValueMustBeProvided2Error,A value must be provided for '{0}' and '{1}'.,,Une valeur doit être indiquée pour « {0} » et « {1} ».
+eVolveMEP Data Table Tools/Properties/Resources,ValueMustBeProvided3Error,"A value must be provided for '{0}', '{1}' and '{2}'.",eVolveMEP Data Table Tools/Properties/Resources!ValueMustBeProvided3Error,"A value must be provided for '{0}', '{1}' and '{2}'.",,"Une valeur doit être indiquée pour « {0} », « {1} » et « {2} »."
+eVolveMEP Data Table Tools/Properties/Resources,ValueMustBeProvidedWhenEnabledError,A value must be provided for '{0}' when enabled.,eVolveMEP Data Table Tools/Properties/Resources!ValueMustBeProvidedWhenEnabledError,A value must be provided for '{0}' when enabled.,,Une valeur doit être indiquée pour « {0} » en cas d'activation.
+eVolveMEP CSV Data Exchange/Properties/Resources,ValueMustBeSelectedError,A {0} must be selected.,eVolveMEP CSV Data Exchange/Properties/Resources!ValueMustBeSelectedError,A {0} must be selected.,Tag refers to a data entry field,Un élément {0} doit être sélectionné.
+eVolveMEP Data Table Tools/ToolsDialog,ViewSourceCodeLabel.Text,View source code on GitHub,eVolveMEP Data Table Tools/ToolsDialog!ViewSourceCodeLabel.Text,View source code on GitHub,,Afficher le code source sur GitHub
+eVolveMEP CSV Data Exchange/ConfigurationForm,ViewSourceCodeLabel.Text,View source code on GitHub,eVolveMEP CSV Data Exchange/ConfigurationForm!ViewSourceCodeLabel.Text,View source code on GitHub,,Afficher le code source sur GitHub
+eVolveMEP CSV Data Exchange/Properties/Resources,WhenXSelectedFolderYMustExistError,"When {0} is selected, the folder location in {1} must exist.",eVolveMEP CSV Data Exchange/Properties/Resources!WhenXSelectedFolderYMustExistError,"When {0} is selected, the folder location in {1} must exist.",Tags refer to data entry fields,"Lorsque l'élément {0} est sélectionné, l'emplacement du dossier dans {1} doit exister."
+eVolveMEP CSV Data Exchange/Properties/Resources,WhenXSelectedYMustExistError,"When {0} is selected, {1} must exist.",eVolveMEP CSV Data Exchange/Properties/Resources!WhenXSelectedYMustExistError,"When {0} is selected, {1} must exist.",Tags refer to data entry fields,"Lorsque l'élément {0} est sélectionné, {1} doit exister."
+eVolveMEP CSV Data Exchange/Properties/Resources,XElementsProcessedNotice,{0} element(s) processed.,eVolveMEP CSV Data Exchange/Properties/Resources!XElementsProcessedNotice,{0} element(s) processed.,Tag is a number,{0} élément(s) traité(s).

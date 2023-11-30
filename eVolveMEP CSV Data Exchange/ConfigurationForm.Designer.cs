@@ -48,6 +48,7 @@
             this.OptionalExportColumnsCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.HelpLinkPictureBox = new System.Windows.Forms.PictureBox();
             this.OpenConfigurationPictureBox = new System.Windows.Forms.PictureBox();
+            this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
             this.DirectionGroupBox.SuspendLayout();
             this.ProfileGroupBox.SuspendLayout();
             this.FileGroupBox.SuspendLayout();
@@ -193,12 +194,20 @@
             this.OpenConfigurationPictureBox.TabStop = false;
             this.OpenConfigurationPictureBox.Click += new System.EventHandler(this.OpenConfigurationPictureBox_Click);
             // 
+            // ViewSourceCodeLabel
+            // 
+            resources.ApplyResources(this.ViewSourceCodeLabel, "ViewSourceCodeLabel");
+            this.ViewSourceCodeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ViewSourceCodeLabel.ForeColor = System.Drawing.Color.Blue;
+            this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
+            // 
             // ConfigurationForm
             // 
             this.AcceptButton = this.OK_Button;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel_Button;
+            this.Controls.Add(this.ViewSourceCodeLabel);
             this.Controls.Add(this.OpenConfigurationPictureBox);
             this.Controls.Add(this.HelpLinkPictureBox);
             this.Controls.Add(this.OptionalExportColumnsGroupBox);
@@ -224,6 +233,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -248,5 +258,6 @@
         private System.Windows.Forms.CheckedListBox OptionalExportColumnsCheckedListBox;
         private System.Windows.Forms.PictureBox HelpLinkPictureBox;
         private System.Windows.Forms.PictureBox OpenConfigurationPictureBox;
+        private System.Windows.Forms.Label ViewSourceCodeLabel;
     }
 }

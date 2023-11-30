@@ -117,46 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ApplyButton.Text" xml:space="preserve">
-	  <value>Appliquer</value>
+  <data name="ButtonText" xml:space="preserve">
+    <value>Data Table
+Tools</value>
   </data>
-  <data name="Cancel_Button.Text" xml:space="preserve">
-	  <value>Annuler</value>
+  <data name="eVolveElectrical" xml:space="preserve">
+    <value>eVolve Electrical</value>
   </data>
-  <data name="DelimiterCommaRadioButton.Text" xml:space="preserve">
-	  <value>Virgule</value>
+  <data name="eVolveMechanical" xml:space="preserve">
+    <value>eVolve Mechanical</value>
   </data>
-  <data name="DelimiterGroupBox.Text" xml:space="preserve">
-	  <value>Séparateur</value>
+  <data name="FileLoadFailure" xml:space="preserve">
+	  <value>Load Failure</value>
   </data>
-  <data name="DelimiterTabRadioButton.Text" xml:space="preserve">
-	  <value>Tabulation</value>
+  <data name="FileSaveFailure" xml:space="preserve">
+	  <value>Save Failure</value>
   </data>
-  <data name="DirectionGroupBox.Text" xml:space="preserve">
-	  <value>Sens</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Help_Medium_20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Help_Medium_20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ExportRadioButton.Text" xml:space="preserve">
-	  <value>Exporter</value>
+  <data name="SettingsLoadErrorNotice" xml:space="preserve">
+	  <value>Could not load settings file:</value>
   </data>
-  <data name="FileBrowseButton.Text" xml:space="preserve">
-	  <value>Parcourir</value>
+  <data name="SettingsSaveErrorNotice" xml:space="preserve">
+	  <value>Could not save settings file:</value>
   </data>
-  <data name="FileGroupBox.Text" xml:space="preserve">
-	  <value>Fichier cible</value>
+  <data name="Settings_20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Settings_20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ImportRadioButton.Text" xml:space="preserve">
-	  <value>Importer</value>
+  <data name="ToolTipText" xml:space="preserve">
+    <value>Advanced tools for working with {0} Data Tables.</value>
+    <comment>Tag is a product name</comment>
   </data>
-  <data name="OK_Button.Text" xml:space="preserve">
-	  <value>OK</value>
+  <data name="Connect" xml:space="preserve">
+	  <value>Connect</value>
   </data>
-  <data name="OptionalExportColumnsGroupBox.Text" xml:space="preserve">
-	  <value>Colonnes facultatives à inclure dans {0}</value>
+  <data name="ValueMustBeProvided2Error" xml:space="preserve">
+	  <value>A value must be provided for '{0}' and '{1}'.</value>
   </data>
-  <data name="ProfileGroupBox.Text" xml:space="preserve">
-	  <value>Profil</value>
+  <data name="CouldNotConvertValueWarning" xml:space="preserve">
+	  <value>One or more values were not able to be converted to the target type.
+The default value was applied in this situation.</value>
   </data>
-  <data name="ViewSourceCodeLabel.Text" xml:space="preserve">
-	  <value>Afficher le code source sur GitHub</value>
+  <data name="ValueMustBeProvided1Error" xml:space="preserve">
+	  <value>A value must be provided for '{0}'.</value>
+  </data>
+  <data name="ValueMustBeProvided3Error" xml:space="preserve">
+	  <value>A value must be provided for '{0}', '{1}' and '{2}'.</value>
+  </data>
+  <data name="NotConnected" xml:space="preserve">
+	  <value>Not connected</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+	  <value>Connected</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+	  <value>Disconnect</value>
+  </data>
+  <data name="NoValueSelectedError" xml:space="preserve">
+	  <value>No {0} is selected.</value>
+  </data>
+  <data name="OperationCancelsOnErrorNotice" xml:space="preserve">
+	  <value>If this produces an error, the operation will cancel.</value>
+  </data>
+  <data name="StatementToRunPriorToImport" xml:space="preserve">
+	  <value>Enter the SQL statement to execute prior to importing data.</value>
+  </data>
+  <data name="StatementToRunAfterImport" xml:space="preserve">
+	  <value>Enter the SQL statement to execute after importing data.</value>
+  </data>
+  <data name="ImportStatementPromptInfo" xml:space="preserve">
+	  <value>Enter the SQL Select statement which will be used to populate the selected {0}. The SQL results will be used to define the column names and their respective data type.</value>
+  </data>
+  <data name="ValueMustBeProvidedWhenEnabledError" xml:space="preserve">
+	  <value>A value must be provided for '{0}' when enabled.</value>
+  </data>
+  <data name="ExportColumnNotFoundError" xml:space="preserve">
+	  <value>The column '{0}' was not found in {1} '{2}'.</value>
+  </data>
+  <data name="NoEntriesDefinedError" xml:space="preserve">
+	  <value>No {0} entries are defined.</value>
+  </data>
+  <data name="OperationCompleted" xml:space="preserve">
+	  <value>Process completed.</value>
+  </data>
+  <data name="ColumnInfoName_Order" xml:space="preserve">
+	  <value>Order</value>
+	  <comment>Sequential order</comment>
+  </data>
+  <data name="ColumnInfoName_Name" xml:space="preserve">
+	  <value>Name</value>
+  </data>
+  <data name="ColumnInfoName_DataType" xml:space="preserve">
+	  <value>Data Type</value>
+  </data>
+  <data name="ColumnInfoName_Expression" xml:space="preserve">
+	  <value>Expression</value>
+	  <comment>Formula expression, ex. Col1+Col2</comment>
+  </data>
+  <data name="ResetSelectedDataTableConfigPrompt" xml:space="preserve">
+	  <value>Delete saved configuration for the selected {0}?</value>
+  </data>
+  <data name="ResetEntireConfigPrompt" xml:space="preserve">
+	  <value>Warning: This will delete ALL saved configuration data.
+Would you like to continue?</value>
+  </data>
+  <data name="SQLImportConfirmationPrompt" xml:space="preserve">
+	  <value>Warning: This operation will completely overwrite the structure and contents the selected {0} and rebuild with the {1} selections.
+
+Would you like to continue?</value>
   </data>
 </root>

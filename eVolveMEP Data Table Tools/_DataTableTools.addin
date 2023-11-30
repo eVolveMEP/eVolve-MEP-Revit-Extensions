@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+ 
+  <AddIn Type="Application">
+    <Name>eVolve MEP Data Table Tools for ~Product~</Name>
+    <Assembly>~AssemblyLocation~</Assembly>
+    <ClientId>~AssemblyId~</ClientId>
+    <FullClassName>eVolve.DataTableTools.Revit.~ApplicationClassName~</FullClassName>
+    <VendorId>eVolve</VendorId>
+    <VendorDescription>eVolve MEP, LLC, www.evolvemep.com</VendorDescription>
+  </AddIn>
+
+</RevitAddIns>

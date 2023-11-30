@@ -11,5 +11,5 @@ global using System.Collections.Generic;
 global using System.Linq;
 global using Autodesk.Revit.DB;
 global using Autodesk.Revit.UI;
-global using eVolve.CsvDataExchange.Revit.Properties;
+global using eVolve.DataTableTools.Revit.Properties;
 global using static eVolve.ExtensionsCommon.Revit.Methods;
