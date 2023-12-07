@@ -252,4 +252,7 @@
   <data name="ChangeColumnNoticeLabel.Text" xml:space="preserve">
 	  <value>La modification de ces valeurs peut avoir un impact sur les scripts et/ou rapports PowerShell existants.</value>
   </data>
+  <data name="SQLRefreshButton.Text" xml:space="preserve">
+	  <value>Actualiser</value>
+  </data>
 </root>

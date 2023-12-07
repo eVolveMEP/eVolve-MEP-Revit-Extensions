@@ -2036,6 +2036,36 @@
   <data name="SQLConnectionStringGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="SQLRefreshButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="SQLRefreshButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SQLRefreshButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>724, 57</value>
+  </data>
+  <data name="SQLRefreshButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 23</value>
+  </data>
+  <data name="SQLRefreshButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="SQLRefreshButton.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="&gt;&gt;SQLRefreshButton.Name" xml:space="preserve">
+    <value>SQLRefreshButton</value>
+  </data>
+  <data name="&gt;&gt;SQLRefreshButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SQLRefreshButton.Parent" xml:space="preserve">
+    <value>SQLConnectionStringGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SQLRefreshButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="SQLConnectionStringHelpLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2064,7 +2094,7 @@
     <value>SQLConnectionStringGroupBox</value>
   </data>
   <data name="&gt;&gt;SQLConnectionStringHelpLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="SQLConnectionStatusLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2073,7 +2103,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
   </data>
   <data name="SQLConnectionStatusLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 62</value>
+    <value>328, 57</value>
   </data>
   <data name="SQLConnectionStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 23</value>
@@ -2097,7 +2127,7 @@
     <value>SQLConnectionStringGroupBox</value>
   </data>
   <data name="&gt;&gt;SQLConnectionStatusLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="SQLConnectButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2106,7 +2136,7 @@
     <value>NoControl</value>
   </data>
   <data name="SQLConnectButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>724, 62</value>
+    <value>596, 57</value>
   </data>
   <data name="SQLConnectButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 23</value>
@@ -2127,7 +2157,7 @@
     <value>SQLConnectionStringGroupBox</value>
   </data>
   <data name="&gt;&gt;SQLConnectButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="SQLConnectionStringTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2151,7 +2181,7 @@
     <value>SQLConnectionStringGroupBox</value>
   </data>
   <data name="&gt;&gt;SQLConnectionStringTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="SQLConnectionStringGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 17</value>

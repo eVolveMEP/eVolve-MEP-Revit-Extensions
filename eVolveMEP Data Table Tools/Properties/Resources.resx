@@ -158,7 +158,9 @@ Tools</value>
   </data>
   <data name="CouldNotConvertValueWarning" xml:space="preserve">
 	  <value>One or more values were not able to be converted to the target type.
-The default value was applied in this situation.</value>
+The default value of "{0}" was set as the data in these rows.
+
+This operation can be undone by using the Undo function within Revit.</value>
   </data>
   <data name="ValueMustBeProvided1Error" xml:space="preserve">
 	  <value>A value must be provided for '{0}'.</value>

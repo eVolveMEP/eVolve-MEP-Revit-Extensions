@@ -141,7 +141,9 @@ Outils</value>
   </data>
   <data name="CouldNotConvertValueWarning" xml:space="preserve">
 	  <value>Une ou plusieurs valeurs n'ont pas pu être converties dans le type cible.
-La valeur par défaut est appliquée dans cette situation.</value>
+La valeur par défaut de « {0} » a été définie comme données dans ces lignes.
+
+Cette opération peut être annulée à l'aide de la fonction Annuler dans Revit.</value>
   </data>
   <data name="Disconnect" xml:space="preserve">
 	  <value>Déconnecter</value>

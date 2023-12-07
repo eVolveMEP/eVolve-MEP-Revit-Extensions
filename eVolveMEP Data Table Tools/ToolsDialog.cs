@@ -278,9 +278,18 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         ExpressionColumnDataTypeComboBox.Text = null;
         ExpressionColumnExpressionTextBox.Text = null;
 
-        var table = !string.IsNullOrEmpty(DataTableComboBox.Text)
-            ? Document.GetTable(DataTableComboBox.Text, out _)
-            : null;
+        DataTable table = null;
+        if (!string.IsNullOrEmpty(DataTableComboBox.Text))
+        {
+            try
+            {
+                table = Document.GetTable(DataTableComboBox.Text, out _);
+            }
+            catch (KeyNotFoundException)
+            {
+                // Table does not exist, it has likely been renamed or deleted.
+            }
+        }
 
         try
         {
@@ -307,6 +316,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     ///
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Event information. </param>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Roslynator", "RCS1140:Add exception to documentation comment.", Justification = "Exceptions do not bubble up")]
     private void ChangeColumnButton_Click(object sender, EventArgs e)
     {
         try
@@ -350,47 +360,66 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             if (!string.IsNullOrEmpty(newDataType))
             {
                 var conversionFailedAtLeastOnce = false;
-                Func<object, object> convertToNewType = newDataType switch
+                object defaultNewTypeValue;
+                Func<object, object> convertToNewType;
+
+                switch (newDataType)
                 {
-                    nameof(String) => existing => existing.ToString(),
-                    nameof(Int32) => existing =>
-                    {
-                        conversionFailedAtLeastOnce |= !int.TryParse(existing.ToString(), out var value);
-                        return value;
-                    }
-                    ,
-                    nameof(Int64) => existing =>
-                    {
-                        conversionFailedAtLeastOnce |= !long.TryParse(existing.ToString(), out var value);
-                        return value;
-                    }
-                    ,
-                    nameof(Double) => existing =>
-                    {
-                        conversionFailedAtLeastOnce |= !double.TryParse(existing.ToString(), out var value);
-                        return value;
-                    }
-                    ,
-                    nameof(Decimal) => existing =>
-                    {
-                        conversionFailedAtLeastOnce |= !decimal.TryParse(existing.ToString(), out var value);
-                        return value;
-                    }
-                    ,
-                    nameof(Boolean) => existing =>
-                    {
-                        conversionFailedAtLeastOnce |= !bool.TryParse(existing.ToString(), out var value);
-                        return value;
-                    }
-                    ,
-                    nameof(DateTime) => existing =>
-                    {
-                        conversionFailedAtLeastOnce |= !DateTime.TryParse(existing.ToString(), out var value);
-                        return value;
-                    }
-                    ,
-                    _ => throw new Exception(newDataType),
-                };
+                    case nameof(String):
+                        defaultNewTypeValue = default(string);
+                        convertToNewType = existing => existing.ToString();
+                        break;
+                    case nameof(Int32):
+                        defaultNewTypeValue = default(int);
+                        convertToNewType = existing =>
+                        {
+                            conversionFailedAtLeastOnce |= !int.TryParse(existing.ToString(), out var value);
+                            return value;
+                        };
+                        break;
+                    case nameof(Int64):
+                        defaultNewTypeValue = default(long);
+                        convertToNewType = existing =>
+                        {
+                            conversionFailedAtLeastOnce |= !long.TryParse(existing.ToString(), out var value);
+                            return value;
+                        };
+                        break;
+                    case nameof(Double):
+                        defaultNewTypeValue = default(double);
+                        convertToNewType = existing =>
+                        {
+                            conversionFailedAtLeastOnce |= !double.TryParse(existing.ToString(), out var value);
+                            return value;
+                        };
+                        break;
+                    case nameof(Decimal):
+                        defaultNewTypeValue = default(decimal);
+                        convertToNewType = existing =>
+                        {
+                            conversionFailedAtLeastOnce |= !decimal.TryParse(existing.ToString(), out var value);
+                            return value;
+                        };
+                        break;
+                    case nameof(Boolean):
+                        defaultNewTypeValue = default(bool);
+                        convertToNewType = existing =>
+                        {
+                            conversionFailedAtLeastOnce |= !bool.TryParse(existing.ToString(), out var value);
+                            return value;
+                        };
+                        break;
+                    case nameof(DateTime):
+                        defaultNewTypeValue = default(DateTime);
+                        convertToNewType = existing =>
+                        {
+                            conversionFailedAtLeastOnce |= !DateTime.TryParse(existing.ToString(), out var value);
+                            return value;
+                        };
+                        break;
+                    default:
+                        throw new ArgumentException(ChangeColumnColumnLabel.Text);
+                }
 
                 // Create a new column with the new type and copy 
                 var sourceColumnIndex = table.Columns.IndexOf(sourceColumnName);
@@ -407,7 +436,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
                 if (conversionFailedAtLeastOnce)
                 {
-                    ShowWarningMessage(this, Resources.CouldNotConvertValueWarning, ChangeColumnDataTypeLabel.Text);
+                    ShowWarningMessage(this, string.Format(Resources.CouldNotConvertValueWarning, defaultNewTypeValue), ChangeColumnDataTypeLabel.Text);
                 }
 
                 actionsPerformed.Add($"{ChangeColumnDataTypeLabel.Text}: {newDataType}");
@@ -601,9 +630,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             SQLConnectionStringTextBox.ReadOnly = false;
             SQLConnectButton.Text = Resources.Connect;
 
-            SQLImportSourceTableComboBox.Items.Clear();
-            SQLImportSourceViewComboBox.Items.Clear();
-            SQLExportTargetComboBox.Items.Clear();
+            ClearSqlObjectSelections();
             SQLExportFieldMappingListBox.Items.Clear();
 
             SQLImportDataGroupBox.Enabled = false;
@@ -611,7 +638,15 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         }
     }
 
-    /// <summary> Connects to SQL using the provided connection string and updates data selection values. </summary>
+    /// <summary> Clears droplists which are sourced by SQL Server database objects. </summary>
+    private void ClearSqlObjectSelections()
+    {
+        SQLImportSourceTableComboBox.Items.Clear();
+        SQLImportSourceViewComboBox.Items.Clear();
+        SQLExportTargetComboBox.Items.Clear();
+    }
+
+    /// <summary> Connects to SQL Server and performs a <see cref="SQLRefreshButton_Click"/> operation. </summary>
     ///
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Event information. </param>
@@ -623,11 +658,32 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             DataTableChangedSqlHandler(SQLConnectButton, null);
 
             SQLConnectionStatusLabel.Text = Resources.NotConnected;
+            SQLRefreshButton.Enabled = false;
             return;
         }
 
+        SQLRefreshButton_Click(SQLConnectButton, e);
+
+        if (IsSqlConnected)
+        {
+            // Restore the configuration of the currently selected data table.
+            DataTableChangedSqlHandler(SQLConnectButton, EventArgs.Empty);
+
+            SQLRefreshButton.Enabled = true;
+        }
+    }
+
+    /// <summary>
+    /// Refreshes the available selection options from SQL Server using the provided connection string.
+    /// </summary>
+    ///
+    /// <param name="sender"> Source of the event. </param>
+    /// <param name="e"> Event information. </param>
+    private void SQLRefreshButton_Click(object sender, EventArgs e)
+    {
         try
         {
+            ClearSqlObjectSelections();
             using var connection = GetSqlConnection();
 
             var tables = GetSingleStringData("SELECT [name] FROM sys.tables ORDER BY [name] ASC", connection);
@@ -636,18 +692,12 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             SQLImportSourceTableComboBox.Items.AddRange(tables);
             SQLImportSourceViewComboBox.Items.AddRange(views);
             SQLExportTargetComboBox.Items.AddRange(tables);
-            
+
             SQLConnectionStatusLabel.Text = Resources.Connected;
         }
         catch (Exception ex)
         {
             ShowErrorMessage(this, ex.Message, SqlServerToolsTabPage.Text);
-        }
-
-        if (IsSqlConnected)
-        {
-            // Restore the configuration of the currently selected data table.
-            DataTableChangedSqlHandler(SQLConnectButton, EventArgs.Empty);
         }
     }
 

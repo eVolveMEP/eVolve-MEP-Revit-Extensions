@@ -126,7 +126,9 @@ namespace eVolve.DataTableTools.Revit.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to One or more values were not able to be converted to the target type.
-        ///The default value was applied in this situation..
+        ///The default value of &quot;{0}&quot; was set as the data in these rows.
+        ///
+        ///This operation can be undone by using the Undo function within Revit..
         /// </summary>
         internal static string CouldNotConvertValueWarning {
             get {

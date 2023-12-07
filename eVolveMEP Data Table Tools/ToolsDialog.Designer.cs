@@ -80,6 +80,7 @@ partial class ToolsDialog
             this.SQLImportSourceViewRadioButton = new System.Windows.Forms.RadioButton();
             this.SQLImportSourceTableRadioButton = new System.Windows.Forms.RadioButton();
             this.SQLConnectionStringGroupBox = new System.Windows.Forms.GroupBox();
+            this.SQLRefreshButton = new System.Windows.Forms.Button();
             this.SQLConnectionStringHelpLabel = new System.Windows.Forms.Label();
             this.SQLConnectionStatusLabel = new System.Windows.Forms.Label();
             this.SQLConnectButton = new System.Windows.Forms.Button();
@@ -476,12 +477,21 @@ partial class ToolsDialog
             // SQLConnectionStringGroupBox
             // 
             resources.ApplyResources(this.SQLConnectionStringGroupBox, "SQLConnectionStringGroupBox");
+            this.SQLConnectionStringGroupBox.Controls.Add(this.SQLRefreshButton);
             this.SQLConnectionStringGroupBox.Controls.Add(this.SQLConnectionStringHelpLabel);
             this.SQLConnectionStringGroupBox.Controls.Add(this.SQLConnectionStatusLabel);
             this.SQLConnectionStringGroupBox.Controls.Add(this.SQLConnectButton);
             this.SQLConnectionStringGroupBox.Controls.Add(this.SQLConnectionStringTextBox);
             this.SQLConnectionStringGroupBox.Name = "SQLConnectionStringGroupBox";
             this.SQLConnectionStringGroupBox.TabStop = false;
+            // 
+            // SQLRefreshButton
+            // 
+            resources.ApplyResources(this.SQLRefreshButton, "SQLRefreshButton");
+            this.SQLRefreshButton.Name = "SQLRefreshButton";
+            this.SQLRefreshButton.Tag = "";
+            this.SQLRefreshButton.UseVisualStyleBackColor = true;
+            this.SQLRefreshButton.Click += new System.EventHandler(this.SQLRefreshButton_Click);
             // 
             // SQLConnectionStringHelpLabel
             // 
@@ -675,4 +685,5 @@ partial class ToolsDialog
     private System.Windows.Forms.TextBox ChangeColumnNameTextBox;
     private System.Windows.Forms.Label ChangeColumnNameLabel;
     private System.Windows.Forms.Label ChangeColumnNoticeLabel;
+    private System.Windows.Forms.Button SQLRefreshButton;
 }
