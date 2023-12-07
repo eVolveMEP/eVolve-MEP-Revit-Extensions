@@ -26,7 +26,7 @@ public class Settings
     public string SqlConnectionString { get; set; }
 
     /// <summary> Gets or sets the SQL settings specific for each source data table. </summary>
-    public SqlTableSettings[] SqlTableSettings { get; set; } = Array.Empty<SqlTableSettings>();
+    public SqlTableSettings[] SqlTableSettings { get; set; } = [];
 }
 
 /// <summary> Stores SQL specific table settings. </summary>
@@ -54,7 +54,7 @@ public class SqlTableSettings
     /// <summary>
     /// Gets or sets the field mapping between the source <see cref="TableName"/> and <see cref="ExportSourceTargetName"/>.
     /// </summary>
-    public TableFieldMapping[] ExportFieldMappings { get; set; } = Array.Empty<TableFieldMapping>();
+    public TableFieldMapping[] ExportFieldMappings { get; set; } = [];
 
     /// <summary> Gets or sets a value <see cref="ExportSqlPreCommand"/> is enabled. </summary>
     public bool ExportSqlPreCommandEnabled { get; set; }

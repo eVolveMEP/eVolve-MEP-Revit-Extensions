@@ -38,7 +38,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// <remarks>
     /// This can be different from what is currently saved since the user may not yet have applied settings.
     /// </remarks>
-    private Dictionary<string, SqlTableSettings> ActiveSqlTableSettings { get; } = new();
+    private Dictionary<string, SqlTableSettings> ActiveSqlTableSettings { get; } = [];
 
     /// <summary>
     /// Gets the value to use as the key for capturing default values as they will be stored by this configuration.
@@ -293,7 +293,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
         try
         {
-            var columnNames = GetDataTableColumnNames(table) ?? Array.Empty<string>();
+            var columnNames = GetDataTableColumnNames(table) ?? [];
 
             ChangeColumnColumnComboBox.Items.Clear();
             ChangeColumnColumnComboBox.Items.AddRange(columnNames);
@@ -1019,7 +1019,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             data.Add(reader.GetString(0));
         }
         reader.Close();
-        return data.ToArray();
+        return [.. data];
     }
 
     /// <summary> Sanitizes and properly escapes a SQL object such as a table or field name. </summary>
