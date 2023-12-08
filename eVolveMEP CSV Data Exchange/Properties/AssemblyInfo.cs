@@ -1,4 +1,10 @@
-﻿using System.Reflection;
+﻿// Copyright (c) 2023 eVolve MEP, LLC
+// All rights reserved.
+// 
+// This source code is licensed under the BSD-style license found in the
+// LICENSE file in the root directory of this source tree.
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -28,5 +34,5 @@ using System.Runtime.InteropServices;
 //      Revision
 //      Build Date (MMDDY)
 //
-[assembly: AssemblyVersion("7.0.0.04213")]
-[assembly: AssemblyFileVersion("7.0.0.04213")]
+[assembly: AssemblyVersion("7.4.0.12073")]
+[assembly: AssemblyFileVersion("7.4.0.12073")]

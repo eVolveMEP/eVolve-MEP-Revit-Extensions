@@ -1,4 +1,10 @@
-﻿using System.Reflection;
+﻿// Copyright (c) 2023 eVolve MEP, LLC
+// All rights reserved.
+// 
+// This source code is licensed under the BSD-style license found in the
+// LICENSE file in the root directory of this source tree.
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -25,11 +31,8 @@ using System.Runtime.InteropServices;
 //
 //      Major Version
 //      Minor Version
-//      Build Number
 //      Revision
+//      Build Date (MMDDY)
 //
-// You can specify all the values or you can default the Build and Revision Numbers
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("7.4.0.12073")]
+[assembly: AssemblyFileVersion("7.4.0.12073")]
