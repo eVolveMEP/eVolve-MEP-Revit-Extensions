@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 eVolve MEP, LLC
+﻿// Copyright (c) 2024 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -205,7 +205,7 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
     #region Settings
 
     /// <summary> Gets the full pathname of the settings file store location on disk. </summary>
-    private static string SettingsFilePath { get; } = System.IO.Path.Combine(BaseSaveSettingsFileFolder, "CSV Data Exchange", "Settings.xml");
+    private static string SettingsFilePath { get; } = System.IO.Path.Combine(eVolve::eVolve.Core.Revit.ProductInfo.API.UserConfigurationFolderPath, "CSV Data Exchange", "Settings.xml");
 
     /// <summary>
     /// Saves the saved options from <see cref="SettingsFilePath"/> into the form. If an error occurs, the user is notified.

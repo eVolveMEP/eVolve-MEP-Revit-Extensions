@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 eVolve MEP, LLC
+﻿// Copyright (c) 2024 eVolve MEP, LLC
 // All rights reserved.
 //
 // This source code is licensed under the BSD-style license found in the
@@ -32,9 +32,6 @@ internal static class Methods
 
         return System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
     }
-
-    /// <summary> Gets the base directory where extensions should persist their settings. </summary>
-    internal static string BaseSaveSettingsFileFolder { get; } = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "eVolve");
 
     /// <summary>
     /// Loads the provided <paramref name="filePath"/> from disk and deserializes it to <typeparamref name="TSettings"/>.
