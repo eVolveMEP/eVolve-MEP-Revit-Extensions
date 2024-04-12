@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,46 +117,142 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ApplyButton.Text" xml:space="preserve">
-	  <value>Appliquer</value>
+  <data name="ColumnInfoGroupBox.Text" xml:space="preserve">
+	  <value>Informations sur la colonne</value>
   </data>
-  <data name="Cancel_Button.Text" xml:space="preserve">
-	  <value>Annuler</value>
+  <data name="ColumnToolsTabPage.Text" xml:space="preserve">
+	  <value>Outils des colonnes</value>
   </data>
-  <data name="DelimiterCommaRadioButton.Text" xml:space="preserve">
-	  <value>Virgule</value>
+  <data name="DataTableExpressionHelpLabel.Text" xml:space="preserve">
+	  <value>Voir la syntaxe</value>
   </data>
-  <data name="DelimiterGroupBox.Text" xml:space="preserve">
-	  <value>Séparateur</value>
+  <data name="DataTableLabel.Text" xml:space="preserve">
+	  <value>Tableau des données</value>
   </data>
-  <data name="DelimiterTabRadioButton.Text" xml:space="preserve">
-	  <value>Tabulation</value>
+  <data name="ExpressionColumnAddButton.Text" xml:space="preserve">
+	  <value>Ajouter</value>
   </data>
-  <data name="DirectionGroupBox.Text" xml:space="preserve">
-	  <value>Sens</value>
+  <data name="ExpressionColumnDataTypeLabel.Text" xml:space="preserve">
+	  <value>Type de données</value>
   </data>
-  <data name="ExportRadioButton.Text" xml:space="preserve">
-	  <value>Exporter</value>
+  <data name="ExpressionColumnExpressionGroupBox.Text" xml:space="preserve">
+	  <value>Expression</value>
   </data>
-  <data name="FileBrowseButton.Text" xml:space="preserve">
-	  <value>Parcourir</value>
+  <data name="ExpressionColumnGroupBox.Text" xml:space="preserve">
+	  <value>Ajouter une colonne d'expression</value>
   </data>
-  <data name="FileGroupBox.Text" xml:space="preserve">
-	  <value>Fichier cible</value>
+  <data name="ExpressionColumnNameLabel.Text" xml:space="preserve">
+	  <value>Nom de la colonne</value>
   </data>
-  <data name="ImportRadioButton.Text" xml:space="preserve">
-	  <value>Importer</value>
+  <data name="CloseButton.Text" xml:space="preserve">
+	  <value>Fermer</value>
   </data>
-  <data name="OK_Button.Text" xml:space="preserve">
-	  <value>OK</value>
+  <data name="ResetDataTabPage.Text" xml:space="preserve">
+	  <value>Réinitialiser les données enregistrées</value>
   </data>
-  <data name="OptionalExportColumnsGroupBox.Text" xml:space="preserve">
-	  <value>Colonnes facultatives à inclure dans {0}</value>
+  <data name="ResetEntireConfigurationButton.Text" xml:space="preserve">
+	  <value>Réinitialiser l'intégralité de la configuration enregistrée</value>
   </data>
-  <data name="ProfileGroupBox.Text" xml:space="preserve">
-	  <value>Profil</value>
+  <data name="ResetEntireConfigurationGroupBox.Text" xml:space="preserve">
+	  <value>Supprimer la configuration {0}</value>
+  </data>
+  <data name="ResetSelectedConfigurationButton.Text" xml:space="preserve">
+	  <value>Réinitialiser la configuration enregistrée pour le {0} uniquement</value>
+  </data>
+  <data name="SQLConnectButton.Text" xml:space="preserve">
+	  <value>SQLConnectButton</value>
+  </data>
+  <data name="SQLConnectionStatusLabel.Text" xml:space="preserve">
+	  <value>SQLConnectionStatusLabel</value>
+  </data>
+  <data name="SQLConnectionStringGroupBox.Text" xml:space="preserve">
+	  <value>Chaîne de connexion au serveur SQL</value>
+  </data>
+  <data name="SQLConnectionStringHelpLabel.Text" xml:space="preserve">
+	  <value>Afficher les exemples de valeurs</value>
+  </data>
+  <data name="SQLCustomOperationsGoupBox.Text" xml:space="preserve">
+	  <value>Opérations personnalisées</value>
+  </data>
+  <data name="SQLExportDataGroupBox.Text" xml:space="preserve">
+	  <value>Exporter les données</value>
+  </data>
+  <data name="SQLExportExecuteButton.Text" xml:space="preserve">
+	  <value>Exécuter</value>
+  </data>
+  <data name="SQLExportFieldMappingAddButton.Text" xml:space="preserve">
+	  <value>Ajouter</value>
+  </data>
+  <data name="SQLExportFieldMappingGroupBox.Text" xml:space="preserve">
+	  <value>Correspondance des champs</value>
+  </data>
+  <data name="SQLExportFieldMappingRemoveButton.Text" xml:space="preserve">
+	  <value>Retirer</value>
+  </data>
+  <data name="SQLExportPostEventButton.Text" xml:space="preserve">
+	  <value>Modifier</value>
+  </data>
+  <data name="SQLExportPostEventCheckBox.Text" xml:space="preserve">
+	  <value>Exécuter SQL après l'exportation</value>
+  </data>
+  <data name="SQLExportPreEventButton.Text" xml:space="preserve">
+	  <value>Modifier</value>
+  </data>
+  <data name="SQLExportPreEventCheckBox.Text" xml:space="preserve">
+	  <value>Exécuter SQL avant l'exportation</value>
+  </data>
+  <data name="SQLExportTargetLabel.Text" xml:space="preserve">
+	  <value>Cible</value>
+  </data>
+  <data name="SQLImportDataGroupBox.Text" xml:space="preserve">
+	  <value>Importer les données</value>
+  </data>
+  <data name="SQLImportExecuteButton.Text" xml:space="preserve">
+	  <value>Exécuter</value>
+  </data>
+  <data name="SQLImportSourceCustomButton.Text" xml:space="preserve">
+	  <value>Modifier</value>
+  </data>
+  <data name="SQLImportSourceCustomRadioButton.Text" xml:space="preserve">
+	  <value>SQL personnalisé</value>
+  </data>
+  <data name="SQLImportSourceGroupBox.Text" xml:space="preserve">
+	  <value>Source</value>
+  </data>
+  <data name="SQLImportSourceTableRadioButton.Text" xml:space="preserve">
+	  <value>Tableau</value>
+  </data>
+  <data name="SQLImportSourceViewRadioButton.Text" xml:space="preserve">
+	  <value>Vue</value>
+  </data>
+  <data name="SqlServerToolsTabPage.Text" xml:space="preserve">
+	  <value>Outils du serveur SQL</value>
   </data>
   <data name="ViewSourceCodeLabel.Text" xml:space="preserve">
 	  <value>Afficher le code source sur GitHub</value>
+  </data>
+  <data name="ChangeColumnGroupBox.Text" xml:space="preserve">
+	  <value>Modifier les propriétés de la colonne</value>
+  </data>
+  <data name="ChangeColumnDataTypeLabel.Text" xml:space="preserve">
+	  <value>Nouveau type de données</value>
+  </data>
+  <data name="ChangeColumnColumnLabel.Text" xml:space="preserve">
+	  <value>Colonne</value>
+  </data>
+  <data name="ChangeColumnNameLabel.Text" xml:space="preserve">
+	  <value>Nouveau nom</value>
+  </data>
+  <data name="ChangeColumnSequenceLabel.Text" xml:space="preserve">
+	  <value>Nouvel ordre</value>
+  </data>
+  <data name="ChangeColumnButton.Text" xml:space="preserve">
+	  <value>Appliquer</value>
+  </data>
+  <data name="ChangeColumnNoticeLabel.Text" xml:space="preserve">
+	  <value>La modification de ces valeurs peut avoir un impact sur les scripts et/ou rapports PowerShell existants.</value>
+  </data>
+  <data name="SQLRefreshButton.Text" xml:space="preserve">
+	  <value>Actualiser</value>
   </data>
 </root>

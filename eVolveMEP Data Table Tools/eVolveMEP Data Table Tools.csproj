@@ -5,29 +5,29 @@
     <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8D6F812D-459D-4931-BD54-CEBAA484EDE8}</ProjectGuid>
+    <ProjectGuid>{85DE10A1-786E-45EF-992A-80E3815A5A4D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>eVolve.CsvDataExchange.Revit</RootNamespace>
-    <AssemblyName>eVolveCSVDataExchange-UpdateInConditionalProperties</AssemblyName>
+    <RootNamespace>eVolve.DataTableTools.Revit</RootNamespace>
+    <AssemblyName>eVolveDataTableTools-UpdateInConditionalProperties</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <LangVersion>12</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2021|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eE Debug Revit 2021\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2021;ELECTRICAL</DefineConstants>
-    <DocumentationFile>bin\Debug Revit 2021\eVolveCSVDataExchange.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug Revit 2021\eVolveDataTableTools.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2021|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2021;ELECTRICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -37,20 +37,20 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Debug Revit 2021|AnyCPU' ">
-    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2021;MECHANICAL</DefineConstants>
     <OutputPath>bin\eM Debug Revit 2021\</OutputPath>
-    <DocumentationFile>bin\eM Debug Revit 2021\eVolveCSVDataExchange.xml</DocumentationFile>
+    <DocumentationFile>bin\eM Debug Revit 2021\eVolveDataTableTools.xml</DocumentationFile>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Release Revit 2021|AnyCPU' ">
-    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -61,18 +61,18 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2022|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eE Debug Revit 2022\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2022;ELECTRICAL</DefineConstants>
-    <DocumentationFile>bin\Debug Revit 2022\eVolveCSVDataExchange.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug Revit 2022\eVolveDataTableTools.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2022|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2022;ELECTRICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -82,17 +82,17 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2022|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eM Debug Revit 2022\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2022;MECHANICAL</DefineConstants>
-    <DocumentationFile>bin\eM Debug Revit 2022\eVolveCSVDataExchange.xml</DocumentationFile>
+    <DocumentationFile>bin\eM Debug Revit 2022\eVolveDataTableTools.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2022|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2022;MECHANICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -101,18 +101,18 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2023|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eE Debug Revit 2023\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2023;ELECTRICAL</DefineConstants>
-    <DocumentationFile>bin\Debug Revit 2023\eVolveCSVDataExchange.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug Revit 2023\eVolveDataTableTools.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2023|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2023;ELECTRICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -122,17 +122,17 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2023|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eM Debug Revit 2023\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2023;MECHANICAL</DefineConstants>
-    <DocumentationFile>bin\eM Debug Revit 2023\eVolveCSVDataExchange.xml</DocumentationFile>
+    <DocumentationFile>bin\eM Debug Revit 2023\eVolveDataTableTools.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2023|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2023;MECHANICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -141,18 +141,18 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2024|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eE Debug Revit 2024\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2024;ELECTRICAL</DefineConstants>
-    <DocumentationFile>bin\Debug Revit 2024\eVolveCSVDataExchange.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug Revit 2024\eVolveDataTableTools.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2024|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2024;ELECTRICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -162,17 +162,17 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2024|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\eM Debug Revit 2024\</OutputPath>
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;REVIT2024;MECHANICAL</DefineConstants>
-    <DocumentationFile>bin\eM Debug Revit 2024\eVolveCSVDataExchange.xml</DocumentationFile>
+    <DocumentationFile>bin\eM Debug Revit 2024\eVolveDataTableTools.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2024|AnyCPU'">
-    <AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
+    <AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;REVIT2024;MECHANICAL</DefineConstants>
     <Optimize>true</Optimize>
@@ -460,10 +460,14 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -474,14 +478,14 @@
     <Compile Include="..\Common\Methods.cs">
       <Link>Methods.cs</Link>
     </Compile>
-    <Compile Include="Command.cs" />
-    <Compile Include="Application.cs" />
-    <Compile Include="ConfigurationForm.cs">
+    <Compile Include="AddMappingDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfigurationForm.Designer.cs">
-      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    <Compile Include="AddMappingDialog.Designer.cs">
+      <DependentUpon>AddMappingDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Application.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="GlobalUsings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -490,13 +494,31 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="TextInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextInputDialog.Designer.cs">
+      <DependentUpon>TextInputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolsDialog.Designer.cs">
+      <DependentUpon>ToolsDialog.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ConfigurationForm.fr-FR.resx">
-      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    <None Include="packages.config" />
+    <None Include="_DataTableTools.addin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddMappingDialog.fr-fr.resx">
+      <DependentUpon>AddMappingDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfigurationForm.resx">
-      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddMappingDialog.resx">
+      <DependentUpon>AddMappingDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.fr-FR.resx">
       <DependentUpon>Resources.resx</DependentUpon>
@@ -504,16 +526,24 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextInputDialog.fr-FR.resx">
+      <DependentUpon>TextInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextInputDialog.resx">
+      <DependentUpon>TextInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolsDialog.fr-FR.resx">
+      <DependentUpon>ToolsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolsDialog.resx">
+      <DependentUpon>ToolsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="_CSVDataExchange.addin">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CSV_ImportExport_32x32.png" />
+    <EmbeddedResource Include="DataTableTools_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Help_Medium_20x20.png" />
@@ -533,7 +563,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>CALL "$(SolutionDir)BuildTools\PostBuild.bat" "$(ConfigurationName)" "$(TargetDir)" "$(TargetPath)" "A70A6A1A-BF91-C541-158A-5589D57891CB" "9F07922B-CCDF-2290-C059-CC7A8F1FFC78"
+    <PostBuildEvent>CALL "$(SolutionDir)BuildTools\PostBuild.bat" "$(ConfigurationName)" "$(TargetDir)" "$(TargetPath)" "25A711AA-ED48-9295-1F5B-537895FD333D" "DF781AB8-5BB8-D0AC-C0FA-CBA28623BEF6"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>

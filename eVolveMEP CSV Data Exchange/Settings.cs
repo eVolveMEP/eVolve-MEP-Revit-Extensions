@@ -1,8 +1,8 @@
 ﻿// Copyright (c) 2023 eVolve MEP, LLC
 // All rights reserved.
-//
+// 
 // This source code is licensed under the BSD-style license found in the
-// LICENSE.txt file in the root directory of this source tree.
+// LICENSE file in the root directory of this source tree.
 
 namespace eVolve.CsvDataExchange.Revit;
 
@@ -46,5 +46,5 @@ public class Settings
     /// Gets or sets a list of the optional export columns to be included. Entries here should reconcile with
     /// <see cref="Command.OptionalExportColumns"/>.
     /// </summary>
-    public string[] IncludeExportColumns { get; set; } = Array.Empty<string>();
+    public string[] IncludeExportColumns { get; set; } = [];
 }
