@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 eVolve MEP, LLC
+﻿// Copyright (c) 2024 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -158,7 +158,7 @@ internal class Command : IExternalCommand
             }
 
             // Normalize line breaks to spaces.
-            fieldValue = string.Join(" ", fieldValue.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None))
+            fieldValue = string.Join(" ", fieldValue.Split(["\r\n", "\r", "\n"], StringSplitOptions.None))
                 // Escape embedded quotes.
                 .Replace("\"", "\"\"")
                 .Trim();
@@ -194,7 +194,7 @@ internal class Command : IExternalCommand
 
         var csvDataFromFile = System.IO.File.ReadAllText(settings.FilePath);
 
-        var dataRows = csvDataFromFile.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+        var dataRows = csvDataFromFile.Split(["\r\n", "\r", "\n"], StringSplitOptions.RemoveEmptyEntries).ToArray();
         if (dataRows.Length <= 1)
         {
             // No data or header only.
