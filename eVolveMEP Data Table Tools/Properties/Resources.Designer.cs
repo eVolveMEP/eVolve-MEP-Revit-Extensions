@@ -61,16 +61,6 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Table
-        ///Tools.
-        /// </summary>
-        internal static string ButtonText {
-            get {
-                return ResourceManager.GetString("ButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Data Type.
         /// </summary>
         internal static string ColumnInfoName_DataType {
@@ -331,11 +321,21 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data Table
+        ///Tools.
+        /// </summary>
+        internal static string ToolsButtonText {
+            get {
+                return ResourceManager.GetString("ToolsButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advanced tools for working with {0} Data Tables..
         /// </summary>
-        internal static string ToolTipText {
+        internal static string ToolsToolTipText {
             get {
-                return ResourceManager.GetString("ToolTipText", resourceCulture);
+                return ResourceManager.GetString("ToolsToolTipText", resourceCulture);
             }
         }
         

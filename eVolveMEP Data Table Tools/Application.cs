@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 eVolve MEP, LLC
+﻿// Copyright (c) 2024 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -26,13 +26,13 @@ public class ApplicationMechanical : IExternalApplication
     /// <inheritdoc/>
     public Result OnStartup(UIControlledApplication application)
     {
-        var ribbonButton = eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ButtonText,
+        var ribbonButton = eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ToolsButtonText,
             System.Reflection.Assembly.GetExecutingAssembly().Location,
-            typeof(Command),
+            typeof(ToolsCommand),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
-            System.Windows.Media.Imaging.BitmapFrame.Create(Command.IconResource),
-            string.Format(Resources.ToolTipText, HostProductName),
-            Command.HelpLinkUrl);
+            System.Windows.Media.Imaging.BitmapFrame.Create(ToolsCommand.IconResource),
+            string.Format(Resources.ToolsToolTipText, HostProductName),
+            ToolsCommand.HelpLinkUrl);
 
         eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(ribbonButton);
 

@@ -54,8 +54,8 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
         Document = document;
 
-        Text = Command.ButtonTextWithNoLineBreaks;
-        Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(Command.IconResource)).GetHicon());
+        Text = GetButtonTextWithNoLineBreaks(Resources.ToolsButtonText);
+        Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(ToolsCommand.IconResource)).GetHicon());
         RefreshDataTables();
 
         // Capture the default values.
@@ -165,10 +165,10 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         OpenHelpLink();
     }
 
-    /// <summary> Opens <see cref="Command.HelpLinkUrl"/> in the default application. </summary>
+    /// <summary> Opens <see cref="ToolsCommand.HelpLinkUrl"/> in the default application. </summary>
     private static void OpenHelpLink()
     {
-        System.Diagnostics.Process.Start(Command.HelpLinkUrl);
+        System.Diagnostics.Process.Start(ToolsCommand.HelpLinkUrl);
     }
 
     #region Settings
