@@ -1,0 +1,102 @@
+﻿namespace eVolve.DataTableTools.Revit;
+
+partial class ViewTableDialog
+{
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing && (components != null))
+        {
+            components.Dispose();
+        }
+        base.Dispose(disposing);
+    }
+
+    #region Windows Form Designer generated code
+
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewTableDialog));
+            this.DataTableComboBox = new System.Windows.Forms.ComboBox();
+            this.DataTableLabel = new System.Windows.Forms.Label();
+            this.TableDataGridView = new System.Windows.Forms.DataGridView();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.ClearCacheButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.TableDataGridView)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // DataTableComboBox
+            // 
+            this.DataTableComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DataTableComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.DataTableComboBox, "DataTableComboBox");
+            this.DataTableComboBox.Name = "DataTableComboBox";
+            this.DataTableComboBox.SelectedIndexChanged += new System.EventHandler(this.DataTableComboBox_SelectedIndexChanged);
+            // 
+            // DataTableLabel
+            // 
+            resources.ApplyResources(this.DataTableLabel, "DataTableLabel");
+            this.DataTableLabel.Name = "DataTableLabel";
+            // 
+            // TableDataGridView
+            // 
+            this.TableDataGridView.AllowUserToAddRows = false;
+            this.TableDataGridView.AllowUserToDeleteRows = false;
+            this.TableDataGridView.AllowUserToOrderColumns = true;
+            resources.ApplyResources(this.TableDataGridView, "TableDataGridView");
+            this.TableDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TableDataGridView.Name = "TableDataGridView";
+            this.TableDataGridView.ReadOnly = true;
+            // 
+            // CloseButton
+            // 
+            resources.ApplyResources(this.CloseButton, "CloseButton");
+            this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            // 
+            // ClearCacheButton
+            // 
+            resources.ApplyResources(this.ClearCacheButton, "ClearCacheButton");
+            this.ClearCacheButton.Name = "ClearCacheButton";
+            this.ClearCacheButton.UseVisualStyleBackColor = true;
+            this.ClearCacheButton.Click += new System.EventHandler(this.ClearCacheButton_Click);
+            // 
+            // ViewTableDialog
+            // 
+            this.AcceptButton = this.CloseButton;
+            resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CloseButton;
+            this.Controls.Add(this.ClearCacheButton);
+            this.Controls.Add(this.CloseButton);
+            this.Controls.Add(this.TableDataGridView);
+            this.Controls.Add(this.DataTableComboBox);
+            this.Controls.Add(this.DataTableLabel);
+            this.Name = "ViewTableDialog";
+            ((System.ComponentModel.ISupportInitialize)(this.TableDataGridView)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+    }
+
+    #endregion
+
+    private System.Windows.Forms.ComboBox DataTableComboBox;
+    private System.Windows.Forms.Label DataTableLabel;
+    private System.Windows.Forms.DataGridView TableDataGridView;
+    private System.Windows.Forms.Button CloseButton;
+    private System.Windows.Forms.Button ClearCacheButton;
+}

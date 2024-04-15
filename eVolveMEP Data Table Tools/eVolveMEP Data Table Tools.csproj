@@ -506,6 +506,13 @@
     <Compile Include="ToolsDialog.Designer.cs">
       <DependentUpon>ToolsDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewTableCommand.cs" />
+    <Compile Include="ViewTableDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTableDialog.Designer.cs">
+      <DependentUpon>ViewTableDialog.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -540,6 +547,12 @@
     <EmbeddedResource Include="ToolsDialog.resx">
       <DependentUpon>ToolsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTableDialog.fr-fr.resx">
+      <DependentUpon>ViewTableDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTableDialog.resx">
+      <DependentUpon>ViewTableDialog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

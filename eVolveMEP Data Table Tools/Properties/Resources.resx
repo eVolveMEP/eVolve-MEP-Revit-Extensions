@@ -230,4 +230,11 @@ Would you like to continue?</value>
 
 Would you like to continue?</value>
   </data>
+  <data name="ViewTableButtonText" xml:space="preserve">
+	  <value>View
+Data Table</value>
+  </data>
+  <data name="ViewTableToolTipText" xml:space="preserve">
+	  <value>Opens a read-only dialog for viewing the contents of {0} Data Tables.</value>
+  </data>
 </root>

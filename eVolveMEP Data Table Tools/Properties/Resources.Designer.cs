@@ -374,5 +374,24 @@ namespace eVolve.DataTableTools.Revit.Properties {
                 return ResourceManager.GetString("ValueMustBeProvidedWhenEnabledError", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View
+        ///Data Table.
+        /// </summary>
+        internal static string ViewTableButtonText {
+            get {
+                return ResourceManager.GetString("ViewTableButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opens a read-only dialog for viewing the contents of {0} Data Tables..
+        /// </summary>
+        internal static string ViewTableToolTipText {
+            get {
+                return ResourceManager.GetString("ViewTableToolTipText", resourceCulture);
+            }
+        }
     }
 }

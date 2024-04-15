@@ -26,15 +26,25 @@ public class ApplicationMechanical : IExternalApplication
     /// <inheritdoc/>
     public Result OnStartup(UIControlledApplication application)
     {
-        var ribbonButton = eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ToolsButtonText,
+        var splitButton = (SplitButton)eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(new SplitButtonData(Resources.ToolsButtonText, Resources.ToolsButtonText));
+
+        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ToolsButtonText,
             System.Reflection.Assembly.GetExecutingAssembly().Location,
             typeof(ToolsCommand),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
             System.Windows.Media.Imaging.BitmapFrame.Create(ToolsCommand.IconResource),
             string.Format(Resources.ToolsToolTipText, HostProductName),
-            ToolsCommand.HelpLinkUrl);
+            ToolsCommand.HelpLinkUrl));
 
-        eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(ribbonButton);
+        splitButton.AddSeparator();
+
+        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ViewTableButtonText,
+            System.Reflection.Assembly.GetExecutingAssembly().Location,
+            typeof(ViewTableCommand),
+            typeof(ExtensionsCommon.Revit.CommandAvailability),
+            System.Windows.Media.Imaging.BitmapFrame.Create(ViewTableCommand.IconResource),
+            string.Format(Resources.ViewTableToolTipText, HostProductName),
+            ViewTableCommand.HelpLinkUrl));
 
         return Result.Succeeded;
     }
