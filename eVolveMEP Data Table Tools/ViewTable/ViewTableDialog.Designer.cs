@@ -1,4 +1,4 @@
-﻿namespace eVolve.DataTableTools.Revit;
+﻿namespace eVolve.DataTableTools.Revit.ViewTable;
 
 partial class ViewTableDialog
 {

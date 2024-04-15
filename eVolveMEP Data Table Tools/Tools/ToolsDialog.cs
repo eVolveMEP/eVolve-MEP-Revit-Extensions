@@ -10,7 +10,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace eVolve.DataTableTools.Revit;
+namespace eVolve.DataTableTools.Revit.Tools;
 
 /// <summary> Dialog for handling all operations. </summary>
 internal sealed partial class ToolsDialog : System.Windows.Forms.Form

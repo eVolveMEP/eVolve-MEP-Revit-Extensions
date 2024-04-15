@@ -6,12 +6,12 @@
 
 using Autodesk.Revit.Attributes;
 
-namespace eVolve.DataTableTools.Revit;
+namespace eVolve.DataTableTools.Revit.ViewTable;
 
-/// <summary> Opens the <see cref="ToolsDialog"/> for working with data tables. </summary>
+/// <summary> Opens a dialog for viewing the contents of data tables. </summary>
 [Transaction(TransactionMode.Manual)]
 [Regeneration(RegenerationOption.Manual)]
-internal class ToolsCommand : IExternalCommand
+internal class ViewTableCommand : IExternalCommand
 {
     /// <summary> Gets the icon resource. </summary>
     internal static System.IO.Stream IconResource => GetIconResource("DataTableTools_32x32.png");
@@ -22,18 +22,25 @@ internal class ToolsCommand : IExternalCommand
         get
         {
 #if ELECTRICAL
-            return "https://help-electrical.evolvemep.com/article/q68ll2jlyf";
+            return "";
 #elif MECHANICAL
-            return "https://help-mechanical.evolvemep.com/article/9mgugym789";
+            return "";
 #endif
         }
     }
 
-    /// <inheritdoc/>
+    /// <inheritdoc />
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
-        using var dialog = new ToolsDialog(commandData.Application.ActiveUIDocument.Document);
-        dialog.ShowDialog();
+        try
+        {
+            using var dialog = new ViewTableDialog(commandData.Application.ActiveUIDocument.Document);
+            dialog.ShowDialog();
+        }
+        catch (Exception ex)
+        {
+            ShowErrorMessage(null, ex.Message, GetButtonTextWithNoLineBreaks(Resources.ViewTableButtonText));
+        }
         return Result.Succeeded;
     }
 }

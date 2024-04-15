@@ -7,7 +7,7 @@
 extern alias eVolve;
 using eVolve::eVolve.Core.Revit.Reporting;
 
-namespace eVolve.DataTableTools.Revit;
+namespace eVolve.DataTableTools.Revit.ViewTable;
 
 /// <summary> Dialog for viewing <see cref="System.Data.DataTable"/>s. </summary>
 internal partial class ViewTableDialog : System.Windows.Forms.Form
@@ -25,7 +25,7 @@ internal partial class ViewTableDialog : System.Windows.Forms.Form
         Document = document;
 
         Text = GetButtonTextWithNoLineBreaks(Resources.ViewTableButtonText);
-        Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(ViewTableCommand.IconResource)).GetHicon());
+        Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(ViewTable.ViewTableCommand.IconResource)).GetHicon());
 
         DataTableComboBox.Items.Clear();
         DataTableComboBox.Items.AddRange(Document.GetTableNames());

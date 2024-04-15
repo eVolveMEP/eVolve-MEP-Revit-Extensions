@@ -30,21 +30,21 @@ public class ApplicationMechanical : IExternalApplication
 
         splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ToolsButtonText,
             System.Reflection.Assembly.GetExecutingAssembly().Location,
-            typeof(ToolsCommand),
+            typeof(Tools.ToolsCommand),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
-            System.Windows.Media.Imaging.BitmapFrame.Create(ToolsCommand.IconResource),
+            System.Windows.Media.Imaging.BitmapFrame.Create(Tools.ToolsCommand.IconResource),
             string.Format(Resources.ToolsToolTipText, HostProductName),
-            ToolsCommand.HelpLinkUrl));
+            Tools.ToolsCommand.HelpLinkUrl));
 
         splitButton.AddSeparator();
 
         splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ViewTableButtonText,
             System.Reflection.Assembly.GetExecutingAssembly().Location,
-            typeof(ViewTableCommand),
+            typeof(ViewTable.ViewTableCommand),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
-            System.Windows.Media.Imaging.BitmapFrame.Create(ViewTableCommand.IconResource),
+            System.Windows.Media.Imaging.BitmapFrame.Create(ViewTable.ViewTableCommand.IconResource),
             string.Format(Resources.ViewTableToolTipText, HostProductName),
-            ViewTableCommand.HelpLinkUrl));
+            ViewTable.ViewTableCommand.HelpLinkUrl));
 
         return Result.Succeeded;
     }
