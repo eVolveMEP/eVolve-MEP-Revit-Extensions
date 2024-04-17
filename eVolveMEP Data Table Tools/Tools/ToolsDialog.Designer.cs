@@ -91,8 +91,8 @@ partial class ToolsDialog
             this.ResetSelectedConfigurationButton = new System.Windows.Forms.Button();
             this.DataTableLabel = new System.Windows.Forms.Label();
             this.DataTableComboBox = new System.Windows.Forms.ComboBox();
-            this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Button();
+            this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -560,13 +560,6 @@ partial class ToolsDialog
             this.DataTableComboBox.Name = "DataTableComboBox";
             this.DataTableComboBox.SelectedIndexChanged += new System.EventHandler(this.DataTableComboBox_SelectedIndexChanged);
             // 
-            // ViewSourceCodeLabel
-            // 
-            resources.ApplyResources(this.ViewSourceCodeLabel, "ViewSourceCodeLabel");
-            this.ViewSourceCodeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ViewSourceCodeLabel.ForeColor = System.Drawing.Color.Blue;
-            this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
-            // 
             // CloseButton
             // 
             resources.ApplyResources(this.CloseButton, "CloseButton");
@@ -574,13 +567,18 @@ partial class ToolsDialog
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.UseVisualStyleBackColor = true;
             // 
+            // ViewSourceCodeLabel
+            // 
+            resources.ApplyResources(this.ViewSourceCodeLabel, "ViewSourceCodeLabel");
+            this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
+            // 
             // ToolsDialog
             // 
             this.AcceptButton = this.CloseButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.ViewSourceCodeLabel);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.DataTableComboBox);
             this.Controls.Add(this.DataTableLabel);
             this.Controls.Add(this.MainTabControl);
@@ -670,7 +668,6 @@ partial class ToolsDialog
     private System.Windows.Forms.Label ExpressionColumnDataTypeLabel;
     private System.Windows.Forms.Button SQLExportExecuteButton;
     private System.Windows.Forms.Button SQLImportExecuteButton;
-    private System.Windows.Forms.Label ViewSourceCodeLabel;
     private System.Windows.Forms.Label DataTableExpressionHelpLabel;
     private System.Windows.Forms.GroupBox ColumnInfoGroupBox;
     private System.Windows.Forms.DataGridView ColumnInfoDataGridView;
@@ -686,4 +683,5 @@ partial class ToolsDialog
     private System.Windows.Forms.Label ChangeColumnNameLabel;
     private System.Windows.Forms.Label ChangeColumnNoticeLabel;
     private System.Windows.Forms.Button SQLRefreshButton;
+    private System.Windows.Forms.Label ViewSourceCodeLabel;
 }

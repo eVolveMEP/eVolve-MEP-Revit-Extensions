@@ -25,8 +25,7 @@ internal sealed partial class TextInputDialog : System.Windows.Forms.Form
     {
         using var dialog = new TextInputDialog();
         dialog.Owner = owner;
-        dialog.Icon = owner.Icon;
-        dialog.Text = title ?? "";
+        dialog.PrepDialog(title ?? "");
         dialog.InstructionsLabel.Text = instructions ?? "";
         dialog.InputTextBox.Text = existingValue ?? "";
         return dialog.ShowDialog(owner) == System.Windows.Forms.DialogResult.OK ? dialog.InputTextBox.Text : null;

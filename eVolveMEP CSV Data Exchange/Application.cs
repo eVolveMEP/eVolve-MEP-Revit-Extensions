@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 eVolve MEP, LLC
+﻿// Copyright (c) 2024 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -37,7 +37,7 @@ public class ApplicationMechanical : IExternalApplication
 
         API.IntegrationRibbonPanel.AddItem(ribbonButton);
 
-        API.RegisterImplementingFeature(Command.FeatureId, Command.ButtonTextWithNoLineBreaks);
+        API.RegisterImplementingFeature(Command.FeatureId, GetTextWithNoLineBreaks(Resources.ButtonText));
 
         return Result.Succeeded;
     }

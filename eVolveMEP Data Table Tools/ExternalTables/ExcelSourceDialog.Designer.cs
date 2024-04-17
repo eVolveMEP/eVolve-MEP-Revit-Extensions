@@ -34,6 +34,7 @@ partial class ExcelSourceDialog
             this.Cancel_Button = new System.Windows.Forms.Button();
             this.OKButton = new System.Windows.Forms.Button();
             this.FileGroupBox = new System.Windows.Forms.GroupBox();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.FileBrowseButton = new System.Windows.Forms.Button();
             this.FileTextBox = new System.Windows.Forms.TextBox();
             this.ColumnsGroupBox = new System.Windows.Forms.GroupBox();
@@ -42,7 +43,6 @@ partial class ExcelSourceDialog
             this.DataTypeColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.IncludeColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ExcludeColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.RefreshButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.FileGroupBox.SuspendLayout();
             this.ColumnsGroupBox.SuspendLayout();
@@ -105,6 +105,18 @@ partial class ExcelSourceDialog
             this.FileGroupBox.TabIndex = 21;
             this.FileGroupBox.TabStop = false;
             this.FileGroupBox.Text = "Source File";
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RefreshButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.RefreshButton.Location = new System.Drawing.Point(648, 24);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(115, 23);
+            this.RefreshButton.TabIndex = 2;
+            this.RefreshButton.Text = "Refresh";
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // FileBrowseButton
             // 
@@ -179,18 +191,6 @@ partial class ExcelSourceDialog
             this.ExcludeColumn.HeaderText = "Exclude";
             this.ExcludeColumn.Name = "ExcludeColumn";
             // 
-            // RefreshButton
-            // 
-            this.RefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RefreshButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.RefreshButton.Location = new System.Drawing.Point(648, 24);
-            this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(115, 23);
-            this.RefreshButton.TabIndex = 2;
-            this.RefreshButton.Text = "Refresh";
-            this.RefreshButton.UseVisualStyleBackColor = true;
-            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
-            // 
             // ExcelSourceDialog
             // 
             this.AcceptButton = this.OKButton;
@@ -205,7 +205,6 @@ partial class ExcelSourceDialog
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.ExternalTableSourceBaseControl);
             this.Name = "ExcelSourceDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.FileGroupBox.ResumeLayout(false);
             this.FileGroupBox.PerformLayout();

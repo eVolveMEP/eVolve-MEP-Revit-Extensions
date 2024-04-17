@@ -26,7 +26,7 @@ internal sealed partial class AddMappingDialog : System.Windows.Forms.Form
     {
         using var dialog = new AddMappingDialog();
         dialog.Owner = owner;
-        dialog.Icon = owner.Icon;
+        dialog.PrepDialog();
 
         dialog.DataTableColumnComboBox.Items.Clear();
         dialog.DataTableColumnComboBox.Items.AddRange(dataTableFieldNames.OrderBy(name => name).ToArray());

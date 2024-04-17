@@ -40,10 +40,10 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
+        this.PrepDialog(Resources.ToolsButtonText, ToolsCommand.IconResource, ViewSourceCodeLabel);
+
         Document = document;
 
-        Text = GetButtonTextWithNoLineBreaks(Resources.ToolsButtonText);
-        Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(ToolsCommand.IconResource)).GetHicon());
         RefreshDataTables();
 
         // Capture the default values.
@@ -71,8 +71,6 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         {
             button.Click += EditSqlButton_Click;
         }
-
-        ViewSourceCodeLabel.Click += ViewSourceCodeHandler;
 
         this.Shown += (_, _) => MinimumSize = Size;
         this.FormClosing += ToolsDialog_FormClosing;

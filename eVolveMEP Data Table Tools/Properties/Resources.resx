@@ -254,4 +254,7 @@ If this file is currently open, please close it and try again.</value>
   <data name="ExcelFileNotFoundError" xml:space="preserve">
 	  <value>The specified Excel file could not be found.</value>
   </data>
+  <data name="ViewSourceCodeOnGitHub" xml:space="preserve">
+	  <value>View source code on GitHub</value>
+  </data>
 </root>

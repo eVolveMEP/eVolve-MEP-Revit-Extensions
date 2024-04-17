@@ -31,20 +31,20 @@ partial class ExternalTablesConfigDialog
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExternalTablesConfigDialog));
             this.TabControl = new System.Windows.Forms.TabControl();
             this.ExcelTabPage = new System.Windows.Forms.TabPage();
+            this.ExcelDeleteButton = new System.Windows.Forms.Button();
+            this.ExcelEditButton = new System.Windows.Forms.Button();
+            this.ExcelNewButton = new System.Windows.Forms.Button();
             this.ExcelDataGridView = new System.Windows.Forms.DataGridView();
             this.SqlTabPage = new System.Windows.Forms.TabPage();
+            this.SqlDeleteButton = new System.Windows.Forms.Button();
+            this.SqlEditButton = new System.Windows.Forms.Button();
+            this.SqlNewButton = new System.Windows.Forms.Button();
             this.SqlDataGridView = new System.Windows.Forms.DataGridView();
-            this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.OKButton = new System.Windows.Forms.Button();
             this.Cancel_Button = new System.Windows.Forms.Button();
             this.ApplyButton = new System.Windows.Forms.Button();
-            this.ExcelNewButton = new System.Windows.Forms.Button();
-            this.ExcelEditButton = new System.Windows.Forms.Button();
-            this.ExcelDeleteButton = new System.Windows.Forms.Button();
-            this.SqlDeleteButton = new System.Windows.Forms.Button();
-            this.SqlEditButton = new System.Windows.Forms.Button();
-            this.SqlNewButton = new System.Windows.Forms.Button();
+            this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.ExcelTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExcelDataGridView)).BeginInit();
@@ -80,6 +80,36 @@ partial class ExternalTablesConfigDialog
             this.ExcelTabPage.Text = "Source from Excel";
             this.ExcelTabPage.UseVisualStyleBackColor = true;
             // 
+            // ExcelDeleteButton
+            // 
+            this.ExcelDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ExcelDeleteButton.Location = new System.Drawing.Point(188, 310);
+            this.ExcelDeleteButton.Name = "ExcelDeleteButton";
+            this.ExcelDeleteButton.Size = new System.Drawing.Size(85, 23);
+            this.ExcelDeleteButton.TabIndex = 3;
+            this.ExcelDeleteButton.Text = "Delete";
+            this.ExcelDeleteButton.UseVisualStyleBackColor = true;
+            // 
+            // ExcelEditButton
+            // 
+            this.ExcelEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ExcelEditButton.Location = new System.Drawing.Point(97, 310);
+            this.ExcelEditButton.Name = "ExcelEditButton";
+            this.ExcelEditButton.Size = new System.Drawing.Size(85, 23);
+            this.ExcelEditButton.TabIndex = 2;
+            this.ExcelEditButton.Text = "Edit";
+            this.ExcelEditButton.UseVisualStyleBackColor = true;
+            // 
+            // ExcelNewButton
+            // 
+            this.ExcelNewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ExcelNewButton.Location = new System.Drawing.Point(6, 310);
+            this.ExcelNewButton.Name = "ExcelNewButton";
+            this.ExcelNewButton.Size = new System.Drawing.Size(85, 23);
+            this.ExcelNewButton.TabIndex = 1;
+            this.ExcelNewButton.Text = "New";
+            this.ExcelNewButton.UseVisualStyleBackColor = true;
+            // 
             // ExcelDataGridView
             // 
             this.ExcelDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -105,6 +135,36 @@ partial class ExternalTablesConfigDialog
             this.SqlTabPage.Text = "Source from SQL Server";
             this.SqlTabPage.UseVisualStyleBackColor = true;
             // 
+            // SqlDeleteButton
+            // 
+            this.SqlDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SqlDeleteButton.Location = new System.Drawing.Point(188, 310);
+            this.SqlDeleteButton.Name = "SqlDeleteButton";
+            this.SqlDeleteButton.Size = new System.Drawing.Size(85, 23);
+            this.SqlDeleteButton.TabIndex = 3;
+            this.SqlDeleteButton.Text = "Delete";
+            this.SqlDeleteButton.UseVisualStyleBackColor = true;
+            // 
+            // SqlEditButton
+            // 
+            this.SqlEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SqlEditButton.Location = new System.Drawing.Point(97, 310);
+            this.SqlEditButton.Name = "SqlEditButton";
+            this.SqlEditButton.Size = new System.Drawing.Size(85, 23);
+            this.SqlEditButton.TabIndex = 2;
+            this.SqlEditButton.Text = "Edit";
+            this.SqlEditButton.UseVisualStyleBackColor = true;
+            // 
+            // SqlNewButton
+            // 
+            this.SqlNewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SqlNewButton.Location = new System.Drawing.Point(6, 310);
+            this.SqlNewButton.Name = "SqlNewButton";
+            this.SqlNewButton.Size = new System.Drawing.Size(85, 23);
+            this.SqlNewButton.TabIndex = 1;
+            this.SqlNewButton.Text = "New";
+            this.SqlNewButton.UseVisualStyleBackColor = true;
+            // 
             // SqlDataGridView
             // 
             this.SqlDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -115,20 +175,6 @@ partial class ExternalTablesConfigDialog
             this.SqlDataGridView.Name = "SqlDataGridView";
             this.SqlDataGridView.Size = new System.Drawing.Size(756, 298);
             this.SqlDataGridView.TabIndex = 0;
-            // 
-            // ViewSourceCodeLabel
-            // 
-            this.ViewSourceCodeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ViewSourceCodeLabel.AutoSize = true;
-            this.ViewSourceCodeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ViewSourceCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline);
-            this.ViewSourceCodeLabel.ForeColor = System.Drawing.Color.Blue;
-            this.ViewSourceCodeLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ViewSourceCodeLabel.Location = new System.Drawing.Point(190, 420);
-            this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
-            this.ViewSourceCodeLabel.Size = new System.Drawing.Size(143, 13);
-            this.ViewSourceCodeLabel.TabIndex = 1;
-            this.ViewSourceCodeLabel.Text = "View source code on GitHub";
             // 
             // LogoPictureBox
             // 
@@ -173,65 +219,16 @@ partial class ExternalTablesConfigDialog
             this.ApplyButton.Text = "Apply";
             this.ApplyButton.UseVisualStyleBackColor = true;
             // 
-            // ExcelNewButton
+            // ViewSourceCodeLabel
             // 
-            this.ExcelNewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ExcelNewButton.Location = new System.Drawing.Point(6, 310);
-            this.ExcelNewButton.Name = "ExcelNewButton";
-            this.ExcelNewButton.Size = new System.Drawing.Size(85, 23);
-            this.ExcelNewButton.TabIndex = 1;
-            this.ExcelNewButton.Text = "New";
-            this.ExcelNewButton.UseVisualStyleBackColor = true;
-            // 
-            // ExcelEditButton
-            // 
-            this.ExcelEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ExcelEditButton.Location = new System.Drawing.Point(97, 310);
-            this.ExcelEditButton.Name = "ExcelEditButton";
-            this.ExcelEditButton.Size = new System.Drawing.Size(85, 23);
-            this.ExcelEditButton.TabIndex = 2;
-            this.ExcelEditButton.Text = "Edit";
-            this.ExcelEditButton.UseVisualStyleBackColor = true;
-            // 
-            // ExcelDeleteButton
-            // 
-            this.ExcelDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ExcelDeleteButton.Location = new System.Drawing.Point(188, 310);
-            this.ExcelDeleteButton.Name = "ExcelDeleteButton";
-            this.ExcelDeleteButton.Size = new System.Drawing.Size(85, 23);
-            this.ExcelDeleteButton.TabIndex = 3;
-            this.ExcelDeleteButton.Text = "Delete";
-            this.ExcelDeleteButton.UseVisualStyleBackColor = true;
-            // 
-            // SqlDeleteButton
-            // 
-            this.SqlDeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SqlDeleteButton.Location = new System.Drawing.Point(188, 310);
-            this.SqlDeleteButton.Name = "SqlDeleteButton";
-            this.SqlDeleteButton.Size = new System.Drawing.Size(85, 23);
-            this.SqlDeleteButton.TabIndex = 3;
-            this.SqlDeleteButton.Text = "Delete";
-            this.SqlDeleteButton.UseVisualStyleBackColor = true;
-            // 
-            // SqlEditButton
-            // 
-            this.SqlEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SqlEditButton.Location = new System.Drawing.Point(97, 310);
-            this.SqlEditButton.Name = "SqlEditButton";
-            this.SqlEditButton.Size = new System.Drawing.Size(85, 23);
-            this.SqlEditButton.TabIndex = 2;
-            this.SqlEditButton.Text = "Edit";
-            this.SqlEditButton.UseVisualStyleBackColor = true;
-            // 
-            // SqlNewButton
-            // 
-            this.SqlNewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SqlNewButton.Location = new System.Drawing.Point(6, 310);
-            this.SqlNewButton.Name = "SqlNewButton";
-            this.SqlNewButton.Size = new System.Drawing.Size(85, 23);
-            this.SqlNewButton.TabIndex = 1;
-            this.SqlNewButton.Text = "New";
-            this.SqlNewButton.UseVisualStyleBackColor = true;
+            this.ViewSourceCodeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ViewSourceCodeLabel.AutoSize = true;
+            this.ViewSourceCodeLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ViewSourceCodeLabel.Location = new System.Drawing.Point(190, 420);
+            this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
+            this.ViewSourceCodeLabel.Size = new System.Drawing.Size(115, 13);
+            this.ViewSourceCodeLabel.TabIndex = 1;
+            this.ViewSourceCodeLabel.Text = "ViewSourceCodeLabel";
             // 
             // ExternalTablesConfigDialog
             // 
@@ -240,14 +237,13 @@ partial class ExternalTablesConfigDialog
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel_Button;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ViewSourceCodeLabel);
             this.Controls.Add(this.ApplyButton);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.OKButton);
-            this.Controls.Add(this.ViewSourceCodeLabel);
             this.Controls.Add(this.LogoPictureBox);
             this.Controls.Add(this.TabControl);
             this.Name = "ExternalTablesConfigDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TabControl.ResumeLayout(false);
             this.ExcelTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ExcelDataGridView)).EndInit();
@@ -264,7 +260,6 @@ partial class ExternalTablesConfigDialog
     private System.Windows.Forms.TabControl TabControl;
     private System.Windows.Forms.TabPage ExcelTabPage;
     private System.Windows.Forms.TabPage SqlTabPage;
-    private System.Windows.Forms.Label ViewSourceCodeLabel;
     private System.Windows.Forms.PictureBox LogoPictureBox;
     private System.Windows.Forms.Button OKButton;
     private System.Windows.Forms.Button Cancel_Button;
@@ -277,4 +272,5 @@ partial class ExternalTablesConfigDialog
     private System.Windows.Forms.Button SqlDeleteButton;
     private System.Windows.Forms.Button SqlEditButton;
     private System.Windows.Forms.Button SqlNewButton;
+    private System.Windows.Forms.Label ViewSourceCodeLabel;
 }

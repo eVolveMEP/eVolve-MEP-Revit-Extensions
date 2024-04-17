@@ -11,10 +11,10 @@ namespace eVolve.ExtensionsCommon.Revit;
 /// <summary> Common methods useful across all projects in this solution. </summary>
 internal static class Methods
 {
-    /// <summary> Gets the <paramref name="buttonText"/> as a single line text with all linebreaks removed. </summary>
+    /// <summary> Gets the <paramref name="text"/> as a single line text with all linebreaks removed. </summary>
     ///
-    /// <param name="buttonText"> The button text as it appears in the Revit ribbon. </param>
-    internal static string GetButtonTextWithNoLineBreaks(string buttonText) => buttonText
+    /// <param name="text"> The button text as it appears in the Revit ribbon. </param>
+    internal static string GetTextWithNoLineBreaks(string text) => text
         .Replace("\r", " ")
         .Replace("\n", " ")
         .Replace("  ", " ")
@@ -89,6 +89,40 @@ internal static class Methods
         }
     }
 
+    /// <summary> Prepares the specified <paramref name="form"/> for display in a standard/consistent way. </summary>
+    ///
+    /// <param name="form"> The form to manipulate. </param>
+    /// <param name="dialogText"> (Optional) Form dialog title text. </param>
+    /// <param name="iconResource"> (Optional) Icon resource to set. If not provided, the dialog's owner icon is used. </param>
+    /// <param name="linkToSourceLabel"> (Optional) Label which is used to provide a link to the source code. </param>
+    internal static void PrepDialog(this System.Windows.Forms.Form form, string dialogText = null, System.IO.Stream iconResource = null, Label linkToSourceLabel = null)
+    {
+        // Perform these actions within an event so the parent (if any) will be defined at the time of execution.
+        form.Load += (_, _) =>
+        {
+            if (dialogText != null)
+            {
+                form.Text = GetTextWithNoLineBreaks(dialogText);
+            }
+
+            form.Icon = iconResource != null
+                ? System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(iconResource)).GetHicon())
+                : (form.Parent as System.Windows.Forms.Form)?.Icon;
+        };
+
+        // This will center within the Revit document when no owner is specified.
+        form.StartPosition = FormStartPosition.CenterParent;
+
+        if (linkToSourceLabel != null)
+        {
+            linkToSourceLabel.Text = Resources.ViewSourceCodeOnGitHub;
+            linkToSourceLabel.ForeColor = System.Drawing.Color.Blue;
+            linkToSourceLabel.Font = new System.Drawing.Font(linkToSourceLabel.Font, System.Drawing.FontStyle.Underline);
+            linkToSourceLabel.Cursor = Cursors.Hand;
+            linkToSourceLabel.Click += (_, _) => System.Diagnostics.Process.Start("https://github.com/eVolveMEP/eVolve-MEP-Revit-Extensions");
+        }
+    }
+
     /// <summary> Performs base64 encoding on the specified <paramref name="text"/>. </summary>
     ///
     /// <param name="text"> Value to encode. </param>
@@ -143,10 +177,4 @@ internal static class Methods
     {
         return MessageBox.Show(owner, message, title ?? owner?.Text ?? icon.ToString(), buttons, icon);
     }
-
-    /// <summary> Opens a browser to the page containing the source code. </summary>
-    ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Event information. </param>
-    internal static void ViewSourceCodeHandler(object sender, EventArgs e) => System.Diagnostics.Process.Start("https://github.com/eVolveMEP/eVolve-MEP-Revit-Extensions");
 }

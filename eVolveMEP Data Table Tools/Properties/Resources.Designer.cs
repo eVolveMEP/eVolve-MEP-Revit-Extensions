@@ -423,6 +423,15 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View source code on GitHub.
+        /// </summary>
+        internal static string ViewSourceCodeOnGitHub {
+            get {
+                return ResourceManager.GetString("ViewSourceCodeOnGitHub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View
         ///Data Table.
         /// </summary>

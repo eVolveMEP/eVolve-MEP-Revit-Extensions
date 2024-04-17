@@ -23,7 +23,7 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        Text = dialogTitle;
+        this.PrepDialog(dialogTitle);
 
         ExternalTableSourceBaseControl.SetData(source);
 

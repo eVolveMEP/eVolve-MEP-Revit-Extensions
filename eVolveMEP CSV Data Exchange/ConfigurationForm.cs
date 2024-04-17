@@ -47,10 +47,9 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        Document = document;
+        this.PrepDialog(Resources.ButtonText, Command.IconResource, ViewSourceCodeLabel);
 
-        Text = Command.ButtonTextWithNoLineBreaks;
-        Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(Command.IconResource)).GetHicon());
+        Document = document;
 
         ExportRadioButton.CheckedChanged += DirectionRadioButton_CheckedChanged;
         ImportRadioButton.CheckedChanged += DirectionRadioButton_CheckedChanged;
@@ -63,8 +62,6 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
             .Select(propertyInfo => (string)propertyInfo.GetValue(null))
             .OrderBy(value => value)
             .ToArray());
-
-        ViewSourceCodeLabel.Click += ViewSourceCodeHandler;
 
         this.Shown += (_, _) => MinimumSize = Size;
         this.FormClosing += ConfigurationForm_FormClosing;

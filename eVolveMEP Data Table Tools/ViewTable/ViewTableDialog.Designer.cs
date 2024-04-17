@@ -34,7 +34,10 @@ partial class ViewTableDialog
             this.TableDataGridView = new System.Windows.Forms.DataGridView();
             this.CloseButton = new System.Windows.Forms.Button();
             this.ClearCacheButton = new System.Windows.Forms.Button();
+            this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.TableDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // DataTableComboBox
@@ -74,12 +77,25 @@ partial class ViewTableDialog
             this.ClearCacheButton.UseVisualStyleBackColor = true;
             this.ClearCacheButton.Click += new System.EventHandler(this.ClearCacheButton_Click);
             // 
+            // ViewSourceCodeLabel
+            // 
+            resources.ApplyResources(this.ViewSourceCodeLabel, "ViewSourceCodeLabel");
+            this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
+            // 
+            // LogoPictureBox
+            // 
+            resources.ApplyResources(this.LogoPictureBox, "LogoPictureBox");
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.TabStop = false;
+            // 
             // ViewTableDialog
             // 
             this.AcceptButton = this.CloseButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseButton;
+            this.Controls.Add(this.ViewSourceCodeLabel);
+            this.Controls.Add(this.LogoPictureBox);
             this.Controls.Add(this.ClearCacheButton);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.TableDataGridView);
@@ -87,6 +103,7 @@ partial class ViewTableDialog
             this.Controls.Add(this.DataTableLabel);
             this.Name = "ViewTableDialog";
             ((System.ComponentModel.ISupportInitialize)(this.TableDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,4 +116,6 @@ partial class ViewTableDialog
     private System.Windows.Forms.DataGridView TableDataGridView;
     private System.Windows.Forms.Button CloseButton;
     private System.Windows.Forms.Button ClearCacheButton;
+    private System.Windows.Forms.Label ViewSourceCodeLabel;
+    private System.Windows.Forms.PictureBox LogoPictureBox;
 }

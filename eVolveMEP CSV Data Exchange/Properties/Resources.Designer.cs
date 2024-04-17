@@ -316,6 +316,15 @@ namespace eVolve.CsvDataExchange.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to View source code on GitHub.
+        /// </summary>
+        internal static string ViewSourceCodeOnGitHub {
+            get {
+                return ResourceManager.GetString("ViewSourceCodeOnGitHub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to When {0} is selected, the folder location in {1} must exist..
         /// </summary>
         internal static string WhenXSelectedFolderYMustExistError {

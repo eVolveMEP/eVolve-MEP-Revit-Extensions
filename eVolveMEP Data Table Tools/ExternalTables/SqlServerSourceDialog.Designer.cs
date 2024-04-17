@@ -163,7 +163,6 @@ partial class SqlServerSourceDialog
             this.Controls.Add(this.CommandGroupBox);
             this.Controls.Add(this.ConnectionStringGroupBox);
             this.Name = "SqlServerSourceDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.ConnectionStringGroupBox.ResumeLayout(false);
             this.ConnectionStringGroupBox.PerformLayout();
             this.CommandGroupBox.ResumeLayout(false);

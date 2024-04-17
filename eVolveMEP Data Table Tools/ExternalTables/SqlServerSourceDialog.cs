@@ -19,7 +19,7 @@ internal partial class SqlServerSourceDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        Text = dialogTitle;
+        this.PrepDialog(dialogTitle);
 
         ExternalTableSourceBaseControl.SetData(source);
         ConnectionStringTextBox.Text = source.ConnectionString;

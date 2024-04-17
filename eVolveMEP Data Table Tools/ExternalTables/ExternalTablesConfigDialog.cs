@@ -23,10 +23,7 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        Text = GetButtonTextWithNoLineBreaks(Resources.ExternalTablesButtonText);
-        Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(ExternalTablesConfigCommand.IconResource)).GetHicon());
-
-        ViewSourceCodeLabel.Click += ViewSourceCodeHandler;
+        this.PrepDialog(Resources.ExternalTablesButtonText, ExternalTablesConfigCommand.IconResource, ViewSourceCodeLabel);
 
         foreach (var excelButton in new[] { ExcelNewButton, ExcelEditButton, ExcelDeleteButton })
         {

@@ -2408,42 +2408,6 @@
   <data name="&gt;&gt;DataTableComboBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="ViewSourceCodeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="ViewSourceCodeLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ViewSourceCodeLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Underline</value>
-  </data>
-  <data name="ViewSourceCodeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ViewSourceCodeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 666</value>
-  </data>
-  <data name="ViewSourceCodeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 13</value>
-  </data>
-  <data name="ViewSourceCodeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="ViewSourceCodeLabel.Text" xml:space="preserve">
-    <value>View source code on GitHub</value>
-  </data>
-  <data name="&gt;&gt;ViewSourceCodeLabel.Name" xml:space="preserve">
-    <value>ViewSourceCodeLabel</value>
-  </data>
-  <data name="&gt;&gt;ViewSourceCodeLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ViewSourceCodeLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ViewSourceCodeLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="CloseButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -2472,6 +2436,39 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CloseButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ViewSourceCodeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="ViewSourceCodeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ViewSourceCodeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ViewSourceCodeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 666</value>
+  </data>
+  <data name="ViewSourceCodeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 13</value>
+  </data>
+  <data name="ViewSourceCodeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ViewSourceCodeLabel.Text" xml:space="preserve">
+    <value>ViewSourceCodeLabel</value>
+  </data>
+  <data name="&gt;&gt;ViewSourceCodeLabel.Name" xml:space="preserve">
+    <value>ViewSourceCodeLabel</value>
+  </data>
+  <data name="&gt;&gt;ViewSourceCodeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ViewSourceCodeLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ViewSourceCodeLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -2485,9 +2482,6 @@
   </data>
   <data name="$this.RightToLeftLayout" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ToolsDialog</value>

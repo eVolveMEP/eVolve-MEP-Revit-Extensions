@@ -197,8 +197,6 @@
             // ViewSourceCodeLabel
             // 
             resources.ApplyResources(this.ViewSourceCodeLabel, "ViewSourceCodeLabel");
-            this.ViewSourceCodeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ViewSourceCodeLabel.ForeColor = System.Drawing.Color.Blue;
             this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
             // 
             // ConfigurationForm

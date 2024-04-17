@@ -15,9 +15,6 @@ namespace eVolve.CsvDataExchange.Revit;
 [Regeneration(RegenerationOption.Manual)]
 internal class Command : IExternalCommand
 {
-    /// <summary> Gets the button name of this tool as single line text. </summary>
-    internal static string ButtonTextWithNoLineBreaks => GetButtonTextWithNoLineBreaks(Resources.ButtonText);
-
     /// <summary> Gets the icon resource. </summary>
     internal static System.IO.Stream IconResource => GetIconResource("CSV_ImportExport_32x32.png");
 
@@ -58,7 +55,7 @@ internal class Command : IExternalCommand
         }
         catch (Exception ex)
         {
-            ShowErrorMessage(null, $"{Resources.ErrorOccurredNotice}\n\n{ex.Message}", ButtonTextWithNoLineBreaks);
+            ShowErrorMessage(null, $"{Resources.ErrorOccurredNotice}\n\n{ex.Message}", GetTextWithNoLineBreaks(Resources.ButtonText));
             return Result.Failed;
         }
     }

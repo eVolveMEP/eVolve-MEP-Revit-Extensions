@@ -39,7 +39,7 @@ internal class ViewTableCommand : IExternalCommand
         }
         catch (Exception ex)
         {
-            ShowErrorMessage(null, ex.Message, GetButtonTextWithNoLineBreaks(Resources.ViewTableButtonText));
+            ShowErrorMessage(null, ex.Message, GetTextWithNoLineBreaks(Resources.ViewTableButtonText));
         }
         return Result.Succeeded;
     }

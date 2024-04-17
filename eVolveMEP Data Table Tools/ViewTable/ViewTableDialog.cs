@@ -22,10 +22,9 @@ internal partial class ViewTableDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        Document = document;
+        this.PrepDialog(Resources.ViewTableButtonText, ViewTableCommand.IconResource, ViewSourceCodeLabel);
 
-        Text = GetButtonTextWithNoLineBreaks(Resources.ViewTableButtonText);
-        Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(ViewTable.ViewTableCommand.IconResource)).GetHicon());
+        Document = document;
 
         DataTableComboBox.Items.Clear();
         DataTableComboBox.Items.AddRange(Document.GetTableNames());
