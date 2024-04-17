@@ -154,11 +154,48 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The specified Excel file could not be found..
+        /// </summary>
+        internal static string ExcelFileNotFoundError {
+            get {
+                return ResourceManager.GetString("ExcelFileNotFoundError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excel Files.
+        /// </summary>
+        internal static string ExcelFiles {
+            get {
+                return ResourceManager.GetString("ExcelFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The column &apos;{0}&apos; was not found in {1} &apos;{2}&apos;..
         /// </summary>
         internal static string ExportColumnNotFoundError {
             get {
                 return ResourceManager.GetString("ExportColumnNotFoundError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External Tables
+        ///Configuration.
+        /// </summary>
+        internal static string ExternalTablesButtonText {
+            get {
+                return ResourceManager.GetString("ExternalTablesButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setup and configuration for {0} Data Tables which are sourced externally..
+        /// </summary>
+        internal static string ExternalTablesToolTipText {
+            get {
+                return ResourceManager.GetString("ExternalTablesToolTipText", resourceCulture);
             }
         }
         
@@ -241,6 +278,16 @@ namespace eVolve.DataTableTools.Revit.Properties {
         internal static string OperationCompleted {
             get {
                 return ResourceManager.GetString("OperationCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was an error reading from the Excel file.
+        ///If this file is currently open, please close it and try again..
+        /// </summary>
+        internal static string ReadingExcelFileError {
+            get {
+                return ResourceManager.GetString("ReadingExcelFileError", resourceCulture);
             }
         }
         

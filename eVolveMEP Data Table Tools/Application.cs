@@ -36,6 +36,14 @@ public class ApplicationMechanical : IExternalApplication
             string.Format(Resources.ToolsToolTipText, HostProductName),
             Tools.ToolsCommand.HelpLinkUrl));
 
+        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ExternalTablesButtonText,
+            System.Reflection.Assembly.GetExecutingAssembly().Location,
+            typeof(ExternalTables.ExternalTablesConfigCommand),
+            typeof(ExtensionsCommon.Revit.CommandAvailability),
+            System.Windows.Media.Imaging.BitmapFrame.Create(ExternalTables.ExternalTablesConfigCommand.IconResource),
+            string.Format(Resources.ExternalTablesToolTipText, HostProductName),
+            ExternalTables.ExternalTablesConfigCommand.HelpLinkUrl));
+
         splitButton.AddSeparator();
 
         splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ViewTableButtonText,

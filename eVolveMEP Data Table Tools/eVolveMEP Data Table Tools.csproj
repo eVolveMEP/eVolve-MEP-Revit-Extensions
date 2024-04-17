@@ -455,6 +455,9 @@
     </When>
   </Choose>
   <ItemGroup>
+    <Reference Include="ExcelWrapper, Version=1.5.1.9109, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelWrapper.1.5.1.9109\lib\net20\ExcelWrapper.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Annotations, Version=4242.42.42.42, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.2023.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
@@ -478,6 +481,26 @@
     <Compile Include="..\Common\Methods.cs">
       <Link>Methods.cs</Link>
     </Compile>
+    <Compile Include="ApplicationMethods.cs" />
+    <Compile Include="ExternalTables\ExcelSourceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExternalTables\ExcelSourceDialog.Designer.cs">
+      <DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalTables\ExternalTableSourceBaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExternalTables\ExternalTableSourceBaseControl.Designer.cs">
+      <DependentUpon>ExternalTableSourceBaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalTables\ExternalTablesSettings.cs" />
+    <Compile Include="ExternalTables\SqlServerSourceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExternalTables\SqlServerSourceDialog.Designer.cs">
+      <DependentUpon>SqlServerSourceDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\AddMappingDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -486,6 +509,12 @@
     </Compile>
     <Compile Include="Application.cs" />
     <Compile Include="Tools\ToolsCommand.cs" />
+    <Compile Include="ExternalTables\ExternalTablesConfigDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExternalTables\ExternalTablesConfigDialog.Designer.cs">
+      <DependentUpon>ExternalTablesConfigDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalUsings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -507,6 +536,7 @@
       <DependentUpon>ToolsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewTable\ViewTableCommand.cs" />
+    <Compile Include="ExternalTables\ExternalTablesConfigCommand.cs" />
     <Compile Include="ViewTable\ViewTableDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,11 +551,26 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ExternalTables\ExcelSourceDialog.resx">
+      <DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\ExternalTableSourceBaseControl.resx">
+      <DependentUpon>ExternalTableSourceBaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\SqlServerSourceDialog.resx">
+      <DependentUpon>SqlServerSourceDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\AddMappingDialog.fr-fr.resx">
       <DependentUpon>AddMappingDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\AddMappingDialog.resx">
       <DependentUpon>AddMappingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\ExternalTablesConfigDialog.fr-fr.resx">
+      <DependentUpon>ExternalTablesConfigDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\ExternalTablesConfigDialog.resx">
+      <DependentUpon>ExternalTablesConfigDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.fr-FR.resx">
       <DependentUpon>Resources.resx</DependentUpon>

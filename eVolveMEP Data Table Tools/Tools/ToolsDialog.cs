@@ -18,18 +18,6 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     /// <summary> Gets the current Revit document. </summary>
     private Document Document { get; }
 
-    /// <summary> Gets a lookup of column data type display names (key) with each one's respective data type (value). </summary>
-    private static Dictionary<string, Type> ColumnDataTypeLookup { get; } = new()
-    {
-        { nameof(String), typeof(string) },
-        { nameof(Int32), typeof(int) },
-        { nameof(Int64), typeof(long) },
-        { nameof(Double), typeof(double) },
-        { nameof(Decimal), typeof(decimal) },
-        { nameof(Boolean), typeof(bool) },
-        { nameof(DateTime), typeof(DateTime) },
-    };
-
     /// <summary>
     /// Gets a lookup by data table name (key) of the active <see cref="SqlTableSettings"/> currently respresented on
     /// this form (value).
