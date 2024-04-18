@@ -11,11 +11,17 @@ namespace eVolve.ExtensionsCommon.Revit;
 /// <summary> Common methods useful across all projects in this solution. </summary>
 internal static class Methods
 {
-    /// <summary> Gets the <paramref name="text"/> as a single line text with all linebreaks removed. </summary>
+    /// <summary> Gets the <paramref name="text"/> with all line breaks normalized to a <c>\n</c> character. </summary>
+    ///
+    /// <remarks> This is typically needed when making <see cref="SplitButton"/> text so it appears "correctly". </remarks>
     ///
     /// <param name="text"> The button text as it appears in the Revit ribbon. </param>
-    internal static string GetTextWithNoLineBreaks(string text) => text
-        .Replace("\r", " ")
+    internal static string GetTextWithNormalizedLineBreaks(string text) => string.Join("\n", text.Split(["\r\n", "\r", "\n"], StringSplitOptions.RemoveEmptyEntries));
+
+    /// <summary> Gets the <paramref name="text"/> as a single line text with all linebreaks removed. </summary>
+    ///
+    /// <param name="text"> Text to process. </param>
+    internal static string GetTextWithNoLineBreaks(string text) => GetTextWithNormalizedLineBreaks(text)
         .Replace("\n", " ")
         .Replace("  ", " ")
         .Replace("  ", " ");
@@ -35,7 +41,7 @@ internal static class Methods
 
     /// <summary>
     /// Loads the provided <paramref name="filePath"/> from disk and deserializes it to <typeparamref name="TSettings"/>.
-    /// <para>If the operation fails, <c>null</c> is returned and the user is notified.</para>
+    /// <para>If the operation fails, <see langword="null"/> is returned and the user is notified.</para>
     /// </summary>
     ///
     /// <typeparam name="TSettings"> Serializable settings object. </typeparam>
@@ -61,7 +67,7 @@ internal static class Methods
     /// <summary>
     /// Saves the provided <paramref name="settings"/> to <paramref name="filePath"/> and returns if the operation was
     /// successful.
-    /// <para>The user is notified if any error occur.</para>
+    /// <para>The user is notified if any errors occur.</para>
     /// </summary>
     ///
     /// <typeparam name="TSettings"> Type of the settings. </typeparam>
@@ -92,10 +98,12 @@ internal static class Methods
     /// <summary> Prepares the specified <paramref name="form"/> for display in a standard/consistent way. </summary>
     ///
     /// <param name="form"> The form to manipulate. </param>
-    /// <param name="dialogText"> (Optional) Form dialog title text. </param>
-    /// <param name="iconResource"> (Optional) Icon resource to set. If not provided, the dialog's owner icon is used. </param>
+    /// <param name="dialogText"> (Optional) <paramref name="form"/> dialog title text. </param>
+    /// <param name="iconResource"> (Optional) Icon resource to set. If not provided, the <paramref name="form"/>'s owner icon is used. </param>
+    /// <param name="helpUrl"> (Optional) URL for help information for <paramref name="form"/>. </param>
+    /// <param name="helpIcon"> (Optional) Help icon displayed on the <paramref name="form"/>. </param>
     /// <param name="linkToSourceLabel"> (Optional) Label which is used to provide a link to the source code. </param>
-    internal static void PrepDialog(this System.Windows.Forms.Form form, string dialogText = null, System.IO.Stream iconResource = null, Label linkToSourceLabel = null)
+    internal static void PrepDialog(this System.Windows.Forms.Form form, string dialogText = null, System.IO.Stream iconResource = null, string helpUrl = null, PictureBox helpIcon = null, Label linkToSourceLabel = null)
     {
         // Perform these actions within an event so the parent (if any) will be defined at the time of execution.
         form.Load += (_, _) =>
@@ -107,11 +115,41 @@ internal static class Methods
 
             form.Icon = iconResource != null
                 ? System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(iconResource)).GetHicon())
-                : (form.Parent as System.Windows.Forms.Form)?.Icon;
+                : form.Owner?.Icon;
+
+            if (form.AcceptButton != null)
+            {
+                form.AcceptButton.DialogResult = DialogResult.OK;
+            }
+            if (form.CancelButton != null)
+            {
+                form.CancelButton.DialogResult = DialogResult.Cancel;
+            }
         };
+
+        form.Shown += (_, _) => form.MinimumSize = form.Size;
 
         // This will center within the Revit document when no owner is specified.
         form.StartPosition = FormStartPosition.CenterParent;
+
+        if (!string.IsNullOrEmpty(helpUrl))
+        {
+            void openHelpUrl() => System.Diagnostics.Process.Start(helpUrl);
+            form.HelpRequested += (_, e) =>
+            {
+                e.Handled = true;
+                openHelpUrl();
+            };
+
+            if (helpIcon != null)
+            {
+                helpIcon.Click += (_, _) => openHelpUrl();
+            }
+        }
+        else if (helpIcon != null)
+        {
+            helpIcon.Visible = false;
+        }
 
         if (linkToSourceLabel != null)
         {

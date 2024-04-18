@@ -49,7 +49,7 @@ partial class SqlServerSourceDialog
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ConnectionStringGroupBox.Controls.Add(this.ConnectionStringHelpLabel);
             this.ConnectionStringGroupBox.Controls.Add(this.ConnectionStringTextBox);
-            this.ConnectionStringGroupBox.Location = new System.Drawing.Point(12, 112);
+            this.ConnectionStringGroupBox.Location = new System.Drawing.Point(12, 147);
             this.ConnectionStringGroupBox.Name = "ConnectionStringGroupBox";
             this.ConnectionStringGroupBox.Size = new System.Drawing.Size(776, 96);
             this.ConnectionStringGroupBox.TabIndex = 1;
@@ -59,6 +59,7 @@ partial class SqlServerSourceDialog
             // ConnectionStringHelpLabel
             // 
             this.ConnectionStringHelpLabel.AutoSize = true;
+            this.ConnectionStringHelpLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ConnectionStringHelpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline);
             this.ConnectionStringHelpLabel.ForeColor = System.Drawing.Color.Blue;
             this.ConnectionStringHelpLabel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -68,6 +69,7 @@ partial class SqlServerSourceDialog
             this.ConnectionStringHelpLabel.TabIndex = 1;
             this.ConnectionStringHelpLabel.Tag = "https://www.connectionstrings.com/microsoft-data-sqlclient/";
             this.ConnectionStringHelpLabel.Text = "View example values";
+            this.ConnectionStringHelpLabel.Click += new System.EventHandler(this.ConnectionStringHelpLabel_Click);
             // 
             // ConnectionStringTextBox
             // 
@@ -84,9 +86,9 @@ partial class SqlServerSourceDialog
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CommandGroupBox.Controls.Add(this.CommandTextBox);
-            this.CommandGroupBox.Location = new System.Drawing.Point(12, 234);
+            this.CommandGroupBox.Location = new System.Drawing.Point(12, 266);
             this.CommandGroupBox.Name = "CommandGroupBox";
-            this.CommandGroupBox.Size = new System.Drawing.Size(776, 282);
+            this.CommandGroupBox.Size = new System.Drawing.Size(776, 317);
             this.CommandGroupBox.TabIndex = 2;
             this.CommandGroupBox.TabStop = false;
             this.CommandGroupBox.Text = "SQL Command";
@@ -103,7 +105,7 @@ partial class SqlServerSourceDialog
             this.CommandTextBox.Multiline = true;
             this.CommandTextBox.Name = "CommandTextBox";
             this.CommandTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.CommandTextBox.Size = new System.Drawing.Size(735, 232);
+            this.CommandTextBox.Size = new System.Drawing.Size(735, 267);
             this.CommandTextBox.TabIndex = 0;
             this.CommandTextBox.WordWrap = false;
             // 
@@ -111,7 +113,7 @@ partial class SqlServerSourceDialog
             // 
             this.Cancel_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cancel_Button.Location = new System.Drawing.Point(688, 542);
+            this.Cancel_Button.Location = new System.Drawing.Point(688, 609);
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.Size = new System.Drawing.Size(100, 23);
             this.Cancel_Button.TabIndex = 4;
@@ -121,7 +123,7 @@ partial class SqlServerSourceDialog
             // OKButton
             // 
             this.OKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OKButton.Location = new System.Drawing.Point(582, 542);
+            this.OKButton.Location = new System.Drawing.Point(582, 609);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(100, 23);
             this.OKButton.TabIndex = 3;
@@ -133,7 +135,7 @@ partial class SqlServerSourceDialog
             this.LogoPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
             this.LogoPictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LogoPictureBox.Location = new System.Drawing.Point(12, 542);
+            this.LogoPictureBox.Location = new System.Drawing.Point(12, 609);
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.Size = new System.Drawing.Size(146, 23);
             this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -146,7 +148,7 @@ partial class SqlServerSourceDialog
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ExternalTableSourceBaseControl.Location = new System.Drawing.Point(12, 12);
             this.ExternalTableSourceBaseControl.Name = "ExternalTableSourceBaseControl";
-            this.ExternalTableSourceBaseControl.Size = new System.Drawing.Size(776, 75);
+            this.ExternalTableSourceBaseControl.Size = new System.Drawing.Size(776, 114);
             this.ExternalTableSourceBaseControl.TabIndex = 0;
             // 
             // SqlServerSourceDialog
@@ -155,7 +157,7 @@ partial class SqlServerSourceDialog
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel_Button;
-            this.ClientSize = new System.Drawing.Size(800, 577);
+            this.ClientSize = new System.Drawing.Size(800, 644);
             this.Controls.Add(this.ExternalTableSourceBaseControl);
             this.Controls.Add(this.LogoPictureBox);
             this.Controls.Add(this.Cancel_Button);

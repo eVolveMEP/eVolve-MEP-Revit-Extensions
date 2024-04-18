@@ -55,7 +55,7 @@ partial class ExcelSourceDialog
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ExternalTableSourceBaseControl.Location = new System.Drawing.Point(12, 12);
             this.ExternalTableSourceBaseControl.Name = "ExternalTableSourceBaseControl";
-            this.ExternalTableSourceBaseControl.Size = new System.Drawing.Size(776, 64);
+            this.ExternalTableSourceBaseControl.Size = new System.Drawing.Size(776, 119);
             this.ExternalTableSourceBaseControl.TabIndex = 1;
             // 
             // LogoPictureBox
@@ -63,7 +63,7 @@ partial class ExcelSourceDialog
             this.LogoPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
             this.LogoPictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LogoPictureBox.Location = new System.Drawing.Point(12, 493);
+            this.LogoPictureBox.Location = new System.Drawing.Point(12, 581);
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.Size = new System.Drawing.Size(146, 23);
             this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -74,7 +74,7 @@ partial class ExcelSourceDialog
             // 
             this.Cancel_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cancel_Button.Location = new System.Drawing.Point(688, 493);
+            this.Cancel_Button.Location = new System.Drawing.Point(688, 581);
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.Size = new System.Drawing.Size(100, 23);
             this.Cancel_Button.TabIndex = 19;
@@ -84,7 +84,7 @@ partial class ExcelSourceDialog
             // OKButton
             // 
             this.OKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OKButton.Location = new System.Drawing.Point(582, 493);
+            this.OKButton.Location = new System.Drawing.Point(582, 581);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(100, 23);
             this.OKButton.TabIndex = 18;
@@ -98,7 +98,7 @@ partial class ExcelSourceDialog
             this.FileGroupBox.Controls.Add(this.RefreshButton);
             this.FileGroupBox.Controls.Add(this.FileBrowseButton);
             this.FileGroupBox.Controls.Add(this.FileTextBox);
-            this.FileGroupBox.Location = new System.Drawing.Point(12, 93);
+            this.FileGroupBox.Location = new System.Drawing.Point(12, 137);
             this.FileGroupBox.Name = "FileGroupBox";
             this.FileGroupBox.Padding = new System.Windows.Forms.Padding(10);
             this.FileGroupBox.Size = new System.Drawing.Size(776, 67);
@@ -145,9 +145,9 @@ partial class ExcelSourceDialog
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ColumnsGroupBox.Controls.Add(this.ColumnsDataGridView);
-            this.ColumnsGroupBox.Location = new System.Drawing.Point(12, 180);
+            this.ColumnsGroupBox.Location = new System.Drawing.Point(12, 226);
             this.ColumnsGroupBox.Name = "ColumnsGroupBox";
-            this.ColumnsGroupBox.Size = new System.Drawing.Size(776, 280);
+            this.ColumnsGroupBox.Size = new System.Drawing.Size(776, 322);
             this.ColumnsGroupBox.TabIndex = 22;
             this.ColumnsGroupBox.TabStop = false;
             this.ColumnsGroupBox.Text = "Column Configuration";
@@ -167,7 +167,7 @@ partial class ExcelSourceDialog
             this.ExcludeColumn});
             this.ColumnsDataGridView.Location = new System.Drawing.Point(20, 30);
             this.ColumnsDataGridView.Name = "ColumnsDataGridView";
-            this.ColumnsDataGridView.Size = new System.Drawing.Size(743, 234);
+            this.ColumnsDataGridView.Size = new System.Drawing.Size(743, 276);
             this.ColumnsDataGridView.TabIndex = 0;
             // 
             // NameColumn
@@ -197,7 +197,7 @@ partial class ExcelSourceDialog
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel_Button;
-            this.ClientSize = new System.Drawing.Size(800, 528);
+            this.ClientSize = new System.Drawing.Size(800, 616);
             this.Controls.Add(this.ColumnsGroupBox);
             this.Controls.Add(this.FileGroupBox);
             this.Controls.Add(this.LogoPictureBox);

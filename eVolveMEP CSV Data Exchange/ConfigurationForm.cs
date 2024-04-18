@@ -47,7 +47,7 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.ButtonText, Command.IconResource, ViewSourceCodeLabel);
+        this.PrepDialog(Resources.ButtonText, Command.IconResource, Command.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel);
 
         Document = document;
 
@@ -63,9 +63,7 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
             .OrderBy(value => value)
             .ToArray());
 
-        this.Shown += (_, _) => MinimumSize = Size;
-        this.FormClosing += ConfigurationForm_FormClosing;
-        this.HelpRequested += ConfigurationForm_HelpRequested;
+        FormClosing += ConfigurationForm_FormClosing;
     }
         
     /// <summary> Loads saved configuration values into the editors. </summary>
@@ -94,25 +92,6 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
                 e.Cancel = true;
             }
         }
-    }
-
-    /// <summary> Opens help information when F1 is pressed on the form. </summary>
-    ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Help event information. </param>
-    private static void ConfigurationForm_HelpRequested(object sender, HelpEventArgs e)
-    {
-        e.Handled = true;
-        OpenHelpLink();
-    }
-
-    /// <summary> Opens help information. </summary>
-    ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Event information. </param>
-    private void HelpLinkPictureBox_Click(object sender, EventArgs e)
-    {
-        OpenHelpLink();
     }
 
     /// <summary> Opens the Data Profiles configuration dialog and refreshes available selections. </summary>
@@ -298,11 +277,5 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
             ShowErrorMessage(this, string.Join("\n - ", messages), Resources.ValidationErrors);
         }
         return !messages.Any();
-    }
-
-    /// <summary> Opens <see cref="Command.HelpLinkUrl"/> in the default application. </summary>
-    private static void OpenHelpLink()
-    {
-        System.Diagnostics.Process.Start(Command.HelpLinkUrl);
     }
 }

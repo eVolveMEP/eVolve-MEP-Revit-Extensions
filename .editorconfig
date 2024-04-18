@@ -32,8 +32,10 @@ dotnet_diagnostic.CA2235.severity = none
 dotnet_diagnostic.IDE0067.severity = none
 # IDE0068: Use recommended dispose pattern
 dotnet_diagnostic.IDE0068.severity = none
-# IDE0079:Remove unnecessary suppression
+# IDE0079: Remove unnecessary suppression
 dotnet_diagnostic.IDE0079.severity = none
+# IDE0305: Simplify collection initialization
+dotnet_diagnostic.IDE0305.severity = none
 
 ## Roslynator
 

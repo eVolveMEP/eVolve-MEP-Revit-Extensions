@@ -37,7 +37,7 @@ internal partial class SqlServerSourceDialog : System.Windows.Forms.Form
         if (DialogResult == DialogResult.OK && !e.Cancel)
         {
             var source = GetSource();
-            e.Cancel = ExternalTableSourceBaseControl.ValidateData(source,
+            e.Cancel = !ExternalTableSourceBaseControl.ValidateData(source,
                 new[]
                 {
                     (source.ConnectionString, ConnectionStringGroupBox.Text),
@@ -45,6 +45,12 @@ internal partial class SqlServerSourceDialog : System.Windows.Forms.Form
                 });
         }
     }
+
+    /// <summary> Opens the URL associated with the label. </summary>
+    ///
+    /// <param name="sender"> Source of the event. </param>
+    /// <param name="e"> Event information. </param>
+    private void ConnectionStringHelpLabel_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(ConnectionStringHelpLabel.Tag.ToString());
 
     /// <summary> Returns a new <see cref="SqlServerSource"/> based on the current input. </summary>
     public SqlServerSource GetSource()

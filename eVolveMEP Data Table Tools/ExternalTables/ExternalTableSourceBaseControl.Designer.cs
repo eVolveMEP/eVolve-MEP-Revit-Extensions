@@ -34,6 +34,8 @@ partial class ExternalTableSourceBaseControl
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
             this.TableInfoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,12 +44,14 @@ partial class ExternalTableSourceBaseControl
             this.TableInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TableInfoGroupBox.Controls.Add(this.DescriptionTextBox);
+            this.TableInfoGroupBox.Controls.Add(this.DescriptionLabel);
             this.TableInfoGroupBox.Controls.Add(this.CacheCheckBox);
             this.TableInfoGroupBox.Controls.Add(this.NameTextBox);
             this.TableInfoGroupBox.Controls.Add(this.NameLabel);
             this.TableInfoGroupBox.Location = new System.Drawing.Point(0, 0);
             this.TableInfoGroupBox.Name = "TableInfoGroupBox";
-            this.TableInfoGroupBox.Size = new System.Drawing.Size(597, 79);
+            this.TableInfoGroupBox.Size = new System.Drawing.Size(611, 121);
             this.TableInfoGroupBox.TabIndex = 0;
             this.TableInfoGroupBox.TabStop = false;
             this.TableInfoGroupBox.Text = "Table Information";
@@ -56,7 +60,7 @@ partial class ExternalTableSourceBaseControl
             // 
             this.CacheCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CacheCheckBox.AutoSize = true;
-            this.CacheCheckBox.Location = new System.Drawing.Point(448, 31);
+            this.CacheCheckBox.Location = new System.Drawing.Point(462, 31);
             this.CacheCheckBox.Name = "CacheCheckBox";
             this.CacheCheckBox.Size = new System.Drawing.Size(83, 17);
             this.CacheCheckBox.TabIndex = 2;
@@ -70,9 +74,9 @@ partial class ExternalTableSourceBaseControl
             // 
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextBox.Location = new System.Drawing.Point(100, 29);
+            this.NameTextBox.Location = new System.Drawing.Point(113, 29);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(267, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(268, 20);
             this.NameTextBox.TabIndex = 1;
             // 
             // NameLabel
@@ -85,13 +89,33 @@ partial class ExternalTableSourceBaseControl
             this.NameLabel.Text = "Name";
             this.ToolTip.SetToolTip(this.NameLabel, "Descriptive and unique name for the table.");
             // 
+            // DescriptionTextBox
+            // 
+            this.DescriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DescriptionTextBox.Location = new System.Drawing.Point(113, 65);
+            this.DescriptionTextBox.Multiline = true;
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.Size = new System.Drawing.Size(481, 38);
+            this.DescriptionTextBox.TabIndex = 4;
+            // 
+            // DescriptionLabel
+            // 
+            this.DescriptionLabel.AutoSize = true;
+            this.DescriptionLabel.Location = new System.Drawing.Point(20, 68);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.DescriptionLabel.TabIndex = 3;
+            this.DescriptionLabel.Text = "Description";
+            // 
             // ExternalTableSourceBaseControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.TableInfoGroupBox);
             this.Name = "ExternalTableSourceBaseControl";
-            this.Size = new System.Drawing.Size(597, 79);
+            this.Size = new System.Drawing.Size(611, 121);
             this.TableInfoGroupBox.ResumeLayout(false);
             this.TableInfoGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -105,4 +129,6 @@ partial class ExternalTableSourceBaseControl
     private System.Windows.Forms.TextBox NameTextBox;
     private System.Windows.Forms.Label NameLabel;
     private System.Windows.Forms.ToolTip ToolTip;
+    private System.Windows.Forms.TextBox DescriptionTextBox;
+    private System.Windows.Forms.Label DescriptionLabel;
 }

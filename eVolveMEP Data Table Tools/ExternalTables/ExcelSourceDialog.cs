@@ -15,6 +15,12 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
     /// <summary> Backing data for <see cref="ColumnsDataGridView"/>. </summary>
     private BindingList<ExcelColumnInfo> Columns { get; } = [];
 
+    /// <summary>
+    /// Gets or sets the initial <see cref="ExcelSource"/> object which feeds this data.
+    /// <para>This will be <see langword="null"/> after the form as loaded.</para>
+    /// </summary>
+    private ExcelSource InitialSource { get; set; }
+
     /// <summary> Constructor. </summary>
     ///
     /// <param name="dialogTitle"> The dialog title. </param>
@@ -25,18 +31,28 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
 
         this.PrepDialog(dialogTitle);
 
+        InitialSource = source;
+
         ExternalTableSourceBaseControl.SetData(source);
+        FileTextBox.Text = source.FilePath;
 
         NameColumn.DataPropertyName = nameof(ExcelColumnInfo.Name);
-        DataTypeColumn.DataPropertyName = nameof(ExcelColumnInfo.DataType);
         IncludeColumn.DataPropertyName = nameof(ExcelColumnInfo.Include);
         ExcludeColumn.DataPropertyName = nameof(ExcelColumnInfo.Exclude);
+        DataTypeColumn.DataPropertyName = nameof(ExcelColumnInfo.DataType);
+        DataTypeColumn.DataSource = ColumnDataTypeLookup.ToArray();
+        DataTypeColumn.ValueMember = "Key";
+        DataTypeColumn.DisplayMember = "Key";
 
         ColumnsDataGridView.DataSource = Columns;
 
-        Load += (_, _) => RefreshButton_Click(RefreshButton, EventArgs.Empty);
+        Load += (_, _) =>
+        {
+            RefreshButton_Click(RefreshButton, EventArgs.Empty);
+            InitialSource = null;
+        };
         FormClosing += ExcelSourceDialog_FormClosing;
-        FileTextBox.TextChanged += RefreshButton_Click;
+        FileTextBox.Validated += RefreshButton_Click;
     }
 
     /// <summary> Validates user input. </summary>
@@ -48,7 +64,7 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
         if (DialogResult == DialogResult.OK && !e.Cancel)
         {
             var source = GetSource();
-            e.Cancel = ExternalTableSourceBaseControl.ValidateData(source,
+            e.Cancel = !ExternalTableSourceBaseControl.ValidateData(source,
                 new[]
                 {
                     (source.FilePath, FileGroupBox.Text),
@@ -74,6 +90,7 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
         if (dialog.ShowDialog(this) == DialogResult.OK)
         {
             FileTextBox.Text = dialog.FileName;
+            RefreshButton_Click(sender, EventArgs.Empty);
         }
     }
 
@@ -83,7 +100,7 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
     /// <param name="e"> Event information. </param>
     private void RefreshButton_Click(object sender, EventArgs e)
     {
-        var currentConfig = GetSource();
+        var currentConfig = InitialSource ?? GetSource();
         Columns.Clear();
 
         if (string.IsNullOrWhiteSpace(FileTextBox.Text))
@@ -96,18 +113,14 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
             return;
         }
 
-        Dictionary<string, int> headers;
+        var headers = new Dictionary<string, int>();
         try
         {
-            using var excel = new ExcelWrapper.Excel();
-            var workbook = excel.OpenWorkbook(FileTextBox.Text);
-            var worksheet = workbook.GetWorksheet(1);
-            headers = worksheet.GetHeaderIndexes();
-            excel.Close();
+            ExternalTablesMethods.ReadFromExcel(FileTextBox.Text, worksheet => headers = worksheet.GetHeaderIndexes());
         }
         catch (Exception ex)
         {
-            ShowErrorMessage(this, Resources.ReadingExcelFileError + "\n\n" + ex.Message);
+            ShowErrorMessage(this, ex.Message);
             return;
         }
 
@@ -128,6 +141,8 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
     public ExcelSource GetSource()
     {
         var data = ExternalTableSourceBaseControl.GetData<ExcelSource>();
+
+        data.FilePath = FileTextBox.Text;
 
         data.IncludeColumnNames = Columns.All(column => column.Include)
             ? []

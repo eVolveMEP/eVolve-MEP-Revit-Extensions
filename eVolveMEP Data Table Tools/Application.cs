@@ -28,7 +28,8 @@ public class ApplicationMechanical : IExternalApplication
     {
         var splitButton = (SplitButton)eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(new SplitButtonData(Resources.ToolsButtonText, Resources.ToolsButtonText));
 
-        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ToolsButtonText,
+        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(
+            GetTextWithNormalizedLineBreaks(Resources.ToolsButtonText),
             System.Reflection.Assembly.GetExecutingAssembly().Location,
             typeof(Tools.ToolsCommand),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
@@ -36,7 +37,8 @@ public class ApplicationMechanical : IExternalApplication
             string.Format(Resources.ToolsToolTipText, HostProductName),
             Tools.ToolsCommand.HelpLinkUrl));
 
-        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ExternalTablesButtonText,
+        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(
+            GetTextWithNormalizedLineBreaks(Resources.ExternalTablesButtonText),
             System.Reflection.Assembly.GetExecutingAssembly().Location,
             typeof(ExternalTables.ExternalTablesConfigCommand),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
@@ -46,13 +48,17 @@ public class ApplicationMechanical : IExternalApplication
 
         splitButton.AddSeparator();
 
-        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(Resources.ViewTableButtonText,
+        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(
+            GetTextWithNormalizedLineBreaks(Resources.ViewTableButtonText),
             System.Reflection.Assembly.GetExecutingAssembly().Location,
             typeof(ViewTable.ViewTableCommand),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
             System.Windows.Media.Imaging.BitmapFrame.Create(ViewTable.ViewTableCommand.IconResource),
             string.Format(Resources.ViewTableToolTipText, HostProductName),
             ViewTable.ViewTableCommand.HelpLinkUrl));
+
+        // Load external tables for usage.
+        ExternalTables.ExternalTablesMethods.ApplySettings(ExternalTables.ExternalTablesMethods.GetSettings());
 
         return Result.Succeeded;
     }

@@ -140,14 +140,12 @@
             // OK_Button
             // 
             resources.ApplyResources(this.OK_Button, "OK_Button");
-            this.OK_Button.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OK_Button.Name = "OK_Button";
             this.OK_Button.UseVisualStyleBackColor = true;
             // 
             // Cancel_Button
             // 
             resources.ApplyResources(this.Cancel_Button, "Cancel_Button");
-            this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.UseVisualStyleBackColor = true;
             // 
@@ -184,7 +182,6 @@
             this.HelpLinkPictureBox.Image = global::eVolve.CsvDataExchange.Revit.Properties.Resources.Help_Medium_20x20;
             this.HelpLinkPictureBox.Name = "HelpLinkPictureBox";
             this.HelpLinkPictureBox.TabStop = false;
-            this.HelpLinkPictureBox.Click += new System.EventHandler(this.HelpLinkPictureBox_Click);
             // 
             // OpenConfigurationPictureBox
             // 

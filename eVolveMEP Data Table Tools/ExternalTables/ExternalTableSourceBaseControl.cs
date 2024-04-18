@@ -28,7 +28,7 @@ internal partial class ExternalTableSourceBaseControl : UserControl
     {
         var messages = new[] { (data.Name, NameLabel.Text) }
             .Concat(additionalFields)
-            .Where(input => !string.IsNullOrWhiteSpace(input.Item1))
+            .Where(input => string.IsNullOrWhiteSpace(input.Item1))
             .Select(input => string.Format(Resources.ValueMustBeProvided1Error, input.Item2))
             .ToArray();
 
@@ -45,6 +45,7 @@ internal partial class ExternalTableSourceBaseControl : UserControl
     public T GetData<T>() where T : ExternalTableSourceBase, new() => new()
     {
         Name = NameTextBox.Text.Trim(),
+        Description = DescriptionTextBox.Text,
         Cache = CacheCheckBox.Checked,
     };
 
@@ -55,6 +56,7 @@ internal partial class ExternalTableSourceBaseControl : UserControl
     public void SetData<T>(T data) where T : ExternalTableSourceBase
     {
         NameTextBox.Text = data.Name;
+        DescriptionTextBox.Text = data.Description;
         CacheCheckBox.Checked = data.Cache;
     }
 }

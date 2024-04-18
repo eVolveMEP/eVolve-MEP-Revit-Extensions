@@ -25,11 +25,14 @@ public abstract class ExternalTableSourceBase
     /// <remarks> This should be unique. </remarks>
     public string Name { get; set; }
 
+    /// <summary> Gets or sets the description. </summary>
+    public string Description { get; set; }
+
     /// <summary>
     /// Gets or sets a value indicating whether this data is cached (<see langword="true"/>) or performs a live lookup on
     /// each request (<see langword="false"/>).
     /// </summary>
-    public bool Cache { get; set; }
+    public bool Cache { get; set; } = true;
 }
 
 
@@ -72,7 +75,7 @@ public class ExcelColumnDataType
     /// <summary>
     /// Gets or sets the type of the data. This should be a key value within <see cref="ColumnDataTypeLookup"/>.
     /// </summary>
-    public string DataType { get; set; }
+    public string DataType { get; set; } = ColumnDataTypeLookup.First().Key;
 }
 
 /// <summary> (Serializable) External SQL Server data source configuration information. </summary>

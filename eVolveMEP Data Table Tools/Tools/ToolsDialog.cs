@@ -40,7 +40,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.ToolsButtonText, ToolsCommand.IconResource, ViewSourceCodeLabel);
+        this.PrepDialog(Resources.ToolsButtonText, ToolsCommand.IconResource, ToolsCommand.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel);
 
         Document = document;
 
@@ -72,9 +72,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             button.Click += EditSqlButton_Click;
         }
 
-        this.Shown += (_, _) => MinimumSize = Size;
-        this.FormClosing += ToolsDialog_FormClosing;
-        this.HelpRequested += ToolsDialog_HelpRequested;
+        FormClosing += ToolsDialog_FormClosing;
     }
 
     /// <summary> Loads saved configuration values into the editors. </summary>
@@ -132,35 +130,10 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         }
     }
 
-    /// <summary> Opens help information when F1 is pressed on the form. </summary>
-    ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Help event information. </param>
-    private static void ToolsDialog_HelpRequested(object sender, HelpEventArgs e)
-    {
-        e.Handled = true;
-        OpenHelpLink();
-    }
-
-    /// <summary> Opens help information. </summary>
-    ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Event information. </param>
-    private void HelpLinkPictureBox_Click(object sender, EventArgs e)
-    {
-        OpenHelpLink();
-    }
-
-    /// <summary> Opens <see cref="ToolsCommand.HelpLinkUrl"/> in the default application. </summary>
-    private static void OpenHelpLink()
-    {
-        System.Diagnostics.Process.Start(ToolsCommand.HelpLinkUrl);
-    }
-
     #region Settings
 
     /// <summary> Gets the full pathname of the settings file store location on disk. </summary>
-    private static string SettingsFilePath { get; } = System.IO.Path.Combine(eVolve::eVolve.Core.Revit.ProductInfo.API.UserConfigurationFolderPath, "Data Table Tools", "Settings.xml");
+    private static string SettingsFilePath { get; } = System.IO.Path.Combine(ApplicationConfigurationPath, "Settings.xml");
 
     /// <summary>
     /// Saves the saved options from <see cref="SettingsFilePath"/> into the form. If an error occurs, the user is

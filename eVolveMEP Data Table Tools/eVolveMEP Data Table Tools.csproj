@@ -488,6 +488,9 @@
     <Compile Include="ExternalTables\ExcelSourceDialog.Designer.cs">
       <DependentUpon>ExcelSourceDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExternalTables\SqlServerTableSource .cs" />
+    <Compile Include="ExternalTables\ExcelTableSource.cs" />
+    <Compile Include="ExternalTables\ExternalTablesMethods.cs" />
     <Compile Include="ExternalTables\ExternalTableSourceBaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -551,11 +554,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ExternalTables\ExcelSourceDialog.fr-fr.resx">
+      <DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExternalTables\ExcelSourceDialog.resx">
       <DependentUpon>ExcelSourceDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\ExternalTableSourceBaseControl.fr-fr.resx">
+      <DependentUpon>ExternalTableSourceBaseControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExternalTables\ExternalTableSourceBaseControl.resx">
       <DependentUpon>ExternalTableSourceBaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\SqlServerSourceDialog.fr-fr.resx">
+      <DependentUpon>SqlServerSourceDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExternalTables\SqlServerSourceDialog.resx">
       <DependentUpon>SqlServerSourceDialog.cs</DependentUpon>

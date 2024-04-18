@@ -58,14 +58,12 @@ partial class TextInputDialog
             // OKButton
             // 
             resources.ApplyResources(this.OKButton, "OKButton");
-            this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OKButton.Name = "OKButton";
             this.OKButton.UseVisualStyleBackColor = true;
             // 
             // Cancel_Button
             // 
             resources.ApplyResources(this.Cancel_Button, "Cancel_Button");
-            this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.UseVisualStyleBackColor = true;
             // 

@@ -22,7 +22,7 @@ internal partial class ViewTableDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.ViewTableButtonText, ViewTableCommand.IconResource, ViewSourceCodeLabel);
+        this.PrepDialog(Resources.ViewTableButtonText, ViewTableCommand.IconResource, ViewTable.ViewTableCommand.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel);
 
         Document = document;
 
@@ -47,6 +47,10 @@ internal partial class ViewTableDialog : System.Windows.Forms.Form
                 System.Windows.Forms.Application.DoEvents();
 
                 TableDataGridView.DataSource = Document.GetTable(DataTableComboBox.Text, out _);
+            }
+            catch (Exception ex)
+            {
+                ShowErrorMessage(this, ex.Message);
             }
             finally
             {

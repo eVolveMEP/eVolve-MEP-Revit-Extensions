@@ -128,7 +128,6 @@ partial class ToolsDialog
             this.HelpLinkPictureBox.Image = global::eVolve.DataTableTools.Revit.Properties.Resources.Help_Medium_20x20;
             this.HelpLinkPictureBox.Name = "HelpLinkPictureBox";
             this.HelpLinkPictureBox.TabStop = false;
-            this.HelpLinkPictureBox.Click += new System.EventHandler(this.HelpLinkPictureBox_Click);
             // 
             // LogoPictureBox
             // 
@@ -563,7 +562,6 @@ partial class ToolsDialog
             // CloseButton
             // 
             resources.ApplyResources(this.CloseButton, "CloseButton");
-            this.CloseButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.UseVisualStyleBackColor = true;
             // 
