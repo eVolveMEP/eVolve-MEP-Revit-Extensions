@@ -83,8 +83,12 @@ public class ExcelColumnDataType
 public class SqlServerSource : ExternalTableSourceBase
 {
     /// <summary> Gets or sets the connection string. </summary>
+    ///
+    /// <remarks> This is encoded in base64. </remarks>
     public string ConnectionString { get; set; }
 
     /// <summary> Gets or sets the SQL command text to be executed. </summary>
+    ///
+    /// <remarks> <inheritdoc cref="ConnectionString" path="/remarks"/> </remarks>
     public string CommandText { get; set; }
 }

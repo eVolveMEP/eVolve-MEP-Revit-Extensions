@@ -42,7 +42,7 @@ internal class SqlServerTableSource(SqlServerSource source) : eVolve::eVolve.Cor
     {
         metadata = null;
 
-        using var adapter = new SqlDataAdapter(Source.CommandText, Source.ConnectionString);
+        using var adapter = new SqlDataAdapter(FromBase64(Source.CommandText), FromBase64(Source.ConnectionString));
         var results = new DataSet();
         adapter.Fill(results);
         var table = results.Tables[0].Copy();

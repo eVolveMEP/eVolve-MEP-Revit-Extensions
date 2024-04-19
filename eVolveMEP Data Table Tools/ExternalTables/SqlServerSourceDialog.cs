@@ -22,8 +22,8 @@ internal partial class SqlServerSourceDialog : System.Windows.Forms.Form
         this.PrepDialog(dialogTitle);
 
         ExternalTableSourceBaseControl.SetData(source);
-        ConnectionStringTextBox.Text = source.ConnectionString;
-        CommandTextBox.Text = source.CommandText;
+        ConnectionStringTextBox.Text = FromBase64(source.ConnectionString);
+        CommandTextBox.Text = FromBase64(source.CommandText);
 
         FormClosing += SqlServerSourceDialog_FormClosing;
     }
@@ -56,8 +56,8 @@ internal partial class SqlServerSourceDialog : System.Windows.Forms.Form
     public SqlServerSource GetSource()
     {
         var data = ExternalTableSourceBaseControl.GetData<SqlServerSource>();
-        data.ConnectionString = ConnectionStringTextBox.Text.Trim();
-        data.CommandText = CommandTextBox.Text;
+        data.ConnectionString = ToBase64(ConnectionStringTextBox.Text.Trim());
+        data.CommandText = ToBase64(CommandTextBox.Text);
         return data;
     }
 }
