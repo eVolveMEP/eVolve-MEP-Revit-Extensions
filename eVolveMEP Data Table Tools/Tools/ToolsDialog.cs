@@ -59,8 +59,8 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
         SQLConnectionStatusLabel.TextChanged += SQLConnectionStatusLabel_TextChanged;
 
-        ResetSelectedConfigurationButton.Text = string.Format(ResetSelectedConfigurationButton.Text, DataTableLabel.Text);
         ResetEntireConfigurationGroupBox.Text = string.Format(ResetEntireConfigurationGroupBox.Text, Text);
+        ResetSelectedConfigurationButton.Text = string.Format(ResetSelectedConfigurationButton.Text, DataTableLabel.Text);
 
         // TextChanged occurs before SelectedIndexChanged so consumers interested in the previous value need to consider this.
         DataTableComboBox.TextChanged += DataTableChangedToolsHandler;

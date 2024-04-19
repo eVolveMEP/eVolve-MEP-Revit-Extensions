@@ -520,7 +520,6 @@ partial class ToolsDialog
             // ResetDataTabPage
             // 
             this.ResetDataTabPage.Controls.Add(this.ResetEntireConfigurationGroupBox);
-            this.ResetDataTabPage.Controls.Add(this.ResetSelectedConfigurationButton);
             resources.ApplyResources(this.ResetDataTabPage, "ResetDataTabPage");
             this.ResetDataTabPage.Name = "ResetDataTabPage";
             this.ResetDataTabPage.UseVisualStyleBackColor = true;
@@ -528,6 +527,7 @@ partial class ToolsDialog
             // ResetEntireConfigurationGroupBox
             // 
             this.ResetEntireConfigurationGroupBox.Controls.Add(this.ResetEntireConfigurationButton);
+            this.ResetEntireConfigurationGroupBox.Controls.Add(this.ResetSelectedConfigurationButton);
             resources.ApplyResources(this.ResetEntireConfigurationGroupBox, "ResetEntireConfigurationGroupBox");
             this.ResetEntireConfigurationGroupBox.Name = "ResetEntireConfigurationGroupBox";
             this.ResetEntireConfigurationGroupBox.TabStop = false;
