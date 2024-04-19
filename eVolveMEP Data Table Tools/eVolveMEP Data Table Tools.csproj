@@ -631,6 +631,10 @@
     <Analyzer Include="..\packages\Roslynator.Analyzers.4.6.4\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Common.dll" />
     <Analyzer Include="..\packages\Roslynator.Analyzers.4.6.4\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Core.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExternalTablesConfiguration_32x32.png" />
+    <EmbeddedResource Include="ViewDataTables_32x32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>CALL "$(SolutionDir)BuildTools\PostBuild.bat" "$(ConfigurationName)" "$(TargetDir)" "$(TargetPath)" "25A711AA-ED48-9295-1F5B-537895FD333D" "DF781AB8-5BB8-D0AC-C0FA-CBA28623BEF6"

@@ -14,7 +14,7 @@ namespace eVolve.DataTableTools.Revit.ExternalTables;
 internal class ExternalTablesConfigCommand : IExternalCommand
 {
     /// <summary> Gets the icon resource. </summary>
-    internal static System.IO.Stream IconResource => GetIconResource("DataTableTools_32x32.png");
+    internal static System.IO.Stream IconResource => GetIconResource("ExternalTablesConfiguration_32x32.png");
 
     /// <summary> Gets URL of the help link to open when requested by the user. </summary>
     internal static string HelpLinkUrl
@@ -22,9 +22,9 @@ internal class ExternalTablesConfigCommand : IExternalCommand
         get
         {
 #if ELECTRICAL
-            return "";
+            return "https://help-electrical.evolvemep.com/article/x1ttgpllk2";
 #elif MECHANICAL
-            return "";
+            return "https://help-mechanical.evolvemep.com/article/dofelbuc87";
 #endif
         }
     }
