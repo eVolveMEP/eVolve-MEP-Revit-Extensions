@@ -65,10 +65,9 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
         {
             var source = GetSource();
             e.Cancel = !ExternalTableSourceBaseControl.ValidateData(source,
-                new[]
-                {
-                    (source.FilePath, FileGroupBox.Text),
-                });
+            [
+                (source.FilePath, FileGroupBox.Text),
+            ]);
         }
     }
 

@@ -38,11 +38,10 @@ internal partial class SqlServerSourceDialog : System.Windows.Forms.Form
         {
             var source = GetSource();
             e.Cancel = !ExternalTableSourceBaseControl.ValidateData(source,
-                new[]
-                {
-                    (source.ConnectionString, ConnectionStringGroupBox.Text),
-                    (source.CommandText, CommandGroupBox.Text),
-                });
+            [
+                (source.ConnectionString, ConnectionStringGroupBox.Text),
+                (source.CommandText, CommandGroupBox.Text),
+            ]);
         }
     }
 

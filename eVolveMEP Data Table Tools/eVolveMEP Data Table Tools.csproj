@@ -455,8 +455,8 @@
     </When>
   </Choose>
   <ItemGroup>
-    <Reference Include="ExcelWrapper, Version=1.5.1.9109, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ExcelWrapper.1.5.1.9109\lib\net20\ExcelWrapper.dll</HintPath>
+    <Reference Include="ExcelWrapper, Version=2.0.0.4264, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelWrapper.2.0.0.4264\lib\net40\ExcelWrapper.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Annotations, Version=4242.42.42.42, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.2023.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
