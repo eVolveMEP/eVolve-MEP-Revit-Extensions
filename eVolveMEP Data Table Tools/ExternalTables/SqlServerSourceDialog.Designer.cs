@@ -28,7 +28,6 @@ partial class SqlServerSourceDialog
     /// </summary>
     private void InitializeComponent()
     {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SqlServerSourceDialog));
             this.ConnectionStringGroupBox = new System.Windows.Forms.GroupBox();
             this.ConnectionStringHelpLabel = new System.Windows.Forms.Label();
             this.ConnectionStringTextBox = new System.Windows.Forms.TextBox();
@@ -133,7 +132,7 @@ partial class SqlServerSourceDialog
             // LogoPictureBox
             // 
             this.LogoPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
+            this.LogoPictureBox.Image = global::eVolve.DataTableTools.Revit.Properties.Resources.Logo;
             this.LogoPictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LogoPictureBox.Location = new System.Drawing.Point(12, 609);
             this.LogoPictureBox.Name = "LogoPictureBox";

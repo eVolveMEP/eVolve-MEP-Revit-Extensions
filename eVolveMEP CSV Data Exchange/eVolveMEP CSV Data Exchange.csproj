@@ -531,6 +531,9 @@
     <Analyzer Include="..\packages\Roslynator.Analyzers.4.6.4\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Common.dll" />
     <Analyzer Include="..\packages\Roslynator.Analyzers.4.6.4\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Core.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>CALL "$(SolutionDir)BuildTools\PostBuild.bat" "$(ConfigurationName)" "$(TargetDir)" "$(TargetPath)" "A70A6A1A-BF91-C541-158A-5589D57891CB" "9F07922B-CCDF-2290-C059-CC7A8F1FFC78"

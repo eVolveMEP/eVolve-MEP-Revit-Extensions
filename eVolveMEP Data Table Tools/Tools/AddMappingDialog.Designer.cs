@@ -64,6 +64,7 @@ partial class AddMappingDialog
             // LogoPictureBox
             // 
             resources.ApplyResources(this.LogoPictureBox, "LogoPictureBox");
+            this.LogoPictureBox.Image = global::eVolve.DataTableTools.Revit.Properties.Resources.Logo;
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.TabStop = false;
             // 

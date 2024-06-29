@@ -629,6 +629,9 @@
     <Analyzer Include="..\packages\Roslynator.Analyzers.4.6.4\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Common.dll" />
     <Analyzer Include="..\packages\Roslynator.Analyzers.4.6.4\analyzers\dotnet\cs\Roslynator_Analyzers_Roslynator.Workspaces.Core.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>IF "$(OutDir)"=="bin\Release\" "$(SolutionDir)BuildTools\ILRepack.exe" /out:"$(TargetPath)" "$(TargetPath)" "$(TargetDir)ExcelWrapper.dll" /internalize

@@ -28,7 +28,6 @@ partial class ExternalTablesConfigDialog
     /// </summary>
     private void InitializeComponent()
     {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExternalTablesConfigDialog));
             this.TabControl = new System.Windows.Forms.TabControl();
             this.ExcelTabPage = new System.Windows.Forms.TabPage();
             this.ExcelDeleteButton = new System.Windows.Forms.Button();
@@ -243,7 +242,7 @@ partial class ExternalTablesConfigDialog
             // LogoPictureBox
             // 
             this.LogoPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
+            this.LogoPictureBox.Image = global::eVolve.DataTableTools.Revit.Properties.Resources.Logo;
             this.LogoPictureBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LogoPictureBox.Location = new System.Drawing.Point(12, 497);
             this.LogoPictureBox.Name = "LogoPictureBox";

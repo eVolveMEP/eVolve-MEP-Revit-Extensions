@@ -146,6 +146,7 @@
             // Cancel_Button
             // 
             resources.ApplyResources(this.Cancel_Button, "Cancel_Button");
+            this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.UseVisualStyleBackColor = true;
             // 
@@ -159,6 +160,7 @@
             // LogoPictureBox
             // 
             resources.ApplyResources(this.LogoPictureBox, "LogoPictureBox");
+            this.LogoPictureBox.Image = global::eVolve.CsvDataExchange.Revit.Properties.Resources.Logo;
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.TabStop = false;
             // 
