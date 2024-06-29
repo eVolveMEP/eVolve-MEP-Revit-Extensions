@@ -455,6 +455,9 @@
     </When>
   </Choose>
   <ItemGroup>
+    <Reference Include="ExcelWrapper, Version=2.0.0.4264, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelWrapper.2.0.0.4264\lib\net40\ExcelWrapper.dll</HintPath>
+    </Reference>
     <Reference Include="JetBrains.Annotations, Version=4242.42.42.42, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.2023.3.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
@@ -478,14 +481,43 @@
     <Compile Include="..\Common\Methods.cs">
       <Link>Methods.cs</Link>
     </Compile>
-    <Compile Include="AddMappingDialog.cs">
+    <Compile Include="ApplicationMethods.cs" />
+    <Compile Include="ExternalTables\ExcelSourceDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddMappingDialog.Designer.cs">
+    <Compile Include="ExternalTables\ExcelSourceDialog.Designer.cs">
+      <DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalTables\SqlServerTableSource .cs" />
+    <Compile Include="ExternalTables\ExcelTableSource.cs" />
+    <Compile Include="ExternalTables\ExternalTablesMethods.cs" />
+    <Compile Include="ExternalTables\ExternalTableSourceBaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExternalTables\ExternalTableSourceBaseControl.Designer.cs">
+      <DependentUpon>ExternalTableSourceBaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalTables\ExternalTablesSettings.cs" />
+    <Compile Include="ExternalTables\SqlServerSourceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExternalTables\SqlServerSourceDialog.Designer.cs">
+      <DependentUpon>SqlServerSourceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\AddMappingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\AddMappingDialog.Designer.cs">
       <DependentUpon>AddMappingDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Application.cs" />
-    <Compile Include="Command.cs" />
+    <Compile Include="Tools\ToolsCommand.cs" />
+    <Compile Include="ExternalTables\ExternalTablesConfigDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExternalTables\ExternalTablesConfigDialog.Designer.cs">
+      <DependentUpon>ExternalTablesConfigDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalUsings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -494,17 +526,25 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="TextInputDialog.cs">
+    <Compile Include="Tools\TextInputDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TextInputDialog.Designer.cs">
+    <Compile Include="Tools\TextInputDialog.Designer.cs">
       <DependentUpon>TextInputDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolsDialog.cs">
+    <Compile Include="Tools\ToolsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolsDialog.Designer.cs">
+    <Compile Include="Tools\ToolsDialog.Designer.cs">
       <DependentUpon>ToolsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTable\ViewTableCommand.cs" />
+    <Compile Include="ExternalTables\ExternalTablesConfigCommand.cs" />
+    <Compile Include="ViewTable\ViewTableDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTable\ViewTableDialog.Designer.cs">
+      <DependentUpon>ViewTableDialog.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -514,11 +554,35 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddMappingDialog.fr-fr.resx">
+    <EmbeddedResource Include="ExternalTables\ExcelSourceDialog.fr-fr.resx">
+      <DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\ExcelSourceDialog.resx">
+      <DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\ExternalTableSourceBaseControl.fr-fr.resx">
+      <DependentUpon>ExternalTableSourceBaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\ExternalTableSourceBaseControl.resx">
+      <DependentUpon>ExternalTableSourceBaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\SqlServerSourceDialog.fr-fr.resx">
+      <DependentUpon>SqlServerSourceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\SqlServerSourceDialog.resx">
+      <DependentUpon>SqlServerSourceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\AddMappingDialog.fr-fr.resx">
       <DependentUpon>AddMappingDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddMappingDialog.resx">
+    <EmbeddedResource Include="Tools\AddMappingDialog.resx">
       <DependentUpon>AddMappingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\ExternalTablesConfigDialog.fr-fr.resx">
+      <DependentUpon>ExternalTablesConfigDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalTables\ExternalTablesConfigDialog.resx">
+      <DependentUpon>ExternalTablesConfigDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.fr-FR.resx">
       <DependentUpon>Resources.resx</DependentUpon>
@@ -528,27 +592,31 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="TextInputDialog.fr-FR.resx">
+    <EmbeddedResource Include="Tools\TextInputDialog.fr-FR.resx">
       <DependentUpon>TextInputDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TextInputDialog.resx">
+    <EmbeddedResource Include="Tools\TextInputDialog.resx">
       <DependentUpon>TextInputDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolsDialog.fr-FR.resx">
+    <EmbeddedResource Include="Tools\ToolsDialog.fr-FR.resx">
       <DependentUpon>ToolsDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolsDialog.resx">
+    <EmbeddedResource Include="Tools\ToolsDialog.resx">
       <DependentUpon>ToolsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTable\ViewTableDialog.fr-fr.resx">
+      <DependentUpon>ViewTableDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTable\ViewTableDialog.resx">
+      <DependentUpon>ViewTableDialog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DataTableTools_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <EmbeddedResource Include="ExternalTablesConfiguration_32x32.png" />
+    <EmbeddedResource Include="ViewDataTables_32x32.png" />
     <None Include="Help_Medium_20x20.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Settings_20x20.png" />
   </ItemGroup>
   <ItemGroup>
@@ -563,7 +631,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>CALL "$(SolutionDir)BuildTools\PostBuild.bat" "$(ConfigurationName)" "$(TargetDir)" "$(TargetPath)" "25A711AA-ED48-9295-1F5B-537895FD333D" "DF781AB8-5BB8-D0AC-C0FA-CBA28623BEF6"
-</PostBuildEvent>
+    <PostBuildEvent>IF "$(OutDir)"=="bin\Release\" "$(SolutionDir)BuildTools\ILRepack.exe" /out:"$(TargetPath)" "$(TargetPath)" "$(TargetDir)ExcelWrapper.dll" /internalize
+
+CALL "$(SolutionDir)BuildTools\PostBuild.bat" "$(ConfigurationName)" "$(TargetDir)" "$(TargetPath)" "25A711AA-ED48-9295-1F5B-537895FD333D" "DF781AB8-5BB8-D0AC-C0FA-CBA28623BEF6"</PostBuildEvent>
   </PropertyGroup>
 </Project>

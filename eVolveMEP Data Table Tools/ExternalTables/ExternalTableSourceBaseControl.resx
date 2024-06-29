@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,107 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ToolsButtonText" xml:space="preserve">
-	  <value>Tableau de données
-Outils</value>
-  </data>
-  <data name="ColumnInfoName_DataType" xml:space="preserve">
-	  <value>Type de données</value>
-  </data>
-  <data name="ColumnInfoName_Expression" xml:space="preserve">
-	  <value>Expression</value>
-  </data>
-  <data name="ColumnInfoName_Name" xml:space="preserve">
-	  <value>Nom</value>
-  </data>
-  <data name="ColumnInfoName_Order" xml:space="preserve">
-	  <value>Ordre</value>
-  </data>
-  <data name="Connect" xml:space="preserve">
-	  <value>Se connecter</value>
-  </data>
-  <data name="Connected" xml:space="preserve">
-	  <value>Connecté</value>
-  </data>
-  <data name="CouldNotConvertValueWarning" xml:space="preserve">
-	  <value>Une ou plusieurs valeurs n'ont pas pu être converties dans le type cible.
-La valeur par défaut de « {0} » a été définie comme données dans ces lignes.
-
-Cette opération peut être annulée à l'aide de la fonction Annuler dans Revit.</value>
-  </data>
-  <data name="Disconnect" xml:space="preserve">
-	  <value>Déconnecter</value>
-  </data>
-  <data name="eVolveElectrical" xml:space="preserve">
-	  <value>eVolve Electrical</value>
-  </data>
-  <data name="eVolveMechanical" xml:space="preserve">
-	  <value>eVolve Mechanical</value>
-  </data>
-  <data name="ExportColumnNotFoundError" xml:space="preserve">
-	  <value>La colonne « {0} » a été trouvée dans {1} « {2} ».</value>
-  </data>
-  <data name="FileLoadFailure" xml:space="preserve">
-	  <value>Échec du chargement</value>
-  </data>
-  <data name="FileSaveFailure" xml:space="preserve">
-	  <value>Échec de l'enregistrement</value>
-  </data>
-  <data name="ImportStatementPromptInfo" xml:space="preserve">
-	  <value>Saisissez l'énoncé SQL Select à utiliser pour remplir le {0} sélectionné. Les résultats SQL seront utilisés pour définir les noms des colonnes et leur type de données respectif.</value>
-  </data>
-  <data name="NoEntriesDefinedError" xml:space="preserve">
-	  <value>Aucune entrée {0} n'est sélectionnée.</value>
-  </data>
-  <data name="NotConnected" xml:space="preserve">
-	  <value>Non connecté</value>
-  </data>
-  <data name="NoValueSelectedError" xml:space="preserve">
-	  <value>Aucun {0} sélectionné.</value>
-  </data>
-  <data name="OperationCancelsOnErrorNotice" xml:space="preserve">
-	  <value>En cas d'erreur, l'opération sera annulée.</value>
-  </data>
-  <data name="OperationCompleted" xml:space="preserve">
-	  <value>Traitement terminé.</value>
-  </data>
-  <data name="ResetEntireConfigPrompt" xml:space="preserve">
-	  <value>Avertissement : TOUTES les données de la configuration enregistrée seront supprimées.
-Voulez-vous continuer ?</value>
-  </data>
-  <data name="ResetSelectedDataTableConfigPrompt" xml:space="preserve">
-	  <value>Réinitialiser la configuration enregistrée pour le {0} sélectionné ?</value>
-  </data>
-  <data name="SettingsLoadErrorNotice" xml:space="preserve">
-	  <value>Impossible de charger le fichier de paramètres :</value>
-  </data>
-  <data name="SettingsSaveErrorNotice" xml:space="preserve">
-	  <value>Impossible d'enregistrer le fichier de paramètres :</value>
-  </data>
-  <data name="SQLImportConfirmationPrompt" xml:space="preserve">
-	  <value>Avertissement : Cette opération écrasera complètement la structure et le contenu du {0} sélectionné et effectuera une reconstruction avec les sélections {1}.
-
-Voulez-vous continuer ?</value>
-  </data>
-  <data name="StatementToRunAfterImport" xml:space="preserve">
-	  <value>Saisissez l'énoncé SQL à exécuter après l'importation des données.</value>
-  </data>
-  <data name="StatementToRunPriorToImport" xml:space="preserve">
-	  <value>Saisissez l'énoncé SQL à exécuter avant l'importation des données.</value>
-  </data>
-  <data name="ToolsToolTipText" xml:space="preserve">
-	  <value>Outils avancés pour travailler avec les tableaux de données {0}.</value>
-  </data>
-  <data name="ValueMustBeProvided1Error" xml:space="preserve">
-	  <value>Une valeur doit être indiquée pour « {0} ».</value>
-  </data>
-  <data name="ValueMustBeProvided2Error" xml:space="preserve">
-	  <value>Une valeur doit être indiquée pour « {0} » et « {1} ».</value>
-  </data>
-  <data name="ValueMustBeProvided3Error" xml:space="preserve">
-	  <value>Une valeur doit être indiquée pour « {0} », « {1} » et « {2} ».</value>
-  </data>
-  <data name="ValueMustBeProvidedWhenEnabledError" xml:space="preserve">
-	  <value>Une valeur doit être indiquée pour « {0} » en cas d'activation.</value>
-  </data>
+  <metadata name="ToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

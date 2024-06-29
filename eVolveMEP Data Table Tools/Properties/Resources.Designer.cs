@@ -61,16 +61,6 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Table
-        ///Tools.
-        /// </summary>
-        internal static string ButtonText {
-            get {
-                return ResourceManager.GetString("ButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Data Type.
         /// </summary>
         internal static string ColumnInfoName_DataType {
@@ -164,11 +154,48 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The specified Excel file could not be found..
+        /// </summary>
+        internal static string ExcelFileNotFoundError {
+            get {
+                return ResourceManager.GetString("ExcelFileNotFoundError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Excel Files.
+        /// </summary>
+        internal static string ExcelFiles {
+            get {
+                return ResourceManager.GetString("ExcelFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The column &apos;{0}&apos; was not found in {1} &apos;{2}&apos;..
         /// </summary>
         internal static string ExportColumnNotFoundError {
             get {
                 return ResourceManager.GetString("ExportColumnNotFoundError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to External Tables
+        ///Configuration.
+        /// </summary>
+        internal static string ExternalTablesButtonText {
+            get {
+                return ResourceManager.GetString("ExternalTablesButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setup and configuration for {0} Data Tables which are sourced externally..
+        /// </summary>
+        internal static string ExternalTablesToolTipText {
+            get {
+                return ResourceManager.GetString("ExternalTablesToolTipText", resourceCulture);
             }
         }
         
@@ -255,6 +282,16 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There was an error reading from the Excel file.
+        ///If this file is currently open, please close it and try again..
+        /// </summary>
+        internal static string ReadingExcelFileError {
+            get {
+                return ResourceManager.GetString("ReadingExcelFileError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Warning: This will delete ALL saved configuration data.
         ///Would you like to continue?.
         /// </summary>
@@ -331,11 +368,21 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Data Table
+        ///Tools.
+        /// </summary>
+        internal static string ToolsButtonText {
+            get {
+                return ResourceManager.GetString("ToolsButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Advanced tools for working with {0} Data Tables..
         /// </summary>
-        internal static string ToolTipText {
+        internal static string ToolsToolTipText {
             get {
-                return ResourceManager.GetString("ToolTipText", resourceCulture);
+                return ResourceManager.GetString("ToolsToolTipText", resourceCulture);
             }
         }
         
@@ -372,6 +419,34 @@ namespace eVolve.DataTableTools.Revit.Properties {
         internal static string ValueMustBeProvidedWhenEnabledError {
             get {
                 return ResourceManager.GetString("ValueMustBeProvidedWhenEnabledError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View source code on GitHub.
+        /// </summary>
+        internal static string ViewSourceCodeOnGitHub {
+            get {
+                return ResourceManager.GetString("ViewSourceCodeOnGitHub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View
+        ///Data Table.
+        /// </summary>
+        internal static string ViewTableButtonText {
+            get {
+                return ResourceManager.GetString("ViewTableButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opens a read-only dialog for viewing the contents of {0} Data Tables..
+        /// </summary>
+        internal static string ViewTableToolTipText {
+            get {
+                return ResourceManager.GetString("ViewTableToolTipText", resourceCulture);
             }
         }
     }

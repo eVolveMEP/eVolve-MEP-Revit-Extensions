@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ButtonText" xml:space="preserve">
+  <data name="ToolsButtonText" xml:space="preserve">
     <value>Data Table
 Tools</value>
   </data>
@@ -146,7 +146,7 @@ Tools</value>
   <data name="Settings_20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Settings_20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ToolTipText" xml:space="preserve">
+  <data name="ToolsToolTipText" xml:space="preserve">
     <value>Advanced tools for working with {0} Data Tables.</value>
     <comment>Tag is a product name</comment>
   </data>
@@ -229,5 +229,32 @@ Would you like to continue?</value>
 	  <value>Warning: This operation will completely overwrite the structure and contents the selected {0} and rebuild with the {1} selections.
 
 Would you like to continue?</value>
+  </data>
+  <data name="ViewTableButtonText" xml:space="preserve">
+	  <value>View
+Data Table</value>
+  </data>
+  <data name="ViewTableToolTipText" xml:space="preserve">
+	  <value>Opens a read-only dialog for viewing the contents of {0} Data Tables.</value>
+  </data>
+  <data name="ExternalTablesButtonText" xml:space="preserve">
+	  <value>External Tables
+Configuration</value>
+  </data>
+  <data name="ExternalTablesToolTipText" xml:space="preserve">
+	  <value>Setup and configuration for {0} Data Tables which are sourced externally.</value>
+  </data>
+  <data name="ExcelFiles" xml:space="preserve">
+	  <value>Excel Files</value>
+  </data>
+  <data name="ReadingExcelFileError" xml:space="preserve">
+	  <value>There was an error reading from the Excel file.
+If this file is currently open, please close it and try again.</value>
+  </data>
+  <data name="ExcelFileNotFoundError" xml:space="preserve">
+	  <value>The specified Excel file could not be found.</value>
+  </data>
+  <data name="ViewSourceCodeOnGitHub" xml:space="preserve">
+	  <value>View source code on GitHub</value>
   </data>
 </root>

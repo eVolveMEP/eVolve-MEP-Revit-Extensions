@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 eVolve MEP, LLC
+﻿// Copyright (c) 2024 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -18,11 +18,13 @@ public enum SqlImportSource
     CustomSql,
 }
 
-/// <summary> Stores settings configured on <see cref="ToolsDialog"/>. </summary>
+/// <summary> Stores settings configured on <see cref="Tools.ToolsDialog"/>. </summary>
 [Serializable]
 public class Settings
 {
     /// <summary> Gets or sets the SQL Server connection string. </summary>
+    ///
+    /// <remarks> This is encoded in base64. </remarks>
     public string SqlConnectionString { get; set; }
 
     /// <summary> Gets or sets the SQL settings specific for each source data table. </summary>
@@ -46,6 +48,8 @@ public class SqlTableSettings
     public string ImportSourceViewName { get; set; }
 
     /// <summary> Gets or sets the custom SQL command to run for data import. </summary>
+    ///
+    /// <remarks> <inheritdoc cref="Settings.SqlConnectionString" path="/remarks"/> </remarks>
     public string ImportSourceCustomSql { get; set; }
 
     /// <summary> Gets or sets the name of the export destination SQL table. </summary>
@@ -60,12 +64,16 @@ public class SqlTableSettings
     public bool ExportSqlPreCommandEnabled { get; set; }
 
     /// <summary> Gets or sets the SQL command to optionally run before exporting a data table to a SQL table. </summary>
+    ///
+    /// <remarks> <inheritdoc cref="Settings.SqlConnectionString" path="/remarks"/> </remarks>
     public string ExportSqlPreCommand { get; set; }
 
     /// <summary> Gets or sets a value <see cref="ExportSqlPostCommand"/> is enabled. </summary>
     public bool ExportSqlPostCommandEnabled { get; set; }
 
     /// <summary> Gets or sets the SQL command to optionally run after exporting a data table to a SQL table. </summary>
+    ///
+    /// <remarks> <inheritdoc cref="Settings.SqlConnectionString" path="/remarks"/> </remarks>
     public string ExportSqlPostCommand { get; set; }
 }
 

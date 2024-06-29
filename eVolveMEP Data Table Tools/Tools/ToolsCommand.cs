@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 eVolve MEP, LLC
+﻿// Copyright (c) 2024 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -6,16 +6,13 @@
 
 using Autodesk.Revit.Attributes;
 
-namespace eVolve.DataTableTools.Revit;
+namespace eVolve.DataTableTools.Revit.Tools;
 
-/// <summary> Executes the import/export process. </summary>
+/// <summary> Opens the <see cref="ToolsDialog"/> for working with data tables. </summary>
 [Transaction(TransactionMode.Manual)]
 [Regeneration(RegenerationOption.Manual)]
-internal class Command : IExternalCommand
+internal class ToolsCommand : IExternalCommand
 {
-    /// <summary> Gets the button name of this tool as single line text. </summary>
-    internal static string ButtonTextWithNoLineBreaks => GetButtonTextWithNoLineBreaks(Resources.ButtonText);
-
     /// <summary> Gets the icon resource. </summary>
     internal static System.IO.Stream IconResource => GetIconResource("DataTableTools_32x32.png");
 

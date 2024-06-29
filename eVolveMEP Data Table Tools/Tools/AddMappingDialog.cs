@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 eVolve MEP, LLC
+﻿// Copyright (c) 2024 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -6,7 +6,7 @@
 
 using System.Windows.Forms;
 
-namespace eVolve.DataTableTools.Revit;
+namespace eVolve.DataTableTools.Revit.Tools;
 
 /// <summary>
 /// Dialog for prompting to create a mapping between a data table and a SQL table.
@@ -26,7 +26,7 @@ internal sealed partial class AddMappingDialog : System.Windows.Forms.Form
     {
         using var dialog = new AddMappingDialog();
         dialog.Owner = owner;
-        dialog.Icon = owner.Icon;
+        dialog.PrepDialog();
 
         dialog.DataTableColumnComboBox.Items.Clear();
         dialog.DataTableColumnComboBox.Items.AddRange(dataTableFieldNames.OrderBy(name => name).ToArray());

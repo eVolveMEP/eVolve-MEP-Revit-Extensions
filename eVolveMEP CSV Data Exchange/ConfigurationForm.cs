@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 eVolve MEP, LLC
+﻿// Copyright (c) 2024 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -47,10 +47,9 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        Document = document;
+        this.PrepDialog(Resources.ButtonText, Command.IconResource, Command.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel);
 
-        Text = Command.ButtonTextWithNoLineBreaks;
-        Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(Command.IconResource)).GetHicon());
+        Document = document;
 
         ExportRadioButton.CheckedChanged += DirectionRadioButton_CheckedChanged;
         ImportRadioButton.CheckedChanged += DirectionRadioButton_CheckedChanged;
@@ -64,11 +63,7 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
             .OrderBy(value => value)
             .ToArray());
 
-        ViewSourceCodeLabel.Click += ViewSourceCodeHandler;
-
-        this.Shown += (_, _) => MinimumSize = Size;
-        this.FormClosing += ConfigurationForm_FormClosing;
-        this.HelpRequested += ConfigurationForm_HelpRequested;
+        FormClosing += ConfigurationForm_FormClosing;
     }
         
     /// <summary> Loads saved configuration values into the editors. </summary>
@@ -97,25 +92,6 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
                 e.Cancel = true;
             }
         }
-    }
-
-    /// <summary> Opens help information when F1 is pressed on the form. </summary>
-    ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Help event information. </param>
-    private static void ConfigurationForm_HelpRequested(object sender, HelpEventArgs e)
-    {
-        e.Handled = true;
-        OpenHelpLink();
-    }
-
-    /// <summary> Opens help information. </summary>
-    ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Event information. </param>
-    private void HelpLinkPictureBox_Click(object sender, EventArgs e)
-    {
-        OpenHelpLink();
     }
 
     /// <summary> Opens the Data Profiles configuration dialog and refreshes available selections. </summary>
@@ -205,7 +181,7 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
     #region Settings
 
     /// <summary> Gets the full pathname of the settings file store location on disk. </summary>
-    private static string SettingsFilePath { get; } = System.IO.Path.Combine(BaseSaveSettingsFileFolder, "CSV Data Exchange", "Settings.xml");
+    private static string SettingsFilePath { get; } = System.IO.Path.Combine(eVolve::eVolve.Core.Revit.ProductInfo.API.UserConfigurationFolderPath, "CSV Data Exchange", "Settings.xml");
 
     /// <summary>
     /// Saves the saved options from <see cref="SettingsFilePath"/> into the form. If an error occurs, the user is notified.
@@ -301,11 +277,5 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
             ShowErrorMessage(this, string.Join("\n - ", messages), Resources.ValidationErrors);
         }
         return !messages.Any();
-    }
-
-    /// <summary> Opens <see cref="Command.HelpLinkUrl"/> in the default application. </summary>
-    private static void OpenHelpLink()
-    {
-        System.Diagnostics.Process.Start(Command.HelpLinkUrl);
     }
 }
