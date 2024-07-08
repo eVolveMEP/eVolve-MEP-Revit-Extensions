@@ -65,13 +65,16 @@ partial class TextInputDialog
             // Cancel_Button
             // 
             resources.ApplyResources(this.Cancel_Button, "Cancel_Button");
+            this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.UseVisualStyleBackColor = true;
             // 
             // TextInputDialog
             // 
+            this.AcceptButton = this.OKButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.Cancel_Button;
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.LogoPictureBox);
             this.Controls.Add(this.OKButton);

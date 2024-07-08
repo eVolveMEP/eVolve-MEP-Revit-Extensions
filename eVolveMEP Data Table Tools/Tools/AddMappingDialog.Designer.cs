@@ -90,8 +90,10 @@ partial class AddMappingDialog
             // 
             // AddMappingDialog
             // 
+            this.AcceptButton = this.OKButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.Cancel_Button;
             this.Controls.Add(this.SQLTableColumnGroupBox);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.LogoPictureBox);
