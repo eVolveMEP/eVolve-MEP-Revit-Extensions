@@ -37,7 +37,6 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
         FileTextBox.Text = source.FilePath;
 
         NameColumn.DataPropertyName = nameof(ExcelColumnInfo.Name);
-        IncludeColumn.DataPropertyName = nameof(ExcelColumnInfo.Include);
         ExcludeColumn.DataPropertyName = nameof(ExcelColumnInfo.Exclude);
         DataTypeColumn.DataPropertyName = nameof(ExcelColumnInfo.DataType);
         DataTypeColumn.DataSource = ColumnDataTypeLookup.ToArray();
@@ -126,7 +125,6 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
         foreach (var header in headers)
         {
             var columnInfo = new ExcelColumnInfo() { Name = header.Key };
-            columnInfo.Include = !currentConfig.IncludeColumnNames.Any() || currentConfig.IncludeColumnNames.Contains(columnInfo.Name);
             columnInfo.Exclude = currentConfig.ExcludeColumnNames.Contains(columnInfo.Name);
             if (currentConfig.ColumnDataTypes.FirstOrDefault(dataType => dataType.ColumnName == columnInfo.Name) is { } dataTypeEntry)
             {
@@ -142,13 +140,6 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
         var data = ExternalTableSourceBaseControl.GetData<ExcelSource>();
 
         data.FilePath = FileTextBox.Text;
-
-        data.IncludeColumnNames = Columns.All(column => column.Include)
-            ? []
-            : Columns
-                .Where(column => column.Include)
-                .Select(column => column.Name)
-                .ToArray();
 
         data.ExcludeColumnNames = Columns
             .Where(column => column.Exclude)
@@ -172,9 +163,6 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
     {
         /// <summary> Gets or sets the column name. </summary>
         public string Name { get; set; }
-
-        /// <summary> Gets or sets a value indicating whether this column should be included the table. </summary>
-        public bool Include { get; set; } = true;
 
         /// <summary> Gets or sets a value indicating whether this column should be excluded from the table. </summary>
         public bool Exclude { get; set; }

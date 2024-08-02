@@ -40,7 +40,6 @@ partial class ExcelSourceDialog
             this.ColumnsDataGridView = new System.Windows.Forms.DataGridView();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataTypeColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.IncludeColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ExcludeColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.FileGroupBox.SuspendLayout();
@@ -162,7 +161,6 @@ partial class ExcelSourceDialog
             this.ColumnsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameColumn,
             this.DataTypeColumn,
-            this.IncludeColumn,
             this.ExcludeColumn});
             this.ColumnsDataGridView.Location = new System.Drawing.Point(20, 30);
             this.ColumnsDataGridView.Name = "ColumnsDataGridView";
@@ -179,11 +177,6 @@ partial class ExcelSourceDialog
             // 
             this.DataTypeColumn.HeaderText = "Data Type";
             this.DataTypeColumn.Name = "DataTypeColumn";
-            // 
-            // IncludeColumn
-            // 
-            this.IncludeColumn.HeaderText = "Include";
-            this.IncludeColumn.Name = "IncludeColumn";
             // 
             // ExcludeColumn
             // 
@@ -224,9 +217,8 @@ partial class ExcelSourceDialog
     private System.Windows.Forms.TextBox FileTextBox;
     private System.Windows.Forms.GroupBox ColumnsGroupBox;
     private System.Windows.Forms.DataGridView ColumnsDataGridView;
+    private System.Windows.Forms.Button RefreshButton;
     private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
     private System.Windows.Forms.DataGridViewComboBoxColumn DataTypeColumn;
-    private System.Windows.Forms.DataGridViewCheckBoxColumn IncludeColumn;
     private System.Windows.Forms.DataGridViewCheckBoxColumn ExcludeColumn;
-    private System.Windows.Forms.Button RefreshButton;
 }

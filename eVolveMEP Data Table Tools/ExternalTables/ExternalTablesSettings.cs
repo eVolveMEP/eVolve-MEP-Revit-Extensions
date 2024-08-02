@@ -43,20 +43,7 @@ public class ExcelSource : ExternalTableSourceBase
     /// <summary> Gets or sets the full pathname of the file. </summary>
     public string FilePath { get; set; }
 
-    /// <summary>
-    /// Gets or sets a list of column names which should be included in the results.
-    /// <para>When this is empty, it indicates all columns should be included.</para>
-    /// </summary>
-    ///
-    /// <remarks>
-    /// When the same value appears in both <see cref="IncludeColumnNames"/> and <see cref="ExcludeColumnNames"/>,
-    /// <see cref="ExcludeColumnNames"/> takes priority.
-    /// </remarks>
-    public string[] IncludeColumnNames { get; set; } = [];
-
     /// <summary> Gets or sets a list of column names which should be excluded from the results. </summary>
-    ///
-    /// <remarks> <inheritdoc cref="IncludeColumnNames" path="/remarks"/> </remarks>
     public string[] ExcludeColumnNames { get; set; } = [];
 
     /// <summary> Gets or sets a list of definitions specifying the type of data columns contain. </summary>

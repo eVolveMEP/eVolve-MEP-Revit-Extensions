@@ -48,7 +48,6 @@ internal class ExcelTableSource(ExcelSource source) : eVolve::eVolve.Core.Revit.
             {
                 var headers = worksheet.GetHeaderIndexes()
                     .Where(entry => !Source.ExcludeColumnNames.Contains(entry.Key))
-                    .Where(entry => !Source.IncludeColumnNames.Any() || Source.IncludeColumnNames.Contains(entry.Key))
                     .ToArray();
 
                 if (!headers.Any())
