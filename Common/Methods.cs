@@ -134,7 +134,7 @@ internal static class Methods
 
         if (!string.IsNullOrEmpty(helpUrl))
         {
-            void openHelpUrl() => System.Diagnostics.Process.Start(helpUrl);
+            void openHelpUrl() => StartProcess(helpUrl);
             form.HelpRequested += (_, e) =>
             {
                 e.Handled = true;
@@ -157,7 +157,7 @@ internal static class Methods
             linkToSourceLabel.ForeColor = System.Drawing.Color.Blue;
             linkToSourceLabel.Font = new System.Drawing.Font(linkToSourceLabel.Font, System.Drawing.FontStyle.Underline);
             linkToSourceLabel.Cursor = Cursors.Hand;
-            linkToSourceLabel.Click += (_, _) => System.Diagnostics.Process.Start("https://github.com/eVolveMEP/eVolve-MEP-Revit-Extensions");
+            linkToSourceLabel.Click += (_, _) => StartProcess("https://github.com/eVolveMEP/eVolve-MEP-Revit-Extensions");
         }
     }
 
@@ -214,5 +214,25 @@ internal static class Methods
     private static DialogResult ShowMessage(MessageBoxIcon icon, System.Windows.Forms.Form owner, string message, string title, MessageBoxButtons buttons = MessageBoxButtons.OK)
     {
         return MessageBox.Show(owner, message, title ?? owner?.Text ?? icon.ToString(), buttons, icon);
+    }
+
+    /// <summary>
+    /// Begins a process via <see cref="System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)"/>
+    /// with <see cref="System.Diagnostics.ProcessStartInfo.UseShellExecute"/> set to <see langword="true"/>.
+    /// </summary>
+    ///
+    /// <remarks>
+    /// In .NET Framework this was defaulted to <see langword="true"/>, however in .NET Core (Revit 2025+) it is
+    /// defaulted to <see langword="false"/>.
+    /// </remarks>
+    ///
+    /// <param name="fileName"> File path or website used in <see cref="System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)"/>.</param>
+    internal static void StartProcess(string fileName)
+    {
+        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+        {
+            FileName = fileName,
+            UseShellExecute = true,
+        });
     }
 }

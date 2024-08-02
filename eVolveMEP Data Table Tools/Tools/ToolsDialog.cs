@@ -86,7 +86,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         SQLConnectButton.Text = Resources.Connect;
         SQLConnectionStatusLabel.Text = Resources.NotConnected;
 
-        static void openHelpLink(object s1, EventArgs e1) => System.Diagnostics.Process.Start(((Label)s1).Tag.ToString());
+        static void openHelpLink(object s1, EventArgs e1) => StartProcess(((Label)s1).Tag.ToString());
         foreach (var helpLabel in new[] { DataTableExpressionHelpLabel, SQLConnectionStringHelpLabel })
         {
             helpLabel.Cursor = Cursors.Hand;

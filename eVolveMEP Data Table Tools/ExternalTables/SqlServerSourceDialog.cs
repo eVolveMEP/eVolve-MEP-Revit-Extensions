@@ -49,7 +49,7 @@ internal partial class SqlServerSourceDialog : System.Windows.Forms.Form
     ///
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Event information. </param>
-    private void ConnectionStringHelpLabel_Click(object sender, EventArgs e) => System.Diagnostics.Process.Start(ConnectionStringHelpLabel.Tag.ToString());
+    private void ConnectionStringHelpLabel_Click(object sender, EventArgs e) => StartProcess(ConnectionStringHelpLabel.Tag.ToString());
 
     /// <summary> Returns a new <see cref="SqlServerSource"/> based on the current input. </summary>
     public SqlServerSource GetSource()
