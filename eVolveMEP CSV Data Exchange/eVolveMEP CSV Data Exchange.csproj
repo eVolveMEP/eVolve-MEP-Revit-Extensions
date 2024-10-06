@@ -5,7 +5,7 @@
 		<Product>eVolve Revit Extensions</Product>
 		<Description>CSV file importer/exporter for use with the eVolve Revit product line.</Description>
 		<Copyright>Copyright © 2024 eVolve MEP, LLC</Copyright>
-		<Version>7.4.0.12073</Version>
+		<Version>8.0.0.08024</Version>
 		<Configurations>
 			eE Debug Revit 2022;
 			eE Debug Revit 2023;
