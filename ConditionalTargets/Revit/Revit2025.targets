@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <RevitExecutablePath>C:/Program Files/Autodesk/Revit 2025/Revit.exe</RevitExecutablePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autodesk-Revit-2025-SDK" Version="1.0.0">
+      <NoWarn>NU1701</NoWarn>
+      <IncludeAssets>all</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>

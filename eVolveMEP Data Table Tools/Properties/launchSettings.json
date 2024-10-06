@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Revit": {
+      "commandName": "Executable",
+      "executablePath": "$(RevitExecutablePath)"
+    }
+  }
+}

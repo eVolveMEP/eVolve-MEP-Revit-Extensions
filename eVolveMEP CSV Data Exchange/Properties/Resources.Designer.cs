@@ -225,6 +225,16 @@ namespace eVolve.CsvDataExchange.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CSV file contained no usable data..
         /// </summary>
         internal static string NoDataNotice {
@@ -312,6 +322,15 @@ namespace eVolve.CsvDataExchange.Revit.Properties {
         internal static string ValueMustBeSelectedError {
             get {
                 return ResourceManager.GetString("ValueMustBeSelectedError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View source code on GitHub.
+        /// </summary>
+        internal static string ViewSourceCodeOnGitHub {
+            get {
+                return ResourceManager.GetString("ViewSourceCodeOnGitHub", resourceCulture);
             }
         }
         

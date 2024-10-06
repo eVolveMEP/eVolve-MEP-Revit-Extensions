@@ -140,7 +140,6 @@
             // OK_Button
             // 
             resources.ApplyResources(this.OK_Button, "OK_Button");
-            this.OK_Button.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OK_Button.Name = "OK_Button";
             this.OK_Button.UseVisualStyleBackColor = true;
             // 
@@ -161,6 +160,7 @@
             // LogoPictureBox
             // 
             resources.ApplyResources(this.LogoPictureBox, "LogoPictureBox");
+            this.LogoPictureBox.Image = global::eVolve.CsvDataExchange.Revit.Properties.Resources.Logo;
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.TabStop = false;
             // 
@@ -184,7 +184,6 @@
             this.HelpLinkPictureBox.Image = global::eVolve.CsvDataExchange.Revit.Properties.Resources.Help_Medium_20x20;
             this.HelpLinkPictureBox.Name = "HelpLinkPictureBox";
             this.HelpLinkPictureBox.TabStop = false;
-            this.HelpLinkPictureBox.Click += new System.EventHandler(this.HelpLinkPictureBox_Click);
             // 
             // OpenConfigurationPictureBox
             // 
@@ -197,8 +196,6 @@
             // ViewSourceCodeLabel
             // 
             resources.ApplyResources(this.ViewSourceCodeLabel, "ViewSourceCodeLabel");
-            this.ViewSourceCodeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ViewSourceCodeLabel.ForeColor = System.Drawing.Color.Blue;
             this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
             // 
             // ConfigurationForm

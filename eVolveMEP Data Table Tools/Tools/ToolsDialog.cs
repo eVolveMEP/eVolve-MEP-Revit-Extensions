@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 eVolve MEP, LLC
+﻿// Copyright (c) 2024 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -10,25 +10,13 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace eVolve.DataTableTools.Revit;
+namespace eVolve.DataTableTools.Revit.Tools;
 
 /// <summary> Dialog for handling all operations. </summary>
 internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 {
     /// <summary> Gets the current Revit document. </summary>
     private Document Document { get; }
-
-    /// <summary> Gets a lookup of column data type display names (key) with each one's respective data type (value). </summary>
-    private static Dictionary<string, Type> ColumnDataTypeLookup { get; } = new()
-    {
-        { nameof(String), typeof(string) },
-        { nameof(Int32), typeof(int) },
-        { nameof(Int64), typeof(long) },
-        { nameof(Double), typeof(double) },
-        { nameof(Decimal), typeof(decimal) },
-        { nameof(Boolean), typeof(bool) },
-        { nameof(DateTime), typeof(DateTime) },
-    };
 
     /// <summary>
     /// Gets a lookup by data table name (key) of the active <see cref="SqlTableSettings"/> currently respresented on
@@ -52,10 +40,10 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
+        this.PrepDialog(Resources.ToolsButtonText, ToolsCommand.IconResource, ToolsCommand.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel);
+
         Document = document;
 
-        Text = Command.ButtonTextWithNoLineBreaks;
-        Icon = System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(Command.IconResource)).GetHicon());
         RefreshDataTables();
 
         // Capture the default values.
@@ -71,8 +59,8 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
         SQLConnectionStatusLabel.TextChanged += SQLConnectionStatusLabel_TextChanged;
 
-        ResetSelectedConfigurationButton.Text = string.Format(ResetSelectedConfigurationButton.Text, DataTableLabel.Text);
         ResetEntireConfigurationGroupBox.Text = string.Format(ResetEntireConfigurationGroupBox.Text, Text);
+        ResetSelectedConfigurationButton.Text = string.Format(ResetSelectedConfigurationButton.Text, DataTableLabel.Text);
 
         // TextChanged occurs before SelectedIndexChanged so consumers interested in the previous value need to consider this.
         DataTableComboBox.TextChanged += DataTableChangedToolsHandler;
@@ -84,11 +72,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             button.Click += EditSqlButton_Click;
         }
 
-        ViewSourceCodeLabel.Click += ViewSourceCodeHandler;
-
-        this.Shown += (_, _) => MinimumSize = Size;
-        this.FormClosing += ToolsDialog_FormClosing;
-        this.HelpRequested += ToolsDialog_HelpRequested;
+        FormClosing += ToolsDialog_FormClosing;
     }
 
     /// <summary> Loads saved configuration values into the editors. </summary>
@@ -102,7 +86,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         SQLConnectButton.Text = Resources.Connect;
         SQLConnectionStatusLabel.Text = Resources.NotConnected;
 
-        static void openHelpLink(object s1, EventArgs e1) => System.Diagnostics.Process.Start(((Label)s1).Tag.ToString());
+        static void openHelpLink(object s1, EventArgs e1) => StartProcess(((Label)s1).Tag.ToString());
         foreach (var helpLabel in new[] { DataTableExpressionHelpLabel, SQLConnectionStringHelpLabel })
         {
             helpLabel.Cursor = Cursors.Hand;
@@ -126,7 +110,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     {
         DataTableComboBox.Text = "";
         DataTableComboBox.Items.Clear();
-        DataTableComboBox.Items.AddRange(Document.GetTableNames());
+        DataTableComboBox.Items.AddRange(Document.GetTableNames(includeExternalTables: false));
     }
 
     /// <summary> Opens the Data Tables configuration dialog and refreshes available selections. </summary>
@@ -146,35 +130,10 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         }
     }
 
-    /// <summary> Opens help information when F1 is pressed on the form. </summary>
-    ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Help event information. </param>
-    private static void ToolsDialog_HelpRequested(object sender, HelpEventArgs e)
-    {
-        e.Handled = true;
-        OpenHelpLink();
-    }
-
-    /// <summary> Opens help information. </summary>
-    ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Event information. </param>
-    private void HelpLinkPictureBox_Click(object sender, EventArgs e)
-    {
-        OpenHelpLink();
-    }
-
-    /// <summary> Opens <see cref="Command.HelpLinkUrl"/> in the default application. </summary>
-    private static void OpenHelpLink()
-    {
-        System.Diagnostics.Process.Start(Command.HelpLinkUrl);
-    }
-
     #region Settings
 
     /// <summary> Gets the full pathname of the settings file store location on disk. </summary>
-    private static string SettingsFilePath { get; } = System.IO.Path.Combine(BaseSaveSettingsFileFolder, "Data Table Tools", "Settings.xml");
+    private static string SettingsFilePath { get; } = System.IO.Path.Combine(ApplicationConfigurationPath, "Settings.xml");
 
     /// <summary>
     /// Saves the saved options from <see cref="SettingsFilePath"/> into the form. If an error occurs, the user is

@@ -1,4 +1,4 @@
-# Copyright (c) 2023 eVolve MEP, LLC
+# Copyright (c) 2024 eVolve MEP, LLC
 # All rights reserved.
 #
 # This source code is licensed under the BSD-style license found in the
@@ -22,6 +22,10 @@ dotnet_diagnostic.CA1815.severity = none
 dotnet_diagnostic.CA1819.severity = none
 # CA1822: Mark members as static
 dotnet_diagnostic.CA1822.severity = suggestion
+# CA1860: Avoid using 'Enumerable.Any()' extension method
+dotnet_diagnostic.CA1860.severity = none
+# CA2100: Review SQL queries for security vulnerabilities
+dotnet_diagnostic.CA2100.severity = none
 # CA2213: Disposable fields should be disposed
 dotnet_diagnostic.CA2213.severity = none
 # CA2229: Implement serialization constructors
@@ -32,80 +36,10 @@ dotnet_diagnostic.CA2235.severity = none
 dotnet_diagnostic.IDE0067.severity = none
 # IDE0068: Use recommended dispose pattern
 dotnet_diagnostic.IDE0068.severity = none
-# IDE0079:Remove unnecessary suppression
+# IDE0079: Remove unnecessary suppression
 dotnet_diagnostic.IDE0079.severity = none
-
-## Roslynator
-
-# RCS1033 Remove redundant 'false ||' / 'true &&'
-dotnet_diagnostic.RCS1033.severity = none
-# RCS1036 Remove redundant empty line
-dotnet_diagnostic.RCS1036.severity = none
-# RCS1037 Remove trailing white-space
-dotnet_diagnostic.RCS1037.severity = none
-# RCS1040 Remove empty 'else' clause
-dotnet_diagnostic.RCS1040.severity = suggestion
-# RCS1052 Declare each attribute separately
-dotnet_diagnostic.RCS1052.severity = warning
-# RCS1055 Avoid semicolon at the end of declaration
-dotnet_diagnostic.RCS1055.severity = suggestion
-# RCS1061 Merge 'if' with nested 'if'
-dotnet_diagnostic.RCS1061.severity = suggestion
-# RCS1066 Remove empty 'finally' clause
-dotnet_diagnostic.RCS1066.severity = suggestion
-# RCS1077 Optimize LINQ method call
-dotnet_diagnostic.RCS1077.severity = none
-# RCS1078 Use "" instead of string.Empty
-dotnet_diagnostic.RCS1078.severity = suggestion
-# RCS1080 Use 'Length' property instead of 'Any' method.
-dotnet_diagnostic.RCS1080.severity = none
-# RCS1081 Split variable declaration
-dotnet_diagnostic.RCS1081.severity = suggestion
-# RCS1089 Use ++/-- operator instead of assignment
-dotnet_diagnostic.RCS1089.severity = none
-# RCS1091 Remove empty region
-dotnet_diagnostic.RCS1091.severity = suggestion
-# RCS1096 Convert 'HasFlag' call to bitwise operation
-dotnet_diagnostic.RCS1096.severity = none
-# RCS1112 Combine 'Enumerable.Where' method chain
-dotnet_diagnostic.RCS1112.severity = none
-# RCS1118 Mark local variable as const
-dotnet_diagnostic.RCS1118.severity = none
-# RCS1133 Remove redundant Dispose/Close call
-dotnet_diagnostic.RCS1133.severity = suggestion
-# RCS1134 Remove redundant statement
-dotnet_diagnostic.RCS1134.severity = suggestion
-# RCS1140 Add exception to documentation comment
-dotnet_diagnostic.RCS1140.severity = warning
-# RCS1141 Add element to documentation comment
-dotnet_diagnostic.RCS1141.severity = warning
-# RCS1159 Use EventHandler<T>
-dotnet_diagnostic.RCS1159.severity = none
-# RCS1162 Avoid chain of assignments
-dotnet_diagnostic.RCS1162.severity = suggestion
-# RCS1163 Unused parameter
-#   NOTE: Redundany with IDE0060
-dotnet_diagnostic.RCS1163.severity = none
-# RCS1175 Unused this parameter
-#   NOTE: Redundany with IDE0060
-dotnet_diagnostic.RCS1175.severity = none
-# RCS1181 Convert comment to documentation comment
-dotnet_diagnostic.RCS1181.severity = suggestion
-# RCS1194 Implement exception constructors
-dotnet_diagnostic.RCS1194.severity = none
-# RCS1198 Avoid unnecessary boxing of value type
-#   NOTE: Conflicts with VS flag of redundant call
-dotnet_diagnostic.RCS1198.severity = none
-# RCS1208 Reduce 'if' nesting
-dotnet_diagnostic.RCS1208.severity = none
-# RCS1211 Remove unnecessary 'else'
-dotnet_diagnostic.RCS1211.severity = suggestion
-# RCS1228 Unused element in documentation comment
-dotnet_diagnostic.RCS1228.severity = warning
-# RCS1246 Use element access
-dotnet_diagnostic.RCS1246.severity = none
-
-## /Roslynator
+# IDE0305: Simplify collection initialization
+dotnet_diagnostic.IDE0305.severity = none
 
 ## /Editor Warning Suppressions
 

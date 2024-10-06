@@ -1,4 +1,4 @@
-﻿namespace eVolve.DataTableTools.Revit;
+﻿namespace eVolve.DataTableTools.Revit.Tools;
 
 partial class TextInputDialog
 {
@@ -52,13 +52,13 @@ partial class TextInputDialog
             // LogoPictureBox
             // 
             resources.ApplyResources(this.LogoPictureBox, "LogoPictureBox");
+            this.LogoPictureBox.Image = global::eVolve.DataTableTools.Revit.Properties.Resources.Logo;
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.TabStop = false;
             // 
             // OKButton
             // 
             resources.ApplyResources(this.OKButton, "OKButton");
-            this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OKButton.Name = "OKButton";
             this.OKButton.UseVisualStyleBackColor = true;
             // 
@@ -71,8 +71,10 @@ partial class TextInputDialog
             // 
             // TextInputDialog
             // 
+            this.AcceptButton = this.OKButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.Cancel_Button;
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.LogoPictureBox);
             this.Controls.Add(this.OKButton);

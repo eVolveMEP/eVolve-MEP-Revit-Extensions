@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 eVolve MEP, LLC
+﻿// Copyright (c) 2024 eVolve MEP, LLC
 // All rights reserved.
 //
 // This source code is licensed under the BSD-style license found in the
@@ -11,11 +11,17 @@ namespace eVolve.ExtensionsCommon.Revit;
 /// <summary> Common methods useful across all projects in this solution. </summary>
 internal static class Methods
 {
-    /// <summary> Gets the <paramref name="buttonText"/> as a single line text with all linebreaks removed. </summary>
+    /// <summary> Gets the <paramref name="text"/> with all line breaks normalized to a <c>\n</c> character. </summary>
     ///
-    /// <param name="buttonText"> The button text as it appears in the Revit ribbon. </param>
-    internal static string GetButtonTextWithNoLineBreaks(string buttonText) => buttonText
-        .Replace("\r", " ")
+    /// <remarks> This is typically needed when making <see cref="SplitButton"/> text so it appears "correctly". </remarks>
+    ///
+    /// <param name="text"> The button text as it appears in the Revit ribbon. </param>
+    internal static string GetTextWithNormalizedLineBreaks(string text) => string.Join("\n", text.Split(["\r\n", "\r", "\n"], StringSplitOptions.RemoveEmptyEntries));
+
+    /// <summary> Gets the <paramref name="text"/> as a single line text with all linebreaks removed. </summary>
+    ///
+    /// <param name="text"> Text to process. </param>
+    internal static string GetTextWithNoLineBreaks(string text) => GetTextWithNormalizedLineBreaks(text)
         .Replace("\n", " ")
         .Replace("  ", " ")
         .Replace("  ", " ");
@@ -33,12 +39,9 @@ internal static class Methods
         return System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
     }
 
-    /// <summary> Gets the base directory where extensions should persist their settings. </summary>
-    internal static string BaseSaveSettingsFileFolder { get; } = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "eVolve");
-
     /// <summary>
     /// Loads the provided <paramref name="filePath"/> from disk and deserializes it to <typeparamref name="TSettings"/>.
-    /// <para>If the operation fails, <c>null</c> is returned and the user is notified.</para>
+    /// <para>If the operation fails, <see langword="null"/> is returned and the user is notified.</para>
     /// </summary>
     ///
     /// <typeparam name="TSettings"> Serializable settings object. </typeparam>
@@ -64,7 +67,7 @@ internal static class Methods
     /// <summary>
     /// Saves the provided <paramref name="settings"/> to <paramref name="filePath"/> and returns if the operation was
     /// successful.
-    /// <para>The user is notified if any error occur.</para>
+    /// <para>The user is notified if any errors occur.</para>
     /// </summary>
     ///
     /// <typeparam name="TSettings"> Type of the settings. </typeparam>
@@ -89,6 +92,72 @@ internal static class Methods
         {
             ShowErrorMessage(null, $"{Resources.SettingsSaveErrorNotice}\n{filePath}\n\n{ex.Message}", Resources.FileSaveFailure);
             return false;
+        }
+    }
+
+    /// <summary> Prepares the specified <paramref name="form"/> for display in a standard/consistent way. </summary>
+    ///
+    /// <param name="form"> The form to manipulate. </param>
+    /// <param name="dialogText"> (Optional) <paramref name="form"/> dialog title text. </param>
+    /// <param name="iconResource"> (Optional) Icon resource to set. If not provided, the <paramref name="form"/>'s owner icon is used. </param>
+    /// <param name="helpUrl"> (Optional) URL for help information for <paramref name="form"/>. </param>
+    /// <param name="helpIcon"> (Optional) Help icon displayed on the <paramref name="form"/>. </param>
+    /// <param name="linkToSourceLabel"> (Optional) Label which is used to provide a link to the source code. </param>
+    internal static void PrepDialog(this System.Windows.Forms.Form form, string dialogText = null, System.IO.Stream iconResource = null, string helpUrl = null, PictureBox helpIcon = null, Label linkToSourceLabel = null)
+    {
+        // Perform these actions within an event so the parent (if any) will be defined at the time of execution.
+        form.Load += (_, _) =>
+        {
+            if (dialogText != null)
+            {
+                form.Text = GetTextWithNoLineBreaks(dialogText);
+            }
+
+            form.Icon = iconResource != null
+                ? System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(iconResource)).GetHicon())
+                : form.Owner?.Icon;
+
+            if (form.AcceptButton != null)
+            {
+                form.AcceptButton.DialogResult = DialogResult.OK;
+            }
+            if (form.CancelButton != null)
+            {
+                form.CancelButton.DialogResult = DialogResult.Cancel;
+            }
+        };
+
+        form.Shown += (_, _) => form.MinimumSize = form.Size;
+
+        // This will center within the Revit document when no owner is specified.
+        form.StartPosition = FormStartPosition.CenterParent;
+
+        if (!string.IsNullOrEmpty(helpUrl))
+        {
+            void openHelpUrl() => StartProcess(helpUrl);
+            form.HelpRequested += (_, e) =>
+            {
+                e.Handled = true;
+                openHelpUrl();
+            };
+
+            if (helpIcon != null)
+            {
+                helpIcon.Click += (_, _) => openHelpUrl();
+            }
+        }
+        else if (helpIcon != null)
+        {
+            helpIcon.Visible = false;
+        }
+
+        if (linkToSourceLabel != null)
+        {
+            linkToSourceLabel.Text = Resources.ViewSourceCodeOnGitHub;
+            linkToSourceLabel.ForeColor = System.Drawing.Color.Blue;
+            linkToSourceLabel.Font = new System.Drawing.Font(linkToSourceLabel.Font, System.Drawing.FontStyle.Underline);
+            linkToSourceLabel.Cursor = Cursors.Hand;
+            linkToSourceLabel.Click += (_, _) => StartProcess("https://github.com/eVolveMEP/eVolve-MEP-Revit-Extensions");
         }
     }
 
@@ -147,9 +216,23 @@ internal static class Methods
         return MessageBox.Show(owner, message, title ?? owner?.Text ?? icon.ToString(), buttons, icon);
     }
 
-    /// <summary> Opens a browser to the page containing the source code. </summary>
+    /// <summary>
+    /// Begins a process via <see cref="System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)"/>
+    /// with <see cref="System.Diagnostics.ProcessStartInfo.UseShellExecute"/> set to <see langword="true"/>.
+    /// </summary>
     ///
-    /// <param name="sender"> Source of the event. </param>
-    /// <param name="e"> Event information. </param>
-    internal static void ViewSourceCodeHandler(object sender, EventArgs e) => System.Diagnostics.Process.Start("https://github.com/eVolveMEP/eVolve-MEP-Revit-Extensions");
+    /// <remarks>
+    /// In .NET Framework this was defaulted to <see langword="true"/>, however in .NET Core (Revit 2025+) it is
+    /// defaulted to <see langword="false"/>.
+    /// </remarks>
+    ///
+    /// <param name="fileName"> File path or website used in <see cref="System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)"/>.</param>
+    internal static void StartProcess(string fileName)
+    {
+        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+        {
+            FileName = fileName,
+            UseShellExecute = true,
+        });
+    }
 }

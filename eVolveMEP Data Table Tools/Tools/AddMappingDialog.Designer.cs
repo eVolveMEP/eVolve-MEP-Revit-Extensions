@@ -1,4 +1,4 @@
-﻿namespace eVolve.DataTableTools.Revit;
+﻿namespace eVolve.DataTableTools.Revit.Tools;
 
 partial class AddMappingDialog
 {
@@ -58,20 +58,19 @@ partial class AddMappingDialog
             // Cancel_Button
             // 
             resources.ApplyResources(this.Cancel_Button, "Cancel_Button");
-            this.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.UseVisualStyleBackColor = true;
             // 
             // LogoPictureBox
             // 
             resources.ApplyResources(this.LogoPictureBox, "LogoPictureBox");
+            this.LogoPictureBox.Image = global::eVolve.DataTableTools.Revit.Properties.Resources.Logo;
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.TabStop = false;
             // 
             // OKButton
             // 
             resources.ApplyResources(this.OKButton, "OKButton");
-            this.OKButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OKButton.Name = "OKButton";
             this.OKButton.UseVisualStyleBackColor = true;
             // 
@@ -91,8 +90,10 @@ partial class AddMappingDialog
             // 
             // AddMappingDialog
             // 
+            this.AcceptButton = this.OKButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.Cancel_Button;
             this.Controls.Add(this.SQLTableColumnGroupBox);
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.LogoPictureBox);

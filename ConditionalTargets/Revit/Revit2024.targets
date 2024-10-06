@@ -1,0 +1,11 @@
+<Project>
+    <PropertyGroup>
+        <RevitExecutablePath>C:/Program Files/Autodesk/Revit 2024/Revit.exe</RevitExecutablePath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Autodesk-Revit-2024-SDK" Version="1.0.0">
+            <IncludeAssets>all</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+</Project>
