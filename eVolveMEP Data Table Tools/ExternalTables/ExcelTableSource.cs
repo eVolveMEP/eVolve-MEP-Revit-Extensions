@@ -62,14 +62,26 @@ internal class ExcelTableSource(ExcelSource source) : eVolve::eVolve.Core.Revit.
                     table.Columns[headerEntry.Key].DefaultValue = type == typeof(string) ? "" : Activator.CreateInstance(type);
                 }
 
-                for (var i = 2; i <= worksheet.GetMaxRow(headers.First().Value); i++)
+                var excelData = (object[,])worksheet.GetRange(2, 1, worksheet.GetMaxRow(headers.First().Value), headers.Last().Value).Value;
+                for (var i = 1; i <= excelData.GetLength(0); i++)
                 {
                     var rowData = table.NewRow();
                     foreach (var headerEntry in headers)
                     {
+                        var cellData = excelData[i, headerEntry.Value];
+
+                        // Skip known failures.
+                        if (table.Columns[headerEntry.Key].DataType is { } fieldType
+                            && fieldType != typeof(string)
+                            && cellData is string stringValue
+                            && string.IsNullOrWhiteSpace(stringValue))
+                        {
+                            continue;
+                        }
+
                         try
                         {
-                            rowData[headerEntry.Key] = worksheet.GetValue(i, headerEntry.Value);
+                            rowData[headerEntry.Key] = cellData;
                         }
                         catch
                         {
