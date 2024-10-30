@@ -1,6 +1,6 @@
 ﻿namespace eVolve.DataTableTools.Revit.ExternalTables;
 
-partial class ExcelSourceDialog
+partial class TabularSourceDialog
 {
     /// <summary>
     /// Required designer variable.
@@ -28,7 +28,7 @@ partial class ExcelSourceDialog
     /// </summary>
     private void InitializeComponent()
     {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExcelSourceDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TabularSourceDialog));
             this.ExternalTableSourceBaseControl = new eVolve.DataTableTools.Revit.ExternalTables.ExternalTableSourceBaseControl();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.Cancel_Button = new System.Windows.Forms.Button();

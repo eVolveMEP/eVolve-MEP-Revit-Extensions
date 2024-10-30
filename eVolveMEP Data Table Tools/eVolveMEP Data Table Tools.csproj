@@ -171,6 +171,7 @@
 		<Reference Include="System.Windows.Forms" />
 		<Reference Include="System.Data.DataSetExtensions" />
 		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="Microsoft.VisualBasic" />
 		<Reference Include="System.Data" />
 		<Reference Include="System.Xml" />
 		<Reference Include="WindowsBase" />
@@ -192,12 +193,14 @@
 			<Link>Methods.cs</Link>
 		</Compile>
 		<Compile Include="ApplicationMethods.cs" />
-		<Compile Include="ExternalTables\ExcelSourceDialog.cs">
+		<Compile Include="ExternalTables\CsvTableSource.cs" />
+		<Compile Include="ExternalTables\TabularSourceDialog.cs">
 			<SubType>Form</SubType>
 		</Compile>
-		<Compile Include="ExternalTables\ExcelSourceDialog.Designer.cs">
-			<DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+		<Compile Include="ExternalTables\TabularSourceDialog.Designer.cs">
+			<DependentUpon>TabularSourceDialog.cs</DependentUpon>
 		</Compile>
+		<Compile Include="ExternalTables\DataTableSource.cs" />
 		<Compile Include="ExternalTables\SqlServerTableSource .cs" />
 		<Compile Include="ExternalTables\ExcelTableSource.cs" />
 		<Compile Include="ExternalTables\ExternalTablesMethods.cs" />
@@ -213,6 +216,12 @@
 		</Compile>
 		<Compile Include="ExternalTables\SqlServerSourceDialog.Designer.cs">
 			<DependentUpon>SqlServerSourceDialog.cs</DependentUpon>
+		</Compile>
+		<Compile Include="ExternalTables\DataTableSourceDialog.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Include="ExternalTables\DataTableSourceDialog.Designer.cs">
+		  <DependentUpon>DataTableSourceDialog.cs</DependentUpon>
 		</Compile>
 		<Compile Include="Tools\AddMappingDialog.cs">
 			<SubType>Form</SubType>
@@ -263,11 +272,17 @@
 		</None>
 	</ItemGroup>
 	<ItemGroup>
-		<EmbeddedResource Include="ExternalTables\ExcelSourceDialog.fr-fr.resx">
-			<DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+		<EmbeddedResource Include="ExternalTables\DataTableSourceDialog.fr-fr.resx">
+		  <DependentUpon>DataTableSourceDialog.cs</DependentUpon>
 		</EmbeddedResource>
-		<EmbeddedResource Include="ExternalTables\ExcelSourceDialog.resx">
-			<DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+		<EmbeddedResource Include="ExternalTables\DataTableSourceDialog.resx">
+			<DependentUpon>DataTableSourceDialog.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="ExternalTables\TabularSourceDialog.fr-fr.resx">
+			<DependentUpon>TabularSourceDialog.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="ExternalTables\TabularSourceDialog.resx">
+			<DependentUpon>TabularSourceDialog.cs</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Include="ExternalTables\ExternalTableSourceBaseControl.fr-fr.resx">
 			<DependentUpon>ExternalTableSourceBaseControl.cs</DependentUpon>

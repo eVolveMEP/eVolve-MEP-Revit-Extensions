@@ -117,25 +117,995 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="ExcelDeleteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ExcelDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 353</value>
+  </data>
+  <data name="ExcelDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ExcelDeleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ExcelDeleteButton.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;ExcelDeleteButton.Name" xml:space="preserve">
+    <value>ExcelDeleteButton</value>
+  </data>
+  <data name="&gt;&gt;ExcelDeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelDeleteButton.Parent" xml:space="preserve">
+    <value>ExcelTabPage</value>
+  </data>
+  <data name="&gt;&gt;ExcelDeleteButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ExcelEditButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="ExcelEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 353</value>
+  </data>
+  <data name="ExcelEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="ExcelEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="ExcelEditButton.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;ExcelEditButton.Name" xml:space="preserve">
+    <value>ExcelEditButton</value>
+  </data>
+  <data name="&gt;&gt;ExcelEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelEditButton.Parent" xml:space="preserve">
+    <value>ExcelTabPage</value>
+  </data>
+  <data name="&gt;&gt;ExcelEditButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ExcelNewButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="ExcelNewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 353</value>
+  </data>
+  <data name="ExcelNewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="ExcelNewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ExcelNewButton.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="&gt;&gt;ExcelNewButton.Name" xml:space="preserve">
+    <value>ExcelNewButton</value>
+  </data>
+  <data name="&gt;&gt;ExcelNewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelNewButton.Parent" xml:space="preserve">
+    <value>ExcelTabPage</value>
+  </data>
+  <data name="&gt;&gt;ExcelNewButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ExcelDataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <metadata name="ExcelNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="ExcelNameColumn.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <metadata name="ExcelFilePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="ExcelFilePathColumn.HeaderText" xml:space="preserve">
+    <value>File Path</value>
+  </data>
   <metadata name="ExcelCachedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ExcelDescriptoinColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="ExcelCachedColumn.HeaderText" xml:space="preserve">
+    <value>Cached</value>
+  </data>
+  <metadata name="ExcelDescriptionColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="ExcelDescriptionColumn.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ExcelDataGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="ExcelDataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>756, 341</value>
+  </data>
+  <data name="ExcelDataGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ExcelDataGridView.Name" xml:space="preserve">
+    <value>ExcelDataGridView</value>
+  </data>
+  <data name="&gt;&gt;ExcelDataGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelDataGridView.Parent" xml:space="preserve">
+    <value>ExcelTabPage</value>
+  </data>
+  <data name="&gt;&gt;ExcelDataGridView.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ExcelTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="ExcelTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="ExcelTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>768, 382</value>
+  </data>
+  <data name="ExcelTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ExcelTabPage.Text" xml:space="preserve">
+    <value>Source from Excel</value>
+  </data>
+  <data name="&gt;&gt;ExcelTabPage.Name" xml:space="preserve">
+    <value>ExcelTabPage</value>
+  </data>
+  <data name="&gt;&gt;ExcelTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelTabPage.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;ExcelTabPage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CsvDeleteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="CsvDeleteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CsvDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 353</value>
+  </data>
+  <data name="CsvDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="CsvDeleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="CsvDeleteButton.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;CsvDeleteButton.Name" xml:space="preserve">
+    <value>CsvDeleteButton</value>
+  </data>
+  <data name="&gt;&gt;CsvDeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvDeleteButton.Parent" xml:space="preserve">
+    <value>CsvTabPage</value>
+  </data>
+  <data name="&gt;&gt;CsvDeleteButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CsvEditButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="CsvEditButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CsvEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 353</value>
+  </data>
+  <data name="CsvEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="CsvEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="CsvEditButton.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;CsvEditButton.Name" xml:space="preserve">
+    <value>CsvEditButton</value>
+  </data>
+  <data name="&gt;&gt;CsvEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvEditButton.Parent" xml:space="preserve">
+    <value>CsvTabPage</value>
+  </data>
+  <data name="&gt;&gt;CsvEditButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CsvNewButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="CsvNewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CsvNewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 353</value>
+  </data>
+  <data name="CsvNewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="CsvNewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="CsvNewButton.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="&gt;&gt;CsvNewButton.Name" xml:space="preserve">
+    <value>CsvNewButton</value>
+  </data>
+  <data name="&gt;&gt;CsvNewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvNewButton.Parent" xml:space="preserve">
+    <value>CsvTabPage</value>
+  </data>
+  <data name="&gt;&gt;CsvNewButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CsvDataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <metadata name="CsvNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="CsvNameColumn.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <metadata name="CsvFilePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="CsvFilePathColumn.HeaderText" xml:space="preserve">
+    <value>File Path</value>
+  </data>
+  <metadata name="CsvCachedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="CsvCachedColumn.HeaderText" xml:space="preserve">
+    <value>Cached</value>
+  </data>
+  <metadata name="CsvDescriptionColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="CsvDescriptionColumn.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CsvDataGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="CsvDataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>756, 341</value>
+  </data>
+  <data name="CsvDataGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CsvDataGridView.Name" xml:space="preserve">
+    <value>CsvDataGridView</value>
+  </data>
+  <data name="&gt;&gt;CsvDataGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvDataGridView.Parent" xml:space="preserve">
+    <value>CsvTabPage</value>
+  </data>
+  <data name="&gt;&gt;CsvDataGridView.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CsvTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="CsvTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="CsvTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>768, 382</value>
+  </data>
+  <data name="CsvTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="CsvTabPage.Text" xml:space="preserve">
+    <value>Source from CSV</value>
+  </data>
+  <data name="&gt;&gt;CsvTabPage.Name" xml:space="preserve">
+    <value>CsvTabPage</value>
+  </data>
+  <data name="&gt;&gt;CsvTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvTabPage.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;CsvTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SqlDeleteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="SqlDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 353</value>
+  </data>
+  <data name="SqlDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="SqlDeleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SqlDeleteButton.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;SqlDeleteButton.Name" xml:space="preserve">
+    <value>SqlDeleteButton</value>
+  </data>
+  <data name="&gt;&gt;SqlDeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SqlDeleteButton.Parent" xml:space="preserve">
+    <value>SqlTabPage</value>
+  </data>
+  <data name="&gt;&gt;SqlDeleteButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SqlEditButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="SqlEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 353</value>
+  </data>
+  <data name="SqlEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="SqlEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SqlEditButton.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;SqlEditButton.Name" xml:space="preserve">
+    <value>SqlEditButton</value>
+  </data>
+  <data name="&gt;&gt;SqlEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SqlEditButton.Parent" xml:space="preserve">
+    <value>SqlTabPage</value>
+  </data>
+  <data name="&gt;&gt;SqlEditButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SqlNewButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="SqlNewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 353</value>
+  </data>
+  <data name="SqlNewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="SqlNewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SqlNewButton.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="&gt;&gt;SqlNewButton.Name" xml:space="preserve">
+    <value>SqlNewButton</value>
+  </data>
+  <data name="&gt;&gt;SqlNewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SqlNewButton.Parent" xml:space="preserve">
+    <value>SqlTabPage</value>
+  </data>
+  <data name="&gt;&gt;SqlNewButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SqlDataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <metadata name="SqlNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="SqlNameColumn.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <metadata name="SqlCachedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="SqlCachedColumn.HeaderText" xml:space="preserve">
+    <value>Cached</value>
+  </data>
   <metadata name="SqlDescriptionColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="SqlDescriptionColumn.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="SqlDataGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="SqlDataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>756, 341</value>
+  </data>
+  <data name="SqlDataGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SqlDataGridView.Name" xml:space="preserve">
+    <value>SqlDataGridView</value>
+  </data>
+  <data name="&gt;&gt;SqlDataGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SqlDataGridView.Parent" xml:space="preserve">
+    <value>SqlTabPage</value>
+  </data>
+  <data name="&gt;&gt;SqlDataGridView.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SqlTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="SqlTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="SqlTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>768, 382</value>
+  </data>
+  <data name="SqlTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SqlTabPage.Text" xml:space="preserve">
+    <value>Source from SQL Server</value>
+  </data>
+  <data name="&gt;&gt;SqlTabPage.Name" xml:space="preserve">
+    <value>SqlTabPage</value>
+  </data>
+  <data name="&gt;&gt;SqlTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SqlTabPage.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;SqlTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="DataTableDeleteButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="DataTableDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 353</value>
+  </data>
+  <data name="DataTableDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="DataTableDeleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="DataTableDeleteButton.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;DataTableDeleteButton.Name" xml:space="preserve">
+    <value>DataTableDeleteButton</value>
+  </data>
+  <data name="&gt;&gt;DataTableDeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataTableDeleteButton.Parent" xml:space="preserve">
+    <value>DataTableTabPage</value>
+  </data>
+  <data name="&gt;&gt;DataTableDeleteButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="DataTableEditButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="DataTableEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>97, 353</value>
+  </data>
+  <data name="DataTableEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="DataTableEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="DataTableEditButton.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;DataTableEditButton.Name" xml:space="preserve">
+    <value>DataTableEditButton</value>
+  </data>
+  <data name="&gt;&gt;DataTableEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataTableEditButton.Parent" xml:space="preserve">
+    <value>DataTableTabPage</value>
+  </data>
+  <data name="&gt;&gt;DataTableEditButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DataTableNewButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="DataTableNewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 353</value>
+  </data>
+  <data name="DataTableNewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 23</value>
+  </data>
+  <data name="DataTableNewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="DataTableNewButton.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="&gt;&gt;DataTableNewButton.Name" xml:space="preserve">
+    <value>DataTableNewButton</value>
+  </data>
+  <data name="&gt;&gt;DataTableNewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataTableNewButton.Parent" xml:space="preserve">
+    <value>DataTableTabPage</value>
+  </data>
+  <data name="&gt;&gt;DataTableNewButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="DataTableDataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <metadata name="DataTableNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataTableNameColumn.HeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <metadata name="DataTableFilePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataTableFilePathColumn.HeaderText" xml:space="preserve">
+    <value>File Path</value>
+  </data>
+  <metadata name="DataTableCachedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataTableCachedColumn.HeaderText" xml:space="preserve">
+    <value>Cached</value>
+  </data>
+  <metadata name="DataTableDescriptionColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataTableDescriptionColumn.HeaderText" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DataTableDataGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="DataTableDataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>756, 341</value>
+  </data>
+  <data name="DataTableDataGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;DataTableDataGridView.Name" xml:space="preserve">
+    <value>DataTableDataGridView</value>
+  </data>
+  <data name="&gt;&gt;DataTableDataGridView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataTableDataGridView.Parent" xml:space="preserve">
+    <value>DataTableTabPage</value>
+  </data>
+  <data name="&gt;&gt;DataTableDataGridView.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="DataTableTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="DataTableTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="DataTableTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>768, 382</value>
+  </data>
+  <data name="DataTableTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="DataTableTabPage.Text" xml:space="preserve">
+    <value>Source from Serialized Data Table</value>
+  </data>
+  <data name="&gt;&gt;DataTableTabPage.Name" xml:space="preserve">
+    <value>DataTableTabPage</value>
+  </data>
+  <data name="&gt;&gt;DataTableTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataTableTabPage.Parent" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;DataTableTabPage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>776, 408</value>
+  </data>
+  <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Name" xml:space="preserve">
+    <value>TabControl</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="LogoPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="LogoPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LogoPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 497</value>
+  </data>
+  <data name="LogoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 23</value>
+  </data>
+  <data name="LogoPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="LogoPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;LogoPictureBox.Name" xml:space="preserve">
+    <value>LogoPictureBox</value>
+  </data>
+  <data name="&gt;&gt;LogoPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogoPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LogoPictureBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="OKButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="OKButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>476, 497</value>
+  </data>
+  <data name="OKButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="OKButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="OKButton.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;OKButton.Name" xml:space="preserve">
+    <value>OKButton</value>
+  </data>
+  <data name="&gt;&gt;OKButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OKButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;OKButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="Cancel_Button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="Cancel_Button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>582, 497</value>
+  </data>
+  <data name="Cancel_Button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="Cancel_Button.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="Cancel_Button.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;Cancel_Button.Name" xml:space="preserve">
+    <value>Cancel_Button</value>
+  </data>
+  <data name="&gt;&gt;Cancel_Button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Cancel_Button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Cancel_Button.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ApplyButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="ApplyButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>688, 497</value>
+  </data>
+  <data name="ApplyButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="ApplyButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ApplyButton.Text" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="&gt;&gt;ApplyButton.Name" xml:space="preserve">
+    <value>ApplyButton</value>
+  </data>
+  <data name="&gt;&gt;ApplyButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ApplyButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ApplyButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ViewSourceCodeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="ViewSourceCodeLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ViewSourceCodeLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ViewSourceCodeLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 502</value>
+  </data>
+  <data name="ViewSourceCodeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 13</value>
+  </data>
+  <data name="ViewSourceCodeLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ViewSourceCodeLabel.Text" xml:space="preserve">
+    <value>ViewSourceCodeLabel</value>
+  </data>
+  <data name="&gt;&gt;ViewSourceCodeLabel.Name" xml:space="preserve">
+    <value>ViewSourceCodeLabel</value>
+  </data>
+  <data name="&gt;&gt;ViewSourceCodeLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ViewSourceCodeLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ViewSourceCodeLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ConfigLocationLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="ConfigLocationLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ConfigLocationLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 423</value>
+  </data>
+  <data name="ConfigLocationLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 13</value>
+  </data>
+  <data name="ConfigLocationLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="ConfigLocationLabel.Text" xml:space="preserve">
+    <value>Current configuration location: {0}</value>
+  </data>
+  <data name="&gt;&gt;ConfigLocationLabel.Name" xml:space="preserve">
+    <value>ConfigLocationLabel</value>
+  </data>
+  <data name="&gt;&gt;ConfigLocationLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ConfigLocationLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ConfigLocationLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 453</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>449, 26</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.Text" xml:space="preserve">
+    <value>This is a global/standards path. Any changes will apply to all installations referencing this path.
+A reload of Revit will be required for other installations to apply any updated settings.</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigInfoLabel.Name" xml:space="preserve">
+    <value>GlobalConfigInfoLabel</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigInfoLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigInfoLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigInfoLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="HelpLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="HelpLinkPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="HelpLinkPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>780, -1</value>
+  </data>
+  <data name="HelpLinkPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="HelpLinkPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;HelpLinkPictureBox.Name" xml:space="preserve">
+    <value>HelpLinkPictureBox</value>
+  </data>
+  <data name="&gt;&gt;HelpLinkPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HelpLinkPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;HelpLinkPictureBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 532</value>
+  </data>
+  <data name="&gt;&gt;ExcelNameColumn.Name" xml:space="preserve">
+    <value>ExcelNameColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelFilePathColumn.Name" xml:space="preserve">
+    <value>ExcelFilePathColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelFilePathColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelCachedColumn.Name" xml:space="preserve">
+    <value>ExcelCachedColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelCachedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelDescriptionColumn.Name" xml:space="preserve">
+    <value>ExcelDescriptionColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelDescriptionColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SqlNameColumn.Name" xml:space="preserve">
+    <value>SqlNameColumn</value>
+  </data>
+  <data name="&gt;&gt;SqlNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SqlCachedColumn.Name" xml:space="preserve">
+    <value>SqlCachedColumn</value>
+  </data>
+  <data name="&gt;&gt;SqlCachedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SqlDescriptionColumn.Name" xml:space="preserve">
+    <value>SqlDescriptionColumn</value>
+  </data>
+  <data name="&gt;&gt;SqlDescriptionColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataTableNameColumn.Name" xml:space="preserve">
+    <value>DataTableNameColumn</value>
+  </data>
+  <data name="&gt;&gt;DataTableNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataTableFilePathColumn.Name" xml:space="preserve">
+    <value>DataTableFilePathColumn</value>
+  </data>
+  <data name="&gt;&gt;DataTableFilePathColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataTableCachedColumn.Name" xml:space="preserve">
+    <value>DataTableCachedColumn</value>
+  </data>
+  <data name="&gt;&gt;DataTableCachedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataTableDescriptionColumn.Name" xml:space="preserve">
+    <value>DataTableDescriptionColumn</value>
+  </data>
+  <data name="&gt;&gt;DataTableDescriptionColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvNameColumn.Name" xml:space="preserve">
+    <value>CsvNameColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvFilePathColumn.Name" xml:space="preserve">
+    <value>CsvFilePathColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvFilePathColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvCachedColumn.Name" xml:space="preserve">
+    <value>CsvCachedColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvCachedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvDescriptionColumn.Name" xml:space="preserve">
+    <value>CsvDescriptionColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvDescriptionColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ExternalTablesConfigDialog</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

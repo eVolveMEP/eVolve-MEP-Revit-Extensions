@@ -127,6 +127,15 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CSV Files.
+        /// </summary>
+        internal static string CsvFiles {
+            get {
+                return ResourceManager.GetString("CsvFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disconnect.
         /// </summary>
         internal static string Disconnect {
@@ -292,6 +301,15 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There was an error reading the data..
+        /// </summary>
+        internal static string ReadingDataTableError {
+            get {
+                return ResourceManager.GetString("ReadingDataTableError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There was an error reading from the Excel file.
         ///If this file is currently open, please close it and try again..
         /// </summary>
@@ -317,6 +335,15 @@ namespace eVolve.DataTableTools.Revit.Properties {
         internal static string ResetSelectedDataTableConfigPrompt {
             get {
                 return ResourceManager.GetString("ResetSelectedDataTableConfigPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serialized Data Table Files.
+        /// </summary>
+        internal static string SerializedDataTableFiles {
+            get {
+                return ResourceManager.GetString("SerializedDataTableFiles", resourceCulture);
             }
         }
         

@@ -13,8 +13,14 @@ public class ExternalTablesSettings
     /// <summary> Gets or sets the Excel data sources. </summary>
     public ExcelSource[] Excel { get; set; } = [];
 
+    /// <summary> Gets or sets the CSV data sources. </summary>
+    public CsvSource[] Csv { get; set; } = [];
+
     /// <summary> Gets or sets the SQL Server data sources. </summary>
     public SqlServerSource[] SqlServer { get; set; } = [];
+
+    /// <summary> Gets or sets the serialized data table sources. </summary>
+    public SerializedDataTableSource[] SerializedDataTables { get; set; } = [];
 }
 
 /// <summary> Base class which all <see cref="ExternalTablesSettings"/> sources should inherit from. </summary>
@@ -35,10 +41,8 @@ public abstract class ExternalTableSourceBase
     public bool Cache { get; set; } = true;
 }
 
-
-/// <summary> (Serializable) External Excel data source configuration information. </summary>
-[Serializable]
-public class ExcelSource : ExternalTableSourceBase
+/// <summary> Base class which holds information for tabular data source files. </summary>
+public class TabularSourceBase : ExternalTableSourceBase
 {
     /// <summary> Gets or sets the full pathname of the file. </summary>
     public string FilePath { get; set; }
@@ -49,12 +53,12 @@ public class ExcelSource : ExternalTableSourceBase
     /// <summary> Gets or sets a list of definitions specifying the type of data columns contain. </summary>
     ///
     /// <remarks> If a column does not have a definition, it assumed to be a <see langword="string"/>. </remarks>
-    public ExcelColumnDataType[] ColumnDataTypes { get; set; } = [];
+    public TabularColumnDataType[] ColumnDataTypes { get; set; } = [];
 }
 
-/// <summary> (Serializable) Defines the data type which a column within <see cref="ExcelSource"/> holds. </summary>
+/// <summary> (Serializable) Defines the data type which a column within <see cref="TabularSourceBase"/> holds. </summary>
 [Serializable]
-public class ExcelColumnDataType
+public class TabularColumnDataType
 {
     /// <summary> Gets or sets the name of the column for this definition. </summary>
     public string ColumnName { get; set; }
@@ -64,6 +68,14 @@ public class ExcelColumnDataType
     /// </summary>
     public string DataType { get; set; } = ColumnDataTypeLookup.First().Key;
 }
+
+/// <summary> (Serializable) External Excel data source configuration information. </summary>
+[Serializable]
+public class ExcelSource : TabularSourceBase { }
+
+/// <summary> (Serializable) External CSV file source information. </summary>
+[Serializable]
+public class CsvSource : TabularSourceBase { }
 
 /// <summary> (Serializable) External SQL Server data source configuration information. </summary>
 [Serializable]
@@ -78,4 +90,12 @@ public class SqlServerSource : ExternalTableSourceBase
     ///
     /// <remarks> <inheritdoc cref="ConnectionString" path="/remarks"/> </remarks>
     public string CommandText { get; set; }
+}
+
+/// <summary> (Serializable) External serialized <see cref="System.Data.DataTable"/> source information. </summary>
+[Serializable]
+public class SerializedDataTableSource : ExternalTableSourceBase
+{
+    /// <summary> Gets or sets the full pathname of the serialized source. </summary>
+    public string FilePath { get; set; }
 }

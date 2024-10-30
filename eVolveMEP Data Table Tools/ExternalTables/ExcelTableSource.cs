@@ -57,7 +57,7 @@ internal class ExcelTableSource(ExcelSource source) : eVolve::eVolve.Core.Revit.
 
                 foreach (var headerEntry in headers)
                 {
-                    var type = ColumnDataTypeLookup[Source.ColumnDataTypes.DefaultIfEmpty(new ExcelColumnDataType()).FirstOrDefault(columnType => columnType.ColumnName == headerEntry.Key)!.DataType];
+                    var type = ColumnDataTypeLookup[Source.ColumnDataTypes.DefaultIfEmpty(new TabularColumnDataType()).FirstOrDefault(columnType => columnType.ColumnName == headerEntry.Key)!.DataType];
                     table.Columns.Add(headerEntry.Key, type);
                     table.Columns[headerEntry.Key].DefaultValue = type == typeof(string) ? "" : Activator.CreateInstance(type);
                 }

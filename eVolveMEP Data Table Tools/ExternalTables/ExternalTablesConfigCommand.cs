@@ -32,7 +32,7 @@ internal class ExternalTablesConfigCommand : IExternalCommand
     /// <inheritdoc />
     public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
     {
-        using var dialog = new ExternalTablesConfigDialog();
+        using var dialog = new ExternalTablesConfigDialog(commandData.Application.ActiveUIDocument.Document);
         dialog.ShowDialog();
         return Result.Succeeded;
     }
