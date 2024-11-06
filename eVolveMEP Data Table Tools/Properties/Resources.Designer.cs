@@ -115,6 +115,25 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy
+        ///Data Table.
+        /// </summary>
+        internal static string CopyDataTableButtonText {
+            get {
+                return ResourceManager.GetString("CopyDataTableButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creates copies of existing {0} Data Table..
+        /// </summary>
+        internal static string CopyDataTableToolTipText {
+            get {
+                return ResourceManager.GetString("CopyDataTableToolTipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to One or more values were not able to be converted to the target type.
         ///The default value of &quot;{0}&quot; was set as the data in these rows.
         ///

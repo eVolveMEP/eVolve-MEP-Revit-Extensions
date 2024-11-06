@@ -269,4 +269,11 @@ If this file is currently open, please close it and try again.</value>
   <data name="CsvFiles" xml:space="preserve">
 	  <value>CSV Files</value>
   </data>
+  <data name="CopyDataTableButtonText" xml:space="preserve">
+	  <value>Copy
+Data Table</value>
+  </data>
+  <data name="CopyDataTableToolTipText" xml:space="preserve">
+	  <value>Creates copies of existing {0} Data Table.</value>
+  </data>
 </root>
