@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="OpenConfigurationPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>889, 0</value>
+    <value>866, 0</value>
   </data>
   <data name="OpenConfigurationPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -145,7 +145,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;OpenConfigurationPictureBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="HelpLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -172,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;HelpLinkPictureBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="LogoPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -202,7 +202,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LogoPictureBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="MainTabControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -215,6 +215,9 @@
   </data>
   <data name="ColumnInfoDataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
+  </data>
+  <data name="ColumnInfoDataGridView.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
   </data>
   <data name="ColumnInfoDataGridView.Size" type="System.Drawing.Size, System.Drawing">
     <value>436, 484</value>
@@ -292,7 +295,7 @@
     <value>17, 67</value>
   </data>
   <data name="ExpressionColumnDataTypeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
+    <value>62, 15</value>
   </data>
   <data name="ExpressionColumnDataTypeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -325,7 +328,7 @@
     <value>12, 51</value>
   </data>
   <data name="DataTableExpressionHelpLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
+    <value>81, 17</value>
   </data>
   <data name="DataTableExpressionHelpLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -457,7 +460,7 @@
     <value>17, 31</value>
   </data>
   <data name="ExpressionColumnNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
+    <value>87, 15</value>
   </data>
   <data name="ExpressionColumnNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -568,7 +571,7 @@
     <value>17, 100</value>
   </data>
   <data name="ChangeColumnSequenceLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+    <value>66, 15</value>
   </data>
   <data name="ChangeColumnSequenceLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -622,7 +625,7 @@
     <value>17, 66</value>
   </data>
   <data name="ChangeColumnNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>69, 15</value>
   </data>
   <data name="ChangeColumnNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -706,7 +709,7 @@
     <value>17, 135</value>
   </data>
   <data name="ChangeColumnDataTypeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 13</value>
+    <value>90, 15</value>
   </data>
   <data name="ChangeColumnDataTypeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -760,7 +763,7 @@
     <value>17, 31</value>
   </data>
   <data name="ChangeColumnColumnLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
+    <value>50, 15</value>
   </data>
   <data name="ChangeColumnColumnLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -844,10 +847,10 @@
     <value>True</value>
   </data>
   <data name="SQLExportPreEventCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 32</value>
+    <value>17, 30</value>
   </data>
   <data name="SQLExportPreEventCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 17</value>
+    <value>156, 19</value>
   </data>
   <data name="SQLExportPreEventCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -877,10 +880,10 @@
     <value>NoControl</value>
   </data>
   <data name="SQLExportPostEventCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 67</value>
+    <value>17, 65</value>
   </data>
   <data name="SQLExportPostEventCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 17</value>
+    <value>144, 19</value>
   </data>
   <data name="SQLExportPostEventCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1159,7 +1162,7 @@
     <value>13, 38</value>
   </data>
   <data name="SQLExportTargetLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
+    <value>42, 15</value>
   </data>
   <data name="SQLExportTargetLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1321,7 +1324,7 @@
     <value>18, 102</value>
   </data>
   <data name="SQLImportSourceCustomRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 17</value>
+    <value>97, 19</value>
   </data>
   <data name="SQLImportSourceCustomRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1351,7 +1354,7 @@
     <value>18, 67</value>
   </data>
   <data name="SQLImportSourceViewRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 17</value>
+    <value>54, 19</value>
   </data>
   <data name="SQLImportSourceViewRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1378,7 +1381,7 @@
     <value>18, 32</value>
   </data>
   <data name="SQLImportSourceTableRadioButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 17</value>
+    <value>59, 19</value>
   </data>
   <data name="SQLImportSourceTableRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1489,7 +1492,7 @@
     <value>13, 62</value>
   </data>
   <data name="SQLConnectionStringHelpLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 13</value>
+    <value>138, 17</value>
   </data>
   <data name="SQLConnectionStringHelpLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1774,7 +1777,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MainTabControl.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="DataTableLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1783,7 +1786,7 @@
     <value>13, 22</value>
   </data>
   <data name="DataTableLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>67, 15</value>
   </data>
   <data name="DataTableLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1801,7 +1804,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DataTableLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="DataTableComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 19</value>
@@ -1822,7 +1825,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DataTableComboBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="CloseButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -1852,7 +1855,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CloseButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ViewSourceCodeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -1867,7 +1870,7 @@
     <value>190, 666</value>
   </data>
   <data name="ViewSourceCodeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 13</value>
+    <value>132, 15</value>
   </data>
   <data name="ViewSourceCodeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1885,6 +1888,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ViewSourceCodeLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="VideoLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="VideoLinkPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="VideoLinkPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>889, 0</value>
+  </data>
+  <data name="VideoLinkPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="VideoLinkPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.Name" xml:space="preserve">
+    <value>VideoLinkPictureBox</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

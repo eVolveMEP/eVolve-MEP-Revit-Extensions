@@ -198,6 +198,9 @@
 		<Compile Include="Settings.cs" />
 	</ItemGroup>
 	<ItemGroup>
+	  <None Include="LinkedVideo_20x20.png" />
+	</ItemGroup>
+	<ItemGroup>
 		<EmbeddedResource Include="ConfigurationForm.fr-FR.resx">
 			<DependentUpon>ConfigurationForm.cs</DependentUpon>
 		</EmbeddedResource>

@@ -1,6 +1,6 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
-//
+// 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
@@ -99,11 +99,14 @@ internal static class Methods
     ///
     /// <param name="form"> The form to manipulate. </param>
     /// <param name="dialogText"> (Optional) <paramref name="form"/> dialog title text. </param>
-    /// <param name="iconResource"> (Optional) Icon resource to set. If not provided, the <paramref name="form"/>'s owner icon is used. </param>
+    /// <param name="iconResource"> (Optional) Icon resource to set. If not provided, the <paramref name="form"/>'s owner
+    ///     icon is used. </param>
     /// <param name="helpUrl"> (Optional) URL for help information for <paramref name="form"/>. </param>
     /// <param name="helpIcon"> (Optional) Help icon displayed on the <paramref name="form"/>. </param>
     /// <param name="linkToSourceLabel"> (Optional) Label which is used to provide a link to the source code. </param>
-    internal static void PrepDialog(this System.Windows.Forms.Form form, string dialogText = null, System.IO.Stream iconResource = null, string helpUrl = null, PictureBox helpIcon = null, Label linkToSourceLabel = null)
+    /// <param name="videoUrl"> (Optional) URL of the video link displayed on the <paramref name="form"/>. </param>
+    /// <param name="videoIcon"> (Optional) The video icon displayed on the <paramref name="form"/>. </param>
+    internal static void PrepDialog(this System.Windows.Forms.Form form, string dialogText = null, System.IO.Stream iconResource = null, string helpUrl = null, PictureBox helpIcon = null, Label linkToSourceLabel = null, string videoUrl = null, PictureBox videoIcon = null)
     {
         // Perform these actions within an event so the parent (if any) will be defined at the time of execution.
         form.Load += (_, _) =>
@@ -149,6 +152,25 @@ internal static class Methods
         else if (helpIcon != null)
         {
             helpIcon.Visible = false;
+        }
+
+        if (!string.IsNullOrEmpty(videoUrl))
+        {
+            void openVideoUrl() => StartProcess(videoUrl);
+            form.HelpRequested += (_, e) =>
+            {
+                e.Handled = true;
+                openVideoUrl();
+            };
+
+            if (videoIcon != null)
+            {
+                videoIcon.Click += (_, _) => openVideoUrl();
+            }
+        }
+        else if (videoIcon != null)
+        {
+            videoIcon.Visible = false;
         }
 
         if (linkToSourceLabel != null)

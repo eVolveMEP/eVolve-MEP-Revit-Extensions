@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -25,6 +25,19 @@ internal class ViewTableCommand : IExternalCommand
             return "https://help-electrical.evolvemep.com/article/6g1tvdhzn2";
 #elif MECHANICAL
             return "https://help-mechanical.evolvemep.com/article/k7d9liw314";
+#endif
+        }
+    }
+
+    /// <summary> Gets URL of the video tutorial link to open when requested by the user. </summary>
+    internal static string VideoUrl
+    {
+        get
+        {
+#if ELECTRICAL
+            return "https://help-electrical.evolvemep.com/article/gd7buzagqr";
+#elif MECHANICAL
+            return "https://help-mechanical.evolvemep.com/article/dg73fng2y0";
 #endif
         }
     }

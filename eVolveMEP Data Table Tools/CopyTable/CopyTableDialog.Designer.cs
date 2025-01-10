@@ -42,10 +42,12 @@ partial class CopyTableDialog
             this.InfoLabel = new System.Windows.Forms.Label();
             this.HelpLinkPictureBox = new System.Windows.Forms.PictureBox();
             this.OpenConfigurationPictureBox = new System.Windows.Forms.PictureBox();
+            this.VideoLinkPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.CopyGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VideoLinkPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ViewSourceCodeLabel
@@ -135,10 +137,18 @@ partial class CopyTableDialog
             this.OpenConfigurationPictureBox.TabStop = false;
             this.OpenConfigurationPictureBox.Click += new System.EventHandler(this.OpenConfigurationPictureBox_Click);
             // 
+            // VideoLinkPictureBox
+            // 
+            resources.ApplyResources(this.VideoLinkPictureBox, "VideoLinkPictureBox");
+            this.VideoLinkPictureBox.Image = global::eVolve.DataTableTools.Revit.Properties.Resources.LinkedVideo_20x20;
+            this.VideoLinkPictureBox.Name = "VideoLinkPictureBox";
+            this.VideoLinkPictureBox.TabStop = false;
+            // 
             // CopyTableDialog
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.VideoLinkPictureBox);
             this.Controls.Add(this.OpenConfigurationPictureBox);
             this.Controls.Add(this.HelpLinkPictureBox);
             this.Controls.Add(this.InfoLabel);
@@ -152,6 +162,7 @@ partial class CopyTableDialog
             this.CopyGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VideoLinkPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,4 +183,5 @@ partial class CopyTableDialog
     private System.Windows.Forms.PictureBox HelpLinkPictureBox;
     private System.Windows.Forms.CheckBox ReadOnlyCheckBox;
     private System.Windows.Forms.PictureBox OpenConfigurationPictureBox;
+    private System.Windows.Forms.PictureBox VideoLinkPictureBox;
 }

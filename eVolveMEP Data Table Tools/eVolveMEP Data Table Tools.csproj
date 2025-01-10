@@ -271,6 +271,9 @@
 		</Compile>
 	</ItemGroup>
 	<ItemGroup>
+	  <None Include="LinkedVideo_20x20.png" />
+	</ItemGroup>
+	<ItemGroup>
 	  <EmbeddedResource Include="CopyDataTable_32x32.png" />
 	</ItemGroup>
 	<ItemGroup>
