@@ -22,8 +22,8 @@ internal partial class CopyTableDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.CopyDataTableButtonText, CopyTableCommand.IconResource, CopyTableCommand.HelpLinkUrl, HelpLinkPictureBox,
-            ViewSourceCodeLabel, CopyTableCommand.VideoUrl, VideoLinkPictureBox);
+        this.PrepDialog(Resources.CopyDataTableButtonText, CopyTableCommand.IconResource,
+            CopyTableCommand.HelpLinkUrl, HelpLinkPictureBox, CopyTableCommand.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
         Document = document;
 

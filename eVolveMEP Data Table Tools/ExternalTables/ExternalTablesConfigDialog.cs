@@ -36,8 +36,8 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
 
         Document = document;
 
-        this.PrepDialog(Resources.ExternalTablesButtonText, ExternalTablesConfigCommand.IconResource, ExternalTablesConfigCommand.HelpLinkUrl,
-            HelpLinkPictureBox, ViewSourceCodeLabel, ExternalTablesConfigCommand.VideoUrl, VideoLinkPictureBox);
+        this.PrepDialog(Resources.ExternalTablesButtonText, ExternalTablesConfigCommand.IconResource,
+            ExternalTablesConfigCommand.HelpLinkUrl, HelpLinkPictureBox, ExternalTablesConfigCommand.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
         var settings = ExternalTablesMethods.GetSettings();
         ExcelSources = new BindingList<ExcelSource>(settings.Excel.ToList());

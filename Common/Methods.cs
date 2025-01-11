@@ -103,10 +103,11 @@ internal static class Methods
     ///     icon is used. </param>
     /// <param name="helpUrl"> (Optional) URL for help information for <paramref name="form"/>. </param>
     /// <param name="helpIcon"> (Optional) Help icon displayed on the <paramref name="form"/>. </param>
-    /// <param name="linkToSourceLabel"> (Optional) Label which is used to provide a link to the source code. </param>
     /// <param name="videoUrl"> (Optional) URL of the video link displayed on the <paramref name="form"/>. </param>
     /// <param name="videoIcon"> (Optional) The video icon displayed on the <paramref name="form"/>. </param>
-    internal static void PrepDialog(this System.Windows.Forms.Form form, string dialogText = null, System.IO.Stream iconResource = null, string helpUrl = null, PictureBox helpIcon = null, Label linkToSourceLabel = null, string videoUrl = null, PictureBox videoIcon = null)
+    /// <param name="linkToSourceLabel"> (Optional) Label which is used to provide a link to the source code. </param>
+    internal static void PrepDialog(this System.Windows.Forms.Form form, string dialogText = null, System.IO.Stream iconResource = null,
+        string helpUrl = null, PictureBox helpIcon = null, string videoUrl = null, PictureBox videoIcon = null, Label linkToSourceLabel = null)
     {
         // Perform these actions within an event so the parent (if any) will be defined at the time of execution.
         form.Load += (_, _) =>
@@ -154,19 +155,9 @@ internal static class Methods
             helpIcon.Visible = false;
         }
 
-        if (!string.IsNullOrEmpty(videoUrl))
+        if (!string.IsNullOrEmpty(videoUrl) && (videoIcon != null))
         {
-            void openVideoUrl() => StartProcess(videoUrl);
-            form.HelpRequested += (_, e) =>
-            {
-                e.Handled = true;
-                openVideoUrl();
-            };
-
-            if (videoIcon != null)
-            {
-                videoIcon.Click += (_, _) => openVideoUrl();
-            }
+            videoIcon.Click += (_, _) => StartProcess(videoUrl);
         }
         else if (videoIcon != null)
         {

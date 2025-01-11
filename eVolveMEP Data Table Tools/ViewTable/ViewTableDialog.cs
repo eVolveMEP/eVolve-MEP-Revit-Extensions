@@ -22,8 +22,8 @@ internal partial class ViewTableDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.ViewTableButtonText, ViewTableCommand.IconResource, ViewTableCommand.HelpLinkUrl, HelpLinkPictureBox,
-            ViewSourceCodeLabel, ViewTableCommand.VideoUrl, VideoLinkPictureBox);
+        this.PrepDialog(Resources.ViewTableButtonText, ViewTableCommand.IconResource,
+            ViewTableCommand.HelpLinkUrl, HelpLinkPictureBox, ViewTableCommand.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
         Document = document;
 

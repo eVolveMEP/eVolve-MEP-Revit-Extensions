@@ -40,8 +40,8 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.ToolsButtonText, ToolsCommand.IconResource, ToolsCommand.HelpLinkUrl, HelpLinkPictureBox,
-            ViewSourceCodeLabel, ToolsCommand.VideoUrl, VideoLinkPictureBox);
+        this.PrepDialog(Resources.ToolsButtonText, ToolsCommand.IconResource,
+            ToolsCommand.HelpLinkUrl, HelpLinkPictureBox, ToolsCommand.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
         Document = document;
 

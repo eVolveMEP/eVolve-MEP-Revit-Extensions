@@ -48,8 +48,8 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.ButtonText, Command.IconResource, Command.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel,
-            Command.VideoUrl, VideoLinkPictureBox);
+        this.PrepDialog(Resources.ButtonText, Command.IconResource,
+            Command.HelpLinkUrl, HelpLinkPictureBox, Command.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
         Document = document;
 
