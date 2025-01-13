@@ -4,8 +4,8 @@
 		<Company>eVolve MEP, LLC</Company>
 		<Product>eVolve Revit Extensions</Product>
 		<Description>CSV file importer/exporter for use with the eVolve Revit product line.</Description>
-		<Copyright>Copyright © 2024 eVolve MEP, LLC</Copyright>
-		<Version>8.0.0.08024</Version>
+		<Copyright>Copyright © 2025 eVolve MEP, LLC</Copyright>
+		<Version>8.2.0.01135</Version>
 		<Configurations>
 			eE Debug Revit 2022;
 			eE Debug Revit 2023;
