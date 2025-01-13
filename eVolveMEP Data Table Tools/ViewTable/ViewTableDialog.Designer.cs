@@ -37,9 +37,11 @@ partial class ViewTableDialog
             this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.HelpLinkPictureBox = new System.Windows.Forms.PictureBox();
+            this.VideoLinkPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.TableDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VideoLinkPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // DataTableComboBox
@@ -98,12 +100,20 @@ partial class ViewTableDialog
             this.HelpLinkPictureBox.Name = "HelpLinkPictureBox";
             this.HelpLinkPictureBox.TabStop = false;
             // 
+            // VideoLinkPictureBox
+            // 
+            resources.ApplyResources(this.VideoLinkPictureBox, "VideoLinkPictureBox");
+            this.VideoLinkPictureBox.Image = global::eVolve.DataTableTools.Revit.Properties.Resources.LinkedVideo_20x20;
+            this.VideoLinkPictureBox.Name = "VideoLinkPictureBox";
+            this.VideoLinkPictureBox.TabStop = false;
+            // 
             // ViewTableDialog
             // 
             this.AcceptButton = this.CloseButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseButton;
+            this.Controls.Add(this.VideoLinkPictureBox);
             this.Controls.Add(this.HelpLinkPictureBox);
             this.Controls.Add(this.ViewSourceCodeLabel);
             this.Controls.Add(this.LogoPictureBox);
@@ -116,6 +126,7 @@ partial class ViewTableDialog
             ((System.ComponentModel.ISupportInitialize)(this.TableDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VideoLinkPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,4 +142,5 @@ partial class ViewTableDialog
     private System.Windows.Forms.Label ViewSourceCodeLabel;
     private System.Windows.Forms.PictureBox LogoPictureBox;
     private System.Windows.Forms.PictureBox HelpLinkPictureBox;
+    private System.Windows.Forms.PictureBox VideoLinkPictureBox;
 }

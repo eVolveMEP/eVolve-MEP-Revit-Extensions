@@ -213,11 +213,23 @@
   <data name="ExcelNameColumn.HeaderText" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="ExcelNameColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ExcelNameColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="ExcelFilePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="ExcelFilePathColumn.HeaderText" xml:space="preserve">
     <value>File Path</value>
+  </data>
+  <data name="ExcelFilePathColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ExcelFilePathColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
   </data>
   <metadata name="ExcelCachedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -225,14 +237,29 @@
   <data name="ExcelCachedColumn.HeaderText" xml:space="preserve">
     <value>Cached</value>
   </data>
+  <data name="ExcelCachedColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ExcelCachedColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="ExcelDescriptionColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="ExcelDescriptionColumn.HeaderText" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="ExcelDescriptionColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ExcelDescriptionColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <data name="ExcelDataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
+  </data>
+  <data name="ExcelDataGridView.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
   </data>
   <data name="ExcelDataGridView.Size" type="System.Drawing.Size, System.Drawing">
     <value>756, 341</value>
@@ -378,11 +405,23 @@
   <data name="CsvNameColumn.HeaderText" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="CsvNameColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="CsvNameColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="CsvFilePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="CsvFilePathColumn.HeaderText" xml:space="preserve">
     <value>File Path</value>
+  </data>
+  <data name="CsvFilePathColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="CsvFilePathColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
   </data>
   <metadata name="CsvCachedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -390,14 +429,29 @@
   <data name="CsvCachedColumn.HeaderText" xml:space="preserve">
     <value>Cached</value>
   </data>
+  <data name="CsvCachedColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="CsvCachedColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="CsvDescriptionColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="CsvDescriptionColumn.HeaderText" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="CsvDescriptionColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="CsvDescriptionColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <data name="CsvDataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
+  </data>
+  <data name="CsvDataGridView.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
   </data>
   <data name="CsvDataGridView.Size" type="System.Drawing.Size, System.Drawing">
     <value>756, 341</value>
@@ -534,11 +588,23 @@
   <data name="SqlNameColumn.HeaderText" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="SqlNameColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="SqlNameColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="SqlCachedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="SqlCachedColumn.HeaderText" xml:space="preserve">
     <value>Cached</value>
+  </data>
+  <data name="SqlCachedColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="SqlCachedColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
   </data>
   <metadata name="SqlDescriptionColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -546,8 +612,17 @@
   <data name="SqlDescriptionColumn.HeaderText" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="SqlDescriptionColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="SqlDescriptionColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <data name="SqlDataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
+  </data>
+  <data name="SqlDataGridView.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
   </data>
   <data name="SqlDataGridView.Size" type="System.Drawing.Size, System.Drawing">
     <value>756, 341</value>
@@ -684,11 +759,23 @@
   <data name="DataTableNameColumn.HeaderText" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="DataTableNameColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="DataTableNameColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="DataTableFilePathColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="DataTableFilePathColumn.HeaderText" xml:space="preserve">
     <value>File Path</value>
+  </data>
+  <data name="DataTableFilePathColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="DataTableFilePathColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
   </data>
   <metadata name="DataTableCachedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -696,14 +783,29 @@
   <data name="DataTableCachedColumn.HeaderText" xml:space="preserve">
     <value>Cached</value>
   </data>
+  <data name="DataTableCachedColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="DataTableCachedColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="DataTableDescriptionColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="DataTableDescriptionColumn.HeaderText" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="DataTableDescriptionColumn.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="DataTableDescriptionColumn.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <data name="DataTableDataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
+  </data>
+  <data name="DataTableDataGridView.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
   </data>
   <data name="DataTableDataGridView.Size" type="System.Drawing.Size, System.Drawing">
     <value>756, 341</value>
@@ -769,7 +871,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="LogoPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -799,7 +901,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LogoPictureBox.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="OKButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -826,7 +928,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;OKButton.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="Cancel_Button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -853,7 +955,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Cancel_Button.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="ApplyButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -880,7 +982,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ApplyButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ViewSourceCodeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -895,7 +997,7 @@
     <value>190, 502</value>
   </data>
   <data name="ViewSourceCodeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 13</value>
+    <value>132, 15</value>
   </data>
   <data name="ViewSourceCodeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -913,7 +1015,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ViewSourceCodeLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ConfigLocationLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -925,7 +1027,7 @@
     <value>19, 423</value>
   </data>
   <data name="ConfigLocationLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 13</value>
+    <value>188, 15</value>
   </data>
   <data name="ConfigLocationLabel.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -943,7 +1045,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ConfigLocationLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="GlobalConfigInfoLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -955,7 +1057,7 @@
     <value>19, 453</value>
   </data>
   <data name="GlobalConfigInfoLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>449, 26</value>
+    <value>515, 30</value>
   </data>
   <data name="GlobalConfigInfoLabel.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -974,7 +1076,7 @@ A reload of Revit will be required for other installations to apply any updated 
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GlobalConfigInfoLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="HelpLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1001,6 +1103,33 @@ A reload of Revit will be required for other installations to apply any updated 
     <value>$this</value>
   </data>
   <data name="&gt;&gt;HelpLinkPictureBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="VideoLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="VideoLinkPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="VideoLinkPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>758, -1</value>
+  </data>
+  <data name="VideoLinkPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="VideoLinkPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.Name" xml:space="preserve">
+    <value>VideoLinkPictureBox</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1034,6 +1163,30 @@ A reload of Revit will be required for other installations to apply any updated 
     <value>ExcelDescriptionColumn</value>
   </data>
   <data name="&gt;&gt;ExcelDescriptionColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvNameColumn.Name" xml:space="preserve">
+    <value>CsvNameColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvFilePathColumn.Name" xml:space="preserve">
+    <value>CsvFilePathColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvFilePathColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvCachedColumn.Name" xml:space="preserve">
+    <value>CsvCachedColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvCachedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvDescriptionColumn.Name" xml:space="preserve">
+    <value>CsvDescriptionColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvDescriptionColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SqlNameColumn.Name" xml:space="preserve">
@@ -1076,30 +1229,6 @@ A reload of Revit will be required for other installations to apply any updated 
     <value>DataTableDescriptionColumn</value>
   </data>
   <data name="&gt;&gt;DataTableDescriptionColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CsvNameColumn.Name" xml:space="preserve">
-    <value>CsvNameColumn</value>
-  </data>
-  <data name="&gt;&gt;CsvNameColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CsvFilePathColumn.Name" xml:space="preserve">
-    <value>CsvFilePathColumn</value>
-  </data>
-  <data name="&gt;&gt;CsvFilePathColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CsvCachedColumn.Name" xml:space="preserve">
-    <value>CsvCachedColumn</value>
-  </data>
-  <data name="&gt;&gt;CsvCachedColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CsvDescriptionColumn.Name" xml:space="preserve">
-    <value>CsvDescriptionColumn</value>
-  </data>
-  <data name="&gt;&gt;CsvDescriptionColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

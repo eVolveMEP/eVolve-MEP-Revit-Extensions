@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -36,7 +36,8 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
 
         Document = document;
 
-        this.PrepDialog(Resources.ExternalTablesButtonText, ExternalTablesConfigCommand.IconResource, ExternalTablesConfigCommand.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel);
+        this.PrepDialog(Resources.ExternalTablesButtonText, ExternalTablesConfigCommand.IconResource,
+            ExternalTablesConfigCommand.HelpLinkUrl, HelpLinkPictureBox, ExternalTablesConfigCommand.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
         var settings = ExternalTablesMethods.GetSettings();
         ExcelSources = new BindingList<ExcelSource>(settings.Excel.ToList());

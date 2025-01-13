@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -22,7 +22,8 @@ internal partial class ViewTableDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.ViewTableButtonText, ViewTableCommand.IconResource, ViewTableCommand.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel);
+        this.PrepDialog(Resources.ViewTableButtonText, ViewTableCommand.IconResource,
+            ViewTableCommand.HelpLinkUrl, HelpLinkPictureBox, ViewTableCommand.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
         Document = document;
 
