@@ -93,6 +93,7 @@ partial class ToolsDialog
             this.DataTableComboBox = new System.Windows.Forms.ComboBox();
             this.CloseButton = new System.Windows.Forms.Button();
             this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
+            this.VideoLinkPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
@@ -112,6 +113,7 @@ partial class ToolsDialog
             this.SQLConnectionStringGroupBox.SuspendLayout();
             this.ResetDataTabPage.SuspendLayout();
             this.ResetEntireConfigurationGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VideoLinkPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // OpenConfigurationPictureBox
@@ -571,11 +573,19 @@ partial class ToolsDialog
             resources.ApplyResources(this.ViewSourceCodeLabel, "ViewSourceCodeLabel");
             this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
             // 
+            // VideoLinkPictureBox
+            // 
+            resources.ApplyResources(this.VideoLinkPictureBox, "VideoLinkPictureBox");
+            this.VideoLinkPictureBox.Image = global::eVolve.DataTableTools.Revit.Properties.Resources.LinkedVideo_20x20;
+            this.VideoLinkPictureBox.Name = "VideoLinkPictureBox";
+            this.VideoLinkPictureBox.TabStop = false;
+            // 
             // ToolsDialog
             // 
             this.AcceptButton = this.CloseButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.VideoLinkPictureBox);
             this.Controls.Add(this.ViewSourceCodeLabel);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.DataTableComboBox);
@@ -612,6 +622,7 @@ partial class ToolsDialog
             this.SQLConnectionStringGroupBox.PerformLayout();
             this.ResetDataTabPage.ResumeLayout(false);
             this.ResetEntireConfigurationGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.VideoLinkPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -683,4 +694,5 @@ partial class ToolsDialog
     private System.Windows.Forms.Label ChangeColumnNoticeLabel;
     private System.Windows.Forms.Button SQLRefreshButton;
     private System.Windows.Forms.Label ViewSourceCodeLabel;
+    private System.Windows.Forms.PictureBox VideoLinkPictureBox;
 }

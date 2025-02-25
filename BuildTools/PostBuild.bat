@@ -24,7 +24,7 @@ IF NOT "%ConfigName:eM=%"=="%ConfigName%" (
 SET Product=%ProductName:eVolve=%
 
 FOR /F "tokens=* delims=" %%A IN ('DIR /B "%TargetDir%_*.addin"') DO SET "AddinTemplateFile=%%~nxA"
-SET "AddinFileName=%ProductName%%AddinTemplateFile%"
+SET "AddinFileName=ext_%ProductName%%AddinTemplateFile%"
 SET "AddinFilePath="%TargetDir%%AddinFileName%""
 MOVE /Y "%TargetDir%%AddinTemplateFile%" %AddinFilePath%
 COPY /Y %AddinFilePath% %AddinFilePath%.deploy >nul

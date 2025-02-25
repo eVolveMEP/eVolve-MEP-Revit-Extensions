@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -48,7 +48,8 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.ButtonText, Command.IconResource, Command.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel);
+        this.PrepDialog(Resources.ButtonText, Command.IconResource,
+            Command.HelpLinkUrl, HelpLinkPictureBox, Command.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
         Document = document;
 

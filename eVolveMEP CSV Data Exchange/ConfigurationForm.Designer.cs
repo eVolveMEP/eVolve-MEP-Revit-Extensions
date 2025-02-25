@@ -49,6 +49,7 @@
             this.HelpLinkPictureBox = new System.Windows.Forms.PictureBox();
             this.OpenConfigurationPictureBox = new System.Windows.Forms.PictureBox();
             this.ViewSourceCodeLabel = new System.Windows.Forms.Label();
+            this.VideoLinkPictureBox = new System.Windows.Forms.PictureBox();
             this.DirectionGroupBox.SuspendLayout();
             this.ProfileGroupBox.SuspendLayout();
             this.FileGroupBox.SuspendLayout();
@@ -57,6 +58,7 @@
             this.OptionalExportColumnsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VideoLinkPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ProfileComboBox
@@ -198,12 +200,20 @@
             resources.ApplyResources(this.ViewSourceCodeLabel, "ViewSourceCodeLabel");
             this.ViewSourceCodeLabel.Name = "ViewSourceCodeLabel";
             // 
+            // VideoLinkPictureBox
+            // 
+            resources.ApplyResources(this.VideoLinkPictureBox, "VideoLinkPictureBox");
+            this.VideoLinkPictureBox.Image = global::eVolve.CsvDataExchange.Revit.Properties.Resources.LinkedVideo_20x20;
+            this.VideoLinkPictureBox.Name = "VideoLinkPictureBox";
+            this.VideoLinkPictureBox.TabStop = false;
+            // 
             // ConfigurationForm
             // 
             this.AcceptButton = this.OK_Button;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.Cancel_Button;
+            this.Controls.Add(this.VideoLinkPictureBox);
             this.Controls.Add(this.ViewSourceCodeLabel);
             this.Controls.Add(this.OpenConfigurationPictureBox);
             this.Controls.Add(this.HelpLinkPictureBox);
@@ -229,6 +239,7 @@
             this.OptionalExportColumnsGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HelpLinkPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OpenConfigurationPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VideoLinkPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +267,6 @@
         private System.Windows.Forms.PictureBox HelpLinkPictureBox;
         private System.Windows.Forms.PictureBox OpenConfigurationPictureBox;
         private System.Windows.Forms.Label ViewSourceCodeLabel;
+        private System.Windows.Forms.PictureBox VideoLinkPictureBox;
     }
 }

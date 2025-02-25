@@ -6,15 +6,15 @@
 
 using Autodesk.Revit.Attributes;
 
-namespace eVolve.DataTableTools.Revit.ViewTable;
+namespace eVolve.DataTableTools.Revit.CopyTable;
 
 /// <summary> Opens a dialog for viewing the contents of data tables. </summary>
 [Transaction(TransactionMode.Manual)]
 [Regeneration(RegenerationOption.Manual)]
-internal class ViewTableCommand : IExternalCommand
+internal class CopyTableCommand : IExternalCommand
 {
     /// <summary> Gets the icon resource. </summary>
-    internal static System.IO.Stream IconResource => GetIconResource("ViewDataTables_32x32.png");
+    internal static System.IO.Stream IconResource => GetIconResource("CopyDataTable_32x32.png");
 
     /// <summary> Gets URL of the help link to open when requested by the user. </summary>
     internal static string HelpLinkUrl
@@ -22,9 +22,9 @@ internal class ViewTableCommand : IExternalCommand
         get
         {
 #if ELECTRICAL
-            return "https://help-electrical.evolvemep.com/article/6g1tvdhzn2";
+            return "https://help-electrical.evolvemep.com/article/8e78i6s1b1";
 #elif MECHANICAL
-            return "https://help-mechanical.evolvemep.com/article/k7d9liw314";
+            return "https://help-mechanical.evolvemep.com/article/cugcppz3e6";
 #endif
         }
     }
@@ -35,9 +35,9 @@ internal class ViewTableCommand : IExternalCommand
         get
         {
 #if ELECTRICAL
-            return "https://help-electrical.evolvemep.com/article/gd7buzagqr";
+            return "https://help-electrical.evolvemep.com/article/riv04ya68p";
 #elif MECHANICAL
-            return "https://help-mechanical.evolvemep.com/article/dg73fng2y0";
+            return "https://help-mechanical.evolvemep.com/article/jwgi7rthxd";
 #endif
         }
     }
@@ -47,12 +47,12 @@ internal class ViewTableCommand : IExternalCommand
     {
         try
         {
-            using var dialog = new ViewTableDialog(commandData.Application.ActiveUIDocument.Document);
+            using var dialog = new CopyTableDialog(commandData.Application.ActiveUIDocument.Document);
             dialog.ShowDialog();
         }
         catch (Exception ex)
         {
-            ShowErrorMessage(null, ex.Message, GetTextWithNoLineBreaks(Resources.ViewTableButtonText));
+            ShowErrorMessage(null, ex.Message, GetTextWithNoLineBreaks(Resources.CopyDataTableButtonText));
         }
         return Result.Succeeded;
     }

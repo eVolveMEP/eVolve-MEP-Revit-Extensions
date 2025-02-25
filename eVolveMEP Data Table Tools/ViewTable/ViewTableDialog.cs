@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -12,17 +12,18 @@ namespace eVolve.DataTableTools.Revit.ViewTable;
 /// <summary> Dialog for viewing <see cref="System.Data.DataTable"/>s. </summary>
 internal partial class ViewTableDialog : System.Windows.Forms.Form
 {
-    /// <summary> Gets the current Revit document. </summary>
+    /// <summary> The current Revit document. </summary>
     private Document Document { get; }
 
     /// <summary> Constructor. </summary>
     ///
-    /// <param name="document"> The current Revit document. </param>
+    /// <param name="document"> <inheritdoc cref="Document" path="/summary"/> </param>
     public ViewTableDialog(Document document)
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.ViewTableButtonText, ViewTableCommand.IconResource, ViewTable.ViewTableCommand.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel);
+        this.PrepDialog(Resources.ViewTableButtonText, ViewTableCommand.IconResource,
+            ViewTableCommand.HelpLinkUrl, HelpLinkPictureBox, ViewTableCommand.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
         Document = document;
 

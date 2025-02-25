@@ -138,7 +138,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DataTableComboBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="DataTableLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -151,7 +151,7 @@
     <value>12, 25</value>
   </data>
   <data name="DataTableLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>67, 15</value>
   </data>
   <data name="DataTableLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -169,13 +169,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DataTableLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="TableDataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="TableDataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 68</value>
+  </data>
+  <data name="TableDataGridView.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
   </data>
   <data name="TableDataGridView.Size" type="System.Drawing.Size, System.Drawing">
     <value>1033, 353</value>
@@ -193,7 +196,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TableDataGridView.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="CloseButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -223,7 +226,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;CloseButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ClearCacheButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -232,7 +235,7 @@
     <value>NoControl</value>
   </data>
   <data name="ClearCacheButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>831, 20</value>
+    <value>817, 20</value>
   </data>
   <data name="ClearCacheButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 23</value>
@@ -253,7 +256,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ClearCacheButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="ViewSourceCodeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -268,7 +271,7 @@
     <value>190, 458</value>
   </data>
   <data name="ViewSourceCodeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 13</value>
+    <value>132, 15</value>
   </data>
   <data name="ViewSourceCodeLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -286,7 +289,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ViewSourceCodeLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="LogoPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -316,7 +319,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LogoPictureBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="HelpLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -343,6 +346,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;HelpLinkPictureBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="VideoLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="VideoLinkPictureBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="VideoLinkPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1016, 0</value>
+  </data>
+  <data name="VideoLinkPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="VideoLinkPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.Name" xml:space="preserve">
+    <value>VideoLinkPictureBox</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VideoLinkPictureBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

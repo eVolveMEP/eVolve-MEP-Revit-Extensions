@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -12,32 +12,63 @@ namespace eVolve.DataTableTools.Revit.ExternalTables;
 /// <summary> Dialog for configuration of externally sourced data tables. </summary>
 internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
 {
+    /// <summary> Gets the current Revit document. </summary>
+    private Document Document { get; }
+
     /// <summary> Backing data for <see cref="ExcelDataGridView"/>. </summary>
     private BindingList<ExcelSource> ExcelSources { get; }
+
+    /// <summary> Backing data for <see cref="CsvDataGridView"/>. </summary>
+    private BindingList<CsvSource> CsvSources { get; }
 
     /// <summary> Backing data for <see cref="SqlDataGridView"/>. </summary>
     private BindingList<SqlServerSource> SqlSources { get; }
 
+    /// <summary> Backing data for <see cref="DataTableDataGridView"/>. </summary>
+    private BindingList<SerializedDataTableSource> DataTableSources { get; }
+
     /// <summary> Default constructor. </summary>
-    public ExternalTablesConfigDialog()
+    ///
+    /// <param name="document"> The current Revit document. </param>
+    public ExternalTablesConfigDialog(Document document)
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.ExternalTablesButtonText, ExternalTablesConfigCommand.IconResource, ExternalTablesConfigCommand.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel);
+        Document = document;
+
+        this.PrepDialog(Resources.ExternalTablesButtonText, ExternalTablesConfigCommand.IconResource,
+            ExternalTablesConfigCommand.HelpLinkUrl, HelpLinkPictureBox, ExternalTablesConfigCommand.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
         var settings = ExternalTablesMethods.GetSettings();
         ExcelSources = new BindingList<ExcelSource>(settings.Excel.ToList());
+        CsvSources = new BindingList<CsvSource>(settings.Csv.ToList());
         SqlSources = new BindingList<SqlServerSource>(settings.SqlServer.ToList());
+        DataTableSources = new BindingList<SerializedDataTableSource>(settings.SerializedDataTables.ToList());
 
         ConfigLocationLabel.Text = string.Format(ConfigLocationLabel.Text, ExternalTablesMethods.GetExternalTablesSettingsFilePath(out var isGlobal));
         GlobalConfigInfoLabel.Visible = isGlobal;
 
         foreach (var excelButton in new[] { ExcelNewButton, ExcelEditButton, ExcelDeleteButton })
         {
+            static Dictionary<string, int> getColumnHeaders(string file)
+            {
+                var headers = new Dictionary<string, int>();
+                ExternalTablesMethods.ReadFromExcel(file, worksheet => headers = worksheet.GetHeaderIndexes());
+                return headers;
+            }
+
             excelButton.Click += (sender, _) =>
                 GridHandlers(ExcelSources, ExcelDataGridView, (sender, ExcelNewButton, ExcelEditButton, ExcelDeleteButton),
-                    source => new ExcelSourceDialog($"{((Button)sender).Text} {ExcelTabPage.Text}", source),
-                    dialog => ((ExcelSourceDialog)dialog).GetSource());
+                    source => new TabularSourceDialog($"{((Button)sender).Text} {ExcelTabPage.Text}", source, Resources.ExcelFiles + string.Format(" (*{0})|*{0}", ".xlsx"), getColumnHeaders),
+                    dialog => ((TabularSourceDialog)dialog).GetSource<ExcelSource>());
+        }
+
+        foreach (var csvButton in new[] { CsvNewButton, CsvEditButton, CsvDeleteButton })
+        {
+            csvButton.Click += (sender, _) =>
+                GridHandlers(CsvSources, CsvDataGridView, (sender, CsvNewButton, CsvEditButton, CsvDeleteButton),
+                    source => new TabularSourceDialog($"{((Button)sender).Text} {CsvTabPage.Text}", source, Resources.CsvFiles + string.Format(" (*{0})|*{0}", ".csv"), file => CsvTableSource.GetHeaders(file)),
+                    dialog => ((TabularSourceDialog)dialog).GetSource<CsvSource>());
         }
 
         foreach (var sqlButton in new[] { SqlNewButton, SqlEditButton, SqlDeleteButton })
@@ -46,6 +77,14 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
                 GridHandlers(SqlSources, SqlDataGridView, (sender, SqlNewButton, SqlEditButton, SqlDeleteButton),
                     source => new SqlServerSourceDialog($"{((Button)sender).Text} {SqlTabPage.Text}", source),
                     dialog => ((SqlServerSourceDialog)dialog).GetSource());
+        }
+
+        foreach (var datatableButton in new[] { DataTableNewButton, DataTableEditButton, DataTableDeleteButton })
+        {
+            datatableButton.Click += (sender, _) =>
+                GridHandlers(DataTableSources, DataTableDataGridView, (sender, DataTableNewButton, DataTableEditButton, DataTableDeleteButton),
+                    source => new DataTableSourceDialog(Document, $"{((Button)sender).Text} {DataTableTabPage.Text}", source),
+                    dialog => ((DataTableSourceDialog)dialog).GetSource());
         }
 
         FormClosed += ExternalTablesConfigDialog_FormClosed;
@@ -57,7 +96,7 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
     /// <param name="e"> Event information. </param>
     private void ExternalTablesConfigDialog_Load(object sender, EventArgs e)
     {
-        foreach (var grid in new[] { ExcelDataGridView, SqlDataGridView })
+        foreach (var grid in new[] { ExcelDataGridView, CsvDataGridView, SqlDataGridView, DataTableDataGridView })
         {
             grid.AutoGenerateColumns = false;
             grid.AllowUserToAddRows = false;
@@ -67,14 +106,26 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
 
         ExcelDataGridView.DataSource = ExcelSources;
         ExcelNameColumn.DataPropertyName = nameof(ExcelSource.Name);
-        ExcelDescriptoinColumn.DataPropertyName = nameof(ExcelSource.Description);
+        ExcelDescriptionColumn.DataPropertyName = nameof(ExcelSource.Description);
         ExcelCachedColumn.DataPropertyName = nameof(ExcelSource.Cache);
         ExcelFilePathColumn.DataPropertyName = nameof(ExcelSource.FilePath);
+
+        CsvDataGridView.DataSource = CsvSources;
+        CsvNameColumn.DataPropertyName = nameof(CsvSource.Name);
+        CsvDescriptionColumn.DataPropertyName = nameof(CsvSource.Description);
+        CsvCachedColumn.DataPropertyName = nameof(CsvSource.Cache);
+        CsvFilePathColumn.DataPropertyName = nameof(CsvSource.FilePath);
 
         SqlDataGridView.DataSource = SqlSources;
         SqlNameColumn.DataPropertyName = nameof(SqlServerSource.Name);
         SqlDescriptionColumn.DataPropertyName = nameof(SqlServerSource.Description);
         SqlCachedColumn.DataPropertyName = nameof(SqlServerSource.Cache);
+
+        DataTableDataGridView.DataSource = DataTableSources;
+        DataTableNameColumn.DataPropertyName = nameof(SerializedDataTableSource.Name);
+        DataTableDescriptionColumn.DataPropertyName = nameof(SerializedDataTableSource.Description);
+        DataTableCachedColumn.DataPropertyName = nameof(SerializedDataTableSource.Cache);
+        DataTableFilePathColumn.DataPropertyName = nameof(SerializedDataTableSource.FilePath);
     }
 
     /// <summary> Applies settings as required based on the <see cref="System.Windows.Forms.Form.DialogResult"/>. </summary>
@@ -98,7 +149,9 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
         ExternalTablesMethods.ApplySettings(new ExternalTablesSettings()
         {
             Excel = ExcelSources.ToArray(),
+            Csv = CsvSources.ToArray(),
             SqlServer = SqlSources.ToArray(),
+            SerializedDataTables = DataTableSources.ToArray(),
         });
     }
 

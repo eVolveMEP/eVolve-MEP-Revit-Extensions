@@ -115,6 +115,25 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy
+        ///Data Table.
+        /// </summary>
+        internal static string CopyDataTableButtonText {
+            get {
+                return ResourceManager.GetString("CopyDataTableButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creates copies of existing {0} Data Table..
+        /// </summary>
+        internal static string CopyDataTableToolTipText {
+            get {
+                return ResourceManager.GetString("CopyDataTableToolTipText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to One or more values were not able to be converted to the target type.
         ///The default value of &quot;{0}&quot; was set as the data in these rows.
         ///
@@ -123,6 +142,15 @@ namespace eVolve.DataTableTools.Revit.Properties {
         internal static string CouldNotConvertValueWarning {
             get {
                 return ResourceManager.GetString("CouldNotConvertValueWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CSV Files.
+        /// </summary>
+        internal static string CsvFiles {
+            get {
+                return ResourceManager.GetString("CsvFiles", resourceCulture);
             }
         }
         
@@ -239,6 +267,16 @@ namespace eVolve.DataTableTools.Revit.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LinkedVideo_20x20 {
+            get {
+                object obj = ResourceManager.GetObject("LinkedVideo_20x20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
@@ -292,6 +330,15 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There was an error reading the data..
+        /// </summary>
+        internal static string ReadingDataTableError {
+            get {
+                return ResourceManager.GetString("ReadingDataTableError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There was an error reading from the Excel file.
         ///If this file is currently open, please close it and try again..
         /// </summary>
@@ -317,6 +364,15 @@ namespace eVolve.DataTableTools.Revit.Properties {
         internal static string ResetSelectedDataTableConfigPrompt {
             get {
                 return ResourceManager.GetString("ResetSelectedDataTableConfigPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serialized Data Table Files.
+        /// </summary>
+        internal static string SerializedDataTableFiles {
+            get {
+                return ResourceManager.GetString("SerializedDataTableFiles", resourceCulture);
             }
         }
         

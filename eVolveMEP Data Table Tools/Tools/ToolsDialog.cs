@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -40,7 +40,8 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
     {
         InitializeComponent();
 
-        this.PrepDialog(Resources.ToolsButtonText, ToolsCommand.IconResource, ToolsCommand.HelpLinkUrl, HelpLinkPictureBox, ViewSourceCodeLabel);
+        this.PrepDialog(Resources.ToolsButtonText, ToolsCommand.IconResource,
+            ToolsCommand.HelpLinkUrl, HelpLinkPictureBox, ToolsCommand.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
         Document = document;
 
@@ -59,9 +60,6 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
         SQLConnectionStatusLabel.TextChanged += SQLConnectionStatusLabel_TextChanged;
 
-        ResetEntireConfigurationGroupBox.Text = string.Format(ResetEntireConfigurationGroupBox.Text, Text);
-        ResetSelectedConfigurationButton.Text = string.Format(ResetSelectedConfigurationButton.Text, DataTableLabel.Text);
-
         // TextChanged occurs before SelectedIndexChanged so consumers interested in the previous value need to consider this.
         DataTableComboBox.TextChanged += DataTableChangedToolsHandler;
         DataTableComboBox.TextChanged += DataTableChangedSqlHandler;
@@ -71,6 +69,12 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         {
             button.Click += EditSqlButton_Click;
         }
+
+        Shown += (_, _) =>
+        {
+            ResetEntireConfigurationGroupBox.Text = string.Format(ResetEntireConfigurationGroupBox.Text, Text);
+            ResetSelectedConfigurationButton.Text = string.Format(ResetSelectedConfigurationButton.Text, DataTableLabel.Text);
+        };
 
         FormClosing += ToolsDialog_FormClosing;
     }

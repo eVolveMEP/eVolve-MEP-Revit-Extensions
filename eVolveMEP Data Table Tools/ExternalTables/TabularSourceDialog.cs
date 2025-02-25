@@ -9,36 +9,48 @@ using System.Windows.Forms;
 
 namespace eVolve.DataTableTools.Revit.ExternalTables;
 
-/// <summary> Dialog for defining a <see cref="ExcelSourceDialog"/>. </summary>
-internal partial class ExcelSourceDialog : System.Windows.Forms.Form
+/// <summary> Dialog for defining a data source derived from <see cref="TabularSourceBase"/>. </summary>
+internal partial class TabularSourceDialog : System.Windows.Forms.Form
 {
     /// <summary> Backing data for <see cref="ColumnsDataGridView"/>. </summary>
-    private BindingList<ExcelColumnInfo> Columns { get; } = [];
+    private BindingList<TabularColumnInfo> Columns { get; } = [];
 
     /// <summary>
-    /// Gets or sets the initial <see cref="ExcelSource"/> object which feeds this data.
+    /// Gets or sets the initial source object which feeds this data.
     /// <para>This will be <see langword="null"/> after the form as loaded.</para>
     /// </summary>
-    private ExcelSource InitialSource { get; set; }
+    private TabularSourceBase InitialSource { get; set; }
+
+    /// <summary> File browse dialog selection filter. </summary>
+    private string FileFilter { get; }
+
+    /// <summary>
+    /// Function which takes in a file path and returns a lookup of column header text (key) and column index (value).
+    /// </summary>
+    private Func<string, Dictionary<string, int>> GetHeaderColumns { get; }
 
     /// <summary> Constructor. </summary>
     ///
     /// <param name="dialogTitle"> The dialog title. </param>
     /// <param name="source"> Source object to fill the user input fields with. </param>
-    public ExcelSourceDialog(string dialogTitle, ExcelSource source)
+    /// <param name="fileFilter"> <inheritdoc cref="FileFilter" path="/summary"/></param>
+    /// <param name="getHeaderColumns"> <inheritdoc cref="GetHeaderColumns" path="/summary"/></param>
+    public TabularSourceDialog(string dialogTitle, TabularSourceBase source, string fileFilter, Func<string, Dictionary<string, int>> getHeaderColumns)
     {
         InitializeComponent();
 
         this.PrepDialog(dialogTitle);
 
         InitialSource = source;
+        FileFilter = fileFilter;
+        GetHeaderColumns = getHeaderColumns;
 
         ExternalTableSourceBaseControl.SetData(source);
         FileTextBox.Text = source.FilePath;
 
-        NameColumn.DataPropertyName = nameof(ExcelColumnInfo.Name);
-        ExcludeColumn.DataPropertyName = nameof(ExcelColumnInfo.Exclude);
-        DataTypeColumn.DataPropertyName = nameof(ExcelColumnInfo.DataType);
+        NameColumn.DataPropertyName = nameof(TabularColumnInfo.Name);
+        ExcludeColumn.DataPropertyName = nameof(TabularColumnInfo.Exclude);
+        DataTypeColumn.DataPropertyName = nameof(TabularColumnInfo.DataType);
         DataTypeColumn.DataSource = ColumnDataTypeLookup.ToArray();
         DataTypeColumn.ValueMember = "Key";
         DataTypeColumn.DisplayMember = "Key";
@@ -62,7 +74,7 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
     {
         if (DialogResult == DialogResult.OK && !e.Cancel)
         {
-            var source = GetSource();
+            var source = GetSource<TabularSourceBase>();
             e.Cancel = !ExternalTableSourceBaseControl.ValidateData(source,
             [
                 (source.FilePath, FileGroupBox.Text),
@@ -76,14 +88,11 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
     /// <param name="e"> Event information. </param>
     private void FileBrowseButton_Click(object sender, EventArgs e)
     {
-        const string FileExtension = ".xlsx";
-        var fileFilter = Resources.ExcelFiles + $" (*{FileExtension})|*{FileExtension}";
-
         using var dialog = new OpenFileDialog();
         dialog.CheckFileExists = true;
         dialog.CheckPathExists = true;
         dialog.FileName = FileTextBox.Text;
-        dialog.Filter = fileFilter;
+        dialog.Filter = FileFilter;
         dialog.Title = FileGroupBox.Text;
         if (dialog.ShowDialog(this) == DialogResult.OK)
         {
@@ -98,7 +107,7 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
     /// <param name="e"> Event information. </param>
     private void RefreshButton_Click(object sender, EventArgs e)
     {
-        var currentConfig = InitialSource ?? GetSource();
+        var currentConfig = InitialSource ?? GetSource<TabularSourceBase>();
         Columns.Clear();
 
         if (string.IsNullOrWhiteSpace(FileTextBox.Text))
@@ -111,10 +120,10 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
             return;
         }
 
-        var headers = new Dictionary<string, int>();
+        Dictionary<string, int> headers;
         try
         {
-            ExternalTablesMethods.ReadFromExcel(FileTextBox.Text, worksheet => headers = worksheet.GetHeaderIndexes());
+            headers = GetHeaderColumns(FileTextBox.Text);
         }
         catch (Exception ex)
         {
@@ -124,7 +133,7 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
 
         foreach (var header in headers)
         {
-            var columnInfo = new ExcelColumnInfo() { Name = header.Key };
+            var columnInfo = new TabularColumnInfo() { Name = header.Key };
             columnInfo.Exclude = currentConfig.ExcludeColumnNames.Contains(columnInfo.Name);
             if (currentConfig.ColumnDataTypes.FirstOrDefault(dataType => dataType.ColumnName == columnInfo.Name) is { } dataTypeEntry)
             {
@@ -134,10 +143,12 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
         }
     }
 
-    /// <summary> Returns a new <see cref="ExcelSource"/> based on the current input. </summary>
-    public ExcelSource GetSource()
+    /// <summary> Returns a new <typeparamref name="T"/> based on the current input. </summary>
+    ///
+    /// <typeparam name="T"> Concrete implementation of <see cref="TabularSourceBase"/> which this form represents. </typeparam>
+    public T GetSource<T>() where T : TabularSourceBase, new()
     {
-        var data = ExternalTableSourceBaseControl.GetData<ExcelSource>();
+        var data = ExternalTableSourceBaseControl.GetData<T>();
 
         data.FilePath = FileTextBox.Text;
 
@@ -147,7 +158,7 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
             .ToArray();
 
         data.ColumnDataTypes = Columns
-            .Select(column => new ExcelColumnDataType()
+            .Select(column => new TabularColumnDataType()
             {
                 ColumnName = column.Name,
                 DataType = column.DataType,
@@ -159,7 +170,7 @@ internal partial class ExcelSourceDialog : System.Windows.Forms.Form
 
 
     /// <summary> Defines information for how a column should be handled when reading as a data source. </summary>
-    private sealed class ExcelColumnInfo
+    private sealed class TabularColumnInfo
     {
         /// <summary> Gets or sets the column name. </summary>
         public string Name { get; set; }

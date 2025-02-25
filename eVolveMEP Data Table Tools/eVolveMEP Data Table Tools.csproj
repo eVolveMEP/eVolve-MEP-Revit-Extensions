@@ -4,8 +4,8 @@
 		<Company>eVolve MEP, LLC</Company>
 		<Product>eVolve Revit Extensions</Product>
 		<Description>Advanced tools for working with Data Tables within the eVolve Revit product line.</Description>
-		<Copyright>Copyright © 2024 eVolve MEP, LLC</Copyright>
-		<Version>8.0.0.08024</Version>
+		<Copyright>Copyright © 2025 eVolve MEP, LLC</Copyright>
+		<Version>8.2.0.01135</Version>
 		<Configurations>
 			eE Debug Revit 2022;
 			eE Debug Revit 2023;
@@ -171,6 +171,7 @@
 		<Reference Include="System.Windows.Forms" />
 		<Reference Include="System.Data.DataSetExtensions" />
 		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="Microsoft.VisualBasic" />
 		<Reference Include="System.Data" />
 		<Reference Include="System.Xml" />
 		<Reference Include="WindowsBase" />
@@ -192,12 +193,15 @@
 			<Link>Methods.cs</Link>
 		</Compile>
 		<Compile Include="ApplicationMethods.cs" />
-		<Compile Include="ExternalTables\ExcelSourceDialog.cs">
+		<Compile Include="CopyTable\CopyTableCommand.cs" />
+		<Compile Include="ExternalTables\CsvTableSource.cs" />
+		<Compile Include="ExternalTables\TabularSourceDialog.cs">
 			<SubType>Form</SubType>
 		</Compile>
-		<Compile Include="ExternalTables\ExcelSourceDialog.Designer.cs">
-			<DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+		<Compile Include="ExternalTables\TabularSourceDialog.Designer.cs">
+			<DependentUpon>TabularSourceDialog.cs</DependentUpon>
 		</Compile>
+		<Compile Include="ExternalTables\DataTableSource.cs" />
 		<Compile Include="ExternalTables\SqlServerTableSource .cs" />
 		<Compile Include="ExternalTables\ExcelTableSource.cs" />
 		<Compile Include="ExternalTables\ExternalTablesMethods.cs" />
@@ -214,6 +218,12 @@
 		<Compile Include="ExternalTables\SqlServerSourceDialog.Designer.cs">
 			<DependentUpon>SqlServerSourceDialog.cs</DependentUpon>
 		</Compile>
+		<Compile Include="ExternalTables\DataTableSourceDialog.cs">
+		  <SubType>Form</SubType>
+		</Compile>
+		<Compile Include="ExternalTables\DataTableSourceDialog.Designer.cs">
+		  <DependentUpon>DataTableSourceDialog.cs</DependentUpon>
+		</Compile>
 		<Compile Include="Tools\AddMappingDialog.cs">
 			<SubType>Form</SubType>
 		</Compile>
@@ -221,6 +231,10 @@
 			<DependentUpon>AddMappingDialog.cs</DependentUpon>
 		</Compile>
 		<Compile Include="Application.cs" />
+		<Compile Include="CopyTable\CopyTableDialog.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="CopyTable\CopyTableDialog.Designer.cs" />
 		<Compile Include="Tools\ToolsCommand.cs" />
 		<Compile Include="ExternalTables\ExternalTablesConfigDialog.cs">
 			<SubType>Form</SubType>
@@ -257,17 +271,29 @@
 		</Compile>
 	</ItemGroup>
 	<ItemGroup>
+	  <None Include="LinkedVideo_20x20.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="CopyDataTable_32x32.png" />
+	</ItemGroup>
+	<ItemGroup>
 		<None Include="packages.config" />
 		<None Include="_DataTableTools.addin">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 	<ItemGroup>
-		<EmbeddedResource Include="ExternalTables\ExcelSourceDialog.fr-fr.resx">
-			<DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+		<EmbeddedResource Include="ExternalTables\DataTableSourceDialog.fr-fr.resx">
+		  <DependentUpon>DataTableSourceDialog.cs</DependentUpon>
 		</EmbeddedResource>
-		<EmbeddedResource Include="ExternalTables\ExcelSourceDialog.resx">
-			<DependentUpon>ExcelSourceDialog.cs</DependentUpon>
+		<EmbeddedResource Include="ExternalTables\DataTableSourceDialog.resx">
+			<DependentUpon>DataTableSourceDialog.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="ExternalTables\TabularSourceDialog.fr-fr.resx">
+			<DependentUpon>TabularSourceDialog.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="ExternalTables\TabularSourceDialog.resx">
+			<DependentUpon>TabularSourceDialog.cs</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Include="ExternalTables\ExternalTableSourceBaseControl.fr-fr.resx">
 			<DependentUpon>ExternalTableSourceBaseControl.cs</DependentUpon>
@@ -300,6 +326,12 @@
 			<Generator>ResXFileCodeGenerator</Generator>
 			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
 			<SubType>Designer</SubType>
+		</EmbeddedResource>
+		<EmbeddedResource Include="CopyTable\CopyTableDialog.fr-fr.resx">
+			<DependentUpon>CopyTableDialog.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="CopyTable\CopyTableDialog.resx">
+			<DependentUpon>CopyTableDialog.cs</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Include="Tools\TextInputDialog.fr-FR.resx">
 			<DependentUpon>TextInputDialog.cs</DependentUpon>

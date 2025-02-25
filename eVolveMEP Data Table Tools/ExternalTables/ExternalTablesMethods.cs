@@ -49,7 +49,9 @@ internal static class ExternalTablesMethods
 
         foreach (var source in Enumerable.Empty<eVolve::eVolve.Core.Revit.Reporting.IExternalDataTable>()
             .Concat(settings.Excel.Select(excel => new ExcelTableSource(excel)))
-            .Concat(settings.SqlServer.Select(sqlServer => new SqlServerTableSource(sqlServer))))
+            .Concat(settings.Csv.Select(excel => new CsvTableSource(excel)))
+            .Concat(settings.SqlServer.Select(sqlServer => new SqlServerTableSource(sqlServer)))
+            .Concat(settings.SerializedDataTables.Select(serializedDataTable => new DataTableSource(serializedDataTable))))
         {
             ReportingAPI.RegisterExternalDataTable(source);
             CurrentlyRegisteredIds.Add(source.Id);
