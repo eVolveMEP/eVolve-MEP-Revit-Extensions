@@ -246,6 +246,16 @@ namespace eVolve.DataTableTools.Revit.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The selected entry is sourced from the global configuration file.
+        ///Changes will not be saved..
+        /// </summary>
+        internal static string GlobalConfigurationWillNotBeSavedNotice {
+            get {
+                return ResourceManager.GetString("GlobalConfigurationWillNotBeSavedNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Help_Medium_20x20 {

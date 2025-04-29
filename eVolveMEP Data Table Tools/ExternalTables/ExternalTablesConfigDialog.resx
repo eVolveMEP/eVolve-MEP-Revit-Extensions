@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ExcelDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 353</value>
+    <value>188, 347</value>
   </data>
   <data name="ExcelDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
@@ -154,7 +154,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="ExcelEditButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 353</value>
+    <value>97, 347</value>
   </data>
   <data name="ExcelEditButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
@@ -181,7 +181,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="ExcelNewButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 353</value>
+    <value>6, 347</value>
   </data>
   <data name="ExcelNewButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
@@ -255,6 +255,12 @@
   <data name="ExcelDescriptionColumn.Width" type="System.Int32, mscorlib">
     <value>125</value>
   </data>
+  <metadata name="ExcelGlobalColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ExcelGlobalColumn.HeaderText" xml:space="preserve">
+    <value>Global</value>
+  </data>
   <data name="ExcelDataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
   </data>
@@ -262,7 +268,7 @@
     <value>51</value>
   </data>
   <data name="ExcelDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>756, 341</value>
+    <value>756, 335</value>
   </data>
   <data name="ExcelDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -286,7 +292,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="ExcelTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>768, 382</value>
+    <value>768, 376</value>
   </data>
   <data name="ExcelTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -313,7 +319,7 @@
     <value>NoControl</value>
   </data>
   <data name="CsvDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 353</value>
+    <value>188, 347</value>
   </data>
   <data name="CsvDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
@@ -343,7 +349,7 @@
     <value>NoControl</value>
   </data>
   <data name="CsvEditButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 353</value>
+    <value>97, 347</value>
   </data>
   <data name="CsvEditButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
@@ -373,7 +379,7 @@
     <value>NoControl</value>
   </data>
   <data name="CsvNewButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 353</value>
+    <value>6, 347</value>
   </data>
   <data name="CsvNewButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
@@ -447,6 +453,12 @@
   <data name="CsvDescriptionColumn.Width" type="System.Int32, mscorlib">
     <value>125</value>
   </data>
+  <metadata name="CsvGlobalColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="CsvGlobalColumn.HeaderText" xml:space="preserve">
+    <value>Global</value>
+  </data>
   <data name="CsvDataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
   </data>
@@ -454,7 +466,7 @@
     <value>51</value>
   </data>
   <data name="CsvDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>756, 341</value>
+    <value>756, 335</value>
   </data>
   <data name="CsvDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -478,7 +490,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="CsvTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>768, 382</value>
+    <value>768, 376</value>
   </data>
   <data name="CsvTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -502,7 +514,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="SqlDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 353</value>
+    <value>188, 347</value>
   </data>
   <data name="SqlDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
@@ -529,7 +541,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="SqlEditButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 353</value>
+    <value>97, 347</value>
   </data>
   <data name="SqlEditButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
@@ -556,7 +568,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="SqlNewButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 353</value>
+    <value>6, 347</value>
   </data>
   <data name="SqlNewButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
@@ -618,6 +630,12 @@
   <data name="SqlDescriptionColumn.Width" type="System.Int32, mscorlib">
     <value>125</value>
   </data>
+  <metadata name="SqlGlobalColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="SqlGlobalColumn.HeaderText" xml:space="preserve">
+    <value>Global</value>
+  </data>
   <data name="SqlDataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
   </data>
@@ -625,7 +643,7 @@
     <value>51</value>
   </data>
   <data name="SqlDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>756, 341</value>
+    <value>756, 335</value>
   </data>
   <data name="SqlDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -649,7 +667,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="SqlTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>768, 382</value>
+    <value>768, 376</value>
   </data>
   <data name="SqlTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -673,13 +691,13 @@
     <value>Bottom, Left</value>
   </data>
   <data name="DataTableDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 353</value>
+    <value>188, 347</value>
   </data>
   <data name="DataTableDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
   </data>
   <data name="DataTableDeleteButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="DataTableDeleteButton.Text" xml:space="preserve">
     <value>Delete</value>
@@ -700,13 +718,13 @@
     <value>Bottom, Left</value>
   </data>
   <data name="DataTableEditButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 353</value>
+    <value>97, 347</value>
   </data>
   <data name="DataTableEditButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
   </data>
   <data name="DataTableEditButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="DataTableEditButton.Text" xml:space="preserve">
     <value>Edit</value>
@@ -727,13 +745,13 @@
     <value>Bottom, Left</value>
   </data>
   <data name="DataTableNewButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 353</value>
+    <value>6, 347</value>
   </data>
   <data name="DataTableNewButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 23</value>
   </data>
   <data name="DataTableNewButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="DataTableNewButton.Text" xml:space="preserve">
     <value>New</value>
@@ -801,6 +819,12 @@
   <data name="DataTableDescriptionColumn.Width" type="System.Int32, mscorlib">
     <value>125</value>
   </data>
+  <metadata name="DataTableGlobalColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="DataTableGlobalColumn.HeaderText" xml:space="preserve">
+    <value>Global</value>
+  </data>
   <data name="DataTableDataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
   </data>
@@ -808,10 +832,10 @@
     <value>51</value>
   </data>
   <data name="DataTableDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>756, 341</value>
+    <value>756, 335</value>
   </data>
   <data name="DataTableDataGridView.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;DataTableDataGridView.Name" xml:space="preserve">
     <value>DataTableDataGridView</value>
@@ -832,7 +856,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="DataTableTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>768, 382</value>
+    <value>768, 376</value>
   </data>
   <data name="DataTableTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -856,7 +880,7 @@
     <value>12, 12</value>
   </data>
   <data name="TabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>776, 408</value>
+    <value>776, 402</value>
   </data>
   <data name="TabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -871,7 +895,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TabControl.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="LogoPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -880,7 +904,7 @@
     <value>NoControl</value>
   </data>
   <data name="LogoPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 497</value>
+    <value>12, 546</value>
   </data>
   <data name="LogoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 23</value>
@@ -901,19 +925,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LogoPictureBox.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="OKButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="OKButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>476, 497</value>
+    <value>476, 546</value>
   </data>
   <data name="OKButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
   </data>
   <data name="OKButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="OKButton.Text" xml:space="preserve">
     <value>OK</value>
@@ -928,19 +952,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;OKButton.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="Cancel_Button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="Cancel_Button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 497</value>
+    <value>582, 546</value>
   </data>
   <data name="Cancel_Button.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
   </data>
   <data name="Cancel_Button.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="Cancel_Button.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -955,19 +979,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Cancel_Button.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="ApplyButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="ApplyButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>688, 497</value>
+    <value>688, 546</value>
   </data>
   <data name="ApplyButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
   </data>
   <data name="ApplyButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="ApplyButton.Text" xml:space="preserve">
     <value>Apply</value>
@@ -982,7 +1006,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ApplyButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="ViewSourceCodeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -994,13 +1018,13 @@
     <value>NoControl</value>
   </data>
   <data name="ViewSourceCodeLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 502</value>
+    <value>190, 551</value>
   </data>
   <data name="ViewSourceCodeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 15</value>
+    <value>115, 13</value>
   </data>
   <data name="ViewSourceCodeLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="ViewSourceCodeLabel.Text" xml:space="preserve">
     <value>ViewSourceCodeLabel</value>
@@ -1015,7 +1039,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ViewSourceCodeLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="ConfigLocationLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -1024,13 +1048,13 @@
     <value>True</value>
   </data>
   <data name="ConfigLocationLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 423</value>
+    <value>19, 425</value>
   </data>
   <data name="ConfigLocationLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 15</value>
+    <value>165, 13</value>
   </data>
   <data name="ConfigLocationLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>1</value>
   </data>
   <data name="ConfigLocationLabel.Text" xml:space="preserve">
     <value>Current configuration location: {0}</value>
@@ -1045,38 +1069,38 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ConfigLocationLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
-  <data name="GlobalConfigInfoLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="CommonConfigInfoLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="GlobalConfigInfoLabel.AutoSize" type="System.Boolean, mscorlib">
+  <data name="CommonConfigInfoLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="GlobalConfigInfoLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 453</value>
+  <data name="CommonConfigInfoLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 450</value>
   </data>
-  <data name="GlobalConfigInfoLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>515, 30</value>
+  <data name="CommonConfigInfoLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>459, 26</value>
   </data>
-  <data name="GlobalConfigInfoLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="CommonConfigInfoLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="GlobalConfigInfoLabel.Text" xml:space="preserve">
-    <value>This is a global/standards path. Any changes will apply to all installations referencing this path.
+  <data name="CommonConfigInfoLabel.Text" xml:space="preserve">
+    <value>This is a common standards path. Any changes will apply to all installations referencing this path.
 A reload of Revit will be required for other installations to apply any updated settings.</value>
   </data>
-  <data name="&gt;&gt;GlobalConfigInfoLabel.Name" xml:space="preserve">
-    <value>GlobalConfigInfoLabel</value>
+  <data name="&gt;&gt;CommonConfigInfoLabel.Name" xml:space="preserve">
+    <value>CommonConfigInfoLabel</value>
   </data>
-  <data name="&gt;&gt;GlobalConfigInfoLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;CommonConfigInfoLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GlobalConfigInfoLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;CommonConfigInfoLabel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;GlobalConfigInfoLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;CommonConfigInfoLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="HelpLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1103,7 +1127,7 @@ A reload of Revit will be required for other installations to apply any updated 
     <value>$this</value>
   </data>
   <data name="&gt;&gt;HelpLinkPictureBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="VideoLinkPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1130,6 +1154,72 @@ A reload of Revit will be required for other installations to apply any updated 
     <value>$this</value>
   </data>
   <data name="&gt;&gt;VideoLinkPictureBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GlobalConfigLocationLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="GlobalConfigLocationLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="GlobalConfigLocationLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="GlobalConfigLocationLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 491</value>
+  </data>
+  <data name="GlobalConfigLocationLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 13</value>
+  </data>
+  <data name="GlobalConfigLocationLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GlobalConfigLocationLabel.Text" xml:space="preserve">
+    <value>Global configuration: {0}</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigLocationLabel.Name" xml:space="preserve">
+    <value>GlobalConfigLocationLabel</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigLocationLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigLocationLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigLocationLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 514</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>463, 13</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="GlobalConfigInfoLabel.Text" xml:space="preserve">
+    <value>Configurations within this file are loaded invisibly in the background and cannot be edited directly.</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigInfoLabel.Name" xml:space="preserve">
+    <value>GlobalConfigInfoLabel</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigInfoLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigInfoLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;GlobalConfigInfoLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1139,31 +1229,7 @@ A reload of Revit will be required for other installations to apply any updated 
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 532</value>
-  </data>
-  <data name="&gt;&gt;ExcelNameColumn.Name" xml:space="preserve">
-    <value>ExcelNameColumn</value>
-  </data>
-  <data name="&gt;&gt;ExcelNameColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExcelFilePathColumn.Name" xml:space="preserve">
-    <value>ExcelFilePathColumn</value>
-  </data>
-  <data name="&gt;&gt;ExcelFilePathColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExcelCachedColumn.Name" xml:space="preserve">
-    <value>ExcelCachedColumn</value>
-  </data>
-  <data name="&gt;&gt;ExcelCachedColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExcelDescriptionColumn.Name" xml:space="preserve">
-    <value>ExcelDescriptionColumn</value>
-  </data>
-  <data name="&gt;&gt;ExcelDescriptionColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>800, 581</value>
   </data>
   <data name="&gt;&gt;CsvNameColumn.Name" xml:space="preserve">
     <value>CsvNameColumn</value>
@@ -1189,6 +1255,42 @@ A reload of Revit will be required for other installations to apply any updated 
   <data name="&gt;&gt;CsvDescriptionColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;CsvGlobalColumn.Name" xml:space="preserve">
+    <value>CsvGlobalColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvGlobalColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelNameColumn.Name" xml:space="preserve">
+    <value>ExcelNameColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelFilePathColumn.Name" xml:space="preserve">
+    <value>ExcelFilePathColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelFilePathColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelCachedColumn.Name" xml:space="preserve">
+    <value>ExcelCachedColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelCachedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelDescriptionColumn.Name" xml:space="preserve">
+    <value>ExcelDescriptionColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelDescriptionColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelGlobalColumn.Name" xml:space="preserve">
+    <value>ExcelGlobalColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelGlobalColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;SqlNameColumn.Name" xml:space="preserve">
     <value>SqlNameColumn</value>
   </data>
@@ -1206,6 +1308,12 @@ A reload of Revit will be required for other installations to apply any updated 
   </data>
   <data name="&gt;&gt;SqlDescriptionColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SqlGlobalColumn.Name" xml:space="preserve">
+    <value>SqlGlobalColumn</value>
+  </data>
+  <data name="&gt;&gt;SqlGlobalColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;DataTableNameColumn.Name" xml:space="preserve">
     <value>DataTableNameColumn</value>
@@ -1230,6 +1338,12 @@ A reload of Revit will be required for other installations to apply any updated 
   </data>
   <data name="&gt;&gt;DataTableDescriptionColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DataTableGlobalColumn.Name" xml:space="preserve">
+    <value>DataTableGlobalColumn</value>
+  </data>
+  <data name="&gt;&gt;DataTableGlobalColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ExternalTablesConfigDialog</value>

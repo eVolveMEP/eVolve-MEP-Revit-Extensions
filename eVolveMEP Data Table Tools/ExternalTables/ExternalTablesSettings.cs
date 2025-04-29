@@ -1,8 +1,11 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
+
+extern alias eVolve;
+using ProductAPI = eVolve::eVolve.Core.Revit.ProductInfo.API;
 
 namespace eVolve.DataTableTools.Revit.ExternalTables;
 
@@ -39,13 +42,36 @@ public abstract class ExternalTableSourceBase
     /// each request (<see langword="false"/>).
     /// </summary>
     public bool Cache { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether this entry is sourced from <see cref="ExternalTablesMethods.ExternalTablesGlobalSettingsFilePath"/>.
+    /// </summary>
+    [System.Xml.Serialization.XmlIgnore]
+    public bool Global { get; set; }
 }
 
 /// <summary> Base class which holds information for tabular data source files. </summary>
+[Serializable]
 public class TabularSourceBase : ExternalTableSourceBase
 {
-    /// <summary> Gets or sets the full pathname of the file. </summary>
+    /// <summary>
+    /// Gets or sets the filepath value which will be persisted to disk.
+    /// <para>This should not be used or updated directly.</para>
+    /// </summary>
+    ///
+    /// <remarks> Consume via <see cref="FilePathConsumable"/> </remarks>
     public string FilePath { get; set; }
+
+    /// <summary>
+    /// Gets or sets the consumable file path respective to this local machine.
+    /// <para>This should be used by any method which works with the actual path.</para>
+    /// </summary>
+    [System.Xml.Serialization.XmlIgnore]
+    public string FilePathConsumable
+    {
+        get => ProductAPI.GetExpandedPath(FilePath);
+        set => FilePath = ProductAPI.GetExpansionAwarePath(value);
+    }
 
     /// <summary> Gets or sets a list of column names which should be excluded from the results. </summary>
     public string[] ExcludeColumnNames { get; set; } = [];
@@ -71,11 +97,11 @@ public class TabularColumnDataType
 
 /// <summary> (Serializable) External Excel data source configuration information. </summary>
 [Serializable]
-public class ExcelSource : TabularSourceBase { }
+public class ExcelSource : TabularSourceBase;
 
 /// <summary> (Serializable) External CSV file source information. </summary>
 [Serializable]
-public class CsvSource : TabularSourceBase { }
+public class CsvSource : TabularSourceBase;
 
 /// <summary> (Serializable) External SQL Server data source configuration information. </summary>
 [Serializable]
@@ -96,6 +122,15 @@ public class SqlServerSource : ExternalTableSourceBase
 [Serializable]
 public class SerializedDataTableSource : ExternalTableSourceBase
 {
-    /// <summary> Gets or sets the full pathname of the serialized source. </summary>
+    /// <remarks> Consume via <see cref="FilePathConsumable"/> </remarks>
+    ///
+    /// <inheritdoc cref="TabularSourceBase.FilePath"/>
     public string FilePath { get; set; }
+
+    /// <inheritdoc cref="TabularSourceBase.FilePathConsumable"/>
+    internal string FilePathConsumable
+    {
+        get => ProductAPI.GetExpandedPath(FilePath);
+        set => FilePath = ProductAPI.GetExpansionAwarePath(value);
+    }
 }

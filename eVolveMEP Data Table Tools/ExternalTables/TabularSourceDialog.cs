@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -46,7 +46,7 @@ internal partial class TabularSourceDialog : System.Windows.Forms.Form
         GetHeaderColumns = getHeaderColumns;
 
         ExternalTableSourceBaseControl.SetData(source);
-        FileTextBox.Text = source.FilePath;
+        FileTextBox.Text = source.FilePathConsumable;
 
         NameColumn.DataPropertyName = nameof(TabularColumnInfo.Name);
         ExcludeColumn.DataPropertyName = nameof(TabularColumnInfo.Exclude);
@@ -77,7 +77,7 @@ internal partial class TabularSourceDialog : System.Windows.Forms.Form
             var source = GetSource<TabularSourceBase>();
             e.Cancel = !ExternalTableSourceBaseControl.ValidateData(source,
             [
-                (source.FilePath, FileGroupBox.Text),
+                (source.FilePathConsumable, FileGroupBox.Text),
             ]);
         }
     }
@@ -150,7 +150,7 @@ internal partial class TabularSourceDialog : System.Windows.Forms.Form
     {
         var data = ExternalTableSourceBaseControl.GetData<T>();
 
-        data.FilePath = FileTextBox.Text;
+        data.FilePathConsumable = FileTextBox.Text;
 
         data.ExcludeColumnNames = Columns
             .Where(column => column.Exclude)

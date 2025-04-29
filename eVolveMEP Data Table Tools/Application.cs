@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -68,8 +68,10 @@ public class ApplicationMechanical : IExternalApplication
             string.Format(Resources.CopyDataTableToolTipText, HostProductName),
             CopyTable.CopyTableCommand.HelpLinkUrl));
 
+        eVolve::eVolve.Core.Revit.ProductInfo.API.RegisterExpansionPathMarker("DataTableToolsConfigPath", ApplicationConfigurationPath);
+
         // Load external tables for usage.
-        ExternalTables.ExternalTablesMethods.ApplySettings(ExternalTables.ExternalTablesMethods.GetSettings());
+        ExternalTables.ExternalTablesMethods.ApplySettings(ExternalTables.ExternalTablesMethods.GetSettings(ExternalTables.ExternalTablesMethods.GetExternalTablesSettingsFilePath(out _)));
 
         return Result.Succeeded;
     }

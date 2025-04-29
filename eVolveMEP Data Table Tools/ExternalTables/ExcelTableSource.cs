@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -43,7 +43,7 @@ internal class ExcelTableSource(ExcelSource source) : eVolve::eVolve.Core.Revit.
 
         var table = new DataTable(Source.Name);
 
-        ExternalTablesMethods.ReadFromExcel(Source.FilePath,
+        ExternalTablesMethods.ReadFromExcel(Source.FilePathConsumable,
             worksheet =>
             {
                 var headers = worksheet.GetHeaderIndexes()

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -15,19 +15,46 @@ internal static class ExternalTablesMethods
 {
     /// <summary> Gets the file path where the persisted <see cref="ExternalTablesSettings"/> are stored. </summary>
     ///
-    /// <param name="isGlobal"> [out] Specifies if the path is set to a global/company standard location (<see langword="true"/>)
+    /// <param name="isStandard"> [out] Specifies if the path is set to a company standard location (<see langword="true"/>)
     ///     or a local path (<see langword="false"/>). </param>
-    internal static string GetExternalTablesSettingsFilePath(out bool isGlobal)
+    internal static string GetExternalTablesSettingsFilePath(out bool isStandard)
     {
-        isGlobal = !string.IsNullOrEmpty(ProductAPI.GlobalConfigurationFolderPath);
+        isStandard = !string.IsNullOrEmpty(ProductAPI.GlobalConfigurationFolderPath);
         return System.IO.Path.Combine(!string.IsNullOrEmpty(ProductAPI.GlobalConfigurationFolderPath) ? ProductAPI.GlobalConfigurationFolderPath : ApplicationConfigurationPath, "ExternalTables.xml");
     }
+
+    /// <summary> Gets the full pathname of the external tables global settings file which is loaded invisibly. </summary>
+    internal static string ExternalTablesGlobalSettingsFilePath => System.IO.Path.Combine(ApplicationConfigurationPath, "ExternalTables_Global.xml");
 
     /// <summary>
     /// Gets the <see cref="ExternalTablesSettings"/> currently staved on disk or creates a new instance if it does not
     /// exist.
     /// </summary>
-    public static ExternalTablesSettings GetSettings() => LoadSettings<ExternalTablesSettings>(GetExternalTablesSettingsFilePath(out _)) ?? new ExternalTablesSettings();
+    ///
+    /// <param name="filePath"> Full pathname of the settings file to load from. </param>
+    public static ExternalTablesSettings GetSettings(string filePath)
+    {
+        var settings = LoadSettings<ExternalTablesSettings>(filePath) ?? new ExternalTablesSettings();
+
+        // Flag entries in the global file appropriately.
+        if (filePath.Equals(ExternalTablesGlobalSettingsFilePath, StringComparison.InvariantCultureIgnoreCase))
+        {
+            static void setEntriesGlobal<T>(T[] entries) where T : ExternalTableSourceBase
+            {
+                foreach (var entry in entries)
+                {
+                    entry.Global = true;
+                }
+            }
+
+            setEntriesGlobal(settings.Excel);
+            setEntriesGlobal(settings.Csv);
+            setEntriesGlobal(settings.SqlServer);
+            setEntriesGlobal(settings.SerializedDataTables);
+        }
+
+        return settings;
+    }
 
     /// <summary> Gets a list of Ids currently registered via <see cref="ReportingAPI.RegisterExternalDataTable"/>. </summary>
     private static List<string> CurrentlyRegisteredIds { get; } = [];
@@ -39,6 +66,14 @@ internal static class ExternalTablesMethods
     /// <param name="settings"> Current settings. </param>
     public static void ApplySettings(ExternalTablesSettings settings)
     {
+        static T[] withoutGlobalEntries<T>(T[] entries) where T : ExternalTableSourceBase => entries.Where(entry => !entry.Global).ToArray();
+
+        settings.Excel = withoutGlobalEntries(settings.Excel);
+        settings.Csv = withoutGlobalEntries(settings.Csv);
+        settings.SqlServer = withoutGlobalEntries(settings.SqlServer);
+        settings.SerializedDataTables = withoutGlobalEntries(settings.SerializedDataTables);
+
+
         SaveSettings(settings, GetExternalTablesSettingsFilePath(out _));
 
         foreach (var unregisterId in CurrentlyRegisteredIds)
@@ -47,11 +82,15 @@ internal static class ExternalTablesMethods
         }
         CurrentlyRegisteredIds.Clear();
 
+        var globalSettings = GetSettings(ExternalTablesGlobalSettingsFilePath);
+
+        // Include the global first then the local settings.
+        // This way the local settings will take priority in the event of any name collisions.
         foreach (var source in Enumerable.Empty<eVolve::eVolve.Core.Revit.Reporting.IExternalDataTable>()
-            .Concat(settings.Excel.Select(excel => new ExcelTableSource(excel)))
-            .Concat(settings.Csv.Select(excel => new CsvTableSource(excel)))
-            .Concat(settings.SqlServer.Select(sqlServer => new SqlServerTableSource(sqlServer)))
-            .Concat(settings.SerializedDataTables.Select(serializedDataTable => new DataTableSource(serializedDataTable))))
+            .Concat(globalSettings.Excel.Concat(settings.Excel).Select(excel => new ExcelTableSource(excel)))
+            .Concat(globalSettings.Csv.Concat(settings.Csv).Select(excel => new CsvTableSource(excel)))
+            .Concat(globalSettings.SqlServer.Concat(settings.SqlServer).Select(sqlServer => new SqlServerTableSource(sqlServer)))
+            .Concat(globalSettings.SerializedDataTables.Concat(settings.SerializedDataTables).Select(serializedDataTable => new DataTableSource(serializedDataTable))))
         {
             ReportingAPI.RegisterExternalDataTable(source);
             CurrentlyRegisteredIds.Add(source.Id);
