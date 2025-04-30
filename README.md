@@ -11,10 +11,10 @@ This _exact_ codebase ships with the eVolve Revit products so it serves as a rea
 
 # Project Details
 - Compatible with:
-  - Revit 2022, 2023, 2024, 2025
-  - eVolve Electrical 8.0+
-  - eVolve Mechanical 8.0+
-- Visual Studio 2022 format
+  - Revit 2023, 2024, 2025, 2026
+  - eVolve Electrical 9.0+
+  - eVolve Mechanical 9.0+
+- Visual Studio 2023 format
 
 # Building and Running
 This project uses private Nuget packages to source the Autodesk Revit binaries referenced by the code. In order to build this in an external environment, the appropriate `ConditionalTargets/Revit` sources (which all come from the respective Revit install folder) need to be explicitly referenced by the project.
