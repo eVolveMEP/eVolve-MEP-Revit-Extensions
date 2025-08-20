@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -35,7 +35,7 @@ internal sealed partial class DataTableSourceDialog : System.Windows.Forms.Form
         this.PrepDialog(dialogTitle);
 
         ExternalTableSourceBaseControl.SetData(source);
-        FileTextBox.Text = source.FilePath;
+        FileTextBox.Text = source.FilePathConsumable;
 
         FileInfoLabel.Text = string.Format(FileInfoLabel.Text, SerializeDataTableGroupBox.Text);
 
@@ -56,7 +56,7 @@ internal sealed partial class DataTableSourceDialog : System.Windows.Forms.Form
             var source = GetSource();
             e.Cancel = !ExternalTableSourceBaseControl.ValidateData(source,
             [
-                (source.FilePath, FileGroupBox.Text),
+                (source.FilePathConsumable, FileGroupBox.Text),
             ]);
         }
     }
@@ -106,7 +106,7 @@ internal sealed partial class DataTableSourceDialog : System.Windows.Forms.Form
     public SerializedDataTableSource GetSource()
     {
         var data = ExternalTableSourceBaseControl.GetData<SerializedDataTableSource>();
-        data.FilePath = FileTextBox.Text;
+        data.FilePathConsumable = FileTextBox.Text;
         return data;
     }
 }

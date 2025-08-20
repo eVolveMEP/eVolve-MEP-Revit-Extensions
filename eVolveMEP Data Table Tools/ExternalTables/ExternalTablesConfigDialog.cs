@@ -39,14 +39,17 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
         this.PrepDialog(Resources.ExternalTablesButtonText, ExternalTablesConfigCommand.IconResource,
             ExternalTablesConfigCommand.HelpLinkUrl, HelpLinkPictureBox, ExternalTablesConfigCommand.VideoUrl, VideoLinkPictureBox, ViewSourceCodeLabel);
 
-        var settings = ExternalTablesMethods.GetSettings();
-        ExcelSources = new BindingList<ExcelSource>(settings.Excel.ToList());
-        CsvSources = new BindingList<CsvSource>(settings.Csv.ToList());
-        SqlSources = new BindingList<SqlServerSource>(settings.SqlServer.ToList());
-        DataTableSources = new BindingList<SerializedDataTableSource>(settings.SerializedDataTables.ToList());
+        var settings = ExternalTablesMethods.GetSettings(ExternalTablesMethods.GetExternalTablesSettingsFilePath(out _));
+        var globalSettings = ExternalTablesMethods.GetSettings(ExternalTablesMethods.ExternalTablesGlobalSettingsFilePath);
+        ExcelSources = [.. settings.Excel, .. globalSettings.Excel];
+        CsvSources = [.. settings.Csv, .. globalSettings.Csv];
+        SqlSources = [.. settings.SqlServer, .. globalSettings.SqlServer];
+        DataTableSources = [.. settings.SerializedDataTables, .. globalSettings.SerializedDataTables];
 
-        ConfigLocationLabel.Text = string.Format(ConfigLocationLabel.Text, ExternalTablesMethods.GetExternalTablesSettingsFilePath(out var isGlobal));
-        GlobalConfigInfoLabel.Visible = isGlobal;
+        ConfigLocationLabel.Text = string.Format(ConfigLocationLabel.Text, ExternalTablesMethods.GetExternalTablesSettingsFilePath(out var isStandard));
+        CommonConfigInfoLabel.Visible = isStandard;
+
+        GlobalConfigLocationLabel.Text = string.Format(GlobalConfigLocationLabel.Text, ExternalTablesMethods.ExternalTablesGlobalSettingsFilePath);
 
         foreach (var excelButton in new[] { ExcelNewButton, ExcelEditButton, ExcelDeleteButton })
         {
@@ -108,24 +111,28 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
         ExcelNameColumn.DataPropertyName = nameof(ExcelSource.Name);
         ExcelDescriptionColumn.DataPropertyName = nameof(ExcelSource.Description);
         ExcelCachedColumn.DataPropertyName = nameof(ExcelSource.Cache);
-        ExcelFilePathColumn.DataPropertyName = nameof(ExcelSource.FilePath);
+        ExcelFilePathColumn.DataPropertyName = nameof(ExcelSource.FilePathConsumable);
+        ExcelGlobalColumn.DataPropertyName = nameof(ExcelSource.Global);
 
         CsvDataGridView.DataSource = CsvSources;
         CsvNameColumn.DataPropertyName = nameof(CsvSource.Name);
         CsvDescriptionColumn.DataPropertyName = nameof(CsvSource.Description);
         CsvCachedColumn.DataPropertyName = nameof(CsvSource.Cache);
-        CsvFilePathColumn.DataPropertyName = nameof(CsvSource.FilePath);
+        CsvFilePathColumn.DataPropertyName = nameof(CsvSource.FilePathConsumable);
+        CsvGlobalColumn.DataPropertyName = nameof(CsvSource.Global);
 
         SqlDataGridView.DataSource = SqlSources;
         SqlNameColumn.DataPropertyName = nameof(SqlServerSource.Name);
         SqlDescriptionColumn.DataPropertyName = nameof(SqlServerSource.Description);
         SqlCachedColumn.DataPropertyName = nameof(SqlServerSource.Cache);
+        SqlGlobalColumn.DataPropertyName = nameof(SqlServerSource.Global);
 
         DataTableDataGridView.DataSource = DataTableSources;
         DataTableNameColumn.DataPropertyName = nameof(SerializedDataTableSource.Name);
         DataTableDescriptionColumn.DataPropertyName = nameof(SerializedDataTableSource.Description);
         DataTableCachedColumn.DataPropertyName = nameof(SerializedDataTableSource.Cache);
-        DataTableFilePathColumn.DataPropertyName = nameof(SerializedDataTableSource.FilePath);
+        DataTableFilePathColumn.DataPropertyName = nameof(SerializedDataTableSource.FilePathConsumable);
+        DataTableGlobalColumn.DataPropertyName = nameof(SerializedDataTableSource.Global);
     }
 
     /// <summary> Applies settings as required based on the <see cref="System.Windows.Forms.Form.DialogResult"/>. </summary>
@@ -182,7 +189,7 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
         }
         else if (buttons.Sender == buttons.Delete)
         {
-            if (grid.CurrentRow?.DataBoundItem is T toDelete)
+            if (grid.CurrentRow?.DataBoundItem is T { Global: false } toDelete)
             {
                 sources.Remove(toDelete);
             }
@@ -190,8 +197,13 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
 
         if (source != null)
         {
+            if (source.Global)
+            {
+                ShowNoticeMessage(this, Resources.GlobalConfigurationWillNotBeSavedNotice);
+            }
+
             using var sourceDialog = createSourceDialog(source);
-            if (sourceDialog.ShowDialog(this) == DialogResult.OK)
+            if (sourceDialog.ShowDialog(this) == DialogResult.OK && !source.Global)
             {
                 onSuccess(getSourceDataFromDialog(sourceDialog));
             }

@@ -5,10 +5,10 @@ SET "ElectricalId=%~4"
 SET "MechanicalId=%~5"
 
 SET "VersionYear=Unknown"
-IF NOT "%ConfigName:2021=%"=="%ConfigName%" SET "VersionYear=2021"
-IF NOT "%ConfigName:2022=%"=="%ConfigName%" SET "VersionYear=2022"
 IF NOT "%ConfigName:2023=%"=="%ConfigName%" SET "VersionYear=2023"
 IF NOT "%ConfigName:2024=%"=="%ConfigName%" SET "VersionYear=2024"
+IF NOT "%ConfigName:2025=%"=="%ConfigName%" SET "VersionYear=2025"
+IF NOT "%ConfigName:2026=%"=="%ConfigName%" SET "VersionYear=2026"
 
 SET "ProductName=Unknown"
 IF NOT "%ConfigName:eE=%"=="%ConfigName%" (

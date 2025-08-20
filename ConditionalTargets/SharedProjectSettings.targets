@@ -6,7 +6,6 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>     
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <LangVersion>13</LangVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
@@ -15,9 +14,28 @@
     <SatelliteResourceLanguages>en-US;fr-FR</SatelliteResourceLanguages>    
     <EnableDefaultItems>false</EnableDefaultItems>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <LangVersion>12</LangVersion>
+    <LangVersion>13</LangVersion>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <RevitYear Condition="$(Configuration.Contains('Revit 2023'))">2023</RevitYear>
+    <RevitYear Condition="$(Configuration.Contains('Revit 2024'))">2024</RevitYear>
+    <RevitYear Condition="$(Configuration.Contains('Revit 2025'))">2025</RevitYear>
+    <RevitYear Condition="$(Configuration.Contains('Revit 2026'))">2026</RevitYear>
+    
+    <DefineConstants>$(DefineConstants);REVIT$(RevitYear)</DefineConstants>
+    <DefineConstants Condition="'$(RevitYear)' == '2025' or '$(RevitYear)' == '2026'">$(DefineConstants);CORE</DefineConstants>
+        
+    <EvolvePrefix Condition="$(Configuration.Contains('eE'))">eE</EvolvePrefix>
+    <EvolveProduct Condition="$(Configuration.Contains('eE'))">Electrical</EvolveProduct>
+    
+    <EvolvePrefix Condition="$(Configuration.Contains('eM'))">eM</EvolvePrefix> 
+    <EvolveProduct Condition="$(Configuration.Contains('eM'))">Mechanical</EvolveProduct>
+        
+    <DefineConstants Condition="$(Configuration.Contains('eE'))">$(DefineConstants);ELECTRICAL</DefineConstants>
+    <DefineConstants Condition="$(Configuration.Contains('eM'))">$(DefineConstants);MECHANICAL</DefineConstants>
+  </PropertyGroup>
+  
   <PropertyGroup Condition="$(DefineConstants.Contains('DEBUG'))">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>

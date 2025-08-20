@@ -5,27 +5,27 @@
 		<Product>eVolve Revit Extensions</Product>
 		<Description>Advanced tools for working with Data Tables within the eVolve Revit product line.</Description>
 		<Copyright>Copyright © 2025 eVolve MEP, LLC</Copyright>
-		<Version>8.2.0.01135</Version>
+		<Version>9.0.0.04305</Version>
 		<Configurations>
-			eE Debug Revit 2022;
 			eE Debug Revit 2023;
 			eE Debug Revit 2024;
 			eE Debug Revit 2025;
+			eE Debug Revit 2026;
 
-			eE Release Revit 2022;
 			eE Release Revit 2023;
 			eE Release Revit 2024;
 			eE Release Revit 2025;
+			eE Release Revit 2026;
 
-			eM Debug Revit 2022;
 			eM Debug Revit 2023;
 			eM Debug Revit 2024;
 			eM Debug Revit 2025;
+			eM Debug Revit 2026;
 
-			eM Release Revit 2022;
 			eM Release Revit 2023;
 			eM Release Revit 2024;
 			eM Release Revit 2025;
+			eM Release Revit 2026;
 		</Configurations>
 	</PropertyGroup>
 	
@@ -38,153 +38,59 @@
 		<AppDesignerFolder>Properties</AppDesignerFolder>
 		<RootNamespace>eVolve.DataTableTools.Revit</RootNamespace>
 		<AssemblyName>eVolveDataTableTools-UpdateInConditionalProperties</AssemblyName>
+		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 	</PropertyGroup>
 	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2022|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\eE Debug Revit 2022\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2022;ELECTRICAL</DefineConstants>
-		<DocumentationFile>bin\Debug Revit 2022\eVolveDataTableTools.xml</DocumentationFile>
+	<Import Project="../ConditionalTargets/SharedProjectSettings.targets"/>
+	<Import Project="../ConditionalTargets/Revit/Revit2023.targets" Condition="$(DefineConstants.Contains('REVIT2023'))"/>
+	<Import Project="../ConditionalTargets/Revit/Revit2024.targets" Condition="$(DefineConstants.Contains('REVIT2024'))"/>
+	<Import Project="../ConditionalTargets/Revit/Revit2025.targets" Condition="$(DefineConstants.Contains('REVIT2025'))"/>
+	<Import Project="../ConditionalTargets/Revit/Revit2026.targets" Condition="$(DefineConstants.Contains('REVIT2026'))"/>
+	
+	<PropertyGroup Condition="$(Configuration.Contains('Debug'))">
+		<AssemblyName>eVolveDataTableTools-eVolve$(EvolveProduct)</AssemblyName>
+		<OutputPath>bin\$(EvolvePrefix) Debug Revit $(RevitYear)\</OutputPath>
+		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+		<DocumentationFile>bin\Debug Revit $(RevitYear)\eVolveDataTableTools.xml</DocumentationFile>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2022|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
+	<PropertyGroup Condition="$(Configuration.Contains('Release'))">
+		<AssemblyName>eVolveDataTableTools-eVolve$(EvolveProduct)</AssemblyName>
 		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2022;ELECTRICAL</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2022|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\eM Debug Revit 2022\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2022;MECHANICAL</DefineConstants>
-		<DocumentationFile>bin\eM Debug Revit 2022\eVolveDataTableTools.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2022|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2022;MECHANICAL</DefineConstants>
 	</PropertyGroup>
 	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2023|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\eE Debug Revit 2023\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2023;ELECTRICAL</DefineConstants>
-		<DocumentationFile>bin\Debug Revit 2023\eVolveDataTableTools.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2023|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2023;ELECTRICAL</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2023|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\eM Debug Revit 2023\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2023;MECHANICAL</DefineConstants>
-		<DocumentationFile>bin\eM Debug Revit 2023\eVolveDataTableTools.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2023|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2023;MECHANICAL</DefineConstants>
-	</PropertyGroup>
-	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2024|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\eE Debug Revit 2024\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2024;ELECTRICAL</DefineConstants>
-		<DocumentationFile>bin\Debug Revit 2024\eVolveDataTableTools.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2024|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2024;ELECTRICAL</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2024|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\eM Debug Revit 2024\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2024;MECHANICAL</DefineConstants>
-		<DocumentationFile>bin\eM Debug Revit 2024\eVolveDataTableTools.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2024|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2024;MECHANICAL</DefineConstants>
-	</PropertyGroup>
-	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2025|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\eE Debug Revit 2025\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;CORE;REVIT2025;ELECTRICAL</DefineConstants>
-		<DocumentationFile>bin\Debug Revit 2025\eVolveDataTableTools.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2025|AnyCPU'">
-		<AssemblyName>eVolveDataTableTools-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;CORE;REVIT2025;ELECTRICAL</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Debug Revit 2025|AnyCPU' ">
-		<AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;CORE;REVIT2025;MECHANICAL</DefineConstants>
-		<OutputPath>bin\eM Debug Revit 2025\</OutputPath>
-		<DocumentationFile>bin\eM Debug Revit 2025\eVolveDataTableTools.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Release Revit 2025|AnyCPU' ">
-		<AssemblyName>eVolveDataTableTools-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;CORE;REVIT2025;MECHANICAL</DefineConstants>
-	</PropertyGroup>
-	
-	<Choose>
-		<When Condition="$(DefineConstants.Contains('ELECTRICAL'))">
-			<ItemGroup>
-				<Reference Include="eVolveElectrical">
-					<HintPath>..\..\eVolve-Revit-Products\eVolve Electrical\bin\Release\eVolveElectrical.dll</HintPath>
-					<Private>False</Private>
-					<Aliases>eVolve</Aliases>
-				</Reference>
-			</ItemGroup>
-		</When>
-	</Choose>
-	<Choose>
-		<When Condition="$(DefineConstants.Contains('MECHANICAL'))">
-			<ItemGroup>
-				<Reference Include="eVolveMechanical">
-					<HintPath>..\..\eVolve-Revit-Products\eVolve Mechanical\bin\Release\eVolveMechanical.dll</HintPath>
-					<Private>False</Private>
-					<Aliases>eVolve</Aliases>
-				</Reference>
-			</ItemGroup>
-		</When>
-	</Choose>
-
-	<Import Project="../ConditionalTargets/SharedProjectSettings.targets" />
-	<Import Project="../ConditionalTargets/Revit/Revit2022.targets" Condition="$(DefineConstants.Contains('REVIT2022'))" />
-	<Import Project="../ConditionalTargets/Revit/Revit2023.targets" Condition="$(DefineConstants.Contains('REVIT2023'))" />
-	<Import Project="../ConditionalTargets/Revit/Revit2024.targets" Condition="$(DefineConstants.Contains('REVIT2024'))" />
-	<Import Project="../ConditionalTargets/Revit/Revit2025.targets" Condition="$(DefineConstants.Contains('REVIT2025'))" />
+	<ItemGroup>
+		<Reference Include="eVolve$(EvolveProduct)">
+			<HintPath>..\..\eVolve-Revit-Products\eVolve $(EvolveProduct)\bin\Release\eVolve$(EvolveProduct).dll</HintPath>
+			<Private>False</Private>
+			<Aliases>eVolve</Aliases>
+		</Reference>
+	</ItemGroup>
 	
 	<ItemGroup Condition="!$(DefineConstants.Contains('CORE'))">
-		<Reference Include="PresentationCore" />
-		<Reference Include="System" />
-		<Reference Include="System.ComponentModel.DataAnnotations" />
-		<Reference Include="System.Core" />
-		<Reference Include="System.Data.Linq" />
-		<Reference Include="System.Drawing" />
-		<Reference Include="System.Windows.Forms" />
-		<Reference Include="System.Data.DataSetExtensions" />
-		<Reference Include="Microsoft.CSharp" />
-		<Reference Include="Microsoft.VisualBasic" />
-		<Reference Include="System.Data" />
-		<Reference Include="System.Xml" />
-		<Reference Include="WindowsBase" />
+		<Reference Include="PresentationCore"/>
+		<Reference Include="System"/>
+		<Reference Include="System.ComponentModel.DataAnnotations"/>
+		<Reference Include="System.Core"/>
+		<Reference Include="System.Data.Linq"/>
+		<Reference Include="System.Drawing"/>
+		<Reference Include="System.Windows.Forms"/>
+		<Reference Include="System.Data.DataSetExtensions"/>
+		<Reference Include="Microsoft.CSharp"/>
+		<Reference Include="Microsoft.VisualBasic"/>
+		<Reference Include="System.Data"/>
+		<Reference Include="System.Xml"/>
+		<Reference Include="WindowsBase"/>
 	</ItemGroup>
 	
 	<ItemGroup Condition="$(DefineConstants.Contains('CORE'))">
-		<PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.6"/>
 	</ItemGroup>
-
+	
 	<ItemGroup>
-		<PackageReference Include="ExcelWrapper" Version="2.0.0.4264" />
-		<PackageReference Include="JetBrains.Annotations" Version="2024.2.0" />
+		<PackageReference Include="ExcelWrapper" Version="2.0.0.4264"/>
+		<PackageReference Include="JetBrains.Annotations" Version="2024.2.0"/>
 	</ItemGroup>
+	
 	<ItemGroup>
 		<Compile Include="..\Common\CommandAvailablity.cs">
 			<Link>CommandAvailablity.cs</Link>
@@ -192,26 +98,26 @@
 		<Compile Include="..\Common\Methods.cs">
 			<Link>Methods.cs</Link>
 		</Compile>
-		<Compile Include="ApplicationMethods.cs" />
-		<Compile Include="CopyTable\CopyTableCommand.cs" />
-		<Compile Include="ExternalTables\CsvTableSource.cs" />
+		<Compile Include="ApplicationMethods.cs"/>
+		<Compile Include="CopyTable\CopyTableCommand.cs"/>
+		<Compile Include="ExternalTables\CsvTableSource.cs"/>
 		<Compile Include="ExternalTables\TabularSourceDialog.cs">
 			<SubType>Form</SubType>
 		</Compile>
 		<Compile Include="ExternalTables\TabularSourceDialog.Designer.cs">
 			<DependentUpon>TabularSourceDialog.cs</DependentUpon>
 		</Compile>
-		<Compile Include="ExternalTables\DataTableSource.cs" />
-		<Compile Include="ExternalTables\SqlServerTableSource .cs" />
-		<Compile Include="ExternalTables\ExcelTableSource.cs" />
-		<Compile Include="ExternalTables\ExternalTablesMethods.cs" />
+		<Compile Include="ExternalTables\DataTableSource.cs"/>
+		<Compile Include="ExternalTables\SqlServerTableSource .cs"/>
+		<Compile Include="ExternalTables\ExcelTableSource.cs"/>
+		<Compile Include="ExternalTables\ExternalTablesMethods.cs"/>
 		<Compile Include="ExternalTables\ExternalTableSourceBaseControl.cs">
 			<SubType>UserControl</SubType>
 		</Compile>
 		<Compile Include="ExternalTables\ExternalTableSourceBaseControl.Designer.cs">
 			<DependentUpon>ExternalTableSourceBaseControl.cs</DependentUpon>
 		</Compile>
-		<Compile Include="ExternalTables\ExternalTablesSettings.cs" />
+		<Compile Include="ExternalTables\ExternalTablesSettings.cs"/>
 		<Compile Include="ExternalTables\SqlServerSourceDialog.cs">
 			<SubType>Form</SubType>
 		</Compile>
@@ -219,10 +125,10 @@
 			<DependentUpon>SqlServerSourceDialog.cs</DependentUpon>
 		</Compile>
 		<Compile Include="ExternalTables\DataTableSourceDialog.cs">
-		  <SubType>Form</SubType>
+			<SubType>Form</SubType>
 		</Compile>
 		<Compile Include="ExternalTables\DataTableSourceDialog.Designer.cs">
-		  <DependentUpon>DataTableSourceDialog.cs</DependentUpon>
+			<DependentUpon>DataTableSourceDialog.cs</DependentUpon>
 		</Compile>
 		<Compile Include="Tools\AddMappingDialog.cs">
 			<SubType>Form</SubType>
@@ -230,25 +136,25 @@
 		<Compile Include="Tools\AddMappingDialog.Designer.cs">
 			<DependentUpon>AddMappingDialog.cs</DependentUpon>
 		</Compile>
-		<Compile Include="Application.cs" />
+		<Compile Include="Application.cs"/>
 		<Compile Include="CopyTable\CopyTableDialog.cs">
 			<SubType>Form</SubType>
 		</Compile>
-		<Compile Include="CopyTable\CopyTableDialog.Designer.cs" />
-		<Compile Include="Tools\ToolsCommand.cs" />
+		<Compile Include="CopyTable\CopyTableDialog.Designer.cs"/>
+		<Compile Include="Tools\ToolsCommand.cs"/>
 		<Compile Include="ExternalTables\ExternalTablesConfigDialog.cs">
 			<SubType>Form</SubType>
 		</Compile>
 		<Compile Include="ExternalTables\ExternalTablesConfigDialog.Designer.cs">
 			<DependentUpon>ExternalTablesConfigDialog.cs</DependentUpon>
 		</Compile>
-		<Compile Include="GlobalUsings.cs" />
+		<Compile Include="GlobalUsings.cs"/>
 		<Compile Include="Properties\Resources.Designer.cs">
 			<AutoGen>True</AutoGen>
 			<DesignTime>True</DesignTime>
 			<DependentUpon>Resources.resx</DependentUpon>
 		</Compile>
-		<Compile Include="Settings.cs" />
+		<Compile Include="Settings.cs"/>
 		<Compile Include="Tools\TextInputDialog.cs">
 			<SubType>Form</SubType>
 		</Compile>
@@ -261,8 +167,8 @@
 		<Compile Include="Tools\ToolsDialog.Designer.cs">
 			<DependentUpon>ToolsDialog.cs</DependentUpon>
 		</Compile>
-		<Compile Include="ViewTable\ViewTableCommand.cs" />
-		<Compile Include="ExternalTables\ExternalTablesConfigCommand.cs" />
+		<Compile Include="ViewTable\ViewTableCommand.cs"/>
+		<Compile Include="ExternalTables\ExternalTablesConfigCommand.cs"/>
 		<Compile Include="ViewTable\ViewTableDialog.cs">
 			<SubType>Form</SubType>
 		</Compile>
@@ -270,21 +176,10 @@
 			<DependentUpon>ViewTableDialog.cs</DependentUpon>
 		</Compile>
 	</ItemGroup>
-	<ItemGroup>
-	  <None Include="LinkedVideo_20x20.png" />
-	</ItemGroup>
-	<ItemGroup>
-	  <EmbeddedResource Include="CopyDataTable_32x32.png" />
-	</ItemGroup>
-	<ItemGroup>
-		<None Include="packages.config" />
-		<None Include="_DataTableTools.addin">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
-	</ItemGroup>
+	
 	<ItemGroup>
 		<EmbeddedResource Include="ExternalTables\DataTableSourceDialog.fr-fr.resx">
-		  <DependentUpon>DataTableSourceDialog.cs</DependentUpon>
+			<DependentUpon>DataTableSourceDialog.cs</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Include="ExternalTables\DataTableSourceDialog.resx">
 			<DependentUpon>DataTableSourceDialog.cs</DependentUpon>
@@ -353,16 +248,23 @@
 			<DependentUpon>ViewTableDialog.cs</DependentUpon>
 		</EmbeddedResource>
 	</ItemGroup>
+	
 	<ItemGroup>
-		<EmbeddedResource Include="DataTableTools_32x32.png" />
-		<EmbeddedResource Include="ExternalTablesConfiguration_32x32.png" />
-		<EmbeddedResource Include="ViewDataTables_32x32.png" />
-		<None Include="Help_Medium_20x20.png" />
-		<None Include="Settings_20x20.png" />
-		<None Include="Resources\Logo.png" />
+		<None Include="LinkedVideo_20x20.png"/>
+		<None Include="packages.config"/>
+		<None Include="_DataTableTools.addin">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<EmbeddedResource Include="CopyDataTable_32x32.png"/>
+		<EmbeddedResource Include="DataTableTools_32x32.png"/>
+		<EmbeddedResource Include="ExternalTablesConfiguration_32x32.png"/>
+		<EmbeddedResource Include="ViewDataTables_32x32.png"/>
+		<None Include="Help_Medium_20x20.png"/>
+		<None Include="Settings_20x20.png"/>
+		<None Include="Resources\Logo.png"/>
 	</ItemGroup>
 	
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="CD /D &quot;$(TargetDir)&quot;&#xD;&#xA;&#xD;&#xA;SET &quot;ConfigName=$(ConfigurationName)&quot;&#xD;&#xA;SET &quot;Year=%25ConfigName:~-4%25&quot;&#xD;&#xA;IF /I &quot;%25Year%25&quot; GEQ &quot;2025&quot; SET &quot;AdditionalMerge=&quot;$(TargetDir)System.Data.SqlClient.dll&quot;&quot;&#xD;&#xA;&#xD;&#xA;IF &quot;$(OutDir)&quot;==&quot;bin\Release\&quot; &quot;$(SolutionDir)BuildTools\ILRepack.exe&quot; /out:&quot;$(TargetPath)&quot; &quot;$(TargetPath)&quot; &quot;$(TargetDir)ExcelWrapper.dll&quot; %25AdditionalMerge%25&#xD;&#xA;&#xD;&#xA;CALL &quot;$(SolutionDir)BuildTools\PostBuild.bat&quot; &quot;$(ConfigurationName)&quot; &quot;$(TargetDir)&quot; &quot;$(TargetPath)&quot; &quot;25A711AA-ED48-9295-1F5B-537895FD333D&quot; &quot;DF781AB8-5BB8-D0AC-C0FA-CBA28623BEF6&quot;" />
+		<Exec Command="CD /D &quot;$(TargetDir)&quot;&#xD;&#xA;&#xD;&#xA;SET &quot;ConfigName=$(ConfigurationName)&quot;&#xD;&#xA;SET &quot;Year=%25ConfigName:~-4%25&quot;&#xD;&#xA;IF /I &quot;%25Year%25&quot; GEQ &quot;2025&quot; SET &quot;AdditionalMerge=&quot;$(TargetDir)System.Data.SqlClient.dll&quot;&quot;&#xD;&#xA;&#xD;&#xA;IF &quot;$(OutDir)&quot;==&quot;bin\Release\&quot; &quot;$(SolutionDir)BuildTools\ILRepack.exe&quot; /out:&quot;$(TargetPath)&quot; &quot;$(TargetPath)&quot; &quot;$(TargetDir)ExcelWrapper.dll&quot; %25AdditionalMerge%25&#xD;&#xA;&#xD;&#xA;CALL &quot;$(SolutionDir)BuildTools\PostBuild.bat&quot; &quot;$(ConfigurationName)&quot; &quot;$(TargetDir)&quot; &quot;$(TargetPath)&quot; &quot;25A711AA-ED48-9295-1F5B-537895FD333D&quot; &quot;DF781AB8-5BB8-D0AC-C0FA-CBA28623BEF6&quot;"/>
 	</Target>
 </Project>

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -92,14 +92,14 @@ internal class CsvTableSource(CsvSource source) : eVolve::eVolve.Core.Revit.Repo
     public DataTable GetData(Document document, out string metadata)
     {
         metadata = null;
-        if (GetCsvReader(Source.FilePath) is not { } reader)
+        if (GetCsvReader(Source.FilePathConsumable) is not { } reader)
         {
             return null;
         }
 
         try
         {
-            var headers = GetHeaders(Source.FilePath, reader)
+            var headers = GetHeaders(Source.FilePathConsumable, reader)
                 .Where(entry => !Source.ExcludeColumnNames.Contains(entry.Key))
                 .ToArray();
 

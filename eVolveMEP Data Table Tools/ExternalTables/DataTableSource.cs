@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2025 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -37,21 +37,21 @@ internal class DataTableSource(SerializedDataTableSource source) : eVolve::eVolv
     public DateTime GetLastUpdatedOn(Document document) => LastUpdated;
 
     /// <remarks>
-    /// The format of <see cref="SerializedDataTableSource.FilePath"/> is expected to be that persisted by <see cref="SaveDataTableToFile"/>.
+    /// The format of <see cref="SerializedDataTableSource.FilePathConsumable"/> is expected to be that persisted by <see cref="SaveDataTableToFile"/>.
     /// </remarks>
     ///
     /// <inheritdoc/>
     public DataTable GetData(Document document, out string metadata)
     {
         metadata = null;
-        if (!System.IO.File.Exists(Source.FilePath))
+        if (!System.IO.File.Exists(Source.FilePathConsumable))
         {
             return null;
         }
 
         try
         {
-            using var compressedStream = new System.IO.MemoryStream(System.IO.File.ReadAllBytes(Source.FilePath));
+            using var compressedStream = new System.IO.MemoryStream(System.IO.File.ReadAllBytes(Source.FilePathConsumable));
             using var decompressedStream = new System.IO.MemoryStream();
             using (var decompressor = new System.IO.Compression.GZipStream(compressedStream, System.IO.Compression.CompressionMode.Decompress))
             {

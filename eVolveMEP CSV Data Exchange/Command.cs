@@ -204,7 +204,7 @@ internal class Command : IExternalCommand
 
         var csvDataFromFile = System.IO.File.ReadAllText(settings.FilePath);
 
-        var dataRows = csvDataFromFile.Split(["\r\n", "\r", "\n"], StringSplitOptions.RemoveEmptyEntries).ToArray();
+        var dataRows = csvDataFromFile.Split(["\r\n", "\r", "\n"], StringSplitOptions.RemoveEmptyEntries);
         if (dataRows.Length <= 1)
         {
             // No data or header only.

@@ -5,27 +5,27 @@
 		<Product>eVolve Revit Extensions</Product>
 		<Description>CSV file importer/exporter for use with the eVolve Revit product line.</Description>
 		<Copyright>Copyright © 2025 eVolve MEP, LLC</Copyright>
-		<Version>8.2.0.01135</Version>
+		<Version>9.0.0.04305</Version>
 		<Configurations>
-			eE Debug Revit 2022;
 			eE Debug Revit 2023;
 			eE Debug Revit 2024;
 			eE Debug Revit 2025;
+			eE Debug Revit 2026;
 
-			eE Release Revit 2022;
 			eE Release Revit 2023;
 			eE Release Revit 2024;
 			eE Release Revit 2025;
+			eE Release Revit 2026;
 
-			eM Debug Revit 2022;
 			eM Debug Revit 2023;
 			eM Debug Revit 2024;
 			eM Debug Revit 2025;
+			eM Debug Revit 2026;
 
-			eM Release Revit 2022;
 			eM Release Revit 2023;
 			eM Release Revit 2024;
 			eM Release Revit 2025;
+			eM Release Revit 2026;
 		</Configurations>
 	</PropertyGroup>
 	
@@ -41,139 +41,46 @@
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 	</PropertyGroup>
 	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2022|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\eE Debug Revit 2022\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2022;ELECTRICAL</DefineConstants>
-		<DocumentationFile>bin\Debug Revit 2022\eVolveCSVDataExchange.xml</DocumentationFile>
+	<Import Project="../ConditionalTargets/SharedProjectSettings.targets"/>
+	<Import Project="../ConditionalTargets/Revit/Revit2023.targets" Condition="$(DefineConstants.Contains('REVIT2023'))"/>
+	<Import Project="../ConditionalTargets/Revit/Revit2024.targets" Condition="$(DefineConstants.Contains('REVIT2024'))"/>
+	<Import Project="../ConditionalTargets/Revit/Revit2025.targets" Condition="$(DefineConstants.Contains('REVIT2025'))"/>
+	<Import Project="../ConditionalTargets/Revit/Revit2026.targets" Condition="$(DefineConstants.Contains('REVIT2026'))"/>
+	
+	<PropertyGroup Condition="$(Configuration.Contains('Debug'))">
+		<AssemblyName>eVolveCSVDataExchange-eVolve$(EvolveProduct)</AssemblyName>
+		<OutputPath>bin\$(EvolvePrefix) Debug Revit $(RevitYear)\</OutputPath>
+		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+		<DocumentationFile>bin\Debug Revit $(RevitYear)\eVolveCSVDataExchange.xml</DocumentationFile>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2022|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
+	<PropertyGroup Condition="$(Configuration.Contains('Release'))">
+		<AssemblyName>eVolveCSVDataExchange-eVolve$(EvolveProduct)</AssemblyName>
 		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2022;ELECTRICAL</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2022|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\eM Debug Revit 2022\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2022;MECHANICAL</DefineConstants>
-		<DocumentationFile>bin\eM Debug Revit 2022\eVolveCSVDataExchange.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2022|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2022;MECHANICAL</DefineConstants>
 	</PropertyGroup>
 	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2023|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\eE Debug Revit 2023\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2023;ELECTRICAL</DefineConstants>
-		<DocumentationFile>bin\Debug Revit 2023\eVolveCSVDataExchange.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2023|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2023;ELECTRICAL</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2023|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\eM Debug Revit 2023\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2023;MECHANICAL</DefineConstants>
-		<DocumentationFile>bin\eM Debug Revit 2023\eVolveCSVDataExchange.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2023|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2023;MECHANICAL</DefineConstants>
-	</PropertyGroup>
-	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2024|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\eE Debug Revit 2024\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2024;ELECTRICAL</DefineConstants>
-		<DocumentationFile>bin\Debug Revit 2024\eVolveCSVDataExchange.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2024|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2024;ELECTRICAL</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Debug Revit 2024|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\eM Debug Revit 2024\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;REVIT2024;MECHANICAL</DefineConstants>
-		<DocumentationFile>bin\eM Debug Revit 2024\eVolveCSVDataExchange.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eM Release Revit 2024|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;REVIT2024;MECHANICAL</DefineConstants>
-	</PropertyGroup>
-	
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Debug Revit 2025|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\eE Debug Revit 2025\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;CORE;REVIT2025;ELECTRICAL</DefineConstants>
-		<DocumentationFile>bin\Debug Revit 2025\eVolveCSVDataExchange.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'eE Release Revit 2025|AnyCPU'">
-		<AssemblyName>eVolveCSVDataExchange-eVolveElectrical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;CORE;REVIT2025;ELECTRICAL</DefineConstants>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Debug Revit 2025|AnyCPU' ">
-		<AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS;CORE;REVIT2025;MECHANICAL</DefineConstants>
-		<OutputPath>bin\eM Debug Revit 2025\</OutputPath>
-		<DocumentationFile>bin\eM Debug Revit 2025\eVolveCSVDataExchange.xml</DocumentationFile>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'eM Release Revit 2025|AnyCPU' ">
-		<AssemblyName>eVolveCSVDataExchange-eVolveMechanical</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;CORE;REVIT2025;MECHANICAL</DefineConstants>
-	</PropertyGroup>
-	<Choose>
-		<When Condition="$(DefineConstants.Contains('ELECTRICAL'))">
-			<ItemGroup>
-				<Reference Include="eVolveElectrical">
-					<HintPath>..\..\eVolve-Revit-Products\eVolve Electrical\bin\Release\eVolveElectrical.dll</HintPath>
-					<Private>False</Private>
-					<Aliases>eVolve</Aliases>
-				</Reference>
-			</ItemGroup>
-		</When>
-	</Choose>
-	<Choose>
-		<When Condition="$(DefineConstants.Contains('MECHANICAL'))">
-			<ItemGroup>
-				<Reference Include="eVolveMechanical">
-					<HintPath>..\..\eVolve-Revit-Products\eVolve Mechanical\bin\Release\eVolveMechanical.dll</HintPath>
-					<Private>False</Private>
-					<Aliases>eVolve</Aliases>
-				</Reference>
-			</ItemGroup>
-		</When>
-	</Choose>
-
-	<Import Project="../ConditionalTargets/SharedProjectSettings.targets" />
-	<Import Project="../ConditionalTargets/Revit/Revit2022.targets" Condition="$(DefineConstants.Contains('REVIT2022'))" />
-	<Import Project="../ConditionalTargets/Revit/Revit2023.targets" Condition="$(DefineConstants.Contains('REVIT2023'))" />
-	<Import Project="../ConditionalTargets/Revit/Revit2024.targets" Condition="$(DefineConstants.Contains('REVIT2024'))" />
-	<Import Project="../ConditionalTargets/Revit/Revit2025.targets" Condition="$(DefineConstants.Contains('REVIT2025'))" />
+	<ItemGroup>
+		<Reference Include="eVolve$(EvolveProduct)">
+			<HintPath>..\..\eVolve-Revit-Products\eVolve $(EvolveProduct)\bin\Release\eVolve$(EvolveProduct).dll</HintPath>
+			<Private>False</Private>
+			<Aliases>eVolve</Aliases>
+		</Reference>
+	</ItemGroup>
 	
 	<ItemGroup Condition="!$(DefineConstants.Contains('CORE'))">
-		<Reference Include="PresentationCore" />
-		<Reference Include="System" />
-		<Reference Include="System.Core" />
-		<Reference Include="System.Drawing" />
-		<Reference Include="System.Windows.Forms" />
-		<Reference Include="Microsoft.CSharp" />
-		<Reference Include="System.Xml" />
-		<Reference Include="WindowsBase" />
+		<Reference Include="PresentationCore"/>
+		<Reference Include="System"/>
+		<Reference Include="System.Core"/>
+		<Reference Include="System.Drawing"/>
+		<Reference Include="System.Windows.Forms"/>
+		<Reference Include="Microsoft.CSharp"/>
+		<Reference Include="System.Xml"/>
+		<Reference Include="WindowsBase"/>
 	</ItemGroup>
+	
 	<ItemGroup>
-		<PackageReference Include="JetBrains.Annotations" Version="2024.2.0" />
+		<PackageReference Include="JetBrains.Annotations" Version="2024.2.0"/>
 	</ItemGroup>
+	
 	<ItemGroup>
 		<Compile Include="..\Common\CommandAvailablity.cs">
 			<Link>CommandAvailablity.cs</Link>
@@ -181,25 +88,23 @@
 		<Compile Include="..\Common\Methods.cs">
 			<Link>Methods.cs</Link>
 		</Compile>
-		<Compile Include="Command.cs" />
-		<Compile Include="Application.cs" />
+		<Compile Include="Command.cs"/>
+		<Compile Include="Application.cs"/>
 		<Compile Include="ConfigurationForm.cs">
 			<SubType>Form</SubType>
 		</Compile>
 		<Compile Include="ConfigurationForm.Designer.cs">
 			<DependentUpon>ConfigurationForm.cs</DependentUpon>
 		</Compile>
-		<Compile Include="GlobalUsings.cs" />
+		<Compile Include="GlobalUsings.cs"/>
 		<Compile Include="Properties\Resources.Designer.cs">
 			<AutoGen>True</AutoGen>
 			<DesignTime>True</DesignTime>
 			<DependentUpon>Resources.resx</DependentUpon>
 		</Compile>
-		<Compile Include="Settings.cs" />
+		<Compile Include="Settings.cs"/>
 	</ItemGroup>
-	<ItemGroup>
-	  <None Include="LinkedVideo_20x20.png" />
-	</ItemGroup>
+	
 	<ItemGroup>
 		<EmbeddedResource Include="ConfigurationForm.fr-FR.resx">
 			<DependentUpon>ConfigurationForm.cs</DependentUpon>
@@ -215,17 +120,19 @@
 			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
 	</ItemGroup>
+	
 	<ItemGroup>
-		<None Include="packages.config" />
+		<None Include="LinkedVideo_20x20.png"/>
+		<None Include="packages.config"/>
 		<None Include="_CSVDataExchange.addin">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<EmbeddedResource Include="CSV_ImportExport_32x32.png" />
-		<None Include="Help_Medium_20x20.png" />
-		<None Include="Settings_20x20.png" />
-		<None Include="Resources\Logo.png" />
+		<EmbeddedResource Include="CSV_ImportExport_32x32.png"/>
+		<None Include="Help_Medium_20x20.png"/>
+		<None Include="Settings_20x20.png"/>
+		<None Include="Resources\Logo.png"/>
 	</ItemGroup>
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="CALL &quot;$(SolutionDir)BuildTools\PostBuild.bat&quot; &quot;$(ConfigurationName)&quot; &quot;$(TargetDir)&quot; &quot;$(TargetPath)&quot; &quot;A70A6A1A-BF91-C541-158A-5589D57891CB&quot; &quot;9F07922B-CCDF-2290-C059-CC7A8F1FFC78&quot;" />
+		<Exec Command="CALL &quot;$(SolutionDir)BuildTools\PostBuild.bat&quot; &quot;$(ConfigurationName)&quot; &quot;$(TargetDir)&quot; &quot;$(TargetPath)&quot; &quot;A70A6A1A-BF91-C541-158A-5589D57891CB&quot; &quot;9F07922B-CCDF-2290-C059-CC7A8F1FFC78&quot;"/>
 	</Target>
 </Project>
