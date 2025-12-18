@@ -71,7 +71,7 @@ public class ApplicationMechanical : IExternalApplication
         eVolve::eVolve.Core.Revit.ProductInfo.API.RegisterExpansionPathMarker("DataTableToolsConfigPath", ApplicationConfigurationPath);
 
         // Load external tables for usage.
-        ExternalTables.ExternalTablesMethods.ApplySettings(ExternalTables.ExternalTablesMethods.GetSettings(ExternalTables.ExternalTablesMethods.GetExternalTablesSettingsFilePath(out _)));
+        ExternalTables.ExternalTablesMethods.ApplySettings(ExternalTables.ExternalTablesMethods.GetSettings(ExternalTables.ExternalTablesMethods.GetExternalTablesSettingsFilePath(out _)), false);
 
         return Result.Succeeded;
     }
