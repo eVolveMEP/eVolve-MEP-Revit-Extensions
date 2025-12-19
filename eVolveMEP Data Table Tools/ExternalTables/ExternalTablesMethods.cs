@@ -64,6 +64,7 @@ internal static class ExternalTablesMethods
     /// </summary>
     ///
     /// <param name="settings"> Current settings. </param>
+    /// <param name="saveSettings"> (Optional) Determines if the settings will be saved. </param>
     public static void ApplySettings(ExternalTablesSettings settings, bool saveSettings = true)
     {
         static T[] withoutGlobalEntries<T>(T[] entries) where T : ExternalTableSourceBase => entries.Where(entry => !entry.Global).ToArray();
