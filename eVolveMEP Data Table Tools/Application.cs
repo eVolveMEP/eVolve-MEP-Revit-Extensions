@@ -68,7 +68,7 @@ public class ApplicationMechanical : IExternalApplication
             string.Format(Resources.CopyDataTableToolTipText, HostProductName),
             CopyTable.CopyTableCommand.HelpLinkUrl));
 
-        eVolve::eVolve.Core.Revit.ProductInfo.API.RegisterExpansionPathMarker("DataTableToolsConfigPath", ApplicationConfigurationPath);
+        eVolve::eVolve.Core.Revit.ProductInfo.API.RegisterExpansionPathMarker("DataTableToolsConfigPath", () => ApplicationConfigurationPath);
 
         // Load external tables for usage.
         ExternalTables.ExternalTablesMethods.ApplySettings(ExternalTables.ExternalTablesMethods.GetSettings(ExternalTables.ExternalTablesMethods.GetExternalTablesSettingsFilePath(out _)), false);
