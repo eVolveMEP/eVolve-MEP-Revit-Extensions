@@ -64,7 +64,8 @@ internal static class ExternalTablesMethods
     /// </summary>
     ///
     /// <param name="settings"> Current settings. </param>
-    public static void ApplySettings(ExternalTablesSettings settings)
+    /// <param name="saveSettings"> (Optional) Determines if the settings will be saved. </param>
+    public static void ApplySettings(ExternalTablesSettings settings, bool saveSettings = true)
     {
         static T[] withoutGlobalEntries<T>(T[] entries) where T : ExternalTableSourceBase => entries.Where(entry => !entry.Global).ToArray();
 
@@ -73,8 +74,10 @@ internal static class ExternalTablesMethods
         settings.SqlServer = withoutGlobalEntries(settings.SqlServer);
         settings.SerializedDataTables = withoutGlobalEntries(settings.SerializedDataTables);
 
-
-        SaveSettings(settings, GetExternalTablesSettingsFilePath(out _));
+        if (saveSettings)
+        {
+            SaveSettings(settings, GetExternalTablesSettingsFilePath(out _));
+        }
 
         foreach (var unregisterId in CurrentlyRegisteredIds)
         {
