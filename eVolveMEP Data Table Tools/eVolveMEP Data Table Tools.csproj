@@ -5,7 +5,7 @@
 		<Product>eVolve Revit Extensions</Product>
 		<Description>Advanced tools for working with Data Tables within the eVolve Revit product line.</Description>
 		<Copyright>Copyright © 2026 eVolve MEP, LLC</Copyright>
-		<Version>9.2.0.01076</Version>
+		<Version>9.4.0.02116</Version>
 		<Configurations>
 			eE Debug Revit 2023;
 			eE Debug Revit 2024;
