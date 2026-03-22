@@ -19,7 +19,7 @@ namespace eVolve.DataTableTools.Revit.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -178,15 +178,6 @@ namespace eVolve.DataTableTools.Revit.Properties {
         internal static string eVolveMechanical {
             get {
                 return ResourceManager.GetString("eVolveMechanical", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The specified Excel file could not be found..
-        /// </summary>
-        internal static string ExcelFileNotFoundError {
-            get {
-                return ResourceManager.GetString("ExcelFileNotFoundError", resourceCulture);
             }
         }
         
@@ -440,6 +431,15 @@ namespace eVolve.DataTableTools.Revit.Properties {
         internal static string StatementToRunPriorToImport {
             get {
                 return ResourceManager.GetString("StatementToRunPriorToImport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The specified file could not be found..
+        /// </summary>
+        internal static string TabularFileNotFoundError {
+            get {
+                return ResourceManager.GetString("TabularFileNotFoundError", resourceCulture);
             }
         }
         

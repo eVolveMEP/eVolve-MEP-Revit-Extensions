@@ -97,16 +97,19 @@ internal static class ExternalTablesMethods
     }
 
     /// <summary>
-    /// Wraps the code for opening and closing an Excel document and delegates all work to be done to the provided <paramref name="action"/>.
+    /// Wraps the code for opening and closing an Excel document and delegates all work to be done to the provided <paramref name="worksheetAction"/>.
     /// </summary>
     ///
     /// <exception cref="Exception"> Thrown when an exception error condition occurs. </exception>
     ///
     /// <param name="file"> The Excel file to open. </param>
-    /// <param name="action"> The action to be done with the provided <see cref="ExcelWrapper.Worksheet"/>. </param>
-    internal static void ReadFromExcel(string file, Action<ExcelWrapper.Worksheet> action)
+    /// <param name="sheetName"> The name of the sheet within <paramref name="file"/>.
+    ///     <para>If <see langword="null"/> is provided, the first sheet is used.</para> </param>
+    /// <param name="worksheetAction"> The action to be done with the provided <see cref="ExcelWrapper.Worksheet"/>. </param>
+    /// <param name="workbookAction"> (Optional) The action to be done with the provided <see cref="ExcelWrapper.Workbook"/> after <paramref name="worksheetAction"/> is performed. </param>
+    internal static void ReadFromExcel(string file, string sheetName, Action<ExcelWrapper.Worksheet> worksheetAction, Action<ExcelWrapper.Workbook> workbookAction = null)
     {
-        if (!System.IO.File.Exists(file) || action == null)
+        if (!System.IO.File.Exists(file) || worksheetAction == null)
         {
             return;
         }
@@ -115,11 +118,13 @@ internal static class ExternalTablesMethods
         {
             using var excel = new ExcelWrapper.Excel();
             var workbook = excel.OpenWorkbook(file);
-            var worksheet = workbook.GetWorksheet(1);
-
+            // Default to the first sheet if a name is not provided.
+            var worksheet = workbook.GetWorksheet(!string.IsNullOrEmpty(sheetName) ? sheetName : 1);
+            
             try
             {
-                action(worksheet);
+                worksheetAction(worksheet);
+                workbookAction?.Invoke(workbook);
             }
             finally
             {

@@ -70,6 +70,15 @@ public class TabularSourceBase : ExternalTableSourceBase
         set => FilePath = ProductInfoAPI.GetExpansionAwarePath(value);
     }
 
+    /// <summary>
+    /// Gets or sets the name of the sheet within the tabular data source file.
+    /// </summary>
+    /// <remarks>
+    /// This property specifies the sheet to be read from the file specified in <see cref="FilePath"/>.
+    /// It is primarily used when working with Excel files or other multi-sheet data sources.
+    /// </remarks>
+    public string SheetName { get; set; }
+
     /// <summary> Gets or sets a list of column names which should be excluded from the results. </summary>
     public string[] ExcludeColumnNames { get; set; } = [];
 
