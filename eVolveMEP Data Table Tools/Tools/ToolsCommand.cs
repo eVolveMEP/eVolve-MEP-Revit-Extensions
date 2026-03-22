@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -14,7 +14,7 @@ namespace eVolve.DataTableTools.Revit.Tools;
 internal class ToolsCommand : IExternalCommand
 {
     /// <summary> Gets the icon resource. </summary>
-    internal static System.IO.Stream IconResource => GetIconResource("DataTableTools_32x32.png");
+    internal static System.IO.Stream IconResource => System.Reflection.Assembly.GetExecutingAssembly().GetEmbeddedResource("DataTableTools_32x32.png");
 
     /// <summary> Gets URL of the help link to open when requested by the user. </summary>
     internal static string HelpLinkUrl

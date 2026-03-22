@@ -1,10 +1,8 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
-
-extern alias eVolve;
 
 using System.Data;
 
@@ -13,7 +11,7 @@ namespace eVolve.DataTableTools.Revit.ExternalTables;
 /// <summary> Constructor. </summary>
 ///
 /// <param name="source"> <inheritdoc cref="Source" path="/summary"/>. </param>
-internal class DataTableSource(SerializedDataTableSource source) : eVolve::eVolve.Core.Revit.Reporting.IExternalDataTable
+internal class DataTableSource(SerializedDataTableSource source) : IExternalDataTable
 {
     /// <summary> Source definition which defines how data is pulled. </summary>
     private SerializedDataTableSource Source { get; } = source;

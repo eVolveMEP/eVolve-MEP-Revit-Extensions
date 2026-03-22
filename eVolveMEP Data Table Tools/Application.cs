@@ -1,14 +1,13 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-extern alias eVolve;
-
 namespace eVolve.DataTableTools.Revit;
 
 /// <summary> Entry point Revit uses to configure this extension. </summary>
+[JetBrains.Annotations.UsedImplicitly]
 #if ELECTRICAL
 public class ApplicationElectrical : IExternalApplication
 #elif MECHANICAL
@@ -26,10 +25,10 @@ public class ApplicationMechanical : IExternalApplication
     /// <inheritdoc/>
     public Result OnStartup(UIControlledApplication application)
     {
-        var splitButton = (SplitButton)eVolve::eVolve.Core.Revit.Integration.API.IntegrationRibbonPanel.AddItem(new SplitButtonData(Resources.ToolsButtonText, Resources.ToolsButtonText));
+        var splitButton = (SplitButton)IntegrationAPI.IntegrationRibbonPanel.AddItem(new SplitButtonData(Resources.ToolsButtonText, Resources.ToolsButtonText));
 
-        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(
-            GetTextWithNormalizedLineBreaks(Resources.ToolsButtonText),
+        splitButton.AddPushButton(IntegrationAPI.CreateButton(
+            Resources.ToolsButtonText.ReplaceLineBreaks("\n"),
             System.Reflection.Assembly.GetExecutingAssembly().Location,
             typeof(Tools.ToolsCommand),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
@@ -37,8 +36,8 @@ public class ApplicationMechanical : IExternalApplication
             string.Format(Resources.ToolsToolTipText, HostProductName),
             Tools.ToolsCommand.HelpLinkUrl));
 
-        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(
-            GetTextWithNormalizedLineBreaks(Resources.ExternalTablesButtonText),
+        splitButton.AddPushButton(IntegrationAPI.CreateButton(
+            Resources.ExternalTablesButtonText.ReplaceLineBreaks("\n"),
             System.Reflection.Assembly.GetExecutingAssembly().Location,
             typeof(ExternalTables.ExternalTablesConfigCommand),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
@@ -48,8 +47,8 @@ public class ApplicationMechanical : IExternalApplication
 
         splitButton.AddSeparator();
 
-        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(
-            GetTextWithNormalizedLineBreaks(Resources.ViewTableButtonText),
+        splitButton.AddPushButton(IntegrationAPI.CreateButton(
+            Resources.ViewTableButtonText.ReplaceLineBreaks("\n"),
             System.Reflection.Assembly.GetExecutingAssembly().Location,
             typeof(ViewTable.ViewTableCommand),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
@@ -59,8 +58,8 @@ public class ApplicationMechanical : IExternalApplication
 
         splitButton.AddSeparator();
 
-        splitButton.AddPushButton(eVolve::eVolve.Core.Revit.Integration.API.CreateButton(
-            GetTextWithNormalizedLineBreaks(Resources.CopyDataTableButtonText),
+        splitButton.AddPushButton(IntegrationAPI.CreateButton(
+            Resources.CopyDataTableButtonText.ReplaceLineBreaks("\n"),
             System.Reflection.Assembly.GetExecutingAssembly().Location,
             typeof(CopyTable.CopyTableCommand),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
@@ -68,7 +67,7 @@ public class ApplicationMechanical : IExternalApplication
             string.Format(Resources.CopyDataTableToolTipText, HostProductName),
             CopyTable.CopyTableCommand.HelpLinkUrl));
 
-        eVolve::eVolve.Core.Revit.ProductInfo.API.RegisterExpansionPathMarker("DataTableToolsConfigPath", ApplicationConfigurationPath);
+        ProductInfoAPI.RegisterExpansionPathMarker("DataTableToolsConfigPath", ApplicationConfigurationPath);
 
         // Load external tables for usage.
         ExternalTables.ExternalTablesMethods.ApplySettings(ExternalTables.ExternalTablesMethods.GetSettings(ExternalTables.ExternalTablesMethods.GetExternalTablesSettingsFilePath(out _)), false);

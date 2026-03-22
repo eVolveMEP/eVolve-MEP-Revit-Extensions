@@ -1,11 +1,9 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-extern alias eVolve;
-using eVolve::eVolve.Core.Revit.Reporting;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -90,7 +88,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         SQLConnectButton.Text = Resources.Connect;
         SQLConnectionStatusLabel.Text = Resources.NotConnected;
 
-        static void openHelpLink(object s1, EventArgs e1) => StartProcess(((Label)s1).Tag.ToString());
+        static void openHelpLink(object s1, EventArgs e1) => Files.StartProcess(((Label)s1).Tag.ToString());
         foreach (var helpLabel in new[] { DataTableExpressionHelpLabel, SQLConnectionStringHelpLabel })
         {
             helpLabel.Cursor = Cursors.Hand;
@@ -150,7 +148,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         settings ??= LoadSettings<Settings>(SettingsFilePath);
         if (settings != null)
         {
-            SQLConnectionStringTextBox.Text = FromBase64(settings.SqlConnectionString);
+            SQLConnectionStringTextBox.Text = settings.SqlConnectionString.FromBase64();
 
             // Remove all active state information except for the default state.
             foreach (var key in ActiveSqlTableSettings.Keys.Where(key => key != DefaultSettingsKey).ToArray())
@@ -172,7 +170,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         DataTableChangedSqlHandler(nameof(SaveSettings), EventArgs.Empty);
         var settings = new Settings()
         {
-            SqlConnectionString = ToBase64(SQLConnectionStringTextBox.Text),
+            SqlConnectionString = SQLConnectionStringTextBox.Text.ToBase64(),
             SqlTableSettings = ActiveSqlTableSettings
                 .Where(entry => !string.IsNullOrEmpty(entry.Key))
                 .Where(entry => entry.Key != DefaultSettingsKey)
@@ -185,18 +183,11 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
 
         bool isSqlSettingsDefault(SqlTableSettings sqlTableSettings)
         {
-            static string serializedValue(SqlTableSettings data)
-            {
-                using var stream = new System.IO.StringWriter();
-                new System.Xml.Serialization.XmlSerializer(typeof(SqlTableSettings)).Serialize(stream, data);
-                return stream.ToString();
-            }
-
             // Source table will always be different, so set it to the same value to remove it from consideration.
             var defaultSettings = ActiveSqlTableSettings[DefaultSettingsKey];
             defaultSettings.TableName = sqlTableSettings.TableName;
 
-            return serializedValue(sqlTableSettings) == serializedValue(defaultSettings);
+            return sqlTableSettings.SerializeObject() == defaultSettings.SerializeObject();
         }
     }
 
@@ -329,11 +320,11 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                 switch (newDataType)
                 {
                     case nameof(String):
-                        defaultNewTypeValue = default(string);
+                        defaultNewTypeValue = null;
                         convertToNewType = existing => existing.ToString();
                         break;
                     case nameof(Int32):
-                        defaultNewTypeValue = default(int);
+                        defaultNewTypeValue = 0;
                         convertToNewType = existing =>
                         {
                             conversionFailedAtLeastOnce |= !int.TryParse(existing.ToString(), out var value);
@@ -341,7 +332,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                         };
                         break;
                     case nameof(Int64):
-                        defaultNewTypeValue = default(long);
+                        defaultNewTypeValue = 0;
                         convertToNewType = existing =>
                         {
                             conversionFailedAtLeastOnce |= !long.TryParse(existing.ToString(), out var value);
@@ -349,7 +340,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                         };
                         break;
                     case nameof(Double):
-                        defaultNewTypeValue = default(double);
+                        defaultNewTypeValue = 0;
                         convertToNewType = existing =>
                         {
                             conversionFailedAtLeastOnce |= !double.TryParse(existing.ToString(), out var value);
@@ -357,7 +348,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                         };
                         break;
                     case nameof(Decimal):
-                        defaultNewTypeValue = default(decimal);
+                        defaultNewTypeValue = 0;
                         convertToNewType = existing =>
                         {
                             conversionFailedAtLeastOnce |= !decimal.TryParse(existing.ToString(), out var value);
@@ -365,7 +356,7 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                         };
                         break;
                     case nameof(Boolean):
-                        defaultNewTypeValue = default(bool);
+                        defaultNewTypeValue = false;
                         convertToNewType = existing =>
                         {
                             conversionFailedAtLeastOnce |= !bool.TryParse(existing.ToString(), out var value);
@@ -508,13 +499,13 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
         var previousTableName = 0 switch
         {
             // Use the current value on an explicit save operation.
-            _ when (sender?.ToString() == nameof(SaveSettings)) => DataTableComboBox.Text,
+            _ when sender?.ToString() == nameof(SaveSettings) => DataTableComboBox.Text,
             // Disconnecting from current SQL connection - save the current value.
-            _ when (sender == SQLConnectButton && e == null) => DataTableComboBox.Text,
+            _ when sender == SQLConnectButton && e == null => DataTableComboBox.Text,
             // Connecting to SQL - the selection did not change in this situation.
-            _ when (sender == SQLConnectButton && e != null) => "",
+            _ when sender == SQLConnectButton && e != null => "",
             // Reset the selected data tabl - do not save the current data.
-            _ when (sender == ResetSelectedConfigurationButton) => "",
+            _ when sender == ResetSelectedConfigurationButton => "",
             _ => PreviouslySelectedDataTableName,
         };
 
@@ -530,13 +521,13 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
                     : SqlImportSource.Table,
                 ImportSourceTableName = SQLImportSourceTableComboBox.Text,
                 ImportSourceViewName = SQLImportSourceViewComboBox.Text,
-                ImportSourceCustomSql = ToBase64((string)SQLImportSourceCustomButton.Tag),
+                ImportSourceCustomSql = ((string)SQLImportSourceCustomButton.Tag).ToBase64(),
                 ExportSourceTargetName = SQLExportTargetComboBox.Text,
                 ExportFieldMappings = GetCurrentFieldMappings().ToArray(),
                 ExportSqlPreCommandEnabled = SQLExportPreEventCheckBox.Checked,
-                ExportSqlPreCommand = ToBase64((string)SQLExportPreEventButton.Tag),
+                ExportSqlPreCommand = ((string)SQLExportPreEventButton.Tag).ToBase64(),
                 ExportSqlPostCommandEnabled = SQLExportPostEventCheckBox.Checked,
-                ExportSqlPostCommand = ToBase64((string)SQLExportPostEventButton.Tag),
+                ExportSqlPostCommand = ((string)SQLExportPostEventButton.Tag).ToBase64(),
             };
         }
 
@@ -554,12 +545,12 @@ internal sealed partial class ToolsDialog : System.Windows.Forms.Form
             SQLImportSourceCustomRadioButton.Checked = settings.ImportSource == SqlImportSource.CustomSql;
             SQLImportSourceTableComboBox.Text = settings.ImportSourceTableName;
             SQLImportSourceViewComboBox.Text = settings.ImportSourceViewName;
-            SQLImportSourceCustomButton.Tag = FromBase64(settings.ImportSourceCustomSql);
+            SQLImportSourceCustomButton.Tag = settings.ImportSourceCustomSql.FromBase64();
             SQLExportTargetComboBox.Text = settings.ExportSourceTargetName;
             SQLExportPreEventCheckBox.Checked = settings.ExportSqlPreCommandEnabled;
-            SQLExportPreEventButton.Tag = FromBase64(settings.ExportSqlPreCommand);
+            SQLExportPreEventButton.Tag = settings.ExportSqlPreCommand.FromBase64();
             SQLExportPostEventCheckBox.Checked = settings.ExportSqlPostCommandEnabled;
-            SQLExportPostEventButton.Tag = FromBase64(settings.ExportSqlPostCommand);
+            SQLExportPostEventButton.Tag = settings.ExportSqlPostCommand.FromBase64();
 
             SQLExportFieldMappingListBox.Items.Clear();
             foreach (var fieldMapping in settings.ExportFieldMappings)

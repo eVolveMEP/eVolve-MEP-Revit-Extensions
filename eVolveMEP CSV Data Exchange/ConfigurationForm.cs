@@ -1,12 +1,9 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-extern alias eVolve;
-using eVolve::eVolve.Core.Revit.Integration;
-using static eVolve::eVolve.Core.Revit.Integration.API;
 using System.Windows.Forms;
 
 namespace eVolve.CsvDataExchange.Revit;
@@ -60,10 +57,7 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
             
         // Add all available optional columns to the list for the user to select from.
         OptionalExportColumnsCheckedListBox.Items.Clear();
-        OptionalExportColumnsCheckedListBox.Items.AddRange(typeof(Command.OptionalExportColumns).GetProperties()
-            .Select(propertyInfo => (string)propertyInfo.GetValue(null))
-            .OrderBy(value => value)
-            .ToArray());
+        OptionalExportColumnsCheckedListBox.Items.AddRange(typeof(Command.OptionalExportColumns).GetPropertyValuesOfType<string>().ToArray());
 
         FormClosing += ConfigurationForm_FormClosing;
     }
@@ -122,11 +116,11 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
         ProfileComboBox.Items.Clear();
         if (sender.Equals(ExportRadioButton))
         {
-            ProfileComboBox.Items.AddRange(Document.GetProfileNames(ProfileDirection.Export, Command.FeatureId, null));
+            ProfileComboBox.Items.AddRange(Document.GetProfileNames(IntegrationAPI.ProfileDirection.Export, Command.FeatureId, null));
         }
         else if (sender.Equals(ImportRadioButton))
         {
-            ProfileComboBox.Items.AddRange(Document.GetProfileNames(ProfileDirection.Import, Command.FeatureId, null));
+            ProfileComboBox.Items.AddRange(Document.GetProfileNames(IntegrationAPI.ProfileDirection.Import, Command.FeatureId, null));
         }
     }
 
@@ -183,7 +177,7 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
     #region Settings
 
     /// <summary> Gets the full pathname of the settings file store location on disk. </summary>
-    private static string SettingsFilePath { get; } = System.IO.Path.Combine(eVolve::eVolve.Core.Revit.ProductInfo.API.UserConfigurationFolderPath, "CSV Data Exchange", "Settings.xml");
+    private static string SettingsFilePath { get; } = System.IO.Path.Combine(ProductInfoAPI.UserConfigurationFolderPath, "CSV Data Exchange", "Settings.xml");
 
     /// <summary>
     /// Saves the saved options from <see cref="SettingsFilePath"/> into the form. If an error occurs, the user is notified.

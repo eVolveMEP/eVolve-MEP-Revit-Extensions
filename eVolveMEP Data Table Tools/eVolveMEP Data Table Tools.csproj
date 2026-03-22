@@ -62,7 +62,7 @@
 		<Reference Include="eVolve$(EvolveProduct)">
 			<HintPath>..\..\eVolve-Revit-Products\eVolve $(EvolveProduct)\bin\Release\eVolve$(EvolveProduct).dll</HintPath>
 			<Private>False</Private>
-			<Aliases>eVolve</Aliases>
+			<Aliases>eVolveProduct</Aliases>
 		</Reference>
 	</ItemGroup>
 	

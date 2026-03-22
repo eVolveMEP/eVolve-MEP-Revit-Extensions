@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -62,7 +62,7 @@ internal partial class TabularSourceDialog : System.Windows.Forms.Form
             RefreshButton_Click(RefreshButton, EventArgs.Empty);
             InitialSource = null;
         };
-        FormClosing += ExcelSourceDialog_FormClosing;
+        FormClosing += TabularSourceDialog_FormClosing;
         FileTextBox.Validated += RefreshButton_Click;
     }
 
@@ -70,7 +70,7 @@ internal partial class TabularSourceDialog : System.Windows.Forms.Form
     ///
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Form closing event information. </param>
-    private void ExcelSourceDialog_FormClosing(object sender, FormClosingEventArgs e)
+    private void TabularSourceDialog_FormClosing(object sender, FormClosingEventArgs e)
     {
         if (DialogResult == DialogResult.OK && !e.Cancel)
         {
