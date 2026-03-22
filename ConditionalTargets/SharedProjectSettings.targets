@@ -14,7 +14,7 @@
     <SatelliteResourceLanguages>en-US;fr-FR</SatelliteResourceLanguages>    
     <EnableDefaultItems>false</EnableDefaultItems>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <LangVersion>13</LangVersion>
+    <LangVersion>14</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup>
