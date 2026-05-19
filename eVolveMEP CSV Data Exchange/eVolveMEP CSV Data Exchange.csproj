@@ -7,25 +7,25 @@
 		<Copyright>Copyright © 2025 eVolve MEP, LLC</Copyright>
 		<Version>9.0.0.04305</Version>
 		<Configurations>
-			eE Debug Revit 2023;
 			eE Debug Revit 2024;
 			eE Debug Revit 2025;
 			eE Debug Revit 2026;
+			eE Debug Revit 2027;
 
-			eE Release Revit 2023;
 			eE Release Revit 2024;
 			eE Release Revit 2025;
 			eE Release Revit 2026;
+			eE Release Revit 2027;
 
-			eM Debug Revit 2023;
 			eM Debug Revit 2024;
 			eM Debug Revit 2025;
 			eM Debug Revit 2026;
+			eM Debug Revit 2027;
 
-			eM Release Revit 2023;
 			eM Release Revit 2024;
 			eM Release Revit 2025;
 			eM Release Revit 2026;
+			eM Release Revit 2027;
 		</Configurations>
 	</PropertyGroup>
 	
@@ -41,21 +41,17 @@
 		<GenerateDocumentationFile>False</GenerateDocumentationFile>
 	</PropertyGroup>
 	
-	<Import Project="../ConditionalTargets/SharedProjectSettings.targets"/>
-	<Import Project="../ConditionalTargets/Revit/Revit2023.targets" Condition="$(DefineConstants.Contains('REVIT2023'))"/>
-	<Import Project="../ConditionalTargets/Revit/Revit2024.targets" Condition="$(DefineConstants.Contains('REVIT2024'))"/>
-	<Import Project="../ConditionalTargets/Revit/Revit2025.targets" Condition="$(DefineConstants.Contains('REVIT2025'))"/>
-	<Import Project="../ConditionalTargets/Revit/Revit2026.targets" Condition="$(DefineConstants.Contains('REVIT2026'))"/>
-	
+	<Import Project="../ConditionalTargets/SharedProjectSettings.targets" />
+	<Import Project="../ConditionalTargets/Revit/Revit2024.targets" Condition="$(DefineConstants.Contains('REVIT2024'))" />
+	<Import Project="../ConditionalTargets/Revit/Revit2025.targets" Condition="$(DefineConstants.Contains('REVIT2025'))" />
+	<Import Project="../ConditionalTargets/Revit/Revit2026.targets" Condition="$(DefineConstants.Contains('REVIT2026'))" />
+	<Import Project="../ConditionalTargets/Revit/Revit2027.targets" Condition="$(DefineConstants.Contains('REVIT2027'))" />
 	<PropertyGroup Condition="$(Configuration.Contains('Debug'))">
 		<AssemblyName>eVolveCSVDataExchange-eVolve$(EvolveProduct)</AssemblyName>
-		<OutputPath>bin\$(EvolvePrefix) Debug Revit $(RevitYear)\</OutputPath>
-		<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
 		<DocumentationFile>bin\Debug Revit $(RevitYear)\eVolveCSVDataExchange.xml</DocumentationFile>
 	</PropertyGroup>
 	<PropertyGroup Condition="$(Configuration.Contains('Release'))">
 		<AssemblyName>eVolveCSVDataExchange-eVolve$(EvolveProduct)</AssemblyName>
-		<OutputPath>bin\Release\</OutputPath>
 	</PropertyGroup>
 	
 	<ItemGroup>
@@ -67,18 +63,18 @@
 	</ItemGroup>
 	
 	<ItemGroup Condition="!$(DefineConstants.Contains('CORE'))">
-		<Reference Include="PresentationCore"/>
-		<Reference Include="System"/>
-		<Reference Include="System.Core"/>
-		<Reference Include="System.Drawing"/>
-		<Reference Include="System.Windows.Forms"/>
-		<Reference Include="Microsoft.CSharp"/>
-		<Reference Include="System.Xml"/>
-		<Reference Include="WindowsBase"/>
+		<Reference Include="PresentationCore" />
+		<Reference Include="System" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Drawing" />
+		<Reference Include="System.Windows.Forms" />
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="System.Xml" />
+		<Reference Include="WindowsBase" />
 	</ItemGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="JetBrains.Annotations" Version="2024.2.0"/>
+		<PackageReference Include="JetBrains.Annotations" Version="2024.2.0" />
 	</ItemGroup>
 	
 	<ItemGroup>
@@ -88,32 +84,26 @@
 		<Compile Include="..\Common\Methods.cs">
 			<Link>Methods.cs</Link>
 		</Compile>
-		<Compile Include="Command.cs"/>
-		<Compile Include="Application.cs"/>
+		<Compile Include="Command.cs" />
+		<Compile Include="Application.cs" />
 		<Compile Include="ConfigurationForm.cs">
 			<SubType>Form</SubType>
 		</Compile>
 		<Compile Include="ConfigurationForm.Designer.cs">
 			<DependentUpon>ConfigurationForm.cs</DependentUpon>
 		</Compile>
-		<Compile Include="GlobalUsings.cs"/>
+		<Compile Include="GlobalUsings.cs" />
 		<Compile Include="Properties\Resources.Designer.cs">
 			<AutoGen>True</AutoGen>
 			<DesignTime>True</DesignTime>
 			<DependentUpon>Resources.resx</DependentUpon>
 		</Compile>
-		<Compile Include="Settings.cs"/>
+		<Compile Include="Settings.cs" />
 	</ItemGroup>
 	
 	<ItemGroup>
-		<EmbeddedResource Include="ConfigurationForm.fr-FR.resx">
-			<DependentUpon>ConfigurationForm.cs</DependentUpon>
-		</EmbeddedResource>
 		<EmbeddedResource Include="ConfigurationForm.resx">
 			<DependentUpon>ConfigurationForm.cs</DependentUpon>
-		</EmbeddedResource>
-		<EmbeddedResource Include="Properties\Resources.fr-FR.resx">
-			<DependentUpon>Resources.resx</DependentUpon>
 		</EmbeddedResource>
 		<EmbeddedResource Include="Properties\Resources.resx">
 			<Generator>ResXFileCodeGenerator</Generator>
@@ -122,17 +112,17 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-		<None Include="LinkedVideo_20x20.png"/>
-		<None Include="packages.config"/>
+		<None Include="LinkedVideo_20x20.png" />
+		<None Include="packages.config" />
 		<None Include="_CSVDataExchange.addin">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<EmbeddedResource Include="CSV_ImportExport_32x32.png"/>
-		<None Include="Help_Medium_20x20.png"/>
-		<None Include="Settings_20x20.png"/>
-		<None Include="Resources\Logo.png"/>
+		<EmbeddedResource Include="CSV_ImportExport_32x32.png" />
+		<None Include="Help_Medium_20x20.png" />
+		<None Include="Settings_20x20.png" />
+		<None Include="Resources\Logo.png" />
 	</ItemGroup>
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="CALL &quot;$(SolutionDir)BuildTools\PostBuild.bat&quot; &quot;$(ConfigurationName)&quot; &quot;$(TargetDir)&quot; &quot;$(TargetPath)&quot; &quot;A70A6A1A-BF91-C541-158A-5589D57891CB&quot; &quot;9F07922B-CCDF-2290-C059-CC7A8F1FFC78&quot;"/>
+		<Exec Command="CALL &quot;$(SolutionDir)BuildTools\PostBuild.bat&quot; &quot;$(ConfigurationName)&quot; &quot;$(TargetDir)&quot; &quot;$(TargetPath)&quot; &quot;A70A6A1A-BF91-C541-158A-5589D57891CB&quot; &quot;9F07922B-CCDF-2290-C059-CC7A8F1FFC78&quot;" />
 	</Target>
 </Project>

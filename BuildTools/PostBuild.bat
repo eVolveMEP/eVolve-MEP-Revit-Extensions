@@ -5,10 +5,10 @@ SET "ElectricalId=%~4"
 SET "MechanicalId=%~5"
 
 SET "VersionYear=Unknown"
-IF NOT "%ConfigName:2023=%"=="%ConfigName%" SET "VersionYear=2023"
 IF NOT "%ConfigName:2024=%"=="%ConfigName%" SET "VersionYear=2024"
 IF NOT "%ConfigName:2025=%"=="%ConfigName%" SET "VersionYear=2025"
 IF NOT "%ConfigName:2026=%"=="%ConfigName%" SET "VersionYear=2026"
+IF NOT "%ConfigName:2027=%"=="%ConfigName%" SET "VersionYear=2027"
 
 SET "ProductName=Unknown"
 IF NOT "%ConfigName:eE=%"=="%ConfigName%" (
@@ -36,7 +36,13 @@ COPY /Y %AddinFilePath% %AddinFilePath%.deploy >nul
 
 REM Copy to the correct Revit location.
 REM Note, this action may require admin rights.
-COPY /Y %AddinFilePath% "%ALLUSERSPROFILE%\Autodesk\Revit\Addins\%VersionYear%\%AddinFileName%" >nul
+IF %VersionYear% GEQ 2027 (
+	SET "AddinLocation=%ProgramFiles%\Autodesk\Revit\Addins\%VersionYear%"
+) ELSE (
+	SET "AddinLocation=%ALLUSERSPROFILE%\Autodesk\Revit\Addins\%VersionYear%"
+)
+powershell.exe -ExecutionPolicy Bypass -File "%~dp0\MakeWritableIfNeeded.ps1" "%AddinLocation%"
+COPY /Y %AddinFilePath% "%AddinLocation%\%AddinConfigFile%"
 
 REM Revit API references.
 DEL /Q "%TargetDir%Revit*"
