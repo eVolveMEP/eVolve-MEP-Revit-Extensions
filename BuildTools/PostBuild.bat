@@ -42,7 +42,7 @@ IF %VersionYear% GEQ 2027 (
 	SET "AddinLocation=%ALLUSERSPROFILE%\Autodesk\Revit\Addins\%VersionYear%"
 )
 powershell.exe -ExecutionPolicy Bypass -File "%~dp0\MakeWritableIfNeeded.ps1" "%AddinLocation%"
-COPY /Y %AddinFilePath% "%AddinLocation%\%AddinConfigFile%"
+COPY /Y %AddinFilePath% "%AddinLocation%\%AddinFileName%"
 
 REM Revit API references.
 DEL /Q "%TargetDir%Revit*"
