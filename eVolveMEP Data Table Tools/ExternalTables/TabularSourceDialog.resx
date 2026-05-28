@@ -130,13 +130,13 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="ExternalTableSourceBaseControl.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;ExternalTableSourceBaseControl.Name" xml:space="preserve">
     <value>ExternalTableSourceBaseControl</value>
   </data>
   <data name="&gt;&gt;ExternalTableSourceBaseControl.Type" xml:space="preserve">
-    <value>eVolve.DataTableTools.Revit.ExternalTables.ExternalTableSourceBaseControl, eVolveDataTableTools-eVolveElectrical, Version=7.4.0.12073, Culture=neutral, PublicKeyToken=null</value>
+    <value>eVolve.DataTableTools.Revit.ExternalTables.ExternalTableSourceBaseControl, eVolveDataTableTools-eVolveElectrical, Version=9.0.0.4305, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ExternalTableSourceBaseControl.Parent" xml:space="preserve">
     <value>$this</value>
@@ -151,7 +151,7 @@
     <value>NoControl</value>
   </data>
   <data name="LogoPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 581</value>
+    <value>12, 624</value>
   </data>
   <data name="LogoPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 23</value>
@@ -178,13 +178,13 @@
     <value>Bottom, Right</value>
   </data>
   <data name="Cancel_Button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>688, 581</value>
+    <value>688, 624</value>
   </data>
   <data name="Cancel_Button.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
   </data>
   <data name="Cancel_Button.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>4</value>
   </data>
   <data name="Cancel_Button.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -205,13 +205,13 @@
     <value>Bottom, Right</value>
   </data>
   <data name="OKButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 581</value>
+    <value>582, 624</value>
   </data>
   <data name="OKButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
   </data>
   <data name="OKButton.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>3</value>
   </data>
   <data name="OKButton.Text" xml:space="preserve">
     <value>OK</value>
@@ -230,6 +230,54 @@
   </data>
   <data name="FileGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="SheetComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 61</value>
+  </data>
+  <data name="SheetComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 21</value>
+  </data>
+  <data name="SheetComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;SheetComboBox.Name" xml:space="preserve">
+    <value>SheetComboBox</value>
+  </data>
+  <data name="&gt;&gt;SheetComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SheetComboBox.Parent" xml:space="preserve">
+    <value>FileGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SheetComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SheetLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SheetLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 64</value>
+  </data>
+  <data name="SheetLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 13</value>
+  </data>
+  <data name="SheetLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="SheetLabel.Text" xml:space="preserve">
+    <value>Sheet</value>
+  </data>
+  <data name="&gt;&gt;SheetLabel.Name" xml:space="preserve">
+    <value>SheetLabel</value>
+  </data>
+  <data name="&gt;&gt;SheetLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SheetLabel.Parent" xml:space="preserve">
+    <value>FileGroupBox</value>
+  </data>
+  <data name="&gt;&gt;SheetLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="RefreshButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -259,7 +307,7 @@
     <value>FileGroupBox</value>
   </data>
   <data name="&gt;&gt;RefreshButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="FileBrowseButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -289,7 +337,7 @@
     <value>FileGroupBox</value>
   </data>
   <data name="&gt;&gt;FileBrowseButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="FileTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -313,7 +361,7 @@
     <value>FileGroupBox</value>
   </data>
   <data name="&gt;&gt;FileTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="FileGroupBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 137</value>
@@ -322,10 +370,10 @@
     <value>10, 10, 10, 10</value>
   </data>
   <data name="FileGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>776, 67</value>
+    <value>776, 97</value>
   </data>
   <data name="FileGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>1</value>
   </data>
   <data name="FileGroupBox.Text" xml:space="preserve">
     <value>Source File</value>
@@ -370,7 +418,7 @@
     <value>20, 30</value>
   </data>
   <data name="ColumnsDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>743, 276</value>
+    <value>743, 290</value>
   </data>
   <data name="ColumnsDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -388,13 +436,13 @@
     <value>0</value>
   </data>
   <data name="ColumnsGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 226</value>
+    <value>12, 255</value>
   </data>
   <data name="ColumnsGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>776, 322</value>
+    <value>776, 336</value>
   </data>
   <data name="ColumnsGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>2</value>
   </data>
   <data name="ColumnsGroupBox.Text" xml:space="preserve">
     <value>Column Configuration</value>
@@ -418,7 +466,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 616</value>
+    <value>800, 659</value>
   </data>
   <data name="&gt;&gt;NameColumn.Name" xml:space="preserve">
     <value>NameColumn</value>
@@ -439,7 +487,7 @@
     <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ExcelSourceDialog</value>
+    <value>TabularSourceDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

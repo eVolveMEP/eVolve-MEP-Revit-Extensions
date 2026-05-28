@@ -54,14 +54,14 @@ internal sealed partial class ConfigurationForm : System.Windows.Forms.Form
         ImportRadioButton.CheckedChanged += DirectionRadioButton_CheckedChanged;
 
         OptionalExportColumnsGroupBox.Text = string.Format(OptionalExportColumnsGroupBox.Text, ExportRadioButton.Text);
-            
+
         // Add all available optional columns to the list for the user to select from.
         OptionalExportColumnsCheckedListBox.Items.Clear();
-        OptionalExportColumnsCheckedListBox.Items.AddRange(typeof(Command.OptionalExportColumns).GetPropertyValuesOfType<string>().ToArray());
+        OptionalExportColumnsCheckedListBox.Items.AddRange(default(Command.OptionalExportColumns).GetPropertyValuesOfType<string>().ToArray());
 
         FormClosing += ConfigurationForm_FormClosing;
     }
-        
+
     /// <summary> Loads saved configuration values into the editors. </summary>
     ///
     /// <param name="sender"> Source of the event. </param>

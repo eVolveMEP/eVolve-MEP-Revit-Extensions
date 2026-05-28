@@ -41,7 +41,7 @@ internal class ExcelTableSource(ExcelSource source) : IExternalDataTable
 
         var table = new DataTable(Source.Name);
 
-        ExternalTablesMethods.ReadFromExcel(Source.FilePathConsumable,
+        ExternalTablesMethods.ReadFromExcel(Source.FilePathConsumable, Source.SheetName,
             worksheet =>
             {
                 var headers = worksheet.GetHeaderIndexes()

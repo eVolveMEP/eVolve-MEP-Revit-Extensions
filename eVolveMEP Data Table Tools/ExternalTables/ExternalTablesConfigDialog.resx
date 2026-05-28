@@ -231,6 +231,12 @@
   <data name="ExcelFilePathColumn.Width" type="System.Int32, mscorlib">
     <value>125</value>
   </data>
+  <metadata name="ExcelSheetNameColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ExcelSheetNameColumn.HeaderText" xml:space="preserve">
+    <value>Sheet Name</value>
+  </data>
   <metadata name="ExcelCachedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1231,66 +1237,6 @@ A reload of Revit will be required for other installations to apply any updated 
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 581</value>
   </data>
-  <data name="&gt;&gt;CsvNameColumn.Name" xml:space="preserve">
-    <value>CsvNameColumn</value>
-  </data>
-  <data name="&gt;&gt;CsvNameColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CsvFilePathColumn.Name" xml:space="preserve">
-    <value>CsvFilePathColumn</value>
-  </data>
-  <data name="&gt;&gt;CsvFilePathColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CsvCachedColumn.Name" xml:space="preserve">
-    <value>CsvCachedColumn</value>
-  </data>
-  <data name="&gt;&gt;CsvCachedColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CsvDescriptionColumn.Name" xml:space="preserve">
-    <value>CsvDescriptionColumn</value>
-  </data>
-  <data name="&gt;&gt;CsvDescriptionColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CsvGlobalColumn.Name" xml:space="preserve">
-    <value>CsvGlobalColumn</value>
-  </data>
-  <data name="&gt;&gt;CsvGlobalColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExcelNameColumn.Name" xml:space="preserve">
-    <value>ExcelNameColumn</value>
-  </data>
-  <data name="&gt;&gt;ExcelNameColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExcelFilePathColumn.Name" xml:space="preserve">
-    <value>ExcelFilePathColumn</value>
-  </data>
-  <data name="&gt;&gt;ExcelFilePathColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExcelCachedColumn.Name" xml:space="preserve">
-    <value>ExcelCachedColumn</value>
-  </data>
-  <data name="&gt;&gt;ExcelCachedColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExcelDescriptionColumn.Name" xml:space="preserve">
-    <value>ExcelDescriptionColumn</value>
-  </data>
-  <data name="&gt;&gt;ExcelDescriptionColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ExcelGlobalColumn.Name" xml:space="preserve">
-    <value>ExcelGlobalColumn</value>
-  </data>
-  <data name="&gt;&gt;ExcelGlobalColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;SqlNameColumn.Name" xml:space="preserve">
     <value>SqlNameColumn</value>
   </data>
@@ -1343,6 +1289,72 @@ A reload of Revit will be required for other installations to apply any updated 
     <value>DataTableGlobalColumn</value>
   </data>
   <data name="&gt;&gt;DataTableGlobalColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvNameColumn.Name" xml:space="preserve">
+    <value>CsvNameColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvFilePathColumn.Name" xml:space="preserve">
+    <value>CsvFilePathColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvFilePathColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvCachedColumn.Name" xml:space="preserve">
+    <value>CsvCachedColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvCachedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvDescriptionColumn.Name" xml:space="preserve">
+    <value>CsvDescriptionColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvDescriptionColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CsvGlobalColumn.Name" xml:space="preserve">
+    <value>CsvGlobalColumn</value>
+  </data>
+  <data name="&gt;&gt;CsvGlobalColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelNameColumn.Name" xml:space="preserve">
+    <value>ExcelNameColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelFilePathColumn.Name" xml:space="preserve">
+    <value>ExcelFilePathColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelFilePathColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelSheetNameColumn.Name" xml:space="preserve">
+    <value>ExcelSheetNameColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelSheetNameColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelCachedColumn.Name" xml:space="preserve">
+    <value>ExcelCachedColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelCachedColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelDescriptionColumn.Name" xml:space="preserve">
+    <value>ExcelDescriptionColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelDescriptionColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ExcelGlobalColumn.Name" xml:space="preserve">
+    <value>ExcelGlobalColumn</value>
+  </data>
+  <data name="&gt;&gt;ExcelGlobalColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

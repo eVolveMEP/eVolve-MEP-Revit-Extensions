@@ -42,6 +42,8 @@ partial class TabularSourceDialog
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataTypeColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ExcludeColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SheetLabel = new System.Windows.Forms.Label();
+            this.SheetComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.FileGroupBox.SuspendLayout();
             this.ColumnsGroupBox.SuspendLayout();
@@ -76,6 +78,8 @@ partial class TabularSourceDialog
             // FileGroupBox
             // 
             resources.ApplyResources(this.FileGroupBox, "FileGroupBox");
+            this.FileGroupBox.Controls.Add(this.SheetComboBox);
+            this.FileGroupBox.Controls.Add(this.SheetLabel);
             this.FileGroupBox.Controls.Add(this.RefreshButton);
             this.FileGroupBox.Controls.Add(this.FileBrowseButton);
             this.FileGroupBox.Controls.Add(this.FileTextBox);
@@ -136,7 +140,19 @@ partial class TabularSourceDialog
             resources.ApplyResources(this.ExcludeColumn, "ExcludeColumn");
             this.ExcludeColumn.Name = "ExcludeColumn";
             // 
-            // ExcelSourceDialog
+            // SheetLabel
+            // 
+            resources.ApplyResources(this.SheetLabel, "SheetLabel");
+            this.SheetLabel.Name = "SheetLabel";
+            // 
+            // SheetComboBox
+            // 
+            this.SheetComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SheetComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.SheetComboBox, "SheetComboBox");
+            this.SheetComboBox.Name = "SheetComboBox";
+            // 
+            // TabularSourceDialog
             // 
             this.AcceptButton = this.OKButton;
             resources.ApplyResources(this, "$this");
@@ -148,7 +164,7 @@ partial class TabularSourceDialog
             this.Controls.Add(this.Cancel_Button);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.ExternalTableSourceBaseControl);
-            this.Name = "ExcelSourceDialog";
+            this.Name = "TabularSourceDialog";
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.FileGroupBox.ResumeLayout(false);
             this.FileGroupBox.PerformLayout();
@@ -173,4 +189,6 @@ partial class TabularSourceDialog
     private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
     private System.Windows.Forms.DataGridViewComboBoxColumn DataTypeColumn;
     private System.Windows.Forms.DataGridViewCheckBoxColumn ExcludeColumn;
+    private System.Windows.Forms.ComboBox SheetComboBox;
+    private System.Windows.Forms.Label SheetLabel;
 }

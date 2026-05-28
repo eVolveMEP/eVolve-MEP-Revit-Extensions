@@ -22,7 +22,10 @@ internal static class Methods
     {
         try
         {
-            return filePath.DeserializeObject<TSettings>(true, true);
+            if (System.IO.File.Exists(filePath))
+            {
+                return filePath.DeserializeObject<TSettings>(true, true);
+            }
         }
         catch (Exception ex)
         {
