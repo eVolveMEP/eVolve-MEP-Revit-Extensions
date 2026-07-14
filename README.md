@@ -11,9 +11,9 @@ This _exact_ codebase ships with the eVolve Revit products so it serves as a rea
 
 # Project Details
 - Compatible with:
-  - Revit 2023, 2024, 2025, 2026
-  - eVolve Electrical 9.4+
-  - eVolve Mechanical 9.4+
+  - Revit 2024, 2025, 2026, 2027
+  - eVolve Electrical 10.0
+  - eVolve Mechanical 10.0
 - Visual Studio 2026 format
 
 # Building and Running
