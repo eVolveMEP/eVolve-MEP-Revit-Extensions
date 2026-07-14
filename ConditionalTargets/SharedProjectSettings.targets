@@ -11,20 +11,21 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <SelfContained>true</SelfContained>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <SatelliteResourceLanguages>en-US;fr-FR</SatelliteResourceLanguages>    
+    <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>    
     <EnableDefaultItems>false</EnableDefaultItems>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <LangVersion>13</LangVersion>
+    <LangVersion>14</LangVersion>
+    <NoWarn>$(NoWarn);NU1701</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup>
-    <RevitYear Condition="$(Configuration.Contains('Revit 2023'))">2023</RevitYear>
     <RevitYear Condition="$(Configuration.Contains('Revit 2024'))">2024</RevitYear>
     <RevitYear Condition="$(Configuration.Contains('Revit 2025'))">2025</RevitYear>
     <RevitYear Condition="$(Configuration.Contains('Revit 2026'))">2026</RevitYear>
+	<RevitYear Condition="$(Configuration.Contains('Revit 2027'))">2027</RevitYear>
     
     <DefineConstants>$(DefineConstants);REVIT$(RevitYear)</DefineConstants>
-    <DefineConstants Condition="'$(RevitYear)' == '2025' or '$(RevitYear)' == '2026'">$(DefineConstants);CORE</DefineConstants>
+    <DefineConstants Condition="'$(RevitYear)' == '2025' or '$(RevitYear)' == '2026' or '$(RevitYear)' == '2027'">$(DefineConstants);CORE</DefineConstants>
         
     <EvolvePrefix Condition="$(Configuration.Contains('eE'))">eE</EvolvePrefix>
     <EvolveProduct Condition="$(Configuration.Contains('eE'))">Electrical</EvolveProduct>
@@ -36,23 +37,33 @@
     <DefineConstants Condition="$(Configuration.Contains('eM'))">$(DefineConstants);MECHANICAL</DefineConstants>
   </PropertyGroup>
   
-  <PropertyGroup Condition="$(DefineConstants.Contains('DEBUG'))">
+  <PropertyGroup Condition="$(Configuration.Contains('Debug'))">
+	<OutputPath>bin\$(EvolvePrefix) Debug Revit $(RevitYear)\</OutputPath>
+	<DefineConstants>$(DefineConstants);TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
   </PropertyGroup>
-
-  <PropertyGroup Condition="!$(DefineConstants.Contains('DEBUG'))">
+  
+  <PropertyGroup Condition="!$(Configuration.Contains('Debug'))">
+    <OutputPath>bin\Release\</OutputPath>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
   </PropertyGroup>
 
-  <PropertyGroup Condition="!$(DefineConstants.Contains('CORE'))">
+  <PropertyGroup Condition="'$(RevitYear)' == '2024'">
     <TargetFramework>net48</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(RevitYear)' == '2025' or '$(RevitYear)' == '2026'">
+    <TargetFramework>net8.0-windows</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(RevitYear)' == '2027'">
+    <TargetFramework>net10.0-windows</TargetFramework>
+  </PropertyGroup>
+
   <PropertyGroup Condition="$(DefineConstants.Contains('CORE'))">
-    <TargetFramework>net8-windows</TargetFramework>
     <UseWPF>True</UseWPF>
     <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>

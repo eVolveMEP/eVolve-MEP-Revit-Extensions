@@ -1,15 +1,13 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-extern alias eVolve;
-using eVolve::eVolve.Core.Revit.Integration;
-
 namespace eVolve.CsvDataExchange.Revit;
 
 /// <summary> Entry point Revit uses to configure this extension. </summary>
+[JetBrains.Annotations.UsedImplicitly]
 #if ELECTRICAL
 public class ApplicationElectrical : IExternalApplication
 #elif MECHANICAL
@@ -27,7 +25,7 @@ public class ApplicationMechanical : IExternalApplication
     /// <inheritdoc/>
     public Result OnStartup(UIControlledApplication application)
     {
-        var ribbonButton = API.CreateButton(Resources.ButtonText,
+        var ribbonButton = IntegrationAPI.CreateButton(Resources.ButtonText,
             System.Reflection.Assembly.GetExecutingAssembly().Location,
             typeof(Command),
             typeof(ExtensionsCommon.Revit.CommandAvailability),
@@ -35,9 +33,9 @@ public class ApplicationMechanical : IExternalApplication
             string.Format(Resources.ToolTipText, HostProductName),
             Command.HelpLinkUrl);
 
-        API.IntegrationRibbonPanel.AddItem(ribbonButton);
+        IntegrationAPI.IntegrationRibbonPanel.AddItem(ribbonButton);
 
-        API.RegisterImplementingFeature(Command.FeatureId, GetTextWithNoLineBreaks(Resources.ButtonText));
+        IntegrationAPI.RegisterImplementingFeature(Command.FeatureId, Resources.ButtonText.ReplaceLineBreaks(" "));
 
         return Result.Succeeded;
     }

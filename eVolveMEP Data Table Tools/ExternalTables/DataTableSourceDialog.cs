@@ -1,10 +1,9 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-extern alias eVolve;
 using System.Windows.Forms;
 
 namespace eVolve.DataTableTools.Revit.ExternalTables;
@@ -40,7 +39,7 @@ internal sealed partial class DataTableSourceDialog : System.Windows.Forms.Form
         FileInfoLabel.Text = string.Format(FileInfoLabel.Text, SerializeDataTableGroupBox.Text);
 
         SerializeDataTableComboBox.Items.Clear();
-        SerializeDataTableComboBox.Items.AddRange(eVolve::eVolve.Core.Revit.Reporting.API.GetTableNames(Document).Prepend("").ToArray());
+        SerializeDataTableComboBox.Items.AddRange(Document.GetTableNames().Prepend("").ToArray());
 
         FormClosing += DataTableSourceDialog_FormClosing;
     }
@@ -97,7 +96,7 @@ internal sealed partial class DataTableSourceDialog : System.Windows.Forms.Form
         dialog.Title = SerializeDataTableGroupBox.Text;
         if (dialog.ShowDialog(this) == DialogResult.OK)
         {
-            DataTableSource.SaveDataTableToFile(eVolve::eVolve.Core.Revit.Reporting.API.GetTable(Document, SerializeDataTableComboBox.Text, out _), dialog.FileName);
+            DataTableSource.SaveDataTableToFile(Document.GetTable(SerializeDataTableComboBox.Text, out _), dialog.FileName);
             ShowNoticeMessage(this, Resources.OperationCompleted, SerializeDataTableGroupBox.Text);
         }
     }

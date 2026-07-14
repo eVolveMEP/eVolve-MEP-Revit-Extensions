@@ -1,10 +1,8 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
-
-extern alias eVolve;
 
 using System.Data;
 using System.Data.SqlClient;
@@ -13,8 +11,8 @@ namespace eVolve.DataTableTools.Revit.ExternalTables;
 
 /// <summary> Constructor. </summary>
 ///
-/// <param name="source"> <inheritdoc cref="Source" path="/summary"/>. </param>
-internal class SqlServerTableSource(SqlServerSource source) : eVolve::eVolve.Core.Revit.Reporting.IExternalDataTable
+/// <param name="source"> <inheritdoc cref="Source" path="/summary"/> </param>
+internal class SqlServerTableSource(SqlServerSource source) : IExternalDataTable
 {
     /// <summary> Source definition which defines how data is pulled. </summary>
     private SqlServerSource Source { get; } = source;
@@ -42,7 +40,7 @@ internal class SqlServerTableSource(SqlServerSource source) : eVolve::eVolve.Cor
     {
         metadata = null;
 
-        using var adapter = new SqlDataAdapter(FromBase64(Source.CommandText), FromBase64(Source.ConnectionString));
+        using var adapter = new SqlDataAdapter(Source.CommandText.FromBase64(), Source.ConnectionString.FromBase64());
         var results = new DataSet();
         adapter.Fill(results);
         var table = results.Tables[0].Copy();

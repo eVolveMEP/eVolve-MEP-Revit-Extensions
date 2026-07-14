@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -53,16 +53,20 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
 
         foreach (var excelButton in new[] { ExcelNewButton, ExcelEditButton, ExcelDeleteButton })
         {
-            static Dictionary<string, int> getColumnHeaders(string file)
+            static (Dictionary<string, int>, string[]) getFileData(string file, string sheetName)
             {
                 var headers = new Dictionary<string, int>();
-                ExternalTablesMethods.ReadFromExcel(file, worksheet => headers = worksheet.GetHeaderIndexes());
-                return headers;
+                var sheetNames = Array.Empty<string>();
+                ExternalTablesMethods.ReadFromExcel(file, sheetName,
+                    worksheet => headers = worksheet.GetHeaderIndexes(),
+                    workbook => sheetNames = Enumerable.Range(1, workbook.WorksheetCount).Select(i => workbook.GetWorksheet(i).Name).ToArray()
+                    );
+                return (headers, sheetNames);
             }
 
             excelButton.Click += (sender, _) =>
                 GridHandlers(ExcelSources, ExcelDataGridView, (sender, ExcelNewButton, ExcelEditButton, ExcelDeleteButton),
-                    source => new TabularSourceDialog($"{((Button)sender).Text} {ExcelTabPage.Text}", source, Resources.ExcelFiles + string.Format(" (*{0})|*{0}", ".xlsx"), getColumnHeaders),
+                    source => new TabularSourceDialog($"{((Button)sender).Text} {ExcelTabPage.Text}", source, Resources.ExcelFiles + string.Format(" (*{0})|*{0}", ".xlsx"), getFileData),
                     dialog => ((TabularSourceDialog)dialog).GetSource<ExcelSource>());
         }
 
@@ -70,7 +74,7 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
         {
             csvButton.Click += (sender, _) =>
                 GridHandlers(CsvSources, CsvDataGridView, (sender, CsvNewButton, CsvEditButton, CsvDeleteButton),
-                    source => new TabularSourceDialog($"{((Button)sender).Text} {CsvTabPage.Text}", source, Resources.CsvFiles + string.Format(" (*{0})|*{0}", ".csv"), file => CsvTableSource.GetHeaders(file)),
+                    source => new TabularSourceDialog($"{((Button)sender).Text} {CsvTabPage.Text}", source, Resources.CsvFiles + string.Format(" (*{0})|*{0}", ".csv"), (file, _) => (CsvTableSource.GetHeaders(file), [])),
                     dialog => ((TabularSourceDialog)dialog).GetSource<CsvSource>());
         }
 
@@ -112,6 +116,7 @@ internal partial class ExternalTablesConfigDialog : System.Windows.Forms.Form
         ExcelDescriptionColumn.DataPropertyName = nameof(ExcelSource.Description);
         ExcelCachedColumn.DataPropertyName = nameof(ExcelSource.Cache);
         ExcelFilePathColumn.DataPropertyName = nameof(ExcelSource.FilePathConsumable);
+        ExcelSheetNameColumn.DataPropertyName = nameof(ExcelSource.SheetName);
         ExcelGlobalColumn.DataPropertyName = nameof(ExcelSource.Global);
 
         CsvDataGridView.DataSource = CsvSources;

@@ -253,8 +253,8 @@ Would you like to continue?</value>
   <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ExcelFileNotFoundError" xml:space="preserve">
-    <value>The specified Excel file could not be found.</value>
+  <data name="TabularFileNotFoundError" xml:space="preserve">
+	  <value>The specified file could not be found.</value>
   </data>
   <data name="FileLoadFailure" xml:space="preserve">
     <value>Load Failure</value>

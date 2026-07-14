@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -25,17 +25,21 @@ internal partial class TabularSourceDialog : System.Windows.Forms.Form
     private string FileFilter { get; }
 
     /// <summary>
-    /// Function which takes in a file path and returns a lookup of column header text (key) and column index (value).
+    /// Function which takes in a file path and sheet/page name and returns:
+    /// <list type="bullet">
+    /// <item>Lookup of column header text (key) and column index (value).</item>
+    /// <item>Array of sheet names (if applicable).</item>
+    /// </list>
     /// </summary>
-    private Func<string, Dictionary<string, int>> GetHeaderColumns { get; }
+    private Func<string, string, (Dictionary<string, int> Headers, string[] SheetNames)> GetFileData { get; }
 
     /// <summary> Constructor. </summary>
     ///
     /// <param name="dialogTitle"> The dialog title. </param>
     /// <param name="source"> Source object to fill the user input fields with. </param>
     /// <param name="fileFilter"> <inheritdoc cref="FileFilter" path="/summary"/></param>
-    /// <param name="getHeaderColumns"> <inheritdoc cref="GetHeaderColumns" path="/summary"/></param>
-    public TabularSourceDialog(string dialogTitle, TabularSourceBase source, string fileFilter, Func<string, Dictionary<string, int>> getHeaderColumns)
+    /// <param name="getFileData"> <inheritdoc cref="GetFileData" path="/summary"/></param>
+    public TabularSourceDialog(string dialogTitle, TabularSourceBase source, string fileFilter, Func<string, string, (Dictionary<string, int>, string[])> getFileData)
     {
         InitializeComponent();
 
@@ -43,10 +47,11 @@ internal partial class TabularSourceDialog : System.Windows.Forms.Form
 
         InitialSource = source;
         FileFilter = fileFilter;
-        GetHeaderColumns = getHeaderColumns;
+        GetFileData = getFileData;
 
         ExternalTableSourceBaseControl.SetData(source);
         FileTextBox.Text = source.FilePathConsumable;
+        SheetComboBox.Text = source.SheetName;
 
         NameColumn.DataPropertyName = nameof(TabularColumnInfo.Name);
         ExcludeColumn.DataPropertyName = nameof(TabularColumnInfo.Exclude);
@@ -62,15 +67,16 @@ internal partial class TabularSourceDialog : System.Windows.Forms.Form
             RefreshButton_Click(RefreshButton, EventArgs.Empty);
             InitialSource = null;
         };
-        FormClosing += ExcelSourceDialog_FormClosing;
+        FormClosing += TabularSourceDialog_FormClosing;
         FileTextBox.Validated += RefreshButton_Click;
+        SheetComboBox.Validated += RefreshButton_Click;
     }
 
     /// <summary> Validates user input. </summary>
     ///
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Form closing event information. </param>
-    private void ExcelSourceDialog_FormClosing(object sender, FormClosingEventArgs e)
+    private void TabularSourceDialog_FormClosing(object sender, FormClosingEventArgs e)
     {
         if (DialogResult == DialogResult.OK && !e.Cancel)
         {
@@ -101,14 +107,16 @@ internal partial class TabularSourceDialog : System.Windows.Forms.Form
         }
     }
 
-    /// <summary> Reloads column information from the currently specified Excel file. </summary>
+    /// <summary> Reloads column information from the currently specified file and sheet. </summary>
     ///
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Event information. </param>
     private void RefreshButton_Click(object sender, EventArgs e)
     {
         var currentConfig = InitialSource ?? GetSource<TabularSourceBase>();
+        var currentSheetName = SheetComboBox.Text;
         Columns.Clear();
+        SheetComboBox.Items.Clear();
 
         if (string.IsNullOrWhiteSpace(FileTextBox.Text))
         {
@@ -116,30 +124,34 @@ internal partial class TabularSourceDialog : System.Windows.Forms.Form
         }
         if (!System.IO.File.Exists(FileTextBox.Text))
         {
-            ShowErrorMessage(this, Resources.ExcelFileNotFoundError);
+            ShowErrorMessage(this, Resources.TabularFileNotFoundError);
             return;
         }
 
-        Dictionary<string, int> headers;
         try
         {
-            headers = GetHeaderColumns(FileTextBox.Text);
+            var fileData = GetFileData(FileTextBox.Text, currentSheetName);
+
+            foreach (var header in fileData.Headers)
+            {
+                var columnInfo = new TabularColumnInfo() { Name = header.Key };
+                columnInfo.Exclude = currentConfig.ExcludeColumnNames.Contains(columnInfo.Name);
+                if (currentConfig.ColumnDataTypes.FirstOrDefault(dataType => dataType.ColumnName == columnInfo.Name) is { } dataTypeEntry)
+                {
+                    columnInfo.DataType = dataTypeEntry.DataType;
+                }
+                Columns.Add(columnInfo);
+            }
+
+            SheetComboBox.Items.AddRange(fileData.SheetNames);
+            if (SheetComboBox.Items.Contains(currentSheetName))
+            {
+                SheetComboBox.SelectedItem = currentSheetName;
+            }
         }
         catch (Exception ex)
         {
             ShowErrorMessage(this, ex.Message);
-            return;
-        }
-
-        foreach (var header in headers)
-        {
-            var columnInfo = new TabularColumnInfo() { Name = header.Key };
-            columnInfo.Exclude = currentConfig.ExcludeColumnNames.Contains(columnInfo.Name);
-            if (currentConfig.ColumnDataTypes.FirstOrDefault(dataType => dataType.ColumnName == columnInfo.Name) is { } dataTypeEntry)
-            {
-                columnInfo.DataType = dataTypeEntry.DataType;
-            }
-            Columns.Add(columnInfo);
         }
     }
 
@@ -151,6 +163,7 @@ internal partial class TabularSourceDialog : System.Windows.Forms.Form
         var data = ExternalTableSourceBaseControl.GetData<T>();
 
         data.FilePathConsumable = FileTextBox.Text;
+        data.SheetName = SheetComboBox.Text;
 
         data.ExcludeColumnNames = Columns
             .Where(column => column.Exclude)

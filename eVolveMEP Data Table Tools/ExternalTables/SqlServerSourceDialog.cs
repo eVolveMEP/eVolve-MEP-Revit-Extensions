@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -22,8 +22,8 @@ internal partial class SqlServerSourceDialog : System.Windows.Forms.Form
         this.PrepDialog(dialogTitle);
 
         ExternalTableSourceBaseControl.SetData(source);
-        ConnectionStringTextBox.Text = FromBase64(source.ConnectionString);
-        CommandTextBox.Text = FromBase64(source.CommandText);
+        ConnectionStringTextBox.Text = source.ConnectionString.FromBase64();
+        CommandTextBox.Text = source.CommandText.FromBase64();
 
         FormClosing += SqlServerSourceDialog_FormClosing;
     }
@@ -49,14 +49,14 @@ internal partial class SqlServerSourceDialog : System.Windows.Forms.Form
     ///
     /// <param name="sender"> Source of the event. </param>
     /// <param name="e"> Event information. </param>
-    private void ConnectionStringHelpLabel_Click(object sender, EventArgs e) => StartProcess(ConnectionStringHelpLabel.Tag.ToString());
+    private void ConnectionStringHelpLabel_Click(object sender, EventArgs e) => Files.StartProcess(ConnectionStringHelpLabel.Tag.ToString());
 
     /// <summary> Returns a new <see cref="SqlServerSource"/> based on the current input. </summary>
     public SqlServerSource GetSource()
     {
         var data = ExternalTableSourceBaseControl.GetData<SqlServerSource>();
-        data.ConnectionString = ToBase64(ConnectionStringTextBox.Text.Trim());
-        data.CommandText = ToBase64(CommandTextBox.Text);
+        data.ConnectionString = ConnectionStringTextBox.Text.Trim().ToBase64();
+        data.CommandText = CommandTextBox.Text.ToBase64();
         return data;
     }
 }

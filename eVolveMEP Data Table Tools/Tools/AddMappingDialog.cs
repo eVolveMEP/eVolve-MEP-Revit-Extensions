@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -39,7 +39,7 @@ internal sealed partial class AddMappingDialog : System.Windows.Forms.Form
                 SourceFieldName = dialog.DataTableColumnComboBox.Text,
                 TargetFieldName = dialog.SQLTableColumnComboBox.Text,
             }
-            : default;
+            : null;
     }
 
     /// <summary> Constructor that prevents a default instance of this class from being created. </summary>

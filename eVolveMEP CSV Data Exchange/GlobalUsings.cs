@@ -1,10 +1,16 @@
-// Copyright (c) 2023 eVolve MEP, LLC
+// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
 // Global using directives
+
+extern alias eVolveProduct;
+global using eVolveProduct::eVolve.Core.Revit.General;
+global using eVolveProduct::eVolve.Core.Revit.Integration;
+global using IntegrationAPI = eVolveProduct::eVolve.Core.Revit.Integration.API;
+global using ProductInfoAPI = eVolveProduct::eVolve.Core.Revit.ProductInfo.API;
 
 global using System;
 global using System.Collections.Generic;

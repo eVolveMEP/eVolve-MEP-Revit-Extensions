@@ -1,11 +1,9 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
 
-extern alias eVolve;
-using eVolve::eVolve.Core.Revit.Integration;
 using Autodesk.Revit.Attributes;
 
 namespace eVolve.CsvDataExchange.Revit;
@@ -16,7 +14,7 @@ namespace eVolve.CsvDataExchange.Revit;
 internal class Command : IExternalCommand
 {
     /// <summary> Gets the icon resource. </summary>
-    internal static System.IO.Stream IconResource => GetIconResource("CSV_ImportExport_32x32.png");
+    internal static System.IO.Stream IconResource => System.Reflection.Assembly.GetExecutingAssembly().GetEmbeddedResource("CSV_ImportExport_32x32.png");
 
     /// <summary> Gets URL of the help link to open when requested by the user. </summary>
     internal static string HelpLinkUrl
@@ -68,7 +66,7 @@ internal class Command : IExternalCommand
         }
         catch (Exception ex)
         {
-            ShowErrorMessage(null, $"{Resources.ErrorOccurredNotice}\n\n{ex.Message}", GetTextWithNoLineBreaks(Resources.ButtonText));
+            ShowErrorMessage(null, $"{Resources.ErrorOccurredNotice}\n\n{ex.Message}", Resources.ButtonText.ReplaceLineBreaks(" "));
             return Result.Failed;
         }
     }
@@ -168,7 +166,7 @@ internal class Command : IExternalCommand
             }
 
             // Normalize line breaks to spaces.
-            fieldValue = string.Join(" ", fieldValue.Split(["\r\n", "\r", "\n"], StringSplitOptions.None))
+            fieldValue = fieldValue.ReplaceLineBreaks(" ")
                 // Escape embedded quotes.
                 .Replace("\"", "\"\"")
                 .Trim();
@@ -204,7 +202,7 @@ internal class Command : IExternalCommand
 
         var csvDataFromFile = System.IO.File.ReadAllText(settings.FilePath);
 
-        var dataRows = csvDataFromFile.Split(["\r\n", "\r", "\n"], StringSplitOptions.RemoveEmptyEntries);
+        var dataRows = csvDataFromFile.SplitLineBreaks();
         if (dataRows.Length <= 1)
         {
             // No data or header only.

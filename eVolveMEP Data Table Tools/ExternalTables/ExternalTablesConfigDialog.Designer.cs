@@ -45,11 +45,20 @@ partial class ExternalTablesConfigDialog
             this.SqlEditButton = new System.Windows.Forms.Button();
             this.SqlNewButton = new System.Windows.Forms.Button();
             this.SqlDataGridView = new System.Windows.Forms.DataGridView();
+            this.SqlNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SqlCachedColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SqlDescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SqlGlobalColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DataTableTabPage = new System.Windows.Forms.TabPage();
             this.DataTableDeleteButton = new System.Windows.Forms.Button();
             this.DataTableEditButton = new System.Windows.Forms.Button();
             this.DataTableNewButton = new System.Windows.Forms.Button();
             this.DataTableDataGridView = new System.Windows.Forms.DataGridView();
+            this.DataTableNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataTableFilePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataTableCachedColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DataTableDescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataTableGlobalColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.OKButton = new System.Windows.Forms.Button();
             this.Cancel_Button = new System.Windows.Forms.Button();
@@ -68,18 +77,10 @@ partial class ExternalTablesConfigDialog
             this.CsvGlobalColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ExcelNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExcelFilePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExcelSheetNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExcelCachedColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ExcelDescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExcelGlobalColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.SqlNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SqlCachedColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.SqlDescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SqlGlobalColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DataTableNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataTableFilePathColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataTableCachedColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DataTableDescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataTableGlobalColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.TabControl.SuspendLayout();
             this.ExcelTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExcelDataGridView)).BeginInit();
@@ -139,6 +140,7 @@ partial class ExternalTablesConfigDialog
             this.ExcelDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ExcelNameColumn,
             this.ExcelFilePathColumn,
+            this.ExcelSheetNameColumn,
             this.ExcelCachedColumn,
             this.ExcelDescriptionColumn,
             this.ExcelGlobalColumn});
@@ -223,6 +225,30 @@ partial class ExternalTablesConfigDialog
             this.SqlGlobalColumn});
             this.SqlDataGridView.Name = "SqlDataGridView";
             // 
+            // SqlNameColumn
+            // 
+            resources.ApplyResources(this.SqlNameColumn, "SqlNameColumn");
+            this.SqlNameColumn.Name = "SqlNameColumn";
+            this.SqlNameColumn.ReadOnly = true;
+            // 
+            // SqlCachedColumn
+            // 
+            resources.ApplyResources(this.SqlCachedColumn, "SqlCachedColumn");
+            this.SqlCachedColumn.Name = "SqlCachedColumn";
+            this.SqlCachedColumn.ReadOnly = true;
+            // 
+            // SqlDescriptionColumn
+            // 
+            resources.ApplyResources(this.SqlDescriptionColumn, "SqlDescriptionColumn");
+            this.SqlDescriptionColumn.Name = "SqlDescriptionColumn";
+            this.SqlDescriptionColumn.ReadOnly = true;
+            // 
+            // SqlGlobalColumn
+            // 
+            resources.ApplyResources(this.SqlGlobalColumn, "SqlGlobalColumn");
+            this.SqlGlobalColumn.Name = "SqlGlobalColumn";
+            this.SqlGlobalColumn.ReadOnly = true;
+            // 
             // DataTableTabPage
             // 
             this.DataTableTabPage.Controls.Add(this.DataTableDeleteButton);
@@ -262,6 +288,38 @@ partial class ExternalTablesConfigDialog
             this.DataTableDescriptionColumn,
             this.DataTableGlobalColumn});
             this.DataTableDataGridView.Name = "DataTableDataGridView";
+            // 
+            // DataTableNameColumn
+            // 
+            resources.ApplyResources(this.DataTableNameColumn, "DataTableNameColumn");
+            this.DataTableNameColumn.Name = "DataTableNameColumn";
+            this.DataTableNameColumn.ReadOnly = true;
+            // 
+            // DataTableFilePathColumn
+            // 
+            resources.ApplyResources(this.DataTableFilePathColumn, "DataTableFilePathColumn");
+            this.DataTableFilePathColumn.Name = "DataTableFilePathColumn";
+            this.DataTableFilePathColumn.ReadOnly = true;
+            // 
+            // DataTableCachedColumn
+            // 
+            resources.ApplyResources(this.DataTableCachedColumn, "DataTableCachedColumn");
+            this.DataTableCachedColumn.Name = "DataTableCachedColumn";
+            this.DataTableCachedColumn.ReadOnly = true;
+            // 
+            // DataTableDescriptionColumn
+            // 
+            resources.ApplyResources(this.DataTableDescriptionColumn, "DataTableDescriptionColumn");
+            this.DataTableDescriptionColumn.Name = "DataTableDescriptionColumn";
+            this.DataTableDescriptionColumn.ReadOnly = true;
+            this.DataTableDescriptionColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataTableDescriptionColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // DataTableGlobalColumn
+            // 
+            resources.ApplyResources(this.DataTableGlobalColumn, "DataTableGlobalColumn");
+            this.DataTableGlobalColumn.Name = "DataTableGlobalColumn";
+            this.DataTableGlobalColumn.ReadOnly = true;
             // 
             // LogoPictureBox
             // 
@@ -373,6 +431,12 @@ partial class ExternalTablesConfigDialog
             this.ExcelFilePathColumn.Name = "ExcelFilePathColumn";
             this.ExcelFilePathColumn.ReadOnly = true;
             // 
+            // ExcelSheetNameColumn
+            // 
+            resources.ApplyResources(this.ExcelSheetNameColumn, "ExcelSheetNameColumn");
+            this.ExcelSheetNameColumn.Name = "ExcelSheetNameColumn";
+            this.ExcelSheetNameColumn.ReadOnly = true;
+            // 
             // ExcelCachedColumn
             // 
             resources.ApplyResources(this.ExcelCachedColumn, "ExcelCachedColumn");
@@ -392,62 +456,6 @@ partial class ExternalTablesConfigDialog
             resources.ApplyResources(this.ExcelGlobalColumn, "ExcelGlobalColumn");
             this.ExcelGlobalColumn.Name = "ExcelGlobalColumn";
             this.ExcelGlobalColumn.ReadOnly = true;
-            // 
-            // SqlNameColumn
-            // 
-            resources.ApplyResources(this.SqlNameColumn, "SqlNameColumn");
-            this.SqlNameColumn.Name = "SqlNameColumn";
-            this.SqlNameColumn.ReadOnly = true;
-            // 
-            // SqlCachedColumn
-            // 
-            resources.ApplyResources(this.SqlCachedColumn, "SqlCachedColumn");
-            this.SqlCachedColumn.Name = "SqlCachedColumn";
-            this.SqlCachedColumn.ReadOnly = true;
-            // 
-            // SqlDescriptionColumn
-            // 
-            resources.ApplyResources(this.SqlDescriptionColumn, "SqlDescriptionColumn");
-            this.SqlDescriptionColumn.Name = "SqlDescriptionColumn";
-            this.SqlDescriptionColumn.ReadOnly = true;
-            // 
-            // SqlGlobalColumn
-            // 
-            resources.ApplyResources(this.SqlGlobalColumn, "SqlGlobalColumn");
-            this.SqlGlobalColumn.Name = "SqlGlobalColumn";
-            this.SqlGlobalColumn.ReadOnly = true;
-            // 
-            // DataTableNameColumn
-            // 
-            resources.ApplyResources(this.DataTableNameColumn, "DataTableNameColumn");
-            this.DataTableNameColumn.Name = "DataTableNameColumn";
-            this.DataTableNameColumn.ReadOnly = true;
-            // 
-            // DataTableFilePathColumn
-            // 
-            resources.ApplyResources(this.DataTableFilePathColumn, "DataTableFilePathColumn");
-            this.DataTableFilePathColumn.Name = "DataTableFilePathColumn";
-            this.DataTableFilePathColumn.ReadOnly = true;
-            // 
-            // DataTableCachedColumn
-            // 
-            resources.ApplyResources(this.DataTableCachedColumn, "DataTableCachedColumn");
-            this.DataTableCachedColumn.Name = "DataTableCachedColumn";
-            this.DataTableCachedColumn.ReadOnly = true;
-            // 
-            // DataTableDescriptionColumn
-            // 
-            resources.ApplyResources(this.DataTableDescriptionColumn, "DataTableDescriptionColumn");
-            this.DataTableDescriptionColumn.Name = "DataTableDescriptionColumn";
-            this.DataTableDescriptionColumn.ReadOnly = true;
-            this.DataTableDescriptionColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataTableDescriptionColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // DataTableGlobalColumn
-            // 
-            resources.ApplyResources(this.DataTableGlobalColumn, "DataTableGlobalColumn");
-            this.DataTableGlobalColumn.Name = "DataTableGlobalColumn";
-            this.DataTableGlobalColumn.ReadOnly = true;
             // 
             // ExternalTablesConfigDialog
             // 
@@ -520,16 +528,6 @@ partial class ExternalTablesConfigDialog
     private System.Windows.Forms.PictureBox VideoLinkPictureBox;
     private System.Windows.Forms.Label GlobalConfigLocationLabel;
     private System.Windows.Forms.Label GlobalConfigInfoLabel;
-    private System.Windows.Forms.DataGridViewTextBoxColumn ExcelNameColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn ExcelFilePathColumn;
-    private System.Windows.Forms.DataGridViewCheckBoxColumn ExcelCachedColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn ExcelDescriptionColumn;
-    private System.Windows.Forms.DataGridViewCheckBoxColumn ExcelGlobalColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn CsvNameColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn CsvFilePathColumn;
-    private System.Windows.Forms.DataGridViewCheckBoxColumn CsvCachedColumn;
-    private System.Windows.Forms.DataGridViewTextBoxColumn CsvDescriptionColumn;
-    private System.Windows.Forms.DataGridViewCheckBoxColumn CsvGlobalColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn SqlNameColumn;
     private System.Windows.Forms.DataGridViewCheckBoxColumn SqlCachedColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn SqlDescriptionColumn;
@@ -539,4 +537,15 @@ partial class ExternalTablesConfigDialog
     private System.Windows.Forms.DataGridViewCheckBoxColumn DataTableCachedColumn;
     private System.Windows.Forms.DataGridViewTextBoxColumn DataTableDescriptionColumn;
     private System.Windows.Forms.DataGridViewCheckBoxColumn DataTableGlobalColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn CsvNameColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn CsvFilePathColumn;
+    private System.Windows.Forms.DataGridViewCheckBoxColumn CsvCachedColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn CsvDescriptionColumn;
+    private System.Windows.Forms.DataGridViewCheckBoxColumn CsvGlobalColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn ExcelNameColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn ExcelFilePathColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn ExcelSheetNameColumn;
+    private System.Windows.Forms.DataGridViewCheckBoxColumn ExcelCachedColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn ExcelDescriptionColumn;
+    private System.Windows.Forms.DataGridViewCheckBoxColumn ExcelGlobalColumn;
 }

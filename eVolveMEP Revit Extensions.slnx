@@ -1,0 +1,39 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Release" />
+    <BuildType Name="eE Debug Revit 2024" />
+    <BuildType Name="eE Debug Revit 2025" />
+    <BuildType Name="eE Debug Revit 2026" />
+    <BuildType Name="eE Debug Revit 2027" />
+    <BuildType Name="eE Release Revit 2024" />
+    <BuildType Name="eE Release Revit 2025" />
+    <BuildType Name="eE Release Revit 2026" />
+    <BuildType Name="eE Release Revit 2027" />
+    <BuildType Name="eM Debug Revit 2024" />
+    <BuildType Name="eM Debug Revit 2025" />
+    <BuildType Name="eM Debug Revit 2026" />
+    <BuildType Name="eM Debug Revit 2027" />
+    <BuildType Name="eM Release Revit 2024" />
+    <BuildType Name="eM Release Revit 2025" />
+    <BuildType Name="eM Release Revit 2026" />
+    <BuildType Name="eM Release Revit 2027" />
+  </Configurations>
+  <Folder Name="/Common/">
+    <File Path="Common/CommandAvailablity.cs" />
+    <File Path="Common/Methods.cs" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="eVolveMEP CSV Data Exchange/eVolveMEP CSV Data Exchange.csproj">
+    <BuildType Solution="Debug|*" Project="eE Debug Revit 2024" />
+    <BuildType Solution="Release|*" Project="eE Release Revit 2024" />
+  </Project>
+  <Project Path="eVolveMEP Data Table Tools/eVolveMEP Data Table Tools.csproj">
+    <BuildType Solution="Debug|*" Project="eE Debug Revit 2024" />
+    <BuildType Solution="Release|*" Project="eE Release Revit 2024" />
+  </Project>
+</Solution>

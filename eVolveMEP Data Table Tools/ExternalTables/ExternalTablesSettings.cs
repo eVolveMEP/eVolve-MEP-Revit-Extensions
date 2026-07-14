@@ -1,11 +1,8 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
-
-extern alias eVolve;
-using ProductAPI = eVolve::eVolve.Core.Revit.ProductInfo.API;
 
 namespace eVolve.DataTableTools.Revit.ExternalTables;
 
@@ -69,9 +66,18 @@ public class TabularSourceBase : ExternalTableSourceBase
     [System.Xml.Serialization.XmlIgnore]
     public string FilePathConsumable
     {
-        get => ProductAPI.GetExpandedPath(FilePath);
-        set => FilePath = ProductAPI.GetExpansionAwarePath(value);
+        get => ProductInfoAPI.GetExpandedPath(FilePath);
+        set => FilePath = ProductInfoAPI.GetExpansionAwarePath(value);
     }
+
+    /// <summary>
+    /// Gets or sets the name of the sheet within the tabular data source file.
+    /// </summary>
+    /// <remarks>
+    /// This property specifies the sheet to be read from the file specified in <see cref="FilePath"/>.
+    /// It is primarily used when working with Excel files or other multi-sheet data sources.
+    /// </remarks>
+    public string SheetName { get; set; }
 
     /// <summary> Gets or sets a list of column names which should be excluded from the results. </summary>
     public string[] ExcludeColumnNames { get; set; } = [];
@@ -130,7 +136,7 @@ public class SerializedDataTableSource : ExternalTableSourceBase
     /// <inheritdoc cref="TabularSourceBase.FilePathConsumable"/>
     internal string FilePathConsumable
     {
-        get => ProductAPI.GetExpandedPath(FilePath);
-        set => FilePath = ProductAPI.GetExpansionAwarePath(value);
+        get => ProductInfoAPI.GetExpandedPath(FilePath);
+        set => FilePath = ProductInfoAPI.GetExpansionAwarePath(value);
     }
 }

@@ -1,12 +1,8 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
 // LICENSE file in the root directory of this source tree.
-
-extern alias eVolve;
-using ProductAPI = eVolve::eVolve.Core.Revit.ProductInfo.API;
-using ReportingAPI = eVolve::eVolve.Core.Revit.Reporting.API;
 
 namespace eVolve.DataTableTools.Revit.ExternalTables;
 
@@ -19,8 +15,8 @@ internal static class ExternalTablesMethods
     ///     or a local path (<see langword="false"/>). </param>
     internal static string GetExternalTablesSettingsFilePath(out bool isStandard)
     {
-        isStandard = !string.IsNullOrEmpty(ProductAPI.GlobalConfigurationFolderPath);
-        return System.IO.Path.Combine(!string.IsNullOrEmpty(ProductAPI.GlobalConfigurationFolderPath) ? ProductAPI.GlobalConfigurationFolderPath : ApplicationConfigurationPath, "ExternalTables.xml");
+        isStandard = !string.IsNullOrEmpty(ProductInfoAPI.GlobalConfigurationFolderPath);
+        return System.IO.Path.Combine(!string.IsNullOrEmpty(ProductInfoAPI.GlobalConfigurationFolderPath) ? ProductInfoAPI.GlobalConfigurationFolderPath : ApplicationConfigurationPath, "ExternalTables.xml");
     }
 
     /// <summary> Gets the full pathname of the external tables global settings file which is loaded invisibly. </summary>
@@ -89,7 +85,7 @@ internal static class ExternalTablesMethods
 
         // Include the global first then the local settings.
         // This way the local settings will take priority in the event of any name collisions.
-        foreach (var source in Enumerable.Empty<eVolve::eVolve.Core.Revit.Reporting.IExternalDataTable>()
+        foreach (var source in Enumerable.Empty<IExternalDataTable>()
             .Concat(globalSettings.Excel.Concat(settings.Excel).Select(excel => new ExcelTableSource(excel)))
             .Concat(globalSettings.Csv.Concat(settings.Csv).Select(excel => new CsvTableSource(excel)))
             .Concat(globalSettings.SqlServer.Concat(settings.SqlServer).Select(sqlServer => new SqlServerTableSource(sqlServer)))
@@ -101,16 +97,19 @@ internal static class ExternalTablesMethods
     }
 
     /// <summary>
-    /// Wraps the code for opening and closing an Excel document and delegates all work to be done to the provided <paramref name="action"/>.
+    /// Wraps the code for opening and closing an Excel document and delegates all work to be done to the provided <paramref name="worksheetAction"/>.
     /// </summary>
     ///
     /// <exception cref="Exception"> Thrown when an exception error condition occurs. </exception>
     ///
     /// <param name="file"> The Excel file to open. </param>
-    /// <param name="action"> The action to be done with the provided <see cref="ExcelWrapper.Worksheet"/>. </param>
-    internal static void ReadFromExcel(string file, Action<ExcelWrapper.Worksheet> action)
+    /// <param name="sheetName"> The name of the sheet within <paramref name="file"/>.
+    ///     <para>If <see langword="null"/> is provided, the first sheet is used.</para> </param>
+    /// <param name="worksheetAction"> The action to be done with the provided <see cref="ExcelWrapper.Worksheet"/>. </param>
+    /// <param name="workbookAction"> (Optional) The action to be done with the provided <see cref="ExcelWrapper.Workbook"/> after <paramref name="worksheetAction"/> is performed. </param>
+    internal static void ReadFromExcel(string file, string sheetName, Action<ExcelWrapper.Worksheet> worksheetAction, Action<ExcelWrapper.Workbook> workbookAction = null)
     {
-        if (!System.IO.File.Exists(file) || action == null)
+        if (!System.IO.File.Exists(file) || worksheetAction == null)
         {
             return;
         }
@@ -119,11 +118,13 @@ internal static class ExternalTablesMethods
         {
             using var excel = new ExcelWrapper.Excel();
             var workbook = excel.OpenWorkbook(file);
-            var worksheet = workbook.GetWorksheet(1);
-
+            // Default to the first sheet if a name is not provided.
+            var worksheet = workbook.GetWorksheet(!string.IsNullOrEmpty(sheetName) ? sheetName : 1);
+            
             try
             {
-                action(worksheet);
+                worksheetAction(worksheet);
+                workbookAction?.Invoke(workbook);
             }
             finally
             {

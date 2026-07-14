@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2025 eVolve MEP, LLC
+﻿// Copyright (c) 2026 eVolve MEP, LLC
 // All rights reserved.
 // 
 // This source code is licensed under the BSD-style license found in the
@@ -11,34 +11,6 @@ namespace eVolve.ExtensionsCommon.Revit;
 /// <summary> Common methods useful across all projects in this solution. </summary>
 internal static class Methods
 {
-    /// <summary> Gets the <paramref name="text"/> with all line breaks normalized to a <c>\n</c> character. </summary>
-    ///
-    /// <remarks> This is typically needed when making <see cref="SplitButton"/> text so it appears "correctly". </remarks>
-    ///
-    /// <param name="text"> The button text as it appears in the Revit ribbon. </param>
-    internal static string GetTextWithNormalizedLineBreaks(string text) => string.Join("\n", text.Split(["\r\n", "\r", "\n"], StringSplitOptions.RemoveEmptyEntries));
-
-    /// <summary> Gets the <paramref name="text"/> as a single line text with all linebreaks removed. </summary>
-    ///
-    /// <param name="text"> Text to process. </param>
-    internal static string GetTextWithNoLineBreaks(string text) => GetTextWithNormalizedLineBreaks(text)
-        .Replace("\n", " ")
-        .Replace("  ", " ")
-        .Replace("  ", " ");
-
-    /// <summary>
-    /// Gets the icon resource. It is assumed this is an embedded resource within the respective library.
-    /// </summary>
-    ///
-    /// <param name="imageFileName"> Filename of the image file which is embedded within the library. </param>
-    internal static System.IO.Stream GetIconResource(string imageFileName)
-    {
-        var resourceName = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceNames()
-                .First(name => name.EndsWith("." + imageFileName));
-
-        return System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName);
-    }
-
     /// <summary>
     /// Loads the provided <paramref name="filePath"/> from disk and deserializes it to <typeparamref name="TSettings"/>.
     /// <para>If the operation fails, <see langword="null"/> is returned and the user is notified.</para>
@@ -52,9 +24,7 @@ internal static class Methods
         {
             if (System.IO.File.Exists(filePath))
             {
-                var data = System.IO.File.ReadAllText(filePath);
-                using var stream = new System.IO.StringReader(data);
-                return (TSettings)new System.Xml.Serialization.XmlSerializer(typeof(TSettings)).Deserialize(stream);
+                return filePath.DeserializeObject<TSettings>(true, true);
             }
         }
         catch (Exception ex)
@@ -77,15 +47,7 @@ internal static class Methods
     {
         try
         {
-            using var stream = new System.IO.StringWriter();
-            new System.Xml.Serialization.XmlSerializer(typeof(TSettings)).Serialize(stream, settings);
-
-            var targetDirectory = System.IO.Path.GetDirectoryName(filePath);
-            if (!System.IO.Directory.Exists(targetDirectory))
-            {
-                System.IO.Directory.CreateDirectory(targetDirectory!);
-            }
-            System.IO.File.WriteAllText(filePath, stream.ToString());
+            settings.SerializeObjectToDisk(filePath);
             return true;
         }
         catch (Exception ex)
@@ -114,21 +76,15 @@ internal static class Methods
         {
             if (dialogText != null)
             {
-                form.Text = GetTextWithNoLineBreaks(dialogText);
+                form.Text = dialogText.ReplaceLineBreaks(" ");
             }
 
             form.Icon = iconResource != null
                 ? System.Drawing.Icon.FromHandle(((System.Drawing.Bitmap)System.Drawing.Image.FromStream(iconResource)).GetHicon())
                 : form.Owner?.Icon;
 
-            if (form.AcceptButton != null)
-            {
-                form.AcceptButton.DialogResult = DialogResult.OK;
-            }
-            if (form.CancelButton != null)
-            {
-                form.CancelButton.DialogResult = DialogResult.Cancel;
-            }
+            form.AcceptButton?.DialogResult = DialogResult.OK;
+            form.CancelButton?.DialogResult = DialogResult.Cancel;
         };
 
         form.Shown += (_, _) => form.MinimumSize = form.Size;
@@ -138,30 +94,27 @@ internal static class Methods
 
         if (!string.IsNullOrEmpty(helpUrl))
         {
-            void openHelpUrl() => StartProcess(helpUrl);
+            void openHelpUrl() => Files.StartProcess(helpUrl);
             form.HelpRequested += (_, e) =>
             {
                 e.Handled = true;
                 openHelpUrl();
             };
 
-            if (helpIcon != null)
-            {
-                helpIcon.Click += (_, _) => openHelpUrl();
-            }
+            helpIcon?.Click += (_, _) => openHelpUrl();
         }
-        else if (helpIcon != null)
+        else
         {
-            helpIcon.Visible = false;
+            helpIcon?.Visible = false;
         }
 
         if (!string.IsNullOrEmpty(videoUrl) && (videoIcon != null))
         {
-            videoIcon.Click += (_, _) => StartProcess(videoUrl);
+            videoIcon.Click += (_, _) => Files.StartProcess(videoUrl);
         }
-        else if (videoIcon != null)
+        else
         {
-            videoIcon.Visible = false;
+            videoIcon?.Visible = false;
         }
 
         if (linkToSourceLabel != null)
@@ -170,30 +123,7 @@ internal static class Methods
             linkToSourceLabel.ForeColor = System.Drawing.Color.Blue;
             linkToSourceLabel.Font = new System.Drawing.Font(linkToSourceLabel.Font, System.Drawing.FontStyle.Underline);
             linkToSourceLabel.Cursor = Cursors.Hand;
-            linkToSourceLabel.Click += (_, _) => StartProcess("https://github.com/eVolveMEP/eVolve-MEP-Revit-Extensions");
-        }
-    }
-
-    /// <summary> Performs base64 encoding on the specified <paramref name="text"/>. </summary>
-    ///
-    /// <param name="text"> Value to encode. </param>
-    public static string ToBase64(string text) => string.IsNullOrEmpty(text) ? "" : Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(text.ToCharArray()));
-
-    /// <summary>
-    /// Performs base64 decoding on the specified <paramref name="text"/>. If the provided value is malformed, an empty
-    /// string is returned.
-    /// </summary>
-    ///
-    /// <param name="text"> Value to decode. </param>
-    public static string FromBase64(string text)
-    {
-        try
-        {
-            return System.Text.Encoding.Default.GetString(Convert.FromBase64String(text));
-        }
-        catch (Exception)
-        {
-            return "";
+            linkToSourceLabel.Click += (_, _) => Files.StartProcess("https://github.com/eVolveMEP/eVolve-MEP-Revit-Extensions");
         }
     }
 
@@ -227,25 +157,5 @@ internal static class Methods
     private static DialogResult ShowMessage(MessageBoxIcon icon, System.Windows.Forms.Form owner, string message, string title, MessageBoxButtons buttons = MessageBoxButtons.OK)
     {
         return MessageBox.Show(owner, message, title ?? owner?.Text ?? icon.ToString(), buttons, icon);
-    }
-
-    /// <summary>
-    /// Begins a process via <see cref="System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)"/>
-    /// with <see cref="System.Diagnostics.ProcessStartInfo.UseShellExecute"/> set to <see langword="true"/>.
-    /// </summary>
-    ///
-    /// <remarks>
-    /// In .NET Framework this was defaulted to <see langword="true"/>, however in .NET Core (Revit 2025+) it is
-    /// defaulted to <see langword="false"/>.
-    /// </remarks>
-    ///
-    /// <param name="fileName"> File path or website used in <see cref="System.Diagnostics.Process.Start(System.Diagnostics.ProcessStartInfo)"/>.</param>
-    internal static void StartProcess(string fileName)
-    {
-        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
-        {
-            FileName = fileName,
-            UseShellExecute = true,
-        });
     }
 }
